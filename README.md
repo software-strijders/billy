@@ -2,99 +2,105 @@
 
 ![Logo](logo/logo.svg)
 
-## Table of Contents
-- [Project Frontend development](#project-frontend-development)
-  * [The team](#the-team)
-  * [Introduction](#introduction)
-  * [Git strategy](#git-strategy)
-  * [Scrum](#scrum)
-  * [Code of Conduct](#code-of-conduct)
-    + [Git](#git)
-    + [Code style](#code-style)
-  * [Screenshots](#screenshots)
-  * [Tech/framework used](#tech-framework-used)
-  * [Features](#features)
-  * [Installation](#installation)
-  * [Tests](#tests)
+## Inhoudsopgave
 
-## The team
+- [Het team](#het-team)
+- [Introductie](#introductie)
+- [Git strategie](#git-strategie)
+- [Scrum](#scrum)
+- [Documentatie](#documentatie)
+  - [Visie/Scope document](#visie/scope-document)
+  - [Functioneel ontwerp](#functioneel-ontwerp)
+- [Git](#git)
+- [Codebase](#codebase)
+- [Installatie](#installatie)
+- [Gebruikersinstructies](#gebruikersinstructies)
 
-This project will be made by a group of five, each with their different strenghts and weaknesses that complement<br>
-eachother
 
-The team has the following members:
+## Het team
 
-* Xander Vedder ([@xandervedder](https://github.com/xandervedder))
-* Jort Willemsen ([@JortWillemsen](https://github.com/JortWillemsen))
-* Milan Dol ([@JustMilan](https://github.com/JustMilan))
-* Ruben van den Brink ([@Rubenvdbrink](https://github.com/Rubenvdbrink))
-* Arjen Norbart ([@arjennorbart](https://github.com/arjennorbart))
+Dit project wordt gemaakt door een groep van vijf, elke met zijn eigen sterktes en zwaktes die elkaar complementeren.
 
-## Introduction
+Het groepje bestaat uit de volgende mensen:
 
-This project will turn out as a wiki for all HBO-I educations in the Netherlands.<br>
-It will have to meet the following requirements at least:
-* It has to be a wiki whose pages can be edited
-* Pages can only be edited by logged in users
-* The wiki must be searchable
-* The wiki must be able to be categorized by HBO-I category and by role
-* The wiki must fit in the structure of HBO-I
-* The wiki software should preferably be open source and easy to use
-* The wiki must meet accessibility requirements
-* The wiki must load demonstrable quickly so that as little energy as possible is used.
-* The wiki must meet the requirements of HBO-I
+- Xander Vedder ([@xandervedder](https://github.com/xandervedder))
+- Jort Willemsen ([@JortWillemsen](https://github.com/JortWillemsen))
+- Milan Dol ([@JustMilan](https://github.com/JustMilan))
+- Ruben van den Brink ([@Rubenvdbrink](https://github.com/Rubenvdbrink))
+- Arjen Norbart ([@arjennorbart](https://github.com/arjennorbart))
 
-## Git strategy
+## Introductie
 
-For our git strategy, we are using a modified version of git flow. In our strategy we use the following branches:
+Dit project zal worden gebruikt als een wiki voor alle HBO-i aangesloten hogescholen in Nederland.
 
-- `Master branch`
+Het heeft de volgende eisen:
+
+- Het moet een wiki worden waar de pagina's bewerkt kunnen worden.
+- Pagina's moeten alleen door ingelogde gebruikers bewerkt kunnen worden.
+- De wiki moet doorzocht kunnen worden.
+- De wiki moet (HBO-i) categoriëen hebben.
+- De wiki moet open-source zijn.
+- De wiki moet voldoen aan de toegangelijksheid-eisen.
+- De wiki moet demonstreerbaar snel zijn waardoor er zo min mogelijk energie wordt gebruikt.
+
+## Git strategie
+
+Voor onze Git strategie gebruiken we een gemodificeerde versie van `git flow`. In onze strategie gebruiken we de volgende branches:
+
+- `Main branch`
 - `Development branch`
 - `Feature branches`
 
-Whatever is in the master branch, will be running on Heroku. The only things that will go in the master branch are releases, accompanied by `git tag` tags (v1, v2, etc.). There is a release at the end of every iteration ~ every week.
+Wat op de `main` branch staat, zal op Heroku gaan draaien. Op de `main` branch staat alleen stabiele werkende code. Dit wordt stabiel gehouden door aan het eind van de sprint de `development` branch te mergen met de `main` branch. Deze krijgt dan een versie op de laatste commit, dit wordt met `git tag` gedaan.
 
-All of the development work will be done in the `development` branch. This is to ensure that the deployed version (`master` branch) will always remain stable.
+Al het ontwikkel werk wordt in de `development` branch gemerged d.m.v. Pull Requests in Github. Dit wordt gedaan om de master branch zo stabiel mogelijk te houden.
 
-For every story or (sub)task we create a new `feature` branch, each team member can do whatever he wants in this branch (rebasing, force pushing, all of it). These `feature` branches will be used to make Pull Requests in Github. In these PR's there will be regular reviews to ensure high code quality.
+Voor elke `Task` of `User story` worden `feature` branches aangemaakt, hierdoor heeft ieder teamlid zijn eigen branch waar die alles in kan doen (ongestoord). Met deze `feature` branches worden uiteindelijk Pull Requests gedaan. Op de Pull Requests worden minimaal 2 reviewers gevraagd om het na te kijken. Deze reviews zorgen ervoor dat de kwaliteit van de code hoog blijft.
 
 ## Scrum
 
-This project will make use of the Agile workflow, implementing the Scrum method. This can be seen from our project [boards](https://github.com/huict/prbed-2021-v2b-1/projects). There is a different board for each iteration (1-3).
+Dit project maakt gebruik van een Agile workflow, waarvan de Scrum methode wordt geïmplementeerd. Dit wordt gedaan door in Github gebruik te maken van [projects](https://github.com/HU-SD-SV2PRFED-studenten-2021/prfed_2021-V2B-1/projects).
 
-Currently we use the following lanes:
+Per sprint hebben we een bord waar we kaarten in hebben gezet. Deze kaarten kunnen in verschillende lanes worden gesleept. We hebben de volgende lanes:
 
-- `Backlog` (shared between iterations)
+- `Backlog` (gedeelt tussen de verschillende sprints)
 - `To Do`
 - `In progress`
-- `Done` (automated)
+- `Done` (geautomatiseerd)
 
-We have added all the different types of User Stories located in our backlog, however, each different User Story also has Sub Tasks related to that particular User Story. This way, we can assign different team members to the sub tasks.
+De meeste User Stories zijn al in de `Backlog` gezet. Deze User Stories hebben weer `Task`'s die bij die User Stories horen, dit doen we om de User Stories behapbaar te maken.
 
-We have also given all the sub tasks points, so we've already thought about how long a task would take and/or if it has high complexity.
+We geven de `Task`'s daarom ook punten zodat we als team weten hoeveel moeite er in gestoken moet worden.
 
-## Code of Conduct
+## Documentatie
 
-This paragraph is primarily meant for the team, but it can give insights as to how we're keeping the quality of the code up.
+In dit kopje worden alle zaken omtrent documentatie opgenoemd.
 
-### Git
+### Visie/Scope document
 
-This has been discussed many times by other people, thus it is only natural to link a clear and concise article about this topic:
+<!-- TODO: Add proper link -->
+Het Visie/Scope document is [hier](/documentation) te vinden.
 
-https://chris.beams.io/posts/git-commit/
+### Functioneel ontwerp
 
-The points mentioned in this article are the ones we should be using for making clear git messages.
+<!-- TODO: Add proper link -->
+Het Functioneel ontwerp document van Sprint 1 is [hier](/documentation) te vinden.
+## Git
 
-To keep our git history clean, we don't use the `git merge` command by ourselves, instead, we rebase our `feature` branches. No unnecessary merges from `development` to `feature/...`, only merges from the PR's in `development`.
+Om de commits zo duidelijk mogelijk te houden, volgen we "tips" van dit [artikel](https://chris.beams.io/posts/git-commit/).
 
-### Code style
+Om onze Git history zo schoon mogelijk te houden, gebruiken we in de feature branches geen `git merge`. In plaats daarvan, gebruiken we `git rebase`. Er wordt alleen vanaf Github gemerged. Zo wordt ervoor gezorgd dat er alleen branches *in* `development` worden gemerged, en niet andersom.
 
-## Screenshots
+## Codebase
 
-## Tech/framework used
+Om de kwaliteit van de code base zo hoog mogelijk te houden, maken we als team gebruik van [prettier](). Dit zorgt ervoor dat al onze code op dezelfde lijn gehouden wordt, waardoor verschillen in formatting niet aanwezig zijn.
 
-## Features
+De root directory van de codebase is [hier](/src) te vinden.
 
-## Installation
+## Installatie
 
-## Tests
+<!-- TODO: make this -->
+
+## Gebruikersinstructies
+
+<!-- TODO: make this -->
