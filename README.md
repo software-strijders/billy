@@ -9,7 +9,7 @@
 - [Git strategie](#git-strategie)
 - [Scrum](#scrum)
 - [Documentatie](#documentatie)
-  - [Visie/Scope document](#visie/scope-document)
+  - [Visie/Scope document](#visiescope-document)
   - [Functioneel ontwerp](#functioneel-ontwerp)
 - [Git](#git)
 - [Codebase](#codebase)
