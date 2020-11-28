@@ -93,7 +93,7 @@ Om onze Git history zo schoon mogelijk te houden, gebruiken we in de feature bra
 
 ## Codebase
 
-Om de kwaliteit van de code base zo hoog mogelijk te houden, maken we als team gebruik van [prettier](). Dit zorgt ervoor dat al onze code op dezelfde lijn gehouden wordt, waardoor verschillen in formatting niet aanwezig zijn.
+Om de kwaliteit van de code base zo hoog mogelijk te houden, maken we als team gebruik van [prettier](https://prettier.io/). Dit zorgt ervoor dat al onze code op dezelfde lijn gehouden wordt, waardoor verschillen in formatting niet aanwezig zijn.
 
 De root directory van de codebase is [hier](/src) te vinden.
 
