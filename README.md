@@ -79,7 +79,7 @@ In dit kopje worden alle zaken omtrent documentatie opgenoemd.
 ### Visie/Scope document
 
 <!-- TODO: Add proper link -->
-Het Visie/Scope document is [hier](/documentation) te vinden.
+Het Visie/Scope document is [hier](/documentation/visie-scope-document.pdf) te vinden.
 
 ### Functioneel ontwerp
 
