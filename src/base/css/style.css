@@ -54,3 +54,8 @@ h5 {
   color: white;
   font-weight: normal;
 }
+
+.topBar {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
