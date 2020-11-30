@@ -1,0 +1,21 @@
+@startuml article_state
+
+state Article {
+  state "Created" as C
+  state "Edited" as E
+  state "Deleted" as D
+
+  [*] --> C
+  
+  C --> E
+  C --> D
+  
+  ' When the state is edited, we can edit as many times as we wan. 
+  ' Thus the state won't change.
+  E --> E
+  E --> D
+  
+  D --> [*]  
+}
+
+@enduml
