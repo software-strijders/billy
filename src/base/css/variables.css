@@ -1,3 +1,16 @@
+:root {
+  --billy-color-turquoise: #72efda;
+  --billy-color-blue: #22bef9;
+
+  --billy-gradient: linear-gradient(
+    to bottom right,
+    var(--billy-color-turquoise),
+    var(--billy-color-blue)
+  );
+
+  --billy-color-shadow: rgba(0, 0, 0, 0.16);
+}
+
 @font-face {
   font-family: Aller;
   src: url(/src/assets/font/aller.woff2), url(/src/assets/font/aller.svg);
