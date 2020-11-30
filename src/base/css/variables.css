@@ -34,13 +34,6 @@
 
 @font-face {
   font-family: Aller;
-  src: url(/src/assets/font/aller-light.woff2),
-    url(/src/assets/font/aller-light.svg);
-  font-weight: lighter;
-}
-
-@font-face {
-  font-family: Aller;
   src: url(/src/assets/font/aller-italic.woff2),
     url(/src/assets/font/aller-italic.svg);
   font-style: italic;

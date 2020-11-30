@@ -1,0 +1,56 @@
+@import "./variables.css";
+
+html {
+  font-family: "Aller";
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: var(--billy-gradient);
+}
+
+.body--contrast {
+  background: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-shadow: 0px 5px 10px var(--billy-color-shadow);
+  display: inline-block;
+  font-family: "Aller";
+  margin: 10px 0 10px 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__logo {
+  margin-top: 200px;
+  user-select: none;
+  font-size: 100px;
+  text-align: center;
+  color: white;
+}
+
+.main__underTitle {
+  font-size: 20px;
+  margin: 0 0 50px 0;
+  user-select: none;
+  color: white;
+  font-weight: normal;
+}
