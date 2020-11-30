@@ -1,0 +1,32 @@
+@startuml domain
+
+class Article {
+  - title: String
+  - text: String
+  - author: User
+  - lastEdit: Date
+  - version: int
+}
+
+class Category {
+  - name: String
+}
+
+class Student {
+  - firstName: String
+  - surname: String
+  - birthDate: Date
+  - university: University
+}
+
+class University {
+  - name: String
+  - place: String
+}
+
+Student "1..*" -- "0..*" Article
+Student "1" -- "1" University
+
+Article "1..*" -- "0..*" Category
+
+@enduml
