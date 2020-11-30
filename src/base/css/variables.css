@@ -1,0 +1,35 @@
+@font-face {
+  font-family: Aller;
+  src: url(/src/assets/font/aller.woff2), url(/src/assets/font/aller.svg);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Aller;
+  src: url(/src/assets/font/aller-bold.woff2),
+    url(/src/assets/font/aller-bold.svg);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Aller;
+  src: url(/src/assets/font/aller-bold-italic.woff2),
+    url(/src/assets/font/aller-bold-italic.svg);
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Aller;
+  src: url(/src/assets/font/aller-light.woff2),
+    url(/src/assets/font/aller-light.svg);
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: Aller;
+  src: url(/src/assets/font/aller-italic.woff2),
+    url(/src/assets/font/aller-italic.svg);
+  font-style: italic;
+  font-weight: normal;
+}
