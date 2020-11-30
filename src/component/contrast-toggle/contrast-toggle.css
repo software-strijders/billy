@@ -1,0 +1,26 @@
+.contrastToggle {
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  background-color: black;
+  height: 30px;
+  width: 60px;
+  border-radius: 100px;
+}
+
+.contrastToggle__slider {
+  cursor: pointer;
+  height: 30px;
+  transition: 0.3s;
+  width: 30px;
+  margin-right: auto;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 100px;
+}
+
+.slider--on {
+  transform: translateX(30px);
+}
