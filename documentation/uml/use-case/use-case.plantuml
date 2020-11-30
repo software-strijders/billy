@@ -1,0 +1,11 @@
+@startuml use_case_diagram
+
+actor Gast as g
+
+rectangle Billy {
+  usecase "Artikel inzien" as UC1
+}
+
+g -right-> UC1
+
+@enduml
