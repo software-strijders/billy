@@ -62,3 +62,41 @@ h5 {
 .topBar > * {
   margin: 0 0 0 20px;
 }
+.navbar {
+    background: black;
+}
+
+.navbar ul {
+    display: inline-flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    display: flex;
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    justify-content: left;
+    background: greenyellow;
+
+}
+
+.sidebar div {
+    border: 10px black;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+}
