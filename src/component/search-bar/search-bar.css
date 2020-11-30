@@ -16,14 +16,22 @@
   padding: 0;
 }
 
+.searchBar--contrast {
+  border: 2px solid;
+}
+
 .searchBar__input {
   height: 100%;
   margin: 0;
-  width: 400px;
+  width: 500px;
   border: none;
   font-size: 20px;
   padding: 0 0 0 20px;
   border-radius: 100px 0 0 100px;
+}
+
+.input--contrast {
+  color: black;
 }
 
 .searchBar__button {
@@ -45,4 +53,9 @@
 
 .link--show {
   display: inline-block;
+}
+
+.searchBar__arrow {
+  background-color: transparent;
+  vertical-align: middle;
 }
