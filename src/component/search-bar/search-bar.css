@@ -1,0 +1,61 @@
+@import "/src/base/css/style.css";
+@import "/src/base/css/variables.css";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchBar {
+  height: 50px;
+  display: flex;
+  margin: 0;
+  box-shadow: 0px 5px 10px var(--billy-color-shadow);
+  border-radius: 100px;
+  padding: 0;
+}
+
+.searchBar--contrast {
+  border: 2px solid;
+}
+
+.searchBar__input {
+  height: 100%;
+  margin: 0;
+  width: 500px;
+  border: none;
+  font-size: 20px;
+  padding: 0 0 0 20px;
+  border-radius: 100px 0 0 100px;
+}
+
+.searchBar__input--contrast {
+  color: black;
+}
+
+.searchBar__button {
+  height: 100%;
+  margin: 0;
+  width: 60px;
+  font-size: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 0 100px 100px 0;
+}
+
+.searchBar__link {
+  display: none;
+  margin-top: 10px;
+  color: white;
+  font-size: 13px;
+}
+
+.searchBar__link--show {
+  display: inline-block;
+}
+
+.searchBar__arrow {
+  background-color: transparent;
+  vertical-align: middle;
+}
