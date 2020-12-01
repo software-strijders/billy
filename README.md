@@ -1,6 +1,6 @@
 # Project Frontend development
 
-![Logo](logo/logo.svg)
+![Logo](logo/hboi-logo.svg)
 
 ## Inhoudsopgave
 
@@ -15,7 +15,6 @@
 - [Codebase](#codebase)
 - [Installatie](#installatie)
 - [Gebruikersinstructies](#gebruikersinstructies)
-
 
 ## Het team
 
@@ -79,17 +78,20 @@ In dit kopje worden alle zaken omtrent documentatie opgenoemd.
 ### Visie/Scope document
 
 <!-- TODO: Add proper link -->
+
 Het Visie/Scope document is [hier](/documentation/visie-scope-document.pdf) te vinden.
 
 ### Functioneel ontwerp
 
 <!-- TODO: Add proper link -->
+
 Het Functioneel ontwerp document van Sprint 1 is [hier](/documentation) te vinden.
+
 ## Git
 
 Om de commits zo duidelijk mogelijk te houden, volgen we "tips" van dit [artikel](https://chris.beams.io/posts/git-commit/).
 
-Om onze Git history zo schoon mogelijk te houden, gebruiken we in de feature branches geen `git merge`. In plaats daarvan, gebruiken we `git rebase`. Er wordt alleen vanaf Github gemerged. Zo wordt ervoor gezorgd dat er alleen branches *in* `development` worden gemerged, en niet andersom.
+Om onze Git history zo schoon mogelijk te houden, gebruiken we in de feature branches geen `git merge`. In plaats daarvan, gebruiken we `git rebase`. Er wordt alleen vanaf Github gemerged. Zo wordt ervoor gezorgd dat er alleen branches _in_ `development` worden gemerged, en niet andersom.
 
 ## Codebase
 
