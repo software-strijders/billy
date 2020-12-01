@@ -11,14 +11,6 @@ body {
   width: 100%;
 }
 
-body {
-  background: var(--billy-gradient);
-}
-
-.body--contrast {
-  background: black;
-}
-
 h1,
 h2,
 h3,
@@ -34,9 +26,13 @@ h5 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: max-content;
+  height: 100%;
   align-items: center;
-  justify-content: center;
+  background: var(--billy-gradient);
+}
+
+.main--contrast {
+  background: black;
 }
 
 .main__logo {
@@ -56,6 +52,13 @@ h5 {
 }
 
 .topBar {
+  display: flex;
+  padding: 15px 0;
+  align-content: center;
   align-self: flex-end;
   justify-self: flex-end;
+}
+
+.topBar > * {
+  margin: 0 0 0 20px;
 }

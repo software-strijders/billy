@@ -1,9 +1,12 @@
+@import "/src/base/css/style.css";
+@import "/src/base/css/variables.css";
+
 .contrastToggle {
+  box-shadow: 0px 5px 10px var(--billy-color-shadow);
   cursor: pointer;
   transition: 0.3s;
   display: flex;
   align-items: center;
-  margin: 10px;
   background-color: black;
   height: 30px;
   width: 60px;
