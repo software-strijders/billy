@@ -1,11 +1,10 @@
 import { template } from "./contrast-toggle-template.js";
 
-class ContrastButton extends HTMLElement {
+class ContrastToggle extends HTMLElement {
   constructor() {
     super();
 
     this._shadowRoot = this.attachShadow({ mode: "open" });
-
     this._shadowRoot.innerHTML = template;
   }
 
@@ -14,10 +13,10 @@ class ContrastButton extends HTMLElement {
   }
 
   toggleSwitch() {
-    const slider = this.shadowRoot.querySelector("#slider");
+    const slider = this._shadowRoot.querySelector("#slider");
     slider.classList.toggle("slider--on");
     this.toggleAttribute("on");
   }
 }
 
-customElements.define("contrast-toggle", ContrastButton);
+customElements.define("contrast-toggle", ContrastToggle);

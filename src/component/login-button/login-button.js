@@ -5,7 +5,6 @@ class LoginButton extends HTMLElement {
     super();
 
     this._shadowRoot = this.attachShadow({ mode: "open" });
-
     this._shadowRoot.innerHTML = template;
   }
 

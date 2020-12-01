@@ -30,7 +30,7 @@
   border-radius: 100px 0 0 100px;
 }
 
-.input--contrast {
+.searchBar__input--contrast {
   color: black;
 }
 
@@ -51,7 +51,7 @@
   font-size: 13px;
 }
 
-.link--show {
+.searchBar__link--show {
   display: inline-block;
 }
 
