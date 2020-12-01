@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <clipPath id="clip-manage">
+      <rect width="80" height="80"/>
+    </clipPath>
+  </defs>
+  <g id="manage" clip-path="url(#clip-manage)">
+    <g id="Group_14" data-name="Group 14" transform="translate(6 7.581)">
+      <g id="Group_13" data-name="Group 13">
+        <g id="Group_10" data-name="Group 10">
+          <line id="Line_8" data-name="Line 8" y2="43.919" transform="translate(8.23 21.919)" fill="none" stroke="#000" stroke-width="5"/>
+          <line id="Line_16" data-name="Line 16" y2="10.919" transform="translate(8.23 -0.081)" fill="none" stroke="#000" stroke-width="5"/>
+          <g id="Ellipse_3" data-name="Ellipse 3" transform="translate(0 9.419)" fill="none" stroke="#000" stroke-width="5">
+            <circle cx="8" cy="8" r="8" stroke="none"/>
+            <circle cx="8" cy="8" r="5.5" fill="none"/>
+          </g>
+        </g>
+        <g id="Group_11" data-name="Group 11" transform="translate(26)">
+          <line id="Line_8-2" data-name="Line 8" y2="41.919" transform="translate(8.392)" fill="none" stroke="#000" stroke-width="5"/>
+          <line id="Line_17" data-name="Line 17" y1="11" transform="translate(8.5 54.919)" fill="none" stroke="#000" stroke-width="5"/>
+          <g id="Ellipse_3-2" data-name="Ellipse 3" transform="translate(0 40.419)" fill="none" stroke="#000" stroke-width="5">
+            <circle cx="8" cy="8" r="8" stroke="none"/>
+            <circle cx="8" cy="8" r="5.5" fill="none"/>
+          </g>
+        </g>
+        <g id="Group_12" data-name="Group 12" transform="translate(52)">
+          <line id="Line_8-3" data-name="Line 8" y2="33.919" transform="translate(8.554 31.919)" fill="none" stroke="#000" stroke-width="5"/>
+          <line id="Line_18" data-name="Line 18" y1="20" transform="translate(8.554 -0.081)" fill="none" stroke="#000" stroke-width="5"/>
+          <g id="Ellipse_3-3" data-name="Ellipse 3" transform="translate(0 17.419)" fill="none" stroke="#000" stroke-width="5">
+            <circle cx="8" cy="8" r="8" stroke="none"/>
+            <circle cx="8" cy="8" r="5.5" fill="none"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
