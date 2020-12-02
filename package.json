@@ -1,0 +1,10 @@
+{
+  "name": "billy",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "snowpack dev"
+  },
+  "dependencies": {
+    "snowpack": "^2.17.1"
+  }
+}

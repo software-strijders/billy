@@ -16,7 +16,7 @@ class LoginButton extends HTMLElement {
   }
 
   login() {
-    window.location.href = "../base/login.html";
+    window.location.href = "./login.html";
   }
 }
 
