@@ -8,7 +8,6 @@ class BillyResultItem extends HTMLElement {
 
     connectedCallback() {
         this._shadowRoot.innerHTML = template;
-        // this._shadowRoot.appendChild(template.content.cloneNode(true));
     }
 }
 
