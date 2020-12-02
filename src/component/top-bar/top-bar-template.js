@@ -1,15 +1,15 @@
 export const template = /*html*/ `
 <style>
-    @import '../component/top-bar/style.css';
+    @import '../component/top-bar/top-bar.css';
 </style>
 
 <header>
   <nav class="topBar">
     <ul class="topBar__list">
       <li class="home"><a class="home__text" href="./home.html">Billy</a></li>
-      <li class="item--right"><contrast-toggle></contrast-toggle></li>
-      <li class="item"><search-bar></search-bar></li>
-      <li class="item"><login-button></login-button></li>
+      <li class="item--right"><billy-contrast-toggle></billy-contrast-toggle></li>
+      <li class="item"><billy-search-bar></billy-search-bar></li>
+      <li class="item"><billy-login-button></billy-login-button></li>
     </ul>
   </nav>
 </header>

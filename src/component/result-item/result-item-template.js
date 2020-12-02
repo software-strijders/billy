@@ -1,6 +1,6 @@
 export const template = /*html*/ `
 <style>
-  @import '../component/result-item/style.css';
+  @import '../component/result-item/result-item.css';
 </style>
 <div class="result">
   <div>

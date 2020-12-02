@@ -20,4 +20,4 @@ class LoginButton extends HTMLElement {
   }
 }
 
-customElements.define("login-button", LoginButton);
+customElements.define("billy-login-button", LoginButton);

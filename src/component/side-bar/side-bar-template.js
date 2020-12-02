@@ -1,7 +1,7 @@
 export const template = /*html*/ `
-  <style>
-    @import '../component/side-bar/style.css';
-  </style>
+<style>
+  @import '../component/side-bar/side-bar.css';
+</style>
 
 <div>
   <div class="sideBar">

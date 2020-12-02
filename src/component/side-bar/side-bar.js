@@ -1,6 +1,6 @@
 import { template } from "./side-bar-template.js";
 
-class BillySidebar extends HTMLElement {
+class SideBar extends HTMLElement {
   constructor() {
     super();
     this._shadowRoot = this.attachShadow({ mode: "open" });
@@ -11,4 +11,4 @@ class BillySidebar extends HTMLElement {
   }
 }
 
-window.customElements.define("billy-sidebar", BillySidebar);
+window.customElements.define("billy-sidebar", SideBar);

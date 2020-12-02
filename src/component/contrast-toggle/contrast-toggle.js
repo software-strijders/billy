@@ -19,4 +19,4 @@ class ContrastToggle extends HTMLElement {
   }
 }
 
-customElements.define("contrast-toggle", ContrastToggle);
+customElements.define("billy-contrast-toggle", ContrastToggle);
