@@ -1,6 +1,6 @@
 export const template = /*html*/ `
   <style>
-    @import '../component/sideBar/style.css';
+    @import '../component/side-bar/style.css';
   </style>
 
 <div>
@@ -30,5 +30,5 @@ export const template = /*html*/ `
       Manage
     </a>
   </div>
-</div>;
+</div>
 `;
