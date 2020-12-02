@@ -9,6 +9,9 @@ class LoginButton extends HTMLElement {
   }
 
   connectedCallback() {
+    if (this.hasAttribute('loginButton--large')) {
+      this._shadowRoot.querySelector('button').classList.add("loginButton--large");
+    }
     this.addEventListener("click", this.login);
   }
 

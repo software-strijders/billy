@@ -8,8 +8,8 @@ class BillyTopBar extends HTMLElement {
 
     connectedCallback() {
         this._shadowRoot.innerHTML = template;
-        this._shadowRoot.querySelector('search-bar').setAttribute('noshow', "true");
-        this._shadowRoot.querySelector("login-button").setAttribute('loginButton--large', "true");
+        this._shadowRoot.querySelector('search-bar').setAttribute('noshow', "");
+        this._shadowRoot.querySelector("login-button").setAttribute('loginButton--large', "");
     }
 }
 
