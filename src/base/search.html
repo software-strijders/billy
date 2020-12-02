@@ -7,25 +7,9 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <ul>
-          <li><a href="./home.html">Home</a></li>
-          <li>
-            <button>High contrast</button>
-          </li>
-          <li>
-            <button>Language</button>
-          </li>
-          <li><input placeholder="zoek artikel" /></li>
-          <li><a href="./inloggen.html">Inloggen</a></li>
-        </ul>
-      </nav>
-    </header>
-    <!-- This is still hardcoded like this, becasue 
-      there will be a component for this in the near future -->
+    <billy-top-bar></billy-top-bar>
 
-    <custom-sidebar></custom-sidebar>
+    <billy-sidebar></billy-sidebar>
 
     <div class="result">
       <h1>Results for: %s</h1>
@@ -35,14 +19,16 @@
         <!-- classname zodat we aan deze div result items kunnen toevoegen-->
         <!-- Voor testpurposes staat de custom element tag `<result-item></result-item>` 
         hier, maar dit wordt zometeen via javascript toegevoegd. -->
-        <result-item></result-item>
+        <billy-result-item></billy-result-item>
       </div>
     </div>
 
-    <script
-      type="module"
-      src="../component/result_item/result_item.js"
-    ></script>
-    <script type="module" src="../component/sidebar/sidebar.js"></script>
+    <script type="module" src="../component/result-item/result-item.js"></script>
+    <script type="module" src="../component/side-bar/side-bar.js"></script>
+    <script type="module" src="../component/contrast-toggle/contrast-toggle.js"></script>
+    <script type="module" src="../component/top-bar/top-bar.js"></script>
+    <script type="module" src="../component/search-bar/search-bar.js"></script>
+    <script type="module" src="../component/login-button/login-button.js"></script>
+    <script type="module" src="../component/contrast-toggle/contrast-toggle.js"></script>
   </body>
 </html>
