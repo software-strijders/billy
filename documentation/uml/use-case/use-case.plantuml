@@ -1,11 +1,15 @@
 @startuml use_case_diagram
 
+left to right direction
+
 actor Gast as g
 
 rectangle Billy {
-  usecase "Artikel inzien" as UC1
+  usecase "Startpagina inzien" as UC1
+  usecase "Artikel inzien" as UC2
 }
 
-g -right-> UC1
+g -right- UC1
+g -- UC2
 
 @enduml
