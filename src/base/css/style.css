@@ -62,3 +62,23 @@ h5 {
 .topBar > * {
   margin: 0 0 0 20px;
 }
+.navbar {
+  background: black;
+}
+
+.navbar ul {
+  display: inline-flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.result {
+  width: 65%;
+  padding: 30px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
