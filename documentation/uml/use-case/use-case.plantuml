@@ -3,9 +3,11 @@
 actor Gast as g
 
 rectangle Billy {
-  usecase "Artikel inzien" as UC1
+  usecase "Startpagina inzien" as UC1
+  usecase "Artikel inzien" as UC2
 }
 
 g -right-> UC1
+g -right-> UC2
 
 @enduml
