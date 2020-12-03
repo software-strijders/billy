@@ -1,6 +1,7 @@
 :root {
   --billy-color-turquoise: #72efda;
   --billy-color-blue: #22bef9;
+  --billy-color-white: #fff;
 
   --billy-gradient: linear-gradient(
     to bottom right,
