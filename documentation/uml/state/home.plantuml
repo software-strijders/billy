@@ -1,0 +1,15 @@
+@startuml home_state
+
+state Home {
+    state "Anonymous" as A
+    state "Logged in" as L
+
+    [*] --> A
+    A --> L
+    L --> A
+    L --> [*]
+    A --> [*]
+}
+
+
+@enduml
