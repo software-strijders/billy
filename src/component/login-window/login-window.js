@@ -1,11 +1,45 @@
-import { template } from "./login-window-template.js";
+import { LitElement, html, css } from "lit-element";
 
-class LoginWindow extends HTMLElement {
-  constructor() {
-    super();
+// TODO: This is not really appropriate to be a component, it should be split into
+// smaller components
+class LoginWindow extends LitElement {
+  static getStyles() {
+    return css`
+      @import "../component/login-window/login-window.css";
+    `;
+  }
 
-    this._shadowRoot = this.attachShadow({ mode: "open" });
-    this._shadowRoot.innerHTML = template;
+  render() {
+    return html`
+      <div class="wrapper">
+        <div class="field">
+          <input
+            aria-label="e-mail"
+            placeholder="E-mail"
+            class="field__input"
+            type="text"
+          />
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div class="field">
+          <input
+            aria-label="wachtwoord"
+            placeholder="Wachtwoord"
+            class="field__input"
+            type="password"
+          />
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div class="field">
+          <button class="field__button" onclick="">Inloggen</button>
+        </div>
+        <a class="register__link register__link--show" href="">Nog geen account? Registreer hier</a>
+      </div>
+    `;
   }
 }
 
