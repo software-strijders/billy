@@ -1,27 +1,30 @@
-import { template } from "./category-option-template.js";
+import { LitElement, html, css } from "lit-element";
 
-class CategoryOption extends HTMLElement {
-    constructor() {
-        super();
-        
-        this._shadowRoot = this.attachShadow({ mode: "open" });
-        this._shadowRoot.innerHTML = template;
+class CategoryOption extends LitElement {
+  static get properties() {
+    return {
+      href: { type: String },
+      icon: { type: String },
+      text: { type: String },
     }
+  }
 
-    connectedCallback() {
-        if (this.hasAttribute("icon")) {
-            this._shadowRoot.querySelector("img").setAttribute("src", this.getAttribute("icon"));
-        }
+  static getStyles() {
+    return css`
+      @import "./component/category-option/category-option.css";
+    `;
+  }
 
-        if (this.hasAttribute("text")) {
-            this._shadowRoot.querySelector("p").innerHTML = this.getAttribute("text");
-        }
-
-        if (this.hasAttribute("href")) {
-            console.log(this.getAttribute("href"))
-            this._shadowRoot.querySelector("div").setAttribute("href", this.getAttribute("href"));
-        }
-    }
+  render() {
+    return html`
+      <a class="category" href="${this.href}">
+        <div>
+          <img class="category__image" src="${this.icon}"></img>
+          <p class="category__text">${this.text}</p>
+        </div>
+      </a>
+    `;
+  }
 }
 
 customElements.define("billy-category-option", CategoryOption);
