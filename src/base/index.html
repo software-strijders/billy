@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,21 +8,33 @@
   <link rel="icon" href="/src/assets/favicon.ico" sizes="any" type="image/ico" />
   <title>Billy - Duurzame ontwikkeling</title>
 </head>
-
 <body>
   <main class="main">
-    <div class="topBar">
-      <contrast-toggle></contrast-toggle>
-      <login-button></login-button>
-    </div>
+    <div class ="main__content">
+      <div class="topBar">
+        <billy-contrast-toggle></billy-contrast-toggle>
+        <billy-login-button></billy-login-button>
+      </div>
 
-    <h1 class="main__logo">Billy</h1>
-    <h2 class="main__underTitle">Sustainable development tools</h2>
-    <search-bar />
+      <h1 class="main__logo">Billy</h1>
+      <h2 class="main__underTitle">Sustainable development tools</h2>
+      <billy-search-bar></bily-search-bar>
+      <div class="main__categoryTitle">
+        <h2>Of bekijk de categorieën</h2>
+      </div>
+    </div>
+    <div class="categoryBar">
+      <billy-category-option text="Analyse" icon="/src/assets/analyse-icon.svg" href="./analyse.html"></billy-category-option>
+      <billy-category-option text="Advies" icon="/src/assets/advice-icon.svg" href="./advice.html"></billy-category-option>
+      <billy-category-option text="Ontwerp" icon="/src/assets/design-icon.svg" href="./design.html"></billy-category-option>
+      <billy-category-option text="Realisatie" icon="/src/assets/realize-icon.svg" href="./realize.html"></billy-category-option>
+      <billy-category-option text="Beheer" icon="/src/assets/manage-icon.svg" href="./manage.html"></billy-category-option>
+    </div>
   </main>
   <script type="module" src="../component/search-bar/search-bar.js"></script>
   <script type="module" src="../component/contrast-toggle/contrast-toggle.js"></script>
   <script type="module" src="../component/login-button/login-button.js"></script>
+  <script type="module" src="../component/category-option/category-option.js"></script>
 </body>
-
+</body>
 </html>

@@ -1,0 +1,18 @@
+@import "/src/base/css/style.css";
+@import "/src/base/css/variables.css";
+
+.category {
+  text-decoration: none;
+  color: black;
+}
+
+.category__image {
+  height: 80px;
+  width: 80px;
+}
+
+.category__text {
+  text-align: center;
+  font-family: "Aller";
+  font-style: "Bold";
+}
