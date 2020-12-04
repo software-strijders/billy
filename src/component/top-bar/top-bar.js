@@ -1,16 +1,32 @@
-import {template} from './top-bar-template.js';
+import { LitElement, html, css } from "lit-element";
 
-class TopBar extends HTMLElement {
-    constructor() {
-        super();
-        this._shadowRoot = this.attachShadow({mode: "open"});
-    }
+class TopBar extends LitElement {
+  static getStyles() {
+    return css`
+      @import "../component/top-bar/top-bar.css";
+    `;
+  }
 
-    connectedCallback() {
-        this._shadowRoot.innerHTML = template;
-        this._shadowRoot.querySelector('billy-search-bar').setAttribute('noshow', "");
-        this._shadowRoot.querySelector("billy-login-button").setAttribute('loginButton--large', "");
-    }
+  render() {
+    return html`
+      <nav class="topBar">
+        <ul class="topBar__list">
+          <li class="topBar__item">
+            <a class="topBar__text" href="/">Billy</a>
+          </li>
+          <li class="topBar__item topBar__item--right">
+            <billy-contrast-toggle></billy-contrast-toggle>
+          </li>
+          <li class="topBar__item">
+            <billy-search-bar hideLink="true"></billy-search-bar>
+          </li>
+          <li class="topBar__item topBar__item--last">
+            <billy-login-button large="true"></billy-login-button>
+          </li>
+        </ul>
+      </nav>
+    `;
+  }
 }
 
 window.customElements.define("billy-top-bar", TopBar);

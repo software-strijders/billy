@@ -15,24 +15,25 @@
   padding: 0;
 }
 
-.home {
+.topBar__item {
   justify-content: center;
   align-items: flex-start;
   text-shadow: 0px 5px 10px var(--billy-color-shadow);
-  font-size: 300%;
-  padding: 5px;
+  margin: 0 5px;
 }
 
-.item {
-  margin-left: 20px;
-}
-
-.item--right {
+.topBar__item--right {
   margin-left: auto;
 }
 
-.home__text {
-  color: #FFFFFF;
-  text-decoration: none;
+.topBar__item--last {
+  margin: 0 0 0 5px;
 }
 
+.topBar__text {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 45px;
+  font-weight: bold;
+  margin: 0 0 0 10px;
+}
