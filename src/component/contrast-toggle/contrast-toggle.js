@@ -1,21 +1,35 @@
-import { template } from "./contrast-toggle-template.js";
+import { LitElement, html, css } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 
-class ContrastToggle extends HTMLElement {
+class ContrastToggle extends LitElement {
   constructor() {
     super();
 
-    this._shadowRoot = this.attachShadow({ mode: "open" });
-    this._shadowRoot.innerHTML = template;
+    this.on = false;
   }
 
-  connectedCallback() {
-    this.addEventListener("click", this.toggleSwitch);
+  static get properties() {
+    return {
+      on: { type: Boolean }
+    }
+  }
+
+  static getStyles() {
+    return css`
+      @import "../component/contrast-toggle/contrast-toggle.css";
+    `;
+  }
+
+  render() {
+    return html`
+      <div class="contrastToggle" @click="${this.toggleSwitch}">
+        <div class="contrastToggle__slider ${classMap({ "contrastToggle__slider--on": this.on })}"></div>
+      </div>
+    `;
   }
 
   toggleSwitch() {
-    const slider = this._shadowRoot.querySelector("#slider");
-    slider.classList.toggle("slider--on");
-    this.toggleAttribute("on");
+    this.on = !this.on;
   }
 }
 
