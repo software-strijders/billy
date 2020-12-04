@@ -1,7 +1,7 @@
-.result {
+.resultItem {
   width: 50%;
 }
 
-.title {
+.resultItem__title {
   color: #0096a1;
 }
