@@ -1,18 +1,23 @@
-import { template } from "./login-button-template.js";
+import { LitElement, html, css } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 
-class LoginButton extends HTMLElement {
-  constructor() {
-    super();
-
-    this._shadowRoot = this.attachShadow({ mode: "open" });
-    this._shadowRoot.innerHTML = template;
+class LoginButton extends LitElement {
+  static get properties() {
+    return {
+      large: { type: Boolean }
+    }
   }
 
-  connectedCallback() {
-    if (this.hasAttribute('loginButton--large')) {
-      this._shadowRoot.querySelector('button').classList.add("loginButton--large");
-    }
-    this.addEventListener("click", this.login);
+  static getStyles() {
+    return css`
+      @import "../component/login-button/login-button.css";
+    `;
+  }
+
+  render() {
+    return html`
+      <button class="loginButton ${classMap({ "loginButton--large": this.large })}" @click="${this.login}">Inloggen</button>
+    `;
   }
 
   login() {
