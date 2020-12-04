@@ -45,14 +45,13 @@
 }
 
 .searchBar__link {
-  display: none;
   margin-top: 10px;
   color: white;
   font-size: 13px;
 }
 
-.searchBar__link--show {
-  display: inline-block;
+.searchBar__link--hide {
+  display: none;
 }
 
 .searchBar__arrow {

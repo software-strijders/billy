@@ -1,17 +1,39 @@
-import { template } from "./search-bar-template.js";
+import { LitElement, html, css } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 
-class SearchBar extends HTMLElement {
+const link = "https://www.un.org/en/sections/issues-depth/climate-change/";
+
+class SearchBar extends LitElement {
   constructor() {
     super();
 
-    this._shadowRoot = this.attachShadow({ mode: "open" });
-    this._shadowRoot.innerHTML = template;
+    this.hideLink = false;
   }
 
-  connectedCallback() {
-    if (this.hasAttribute('noshow')) {
-      this._shadowRoot.querySelector('div').children[1].classList.remove('searchBar__link--show');
-    }
+  static get properties() {
+    return {
+      hideLink: { type: Boolean },
+    };
+  }
+
+  static getStyles() {
+    return css`
+      @import "../component/search-bar/search-bar.css";
+    `;
+  }
+
+  render() {
+    return html`
+      <div class="wrapper">
+        <div class="searchBar">
+          <input aria-label="zoek" placeholder="Wat wil je weten?" class="searchBar__input input--contrast" type="text" />
+          <button name="zoek" class="searchBar__button" type="submit">
+            <img class="searchBar__arrow" src="../assets/arrow-right.svg" alt="" />
+          </button>
+        </div>
+        <a class="searchBar__link ${classMap({ "searchBar__link--hide": this.hideLink })}" href="${link}">Meer weten over klimaatverandering? 🌱</a>
+      </div>
+    `;
   }
 }
 
