@@ -49,14 +49,14 @@ h5 {
   user-select: none;
   font-size: 100px;
   text-align: center;
-  color: var(--billy-white);
+  color: var(--billy-color-white);
 }
 
 .main__underTitle {
   font-size: 20px;
   margin: 0 0 50px 0;
   user-select: none;
-  color: var(--billy-white);
+  color: var(--billy-color-white);
   font-weight: normal;
 }
 
@@ -94,7 +94,7 @@ h5 {
 
 .main__categoryTitle {
   margin-top: auto;
-  color: var(--billy-white);
+  color: var(--billy-color-white);
   user-select: none;
 }
 
@@ -104,7 +104,7 @@ h5 {
   grid-gap: 10px;
   justify-items: center;
   align-items: center;
-  background-color: var(--billy-white);
+  background-color: var(--billy-color-white);
   height: 200px;
   width: 100%;
   margin-top: auto;
