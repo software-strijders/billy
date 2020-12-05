@@ -39,4 +39,4 @@ class SideBar extends LitElement {
   }
 }
 
-window.customElements.define("billy-sidebar", SideBar);
+window.customElements.define("billy-side-bar", SideBar);

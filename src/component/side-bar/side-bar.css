@@ -1,10 +1,15 @@
+:host {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
 .sideBar {
   display: flex;
   flex-direction: column;
-  max-width: 130px;
-  height: 100%;
+  height: calc(100% - 20px);
+  width: 100%;
   padding: 10px;
-  position: fixed;
   overflow: hidden;
   text-align: center;
   background: #eaeef1;

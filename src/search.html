@@ -7,25 +7,25 @@
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
-  <billy-top-bar></billy-top-bar>
-  <billy-sidebar></billy-sidebar>
-  <div class="result">
-    <h1>Results for: %s</h1>
-    <!-- Moet met js nog de zoekterm krijgen-->
-    <hr />
-    <div class="result__items">
-      <!-- classname zodat we aan deze div result items kunnen toevoegen-->
-      <!-- Voor testpurposes staat de custom element tag `<result-item></result-item>` 
-      hier, maar dit wordt zometeen via javascript toegevoegd. -->
-      <billy-result-item></billy-result-item>
-    </div>
-  </div>
-  <script type="module" src="./component/result-item/result-item.js"></script>
-  <script type="module" src="./component/side-bar/side-bar.js"></script>
-  <script type="module" src="./component/contrast-toggle/contrast-toggle.js"></script>
+  <billy-app>
+    <billy-top-bar slot="header"></billy-top-bar>
+    <billy-side-bar-layout slot="page-layout">
+      <billy-side-bar slot="side-bar"></billy-side-bar>
+      <div slot="content">
+        <div class="result">
+          <h1>Results for: %s</h1>
+          <hr />
+          <div class="result__items">
+            <billy-result-item></billy-result-item>
+          </div>
+        </div>
+      </div>
+    </billy-side-bar-layout>
+  </billy-app>
+  <script type="module" src="./component/app/app.js"></script>
   <script type="module" src="./component/top-bar/top-bar.js"></script>
-  <script type="module" src="./component/search-bar/search-bar.js"></script>
-  <script type="module" src="./component/login-button/login-button.js"></script>
-  <script type="module" src="./component/contrast-toggle/contrast-toggle.js"></script>
+  <script type="module" src="./component/side-bar-layout/side-bar-layout.js"></script>
+  <script type="module" src="./component/side-bar/side-bar.js"></script>
+  <script type="module" src="./component/result-item/result-item.js"></script>
 </body>
 </html>

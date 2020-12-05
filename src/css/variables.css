@@ -2,6 +2,9 @@
   --billy-color-turquoise: #72efda;
   --billy-color-blue: #22bef9;
   --billy-color-white: #fff;
+  --billy-color-grey: #dddddd;
+  --billy-color-light-grey: #ebebeb;
+  --billy-color-font-light: #7e7e7e;
 
   --billy-gradient: linear-gradient(
     to bottom right,
@@ -10,6 +13,19 @@
   );
 
   --billy-color-shadow: rgba(0, 0, 0, 0.31);
+  --billy-box-shadow: 0px 5px 10px var(--billy-color-shadow);
+
+  /* Dimens: */
+  --billy-max-content-width: 1000px;
+  --billy-side-bar-width: 130px;
+  --billy-top-bar-height: 80px;
+}
+
+.contrast {
+  --billy-color-turquoise: #000;
+  --billy-color-blue: #000;
+  --billy-color-white: #fff;
+  --billy-gradient: #000;
 }
 
 @font-face {

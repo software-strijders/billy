@@ -1,5 +1,9 @@
 import { LitElement, html, css } from "lit-element";
 
+import "../contrast-toggle/contrast-toggle.js";
+import "../search-bar/search-bar.js";
+import "../login-button/login-button.js";
+
 class TopBar extends LitElement {
   static getStyles() {
     return css`

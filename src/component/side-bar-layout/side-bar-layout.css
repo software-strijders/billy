@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  height: calc(100% - var(--billy-top-bar-height));
+  width: 100%;
+}
+
+.sideBarLayout__sideBar {
+  width: var(--billy-side-bar-width);
+}
+
+.sideBarLayout__content {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.sideBarLayout__filler {
+  flex-grow: 1;
+}
+
+.sideBarLayout__contentWrapper {
+  height: 100%;
+  width: 60%;
+  max-width: var(--billy-max-content-width);
+}
+
+.sideBarLayout__aside {
+  height: 100%;
+  flex-grow: 1;
+}
