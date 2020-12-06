@@ -3,7 +3,7 @@ import { LitElement, html, css } from "lit-element";
 class SideBarLayout extends LitElement {
   static getStyles() {
     return css`
-      @import "../component/side-bar-layout/side-bar-layout.css";
+      @import "../component/layout/side-bar-layout/side-bar-layout.css";
     `;
   }
 

@@ -39,6 +39,7 @@
 
 .topBar__item--right {
   display: flex;
+  align-items: center;
   margin-left: auto;
 }
 
