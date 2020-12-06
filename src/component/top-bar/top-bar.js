@@ -35,13 +35,3 @@ class TopBar extends LitElement {
 }
 
 window.customElements.define("billy-top-bar", TopBar);
-
-          // <li class="topBar__item">
-          //   <billy-contrast-toggle></billy-contrast-toggle>
-          // </li>
-          // <li class="topBar__item">
-          //   <billy-search-bar hideLink="true"></billy-search-bar>
-          // </li>
-          // <li class="topBar__item topBar__item--last">
-          //   <billy-login-button large="true"></billy-login-button>
-          // </li>
