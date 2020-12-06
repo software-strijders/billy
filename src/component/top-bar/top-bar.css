@@ -9,7 +9,7 @@
 .topBar {
   width: 100%;
   height: var(--billy-top-bar-height);
-  background: var(--billy-gradient);
+  background: var(--billy-gradient-bar);
   filter: drop-shadow(0px 5px 11px rgba(0, 0, 0, 0.16));
 }
 
