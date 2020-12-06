@@ -9,9 +9,26 @@
   <title>Billy - User Story</title>
 </head>
 <body>
-  <main class="main">
-    <billy-article epic="lol"></billy-article>
-  </main>
+  <billy-app>
+    <billy-top-bar slot="header">
+      <billy-contrast-toggle slot="item"></billy-contrast-toggle>
+      <billy-search-bar hideLink="true" slot="item"></billy-search-bar>
+      <billy-login-button large="true" slot="item"></billy-login-button>
+    </billy-top-bar>
+    <billy-side-bar-layout slot="page-layout">
+      <billy-side-bar slot="side-bar"></billy-side-bar>
+      <billy-article slot="content"></billy-article>
+      <billy-aside slot="aside"></billy-aside>
+    </billy-side-bar-layout>
+  </billy-app>
+  <script type="module" src="./component/app/app.js"></script>
+  <script type="module" src="./component/top-bar/top-bar.js"></script>
+  <script type="module" src="./component/search-bar/search-bar.js"></script>
+  <script type="module" src="./component/contrast-toggle/contrast-toggle.js"></script>
+  <script type="module" src="./component/login-button/login-button.js"></script>
+  <script type="module" src="./component/layout/side-bar-layout/side-bar-layout.js"></script>
+  <script type="module" src="./component/side-bar/side-bar.js"></script>
   <script type="module" src="./component/article/article.js"></script>
+  <script type="module" src="./component/aside/aside.js"></script>
 </body>
 </html>

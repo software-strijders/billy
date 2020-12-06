@@ -1,3 +1,47 @@
-.article {
-  border: 5px solid black;
+:host {
+  display: flex;
+  width: 100%;
+}
+
+.article__content {
+  padding: 25px;
+}
+
+.article__title {
+  font-size: 50px;
+  margin: 0;
+}
+
+.article__categories {
+  margin: 0 0 10px 0;
+}
+
+.category {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: var(--billy-color-light-grey);
+  border-radius: 10px;
+}
+
+.category__text {
+  margin: 0;
+  color: var(--billy-color-font-light);
+  font-size: 14px;
+}
+
+.article__line {
+  height: 4px;
+  margin: 15px 0 25px 0;
+  background-color: var(--billy-color-grey);
+  border: none;
+  border-radius: 3px;;
+}
+
+.article__heading {
+  font-size: 22px;
+}
+
+.article__paragraph {
+  font-size: 18px;
+  margin: 0 0 25px 0;
 }

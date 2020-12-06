@@ -24,12 +24,8 @@ h5 {
 }
 
 .result {
-  width: 65%;
+  width: 100%;
   padding: 30px;
-  display: block;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   text-align: left;
 }
 
