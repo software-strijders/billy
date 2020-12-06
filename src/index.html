@@ -9,28 +9,28 @@
   <title>Billy - Duurzame ontwikkeling</title>
 </head>
 <body>
-  <main class="main">
-    <div class ="main__content">
-      <div class="topBar">
-        <billy-contrast-toggle></billy-contrast-toggle>
-        <billy-login-button></billy-login-button>
+  <billy-app>
+    <billy-full-page-layout slot="page-layout">
+      <billy-hero slot="content">
+        <billy-top-bar hero="true" slot="header">
+          <billy-contrast-toggle slot="item"></billy-contrast-toggle>
+          <billy-login-button slot="item"></billy-login-button>
+        </billy-top-bar>
+        <billy-search-bar slot="content"></billy-search-bar>
+      </billy-hero>
+      <div class="categoryBar" slot="category-bar">
+        <billy-category-option text="Analyse" icon="./assets/analyse-icon.svg" href="./analyse.html"></billy-category-option>
+        <billy-category-option text="Advies" icon="./assets/advice-icon.svg" href="./advice.html"></billy-category-option>
+        <billy-category-option text="Ontwerp" icon="./assets/design-icon.svg" href="./design.html"></billy-category-option>
+        <billy-category-option text="Realisatie" icon="./assets/realize-icon.svg" href="./realize.html"></billy-category-option>
+        <billy-category-option text="Beheer" icon="./assets/manage-icon.svg" href="./manage.html"></billy-category-option>
       </div>
-
-      <h1 class="main__logo">Billy</h1>
-      <h2 class="main__underTitle">Sustainable development tools</h2>
-      <billy-search-bar></bily-search-bar>
-      <div class="main__categoryTitle">
-        <h2>Of bekijk de categorieën</h2>
-      </div>
-    </div>
-    <div class="categoryBar">
-      <billy-category-option text="Analyse" icon="./assets/analyse-icon.svg" href="./analyse.html"></billy-category-option>
-      <billy-category-option text="Advies" icon="./assets/advice-icon.svg" href="./advice.html"></billy-category-option>
-      <billy-category-option text="Ontwerp" icon="./assets/design-icon.svg" href="./design.html"></billy-category-option>
-      <billy-category-option text="Realisatie" icon="./assets/realize-icon.svg" href="./realize.html"></billy-category-option>
-      <billy-category-option text="Beheer" icon="./assets/manage-icon.svg" href="./manage.html"></billy-category-option>
-    </div>
-  </main>
+    </billy-full-page-layout>
+  </billy-app>
+  <script type="module" src="./component/app/app.js"></script>
+  <script type="module" src="./component/layout/full-page-layout/full-page-layout.js"></script>
+  <script type="module" src="./component/hero/hero.js"></script>
+  <script type="module" src="./component/top-bar/top-bar.js"></script>
   <script type="module" src="./component/search-bar/search-bar.js"></script>
   <script type="module" src="./component/contrast-toggle/contrast-toggle.js"></script>
   <script type="module" src="./component/login-button/login-button.js"></script>

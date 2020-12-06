@@ -1,8 +1,24 @@
+::slotted(*) {
+  margin: 0 10px;
+}
+
+::slotted(:last-child) {
+  margin: 0;
+}
+
 .topBar {
   width: 100%;
   height: var(--billy-top-bar-height);
-  background: linear-gradient(to right, #72efda 0%, #22bef9 100%);
+  background: var(--billy-gradient);
   filter: drop-shadow(0px 5px 11px rgba(0, 0, 0, 0.16));
+}
+
+.topBar--hero {
+  background: none;
+}
+
+.topBar--hero .topBar__logo {
+  display: none;
 }
 
 .topBar__list {
@@ -19,18 +35,14 @@
   justify-content: center;
   align-items: flex-start;
   text-shadow: 0px 5px 10px var(--billy-color-shadow);
-  margin: 0 5px;
 }
 
 .topBar__item--right {
+  display: flex;
   margin-left: auto;
 }
 
-.topBar__item--last {
-  margin: 0 0 0 5px;
-}
-
-.topBar__text {
+.topBar__logo {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 45px;
