@@ -10,11 +10,12 @@
   width: 100%;
   height: var(--billy-top-bar-height);
   background: var(--billy-gradient-bar);
-  filter: drop-shadow(0px 5px 11px rgba(0, 0, 0, 0.16));
+  box-shadow: var(--billy-box-shadow-lighter)
 }
 
 .topBar--hero {
   background: none;
+  box-shadow: none;
 }
 
 .topBar--hero .topBar__logo {
@@ -44,7 +45,7 @@
 }
 
 .topBar__logo {
-  color: #FFFFFF;
+  color: var(--billy-color-white);
   text-decoration: none;
   font-size: 45px;
   font-weight: bold;

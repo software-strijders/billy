@@ -4,7 +4,7 @@
   transition: 0.3s;
   display: flex;
   align-items: center;
-  background-color: black;
+  background-color: var(--billy-color-dark);
   height: 30px;
   width: 60px;
   border-radius: 100px;
@@ -17,7 +17,7 @@
   width: 30px;
   margin-right: auto;
   background-color: white;
-  border: 2px solid black;
+  border: 2px solid var(--billy-color-dark);
   border-radius: 100px;
 }
 

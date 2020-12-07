@@ -30,11 +30,11 @@
 }
 
 .article__line {
-  height: 4px;
+  height: var(--billy-line-height);;
   margin: 15px 0 25px 0;
   background-color: var(--billy-color-grey);
   border: none;
-  border-radius: 3px;;
+  border-radius: var(--billy-line-radius);
 }
 
 .article__heading {

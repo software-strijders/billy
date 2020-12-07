@@ -14,10 +14,6 @@
   padding: 0;
 }
 
-.field--contrast {
-  border: 2px solid;
-}
-
 .field__input {
   height: 100%;
   margin: 0;
@@ -39,8 +35,8 @@
 }
 
 .field__button {
-  background-color: black;
-  color: white;
+  background-color: var(--billy-color-dark);
+  color: var(--billy-color-white);
   height: 100%;
   margin: 0;
   width: 540px;

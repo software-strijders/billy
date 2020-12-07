@@ -11,8 +11,8 @@
 
 .sideBarLayout__content {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: var(--billy-grid-template-columns-article);
+  grid-template-rows: var(--billy-grid-template-rows-article);
   height: 100%;
   width: 100%;
   overflow: auto;
@@ -35,6 +35,10 @@
   max-width: var(--billy-max-content-width);
 }
 
+/* 
+TODO: We should define a few of these pixel widths.
+Not sure what would be the best, though. 
+*/
 @media screen and (max-width: 1250px) {
   .sideBarLayout__content {
     grid-template-columns: 1fr;

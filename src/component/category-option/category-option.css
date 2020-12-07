@@ -1,6 +1,6 @@
 .category {
   text-decoration: none;
-  color: black;
+  color: var(--billy-color-font-dark);
 }
 
 .category__image {
@@ -10,6 +10,5 @@
 
 .category__text {
   text-align: center;
-  font-family: "Aller";
-  font-style: "Bold";
+  font-weight: bold;
 }

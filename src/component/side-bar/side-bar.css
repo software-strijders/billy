@@ -12,7 +12,7 @@
   padding: 10px;
   overflow: hidden;
   text-align: center;
-  background: #eaeef1;
+  background: var(--billy-color-side-bar);
   box-shadow: 0px 5px 10px var(--billy-color-shadow);
 }
 
@@ -21,7 +21,7 @@
   flex-direction: column;
   width: 100%;
   margin-bottom: 30px;
-  color: black;
+  color: var(--billy-color-dark);
   text-decoration: none;
 }
 

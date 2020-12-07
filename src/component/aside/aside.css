@@ -24,9 +24,9 @@
 }
 
 .aside__line {
-  height: 4px;
+  height: var(--billy-line-height);
   border: none;
-  border-radius: 3px;
+  border-radius: var(--billy-line-radius);
   background-color: var(--billy-color-grey);
   margin: 5px 0 20px 0;
 }
