@@ -7,9 +7,11 @@ actor Gast as g
 rectangle Billy {
   usecase "Startpagina inzien" as UC1
   usecase "Artikel inzien" as UC2
+  usecase "Artikelen opzoeken" as UC3
 }
 
 g -right- UC1
 g -- UC2
+g -- UC3
 
 @enduml
