@@ -10,7 +10,28 @@ class LoginButton extends LitElement {
 
   static getStyles() {
     return css`
-      @import "../component/login-button/login-button.css";
+      .loginButton {
+        display: flex;
+        align-items: center;
+        box-shadow: 0px 5px 10px var(--billy-color-shadow);
+        border: none;
+        cursor: pointer;
+        background-color: white;
+        height: 30px;
+        font-family: var(--billy-font-family);
+        font-size: 20px;
+        padding: 0 20px 0 15px;
+        border-radius: 20px 0 0 20px;
+        transition: 0.2s;
+      }
+
+      .loginButton:hover {
+        padding-right: 40px;
+      }
+
+      .loginButton--large {
+        height: 50px;
+      }
     `;
   }
 

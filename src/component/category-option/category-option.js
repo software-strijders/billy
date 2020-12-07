@@ -11,7 +11,20 @@ class CategoryOption extends LitElement {
 
   static getStyles() {
     return css`
-      @import "./component/category-option/category-option.css";
+      .category {
+        text-decoration: none;
+        color: var(--billy-color-font-dark);
+      }
+
+      .category__image {
+        height: 80px;
+        width: 80px;
+      }
+
+      .category__text {
+        text-align: center;
+        font-weight: bold;
+      }
     `;
   }
 

@@ -33,7 +33,18 @@ class Example extends LitElement {
     // I just noticed that we shouldn't include our CSS styling like this, since it can cause flashing pages.
     // Source: https://lit-element.polymer-project.org/guide/styles#external-stylesheet
     return css`
-      @import "../component/example/example.css";
+      .example__text {
+        font-size: 100px;
+        color: green;
+      }
+
+      .example__text--large {
+        font-size: 200px;
+      }
+
+      .example__text--red {
+        color: red;
+      }
     `;
   }
 

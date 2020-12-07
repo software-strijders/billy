@@ -3,7 +3,13 @@ import { LitElement, html, css } from "lit-element";
 class ResultItem extends LitElement {
   static getStyles() {
     return css`
-      @import "../component/result-item/result-item.css";
+      .resultItem {
+        width: 50%;
+      }
+
+      .resultItem__title {
+        color: var(--billy-color-result-item);
+      }
     `;
   }
 

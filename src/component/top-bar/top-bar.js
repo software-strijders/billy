@@ -10,7 +10,59 @@ class TopBar extends LitElement {
 
   static getStyles() {
     return css`
-      @import "../component/top-bar/top-bar.css";
+      ::slotted(*) {
+        margin: 0 10px;
+      }
+
+      ::slotted(:last-child) {
+        margin: 0;
+      }
+
+      .topBar {
+        width: 100%;
+        height: var(--billy-top-bar-height);
+        background: var(--billy-gradient-bar);
+        box-shadow: var(--billy-box-shadow-lighter);
+      }
+
+      .topBar--hero {
+        background: none;
+        box-shadow: none;
+      }
+
+      .topBar--hero .topBar__logo {
+        display: none;
+      }
+
+      .topBar__list {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .topBar__item {
+        justify-content: center;
+        align-items: flex-start;
+        text-shadow: 0px 5px 10px var(--billy-color-shadow);
+      }
+
+      .topBar__item--right {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+      }
+
+      .topBar__logo {
+        color: var(--billy-color-white);
+        text-decoration: none;
+        font-size: 45px;
+        font-weight: bold;
+        margin: 0 0 0 10px;
+      }
     `;
   }
 

@@ -18,7 +18,55 @@ class SearchBar extends LitElement {
 
   static getStyles() {
     return css`
-      @import "../component/search-bar/search-bar.css";
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .searchBar {
+        height: 50px;
+        display: flex;
+        margin: 0;
+        box-shadow: 0px 5px 10px var(--billy-color-shadow);
+        border-radius: 100px;
+        padding: 0;
+      }
+
+      .searchBar__input {
+        height: 100%;
+        margin: 0;
+        width: 500px;
+        border: none;
+        font-size: 20px;
+        padding: 0 0 0 20px;
+        border-radius: 100px 0 0 100px;
+      }
+
+      .searchBar__button {
+        height: 100%;
+        margin: 0;
+        width: 60px;
+        font-size: 20px;
+        background-color: var(--billy-color-white);
+        border: none;
+        border-radius: 0 100px 100px 0;
+      }
+
+      .searchBar__link {
+        margin-top: 10px;
+        color: var(--billy-color-white);
+        font-size: 13px;
+      }
+
+      .searchBar__link--hide {
+        display: none;
+      }
+
+      .searchBar__arrow {
+        background-color: var(--billy-color-transparent);
+        vertical-align: middle;
+      }
     `;
   }
 

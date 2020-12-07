@@ -3,7 +3,22 @@ import { LitElement, html, css } from "lit-element"
 class FullPageLayout extends LitElement {
   static getStyles() {
     return css`
-      @import "../component/layout/full-page-layout/full-page-layout.css";
+      :host {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-image: var(--billy-gradient);
+      }
+
+      .fullPageLayout__content {
+        flex: 1;
+      }
+
+      .fullPageLayout__categoryBar {
+        width: 100%;
+        margin: auto 0 0 0;
+      }
     `;
   }
 

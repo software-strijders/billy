@@ -7,7 +7,55 @@ class Article extends LitElement {
 
 
   static getStyles() {
-    return css`@import "./component/article/article.css";`;
+    return css`
+      :host {
+        display: flex;
+        width: 100%;
+      }
+
+      .article__content {
+        padding: 25px;
+      }
+
+      .article__title {
+        font-size: 50px;
+        margin: 0;
+      }
+
+      .article__categories {
+        margin: 0 0 10px 0;
+      }
+
+      .category {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: var(--billy-color-light-grey);
+        border-radius: 10px;
+      }
+
+      .category__text {
+        margin: 0;
+        color: var(--billy-color-font-light);
+        font-size: 14px;
+      }
+
+      .article__line {
+        height: var(--billy-line-height);
+        margin: 15px 0 25px 0;
+        background-color: var(--billy-color-grey);
+        border: none;
+        border-radius: var(--billy-line-radius);
+      }
+
+      .article__heading {
+        font-size: 22px;
+      }
+
+      .article__paragraph {
+        font-size: 18px;
+        margin: 0 0 25px 0;
+      }
+    `;
   }
 
   render() {
