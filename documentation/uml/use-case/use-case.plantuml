@@ -1,17 +1,27 @@
-@startuml use_case_diagram
+@startuml
 
 left to right direction
-
-actor Gast as g
 
 rectangle Billy {
   usecase "Startpagina inzien" as UC1
   usecase "Artikel inzien" as UC2
   usecase "Artikelen opzoeken" as UC3
+  usecase "Inloggen" as UC4
 }
 
+actor Gast as g
+actor Student as s
+actor Docent as d
+actor Superuser as su
+actor Administrator as a
+
 g -right- UC1
-g -- UC2
+g -right- UC2
+g <|-right- s
 g -- UC3
+g -- UC4
+s <|-right- d
+d <|-right- su
+su <|-right- a
 
 @enduml
