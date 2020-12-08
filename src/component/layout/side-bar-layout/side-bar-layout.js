@@ -68,11 +68,11 @@ class SideBarLayout extends LitElement {
       </div>
       <div class="sideBarLayout__content">
         <div class="sideBarLayout__filler"></div>
-        <div class="sideBarLayout__main">
+        <main class="sideBarLayout__main">
           <div class="sideBarLayout__contentWrapper">
             <slot name="content"></slot>
           </div>
-        </div>
+        </main>
         <aside class="sideBarLayout__filler">
           <slot name="aside"></slot>
         </aside>

@@ -18,9 +18,7 @@ class App extends LitElement {
       <header>
         <slot name="header"></slot>
       </header>
-      <main class="app__main">
-        <slot name="page-layout"></slot>
-      </main>
+      <slot name="page-layout"></slot>
     `;
   }
 }

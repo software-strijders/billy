@@ -25,7 +25,7 @@ class SideBar extends LitElement {
 
   render() {
     return html`
-      <div class="sideBar">
+      <nav aria-label="Category menu" class="sideBar">
         <billy-category-option
           text="Analyse"
           icon="./assets/analyse-icon.svg"
@@ -56,7 +56,7 @@ class SideBar extends LitElement {
           href="./manage.html"
           sidebar
         ></billy-category-option>
-      </div>
+      </nav>
     `;
   }
 }

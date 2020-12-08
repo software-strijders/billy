@@ -24,6 +24,11 @@ h5 {
   margin: 10px 0 10px 0;
 }
 
+main {
+  height: 100%;
+  width: 100%;
+}
+
 /* TODO: This should go into a component */
 .result {
   width: 100%;
