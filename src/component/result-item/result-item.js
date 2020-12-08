@@ -1,13 +1,34 @@
-import { template } from "./result-item-template.js";
+import { LitElement, html, css } from "lit-element";
 
-class ResultItem extends HTMLElement {
-  constructor() {
-    super();
-    this._shadowRoot = this.attachShadow({ mode: "open" });
+class ResultItem extends LitElement {
+  static getStyles() {
+    return css`
+      .resultItem {
+        width: 50%;
+      }
+
+      .resultItem__title {
+        color: var(--billy-color-result-item);
+      }
+    `;
   }
 
-  connectedCallback() {
-    this._shadowRoot.innerHTML = template;
+  render() {
+    return html`
+      <div class="resultItem">
+        <div>
+          <h2 class="resultItem__title">Title</h2>
+          <p>
+            <small>
+              <!-- TODO: This <br> should be removed by something else (margins, etc.) -->
+              Description <br />
+              Description
+            </small>
+          </p>
+          <div>tijd: %.f min - laatst gewijzigd; %s</div>
+        </div>
+      </div>
+    `;
   }
 }
 

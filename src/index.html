@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="./assets/favicon.svg" sizes="any" type="image/svg+xml" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="any" type="image/ico" />
+  <title>Billy - Duurzame ontwikkeling</title>
+</head>
+<body>
+  <billy-app>
+    <billy-full-page-layout slot="page-layout">
+      <billy-hero slot="content">
+        <billy-top-bar hero="true" slot="header">
+          <billy-contrast-toggle slot="item"></billy-contrast-toggle>
+          <billy-login-button slot="item"></billy-login-button>
+        </billy-top-bar>
+        <billy-search-bar slot="content"></billy-search-bar>
+      </billy-hero>
+      <div class="categoryBar" slot="category-bar">
+        <billy-category-option text="Analyse" icon="./assets/analyse-icon.svg" href="./analyse.html"></billy-category-option>
+        <billy-category-option text="Advies" icon="./assets/advice-icon.svg" href="./advice.html"></billy-category-option>
+        <billy-category-option text="Ontwerp" icon="./assets/design-icon.svg" href="./design.html"></billy-category-option>
+        <billy-category-option text="Realisatie" icon="./assets/realize-icon.svg" href="./realize.html"></billy-category-option>
+        <billy-category-option text="Beheer" icon="./assets/manage-icon.svg" href="./manage.html"></billy-category-option>
+      </div>
+    </billy-full-page-layout>
+  </billy-app>
+  <script type="module" src="component/components.js"></script>
+</body>
+</body>
+</html>

@@ -1,0 +1,44 @@
+@import "./variables.css";
+
+html {
+  font-family: "Aller";
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  transition: 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-shadow: 0px 5px 10px var(--billy-color-shadow);
+  display: inline-block;
+  font-family: "Aller";
+  margin: 10px 0 10px 0;
+}
+
+/* TODO: This should go into a component */
+.result {
+  width: 100%;
+  padding: 30px;
+  text-align: left;
+}
+
+/* TODO: This should also go into a component */
+.categoryBar {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--billy-color-white);
+  height: 200px;
+  width: 100%;
+  margin-top: auto;
+}

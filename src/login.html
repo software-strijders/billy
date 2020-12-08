@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="./assets/favicon.svg" sizes="any" type="image/svg+xml" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="any" type="image/ico" />
+  <title>Billy - Duurzame ontwikkeling</title>
+</head>
+<body>
+  <billy-app>
+    <billy-full-page-layout slot="page-layout">
+      <billy-hero hideCategoryTitle="true" slot="content">
+        <billy-top-bar hero="true" slot="header">
+          <billy-contrast-toggle slot="item" style="margin: 0 15px 0 0"></billy-contrast-toggle>
+        </billy-top-bar>
+        <billy-login-window slot="content"></billy-login-window>
+      </billy-hero>
+    </billy-full-page-layout>
+  </billy-app>
+  <script type="module" src="component/components.js"></script>
+</body>
+</html>
