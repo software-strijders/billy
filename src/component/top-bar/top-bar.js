@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit-element";
-import { classMap } from "lit-html/directives/class-map.js"
+import { classMap } from "lit-html/directives/class-map.js";
 
 class TopBar extends LitElement {
   static get properties() {
@@ -68,7 +68,10 @@ class TopBar extends LitElement {
 
   render() {
     return html`
-      <nav class="topBar ${classMap({ "topBar--hero": this.hero })}">
+      <nav
+        aria-label="Search menu"
+        class="topBar ${classMap({ "topBar--hero": this.hero })}"
+      >
         <ul class="topBar__list">
           <li class="topBar__item">
             <a class="topBar__logo" href="/">Billy</a>

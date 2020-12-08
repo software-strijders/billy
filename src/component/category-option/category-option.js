@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit-element";
+import { classMap } from "lit-html/directives/class-map.js";
 
 class CategoryOption extends LitElement {
   static get properties() {
@@ -6,7 +7,8 @@ class CategoryOption extends LitElement {
       href: { type: String },
       icon: { type: String },
       text: { type: String },
-    }
+      sideBar: { type: Boolean },
+    };
   }
 
   static getStyles() {
@@ -25,14 +27,26 @@ class CategoryOption extends LitElement {
         text-align: center;
         font-weight: bold;
       }
+
+      .category--sideBar {
+        font-size: 13px;
+        margin: 20px;
+      }
+
+      .category--sideBar .category__image {
+        height: 60px;
+        width: 60px;
+      }
     `;
   }
 
   render() {
     return html`
-      <a class="category" href="${this.href}">
+      <a class="category ${classMap({
+        "category--sideBar": this.sideBar,
+      })}" ClassMap href="${this.href}">
         <div>
-          <img class="category__image" src="${this.icon}"></img>
+          <img alt="" class="category__image" src="${this.icon}"></img>
           <p class="category__text">${this.text}</p>
         </div>
       </a>

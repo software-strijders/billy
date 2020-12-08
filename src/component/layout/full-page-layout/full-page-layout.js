@@ -1,9 +1,17 @@
-import { LitElement, html, css } from "lit-element"
+import { LitElement, html, css } from "lit-element";
 
 class FullPageLayout extends LitElement {
   static getStyles() {
     return css`
       :host {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-image: var(--billy-gradient);
+      }
+
+      main {
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -24,12 +32,16 @@ class FullPageLayout extends LitElement {
 
   render() {
     return html`
-      <div class="fullPageLayout__content">
-        <slot name="content"></slot>
-      </div>
-      <div class="fullPageLayout__categoryBar">
-        <slot name="category-bar"></slot>
-      </div>
+      <main>
+        <div class="fullPageLayout__content">
+          <slot name="content"></slot>
+        </div>
+      </main>
+      <aside>
+        <div class="fullPageLayout__categoryBar">
+          <slot name="category-bar"></slot>
+        </div>
+      </aside>
     `;
   }
 }

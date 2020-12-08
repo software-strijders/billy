@@ -4,8 +4,8 @@ import { classMap } from "lit-html/directives/class-map";
 class LoginButton extends LitElement {
   static get properties() {
     return {
-      large: { type: Boolean }
-    }
+      large: { type: Boolean },
+    };
   }
 
   static getStyles() {
@@ -21,7 +21,7 @@ class LoginButton extends LitElement {
         font-family: var(--billy-font-family);
         font-size: 20px;
         padding: 0 20px 0 15px;
-        border-radius: 20px 0 0 20px;
+        border-radius: 40px 0 0 40px;
         transition: 0.2s;
       }
 
@@ -37,7 +37,12 @@ class LoginButton extends LitElement {
 
   render() {
     return html`
-      <button class="loginButton ${classMap({ "loginButton--large": this.large })}" @click="${this.login}">Inloggen</button>
+      <button
+        class="loginButton ${classMap({ "loginButton--large": this.large })}"
+        @click="${this.login}"
+      >
+        Inloggen
+      </button>
     `;
   }
 

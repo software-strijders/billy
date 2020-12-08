@@ -11,7 +11,7 @@ class Hero extends LitElement {
   static get properties() {
     return {
       hideCategoryTitle: { type: Boolean },
-    }
+    };
   }
 
   static getStyles() {
@@ -87,11 +87,18 @@ class Hero extends LitElement {
       <div class="hero__contentWrapper">
         <div class="hero__content">
           <h1 class="hero__logo">Billy</h1>
-          <h2 class="hero__underTitle">Sustainable development tools</h2>
+          <p class="hero__underTitle">Sustainable development tools</p>
           <slot name="content"></slot>
         </div>
         <div class="hero__footerText">
-          <h2 class="hero__categoryTitle ${classMap({ "hero__categoryTitle--hide": this.hideCategoryTitle })}" slot="text">Of zie de categoriëen</h2>
+          <h2
+            class="hero__categoryTitle ${classMap({
+              "hero__categoryTitle--hide": this.hideCategoryTitle,
+            })}"
+            slot="text"
+          >
+            Of zie de categoriëen
+          </h2>
         </div>
       </div>
     `;

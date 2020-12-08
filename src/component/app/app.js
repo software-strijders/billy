@@ -3,7 +3,7 @@ import { LitElement, html, css } from "lit-element";
 class App extends LitElement {
   static getStyles() {
     return css`
-      :host {
+      .app__main {
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -15,7 +15,9 @@ class App extends LitElement {
 
   render() {
     return html`
-      <slot name="header"></slot>
+      <header>
+        <slot name="header"></slot>
+      </header>
       <slot name="page-layout"></slot>
     `;
   }

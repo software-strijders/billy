@@ -5,7 +5,6 @@ class Article extends LitElement {
     super();
   }
 
-
   static getStyles() {
     return css`
       :host {
@@ -18,7 +17,7 @@ class Article extends LitElement {
       }
 
       .article__title {
-        font-size: 50px;
+        font-size: var(--billy-title-size);
         margin: 0;
       }
 
@@ -29,13 +28,14 @@ class Article extends LitElement {
       .category {
         display: inline-block;
         padding: 5px 10px;
+        margin: 0 10px 0 0;
         background-color: var(--billy-color-light-grey);
-        border-radius: 10px;
+        border-radius: 20px;
       }
 
       .category__text {
         margin: 0;
-        color: var(--billy-color-font-light);
+        color: var(--billy-color-font-dark);
         font-size: 14px;
       }
 
@@ -62,8 +62,12 @@ class Article extends LitElement {
     return html`
       <article class="article__content">
         <div class="article__categories">
+          <!-- TODO: Make into billy-article-tag component -->
           <div class="category">
             <p class="category__text">Gebruikersinteractie</p>
+          </div>
+          <div class="category">
+            <p class="category__text">Advies</p>
           </div>
         </div>
         <h1 class="article__title">User Story</h1>

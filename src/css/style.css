@@ -9,6 +9,7 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
+  height: 100%;
   transition: 0.3s;
 }
 
@@ -23,11 +24,29 @@ h5 {
   margin: 10px 0 10px 0;
 }
 
+main {
+  height: 100%;
+  width: 100%;
+}
+
 /* TODO: This should go into a component */
 .result {
   width: 100%;
   padding: 30px;
   text-align: left;
+}
+
+.result__title {
+  font-size: var(--billy-title-size);
+  text-shadow: none;
+}
+
+.result__hr {
+  margin: var(--billy-line-margin);
+  height: var(--billy-line-height);
+  border: none;
+  border-radius: var(--billy-line-radius);
+  background-color: var(--billy-color-grey);
 }
 
 /* TODO: This should also go into a component */
@@ -38,7 +57,7 @@ h5 {
   justify-items: center;
   align-items: center;
   background-color: var(--billy-color-white);
-  height: 200px;
   width: 100%;
+  height: 200px;
   margin-top: auto;
 }
