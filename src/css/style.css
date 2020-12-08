@@ -36,6 +36,19 @@ main {
   text-align: left;
 }
 
+.result__title {
+  font-size: var(--billy-title-size);
+  text-shadow: none;
+}
+
+.result__hr {
+  margin: var(--billy-line-margin);
+  height: var(--billy-line-height);
+  border: none;
+  border-radius: var(--billy-line-radius);
+  background-color: var(--billy-color-grey);
+}
+
 /* TODO: This should also go into a component */
 .categoryBar {
   display: inline-grid;

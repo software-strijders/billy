@@ -5,7 +5,7 @@
   --billy-color-grey: #dddddd;
   --billy-color-dark: #000;
   --billy-color-light-grey: #ebebeb;
-  --billy-color-result-item: #0096a1;
+  --billy-color-result-item: var(--billy-color-turquoise);
   --billy-color-side-bar: #eaeef1;
   --billy-color-transparent: transparent;
 
@@ -42,6 +42,8 @@
   --billy-grid-template-rows-article: 1fr;
   --billy-line-height: 4px;
   --billy-line-radius: 3px;
+  --billy-line-margin: 15px 0 25px 0;
+  --billy-title-size: 50px;
 }
 
 .contrast {

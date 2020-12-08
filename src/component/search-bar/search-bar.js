@@ -51,6 +51,7 @@ class SearchBar extends LitElement {
         background-color: var(--billy-color-white);
         border: none;
         border-radius: 0 100px 100px 0;
+        cursor: pointer;
       }
 
       .searchBar__link {
@@ -81,6 +82,7 @@ class SearchBar extends LitElement {
             type="text"
           />
           <button
+            @click="${this._search}"
             name="zoek"
             aria-label="Zoek"
             class="searchBar__button"
@@ -102,6 +104,14 @@ class SearchBar extends LitElement {
         >
       </div>
     `;
+  }
+
+  _search(event) {
+    /* 
+    For demonstration purposes. 
+    Needs to be replaced with proper search functionality 
+    */
+    window.location.href = "/search.html";
   }
 }
 

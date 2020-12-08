@@ -30,7 +30,7 @@ class ResultItem extends LitElement {
 
   render() {
     return html`
-      <h2 class="resultItem__title">Title</h2>
+      <h2 @click="${this._handleClick}" class="resultItem__title">Title</h2>
       <p class="resultItem__description">
         <small
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -45,6 +45,10 @@ class ResultItem extends LitElement {
       </p>
       <div class="resultItem__info">tijd: %.f min - laatst gewijzigd; %s</div>
     `;
+  }
+
+  _handleClick(event) {
+    window.location.href = "/article";
   }
 }
 

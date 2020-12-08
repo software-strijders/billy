@@ -17,7 +17,7 @@ class Article extends LitElement {
       }
 
       .article__title {
-        font-size: 50px;
+        font-size: var(--billy-title-size);
         margin: 0;
       }
 
