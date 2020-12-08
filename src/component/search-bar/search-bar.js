@@ -74,12 +74,32 @@ class SearchBar extends LitElement {
     return html`
       <div class="wrapper">
         <div class="searchBar">
-          <input aria-label="zoek" placeholder="Wat wil je weten?" class="searchBar__input input--contrast" type="text" />
-          <button name="zoek" class="searchBar__button" type="submit">
-            <img class="searchBar__arrow" src="../assets/arrow-right.svg" alt="" />
+          <input
+            aria-label="zoek"
+            placeholder="Wat wil je weten?"
+            class="searchBar__input input--contrast"
+            type="text"
+          />
+          <button
+            name="zoek"
+            aria-label="Zoek"
+            class="searchBar__button"
+            type="submit"
+          >
+            <img
+              class="searchBar__arrow"
+              src="../assets/arrow-right.svg"
+              alt=""
+            />
           </button>
         </div>
-        <a class="searchBar__link ${classMap({ "searchBar__link--hide": this.hideLink })}" href="${link}">Meer weten over klimaatverandering? 🌱</a>
+        <a
+          class="searchBar__link ${classMap({
+            "searchBar__link--hide": this.hideLink,
+          })}"
+          href="${link}"
+          >Meer weten over klimaatverandering? 🌱</a
+        >
       </div>
     `;
   }

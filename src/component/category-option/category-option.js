@@ -6,7 +6,7 @@ class CategoryOption extends LitElement {
       href: { type: String },
       icon: { type: String },
       text: { type: String },
-    }
+    };
   }
 
   static getStyles() {
@@ -32,7 +32,7 @@ class CategoryOption extends LitElement {
     return html`
       <a class="category" href="${this.href}">
         <div>
-          <img class="category__image" src="${this.icon}"></img>
+          <img alt="" class="category__image" src="${this.icon}"></img>
           <p class="category__text">${this.text}</p>
         </div>
       </a>

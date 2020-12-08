@@ -9,6 +9,7 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
+  height: 100%;
   transition: 0.3s;
 }
 
@@ -38,7 +39,7 @@ h5 {
   justify-items: center;
   align-items: center;
   background-color: var(--billy-color-white);
-  height: 200px;
   width: 100%;
+  height: 200px;
   margin-top: auto;
 }
