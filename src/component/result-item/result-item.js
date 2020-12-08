@@ -9,6 +9,7 @@ class ResultItem extends LitElement {
         margin: 20px 0;
         width: 100%;
         height: auto;
+        cursor: pointer;
       }
 
       .resultItem__title {
