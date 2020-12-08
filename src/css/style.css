@@ -23,12 +23,14 @@ h5 {
   margin: 10px 0 10px 0;
 }
 
+/* TODO: This should go into a component */
 .result {
   width: 100%;
   padding: 30px;
   text-align: left;
 }
 
+/* TODO: This should also go into a component */
 .categoryBar {
   display: inline-grid;
   grid-template-columns: auto auto auto auto auto;

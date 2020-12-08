@@ -20,7 +20,7 @@ class ResultItem extends LitElement {
           <h2 class="resultItem__title">Title</h2>
           <p>
             <small>
-              <!-- This <br> should be removed by something more elegant -->
+              <!-- TODO: This <br> should be removed by something else (margins, etc.) -->
               Description <br />
               Description
             </small>

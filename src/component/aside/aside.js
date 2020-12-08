@@ -74,10 +74,12 @@ class Aside extends LitElement {
   render() {
     return html`
       <div class="aside__content">
+        <!-- TODO: This could be a component -->
         <div class="aside__card">
           <h2 class="aside__title">Gerelateerd</h1>
           <hr class="aside__line" />
           <div class="aside__links">
+            <!-- TODO: This could be a component -->
             <div class="link">
               <span class="link__title">Wat is een user story?</span>
               <a
@@ -116,6 +118,7 @@ class Aside extends LitElement {
             </div>
           </div>
         </div>
+        <!-- TODO: This could be a component -->
         <div class="aside__card">
           <h2 class="aside__title">Auteur</h1>
           <hr class="aside__line" />

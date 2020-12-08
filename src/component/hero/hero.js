@@ -8,7 +8,6 @@ class Hero extends LitElement {
     this.hideCategoryTitle = false;
   }
 
-
   static get properties() {
     return {
       hideCategoryTitle: { type: Boolean },
