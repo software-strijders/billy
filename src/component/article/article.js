@@ -35,7 +35,7 @@ class Article extends LitElement {
 
       .category__text {
         margin: 0;
-        color: var(--billy-color-dark);
+        color: var(--billy-color-font-dark);
         font-size: 14px;
       }
 
