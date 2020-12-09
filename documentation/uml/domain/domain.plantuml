@@ -1,5 +1,4 @@
-@startuml domain
-
+@startuml
 class Article {
   - title: String
   - text: String
@@ -12,11 +11,19 @@ class Category {
   - name: String
 }
 
-class Student {
+class Contributor {
   - firstName: String
   - surname: String
   - birthDate: Date
   - university: University
+}
+
+class Permission {
+  - name: String
+}
+
+class Role {
+  - name: String
 }
 
 class University {
@@ -24,9 +31,11 @@ class University {
   - place: String
 }
 
-Student "1..*" -- "0..*" Article
-Student "1" -- "1" University
+Permission "1..*" -- "1..*" Role
+Contributor "1..*" -- "1..*" Role 
+Contributor "1..*" -- "0..*" Article : edits
+Contributor "1" -- "1" University
+
 
 Article "1..*" -- "0..*" Category
-
 @enduml
