@@ -4,6 +4,7 @@ state SearchArticle {
   [*] --> DoSearch
   DoSearch --> ShowSearchResults
   ShowSearchResults -left-> DoSearch : SearchAgain
+  ShowSearchResults --> [*]
 }
   
 @enduml

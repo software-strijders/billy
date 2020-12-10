@@ -89,7 +89,7 @@ Het Visie/Scope document is [hier](/documentation/visie-scope-document.pdf) te v
 
 <!-- TODO: Add proper link -->
 
-Het Functioneel ontwerp document van Sprint 1 is [hier](/documentation) te vinden.
+Het Functioneel ontwerp document is [hier](/documentation/functioneel-ontwerp.pdf) te vinden.
 
 ## Git
 
