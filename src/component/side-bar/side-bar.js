@@ -12,7 +12,6 @@ class SideBar extends LitElement {
       .sideBar {
         display: flex;
         flex-direction: column;
-        height: calc(100% - 20px);
         width: 100%;
         text-align: center;
         background: var(--billy-color-side-bar);
