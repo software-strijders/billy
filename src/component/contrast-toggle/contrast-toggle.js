@@ -10,8 +10,8 @@ class ContrastToggle extends LitElement {
 
   static get properties() {
     return {
-      on: { type: Boolean }
-    }
+      on: { type: Boolean },
+    };
   }
 
   static getStyles() {
@@ -19,6 +19,7 @@ class ContrastToggle extends LitElement {
       .contrastToggle {
         box-shadow: 0px 5px 10px var(--billy-color-shadow);
         cursor: pointer;
+        overflow: none;
         transition: 0.3s;
         display: flex;
         align-items: center;
@@ -26,6 +27,7 @@ class ContrastToggle extends LitElement {
         height: 30px;
         width: 60px;
         border-radius: 100px;
+        z-index: 0;
       }
 
       .contrastToggle__slider {
@@ -33,22 +35,61 @@ class ContrastToggle extends LitElement {
         height: 30px;
         transition: 0.3s;
         width: 30px;
+        transform: translateX(-5px);
         margin-right: auto;
-        background-color: white;
-        border: 2px solid var(--billy-color-dark);
+        background-color: black;
+        border: 4px solid var(--billy-color-dark);
         border-radius: 100px;
+        z-index: 2;
       }
 
-      .contrastToggle__slider--on {
-        transform: translateX(30px);
+      .contrastToggle__fill {
+        display: flex;
+        align-items: center;
+        transition: 0.25s;
+        width: 20px;
+        border-radius: 40px;
+        height: 100%;
+        background-color: white;
+        z-index: 1;
+      }
+
+      .contrastToggle--on .contrastToggle__fill {
+        width: 100%;
+      }
+
+      .contrastToggle--on .contrastToggle__slider {
+        transform: translateX(25px);
+      }
+
+      .contrastToggle--on .contrastToggle__sliderIcon {
+        transform: rotate(180deg);
+      }
+
+      .contrastToggle__sliderIcon {
+        transition: 0.25s;
+        width: 30px;
+        user-select: none;
       }
     `;
   }
 
   render() {
     return html`
-      <div class="contrastToggle" @click="${this.toggleSwitch}">
-        <div class="contrastToggle__slider ${classMap({ "contrastToggle__slider--on": this.on })}"></div>
+      <div
+        class="contrastToggle ${classMap({
+          "contrastToggle--on": this.on,
+        })}"
+        @click="${this.toggleSwitch}"
+      >
+        <div class="contrastToggle__fill">
+          <div class="contrastToggle__slider">
+            <img
+              class="contrastToggle__sliderIcon"
+              src="/assets/contrast-icon.svg"
+            />
+          </div>
+        </div>
       </div>
     `;
   }
