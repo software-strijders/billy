@@ -1,6 +1,10 @@
 # Project Frontend development
 
-![Logo](logo/hboi-logo.svg)
+![Banner](logo/billy-banner.png)
+![Node version](https://img.shields.io/npm/v/npm)
+![Snowpack version](https://img.shields.io/npm/v/snowpack?label=Snowpack)
+![Lit element version](https://img.shields.io/npm/v/lit-element?label=Lit%20element)
+![Lit HTML version](https://img.shields.io/npm/v/lit-html?label=Lit%20html)
 
 ## Inhoudsopgave
 

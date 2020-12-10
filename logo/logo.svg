@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="940" height="473" viewBox="0 0 940 473">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.005" y1="0.015" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4c74fc"/>
+      <stop offset="1" stop-color="#801be5"/>
+    </linearGradient>
+    <filter id="Billy" x="72" y="-29" width="798" height="463" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Sustainable_development" x="99" y="361" width="511" height="78" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-logo">
+      <rect width="940" height="473"/>
+    </clipPath>
+  </defs>
+  <g id="logo" clip-path="url(#clip-logo)">
+    <g id="Group_40" data-name="Group 40" transform="translate(-347 -114)">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="924" height="465" rx="12" transform="translate(355 115)" fill="url(#linear-gradient)"/>
+      <g id="Group_1" data-name="Group 1" transform="translate(434.266 95)">
+        <g transform="matrix(1, 0, 0, 1, -87.27, 19)" filter="url(#Billy)">
+          <text id="Billy-2" data-name="Billy" transform="translate(87 323)" fill="#fff" font-size="365" font-family="Aller-Bold, Aller" font-weight="700"><tspan x="0" y="0">Billy</tspan></text>
+        </g>
+      </g>
+      <g id="Group_43" data-name="Group 43" transform="translate(461.136 484.612)">
+        <g transform="matrix(1, 0, 0, 1, -114.14, -370.61)" filter="url(#Sustainable_development)">
+          <text id="Sustainable_development-2" data-name="Sustainable development" transform="translate(114 409)" fill="#fff" font-size="41" font-family="Aller-Bold, Aller" font-weight="700"><tspan x="0" y="0">Sustainable development</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
