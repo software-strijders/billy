@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <clipPath id="clip-contrast_icon">
+      <rect width="80" height="80"/>
+    </clipPath>
+  </defs>
+  <g id="contrast_icon" data-name="contrast icon" clip-path="url(#clip-contrast_icon)">
+    <path id="Icon_metro-contrast" data-name="Icon metro-contrast" d="M42.461,1.928A39.891,39.891,0,1,0,82.352,41.819,39.891,39.891,0,0,0,42.461,1.928ZM12.543,41.819A29.918,29.918,0,0,1,42.461,11.9V71.737A29.918,29.918,0,0,1,12.543,41.819Z" transform="translate(-2.352 -1.819)" fill="#fff"/>
+  </g>
+</svg>
