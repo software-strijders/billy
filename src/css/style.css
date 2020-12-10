@@ -49,16 +49,3 @@ main {
   border-radius: var(--billy-line-radius);
   background-color: var(--billy-color-grey);
 }
-
-/* TODO: This should also go into a component */
-.categoryBar {
-  display: inline-grid;
-  grid-template-columns: auto auto auto auto auto;
-  grid-gap: 10px;
-  justify-items: center;
-  align-items: center;
-  background-color: var(--billy-color-white);
-  width: 100%;
-  height: 200px;
-  margin-top: auto;
-}

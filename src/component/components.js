@@ -1,6 +1,7 @@
 import "./app/app.js";
 import "./article/article.js";
 import "./aside/aside.js";
+import "./category-bar/category-bar.js";
 import "./category-option/category-option.js";
 import "./contrast-toggle/contrast-toggle.js";
 import "./hero/hero.js";
