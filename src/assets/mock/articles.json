@@ -1,0 +1,25 @@
+{
+    "articles": [
+        {
+            "title": "Article 1",
+            "link": "/article1",
+            "headCategory": "Analyse",
+            "subCategory": "Gebruikers Interactie",
+            "description": "This is the description of article 1"
+        },
+        {
+            "title": "Article 2",
+            "link": "/article2",
+            "headCategory": "Realisatie",
+            "subCategory": "Gebruikers Interactie",
+            "description": "This is the description of article 2"
+        },
+        {
+            "title": "Article 3",
+            "link": "/article3",
+            "headCategory": "Ontwerp",
+            "subCategory": "Infrastructuur",
+            "description": "This is the description of article 3"
+        }
+    ]
+}
