@@ -76,7 +76,9 @@ class SearchBar extends LitElement {
       <div class="wrapper">
         <div class="searchBar">
           <input
-            aria-label="zoek"
+            @keydown="${this._handleKeyDown}"
+            id="searchInput"
+            aria-label="Zoek"
             placeholder="Wat wil je weten?"
             class="searchBar__input input--contrast"
             type="text"
@@ -106,12 +108,20 @@ class SearchBar extends LitElement {
     `;
   }
 
+  _getSearchInput() {
+    return this.shadowRoot.querySelector(".searchBar__input").value;
+  }
+
+  _handleKeyDown(event) {
+    if (event.keyCode === 13) {
+      this._search(event);
+    }
+  }
+
   _search(event) {
-    /* 
-    For demonstration purposes. 
-    Needs to be replaced with proper search functionality 
-    */
-    window.location.href = "/search.html";
+    let searchString = this._getSearchInput();
+    window.location.href =
+      "http://" + window.location.host + "/search?q=" + searchString;
   }
 }
 
