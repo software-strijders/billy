@@ -31,13 +31,13 @@ class LoginWindow extends LitElement {
         border-radius: 100px;
       }
 
-      .register__link {
+      .redirect__link {
         margin-top: 10px;
         color: white;
         font-size: 13px;
       }
 
-      .register__link--show {
+      .redirect__link--show {
         display: inline-block;
       }
 
@@ -82,11 +82,16 @@ class LoginWindow extends LitElement {
 
       <div class="wrapper">
         <div class="field">
-          <button class="field__button" onclick="">Inloggen</button>
+          <button class="field__button" @click="${this.login}">Inloggen</button> 
         </div>
-        <a class="register__link register__link--show" href="">Nog geen account? Registreer hier</a>
+        <a class="redirect__link redirect__link--show" href="">Nog geen account? Registreer hier</a>
+        <a class="redirect__link redirect__link--show" href="./index.html">Terug naar homepagina</a>
       </div>
     `;
+  }
+
+  login() {
+    
   }
 }
 
