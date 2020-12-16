@@ -27,7 +27,6 @@ class ContrastToggle extends LitElement {
         height: 30px;
         width: 60px;
         border-radius: 100px;
-        z-index: 0;
       }
 
       .contrastToggle__slider {
@@ -40,7 +39,6 @@ class ContrastToggle extends LitElement {
         background-color: black;
         border: 4px solid var(--billy-color-dark);
         border-radius: 100px;
-        z-index: 2;
       }
 
       .contrastToggle__fill {
@@ -51,7 +49,6 @@ class ContrastToggle extends LitElement {
         border-radius: 40px;
         height: 100%;
         background-color: white;
-        z-index: 1;
       }
 
       .contrastToggle--on .contrastToggle__fill {
