@@ -5,21 +5,27 @@
             "link": "/article1",
             "headCategory": "Analyse",
             "subCategory": "Gebruikers Interactie",
-            "description": "This is the description of article 1"
+            "description": "This is the description of article 1",
+            "readTime": 5,
+            "lastRevised": "2020-02-11"
         },
         {
             "title": "Article 2",
             "link": "/article2",
             "headCategory": "Realisatie",
             "subCategory": "Gebruikers Interactie",
-            "description": "This is the description of article 2"
+            "description": "This is the description of article 2",
+            "readTime": 1,
+            "lastRevised": "2018-03-06"
         },
         {
             "title": "Article 3",
             "link": "/article3",
             "headCategory": "Ontwerp",
             "subCategory": "Infrastructuur",
-            "description": "This is the description of article 3"
+            "description": "This is the description of article 3",
+            "readTime": 11,
+            "lastRevised": "2020-01-10"
         }
     ]
 }
