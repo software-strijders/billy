@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 import parseJson from "../../js/utils.js";
-import * as levenshtein from "fast-levenshtein";
+import levenshtein from "fast-levenshtein";
 
 const mockDataPath = "../../assets/mock/articles.json";
 
@@ -58,19 +58,21 @@ class Results extends LitElement {
         </h1>
         <hr class="results__hr" />
         <div id="resultItems" class="results__items">
-          ${this.articlePreviews.map((article) => {
-            return html`
-              <billy-result-item
-                href="${article.href}"
-                title="${article.title}"
-                description="${article.description}"
-                readTime="${article.readTime}"
-                lastRevised="${article.lastRevised}"
-                headCategory="${article.headCategory}"
-                subCategory="${article.subCategory}"
-              ></billy-result-item>
-            `;
-          })}
+          ${this.articlePreviews.length === 0
+            ? html`<billy-no-result></billy-no-result>`
+            : this.articlePreviews.map((article) => {
+                return html`
+                  <billy-result-item
+                    href="${article.href}"
+                    title="${article.title}"
+                    description="${article.description}"
+                    readTime="${article.readTime}"
+                    lastRevised="${article.lastRevised}"
+                    headCategory="${article.headCategory}"
+                    subCategory="${article.subCategory}"
+                  ></billy-result-item>
+                `;
+              })}
         </div>
       </div>
     `;
@@ -81,22 +83,20 @@ class Results extends LitElement {
     if (urlParams.has("q")) {
       return urlParams.get("q");
     } else {
+      /* Display error message */
     }
   }
 
   _getResultItems() {
-    console.log(levenshtein);
-
     this.query = this._getQuery();
 
     parseJson(mockDataPath).then((json) => {
       for (let num in json.articles) {
         let item = json.articles[num];
 
-        if (
-          item.title.search(new RegExp(this.query, "i")) >= 0 ||
-          item.description.search(new RegExp(this.query, "i")) >= 0
-        ) {
+        if (item.title.search(new RegExp(this.query, "i")) >= 0) {
+          this.articlePreviews.push(item);
+        } else if (levenshtein.get(item.title, this.query) < 4) {
           this.articlePreviews.push(item);
         }
       }

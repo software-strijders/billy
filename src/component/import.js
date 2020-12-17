@@ -13,6 +13,7 @@ import "./login-button/login-button.js";
 import "./login-window/login-window.js";
 import "./results/results.js";
 import "./result-item/result-item.js";
+import "./result-item/no-result.js";
 import "./search-bar/search-bar.js";
 import "./side-bar/side-bar.js";
 import "./top-bar/top-bar.js";
