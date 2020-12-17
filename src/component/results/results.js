@@ -1,11 +1,16 @@
 import { LitElement, html, css } from "lit-element";
 import parseJson from "../../js/utils.js";
+import * as levenshtein from "fast-levenshtein";
 
 const mockDataPath = "../../assets/mock/articles.json";
 
 class Results extends LitElement {
   constructor() {
     super();
+
+    this.query = "";
+    this.articlePreviews = [];
+    this._getResultItems();
   }
 
   static get properties() {
@@ -26,6 +31,7 @@ class Results extends LitElement {
       .results__title {
         font-size: var(--billy-title-size);
         text-shadow: none;
+        margin: 0;
       }
 
       .results__hr {
@@ -35,23 +41,39 @@ class Results extends LitElement {
         border-radius: var(--billy-line-radius);
         background-color: var(--billy-color-grey);
       }
+
+      .results__query {
+        background: var(--billy-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     `;
   }
 
   render() {
-    let component = html`
+    return html`
       <div class="results">
-        <h1 class="results__title">Results for: %s</h1>
+        <h1 class="results__title">
+          Results for: <span class="results__query">${this.query}</span>
+        </h1>
         <hr class="results__hr" />
         <div id="resultItems" class="results__items">
-          <slot name="resultItem"></slot>
+          ${this.articlePreviews.map((article) => {
+            return html`
+              <billy-result-item
+                href="${article.href}"
+                title="${article.title}"
+                description="${article.description}"
+                readTime="${article.readTime}"
+                lastRevised="${article.lastRevised}"
+                headCategory="${article.headCategory}"
+                subCategory="${article.subCategory}"
+              ></billy-result-item>
+            `;
+          })}
         </div>
       </div>
     `;
-
-    this._getResultItems();
-
-    return component;
   }
 
   _getQuery() {
@@ -59,32 +81,26 @@ class Results extends LitElement {
     if (urlParams.has("q")) {
       return urlParams.get("q");
     } else {
-      return "No query found";
     }
   }
 
-  _parseJson(path) {
-    return fetch(path).then((response) => response.json());
-  }
-
   _getResultItems() {
-    let queryString = this._getQuery;
+    console.log(levenshtein);
+
+    this.query = this._getQuery();
+
     parseJson(mockDataPath).then((json) => {
       for (let num in json.articles) {
         let item = json.articles[num];
-        let list = this.shadowRoot.querySelector("#resultItems");
 
-        var result = document.createElement("billy-result-item");
-        result.setAttribute("href", item.link);
-        result.setAttribute("title", item.title);
-        result.setAttribute("description", item.description);
-        result.setAttribute("readTime", item.readTime);
-        result.setAttribute("lastRevised", item.lastRevised);
-        result.setAttribute("headCategory", item.headCategory);
-        result.setAttribute("subCategory", item.subCategory);
-
-        list.appendChild(result);
+        if (
+          item.title.search(new RegExp(this.query, "i")) >= 0 ||
+          item.description.search(new RegExp(this.query, "i")) >= 0
+        ) {
+          this.articlePreviews.push(item);
+        }
       }
+      this.requestUpdate();
     });
   }
 }
