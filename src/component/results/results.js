@@ -19,7 +19,6 @@ class Results extends LitElement {
       }
 
       .results {
-        width: 100%;
         padding: 30px;
         text-align: left;
       }
@@ -81,6 +80,8 @@ class Results extends LitElement {
         result.setAttribute("description", item.description);
         result.setAttribute("readTime", item.readTime);
         result.setAttribute("lastRevised", item.lastRevised);
+        result.setAttribute("headCategory", item.headCategory);
+        result.setAttribute("subCategory", item.subCategory);
 
         list.appendChild(result);
       }
