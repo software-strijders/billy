@@ -41,7 +41,7 @@ class LoginButton extends LitElement {
         class="loginButton ${classMap({ "loginButton--large": this.large })}"
         @click="${this.login}"
       >
-        Inloggen
+        ${localStorage.getItem("email") || "inloggen"}
       </button>
     `;
   }
