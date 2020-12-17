@@ -1,4 +1,8 @@
 import { LitElement, html, css } from "lit-element";
+import { configureStore } from '@reduxjs/toolkit';
+// import reducer from '...'
+
+// const store = configureStore({ reducer })
 
 // TODO: This is not really appropriate to be a component, it should be split into
 // smaller components
@@ -64,6 +68,7 @@ class LoginWindow extends LitElement {
             aria-label="e-mail"
             placeholder="E-mail"
             class="field__input"
+            id="email--input"
             type="text"
           />
         </div>
@@ -75,6 +80,7 @@ class LoginWindow extends LitElement {
             aria-label="wachtwoord"
             placeholder="Wachtwoord"
             class="field__input"
+            id="password--input"
             type="password"
           />
         </div>
@@ -90,8 +96,19 @@ class LoginWindow extends LitElement {
     `;
   }
 
+
   login() {
-    
+    const emailInput = this.shadowRoot.querySelector("#email--input").value
+    const passwordInput = this.shadowRoot.querySelector("#password--input").value
+
+    fetch("/assets/json/accounts.json")
+    .then(response => response.json())
+    .then(data => data.accounts.forEach(account => {
+      if (account.email === emailInput && account.password === passwordInput) {
+        window.localStorage.setItem("email", emailInput)
+        window.history.back();
+      }
+    }));
   }
 }
 
