@@ -1,0 +1,34 @@
+{
+    "accounts":[
+       {
+          "email":"ruben.vandenbrink@student.hu.nl",
+          "password":"1234",
+          "role":"student",
+          "university": "Hogeschool Utrecht"
+       },
+       {
+          "email":"jort.willemsen@student.hu.nl",
+          "password":"1234",
+          "role":"student",
+          "university": "Hogeschool Utrecht"
+       },
+       {
+          "email":"arjen.norbart@student.hu.nl",
+          "password":"1234",
+          "role":"student",
+          "university": "Hogeschool Utrecht"
+       },
+       {
+          "email":"milan.dol@student.hu.nl",
+          "password":"1234",
+          "role":"student",
+          "university": "Hogeschool Utrecht"
+       },
+       {
+          "email":"xander.vedder@student.hu.nl",
+          "password":"1234",
+          "role":"student",
+          "university": "Hogeschool Utrecht"
+       }
+    ]
+ }
