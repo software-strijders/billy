@@ -1,34 +1,44 @@
 {
-    "accounts":[
-       {
-          "email":"ruben.vandenbrink@student.hu.nl",
-          "password":"1234",
-          "role":"student",
-          "university": "Hogeschool Utrecht"
-       },
-       {
-          "email":"jort.willemsen@student.hu.nl",
-          "password":"1234",
-          "role":"student",
-          "university": "Hogeschool Utrecht"
-       },
-       {
-          "email":"arjen.norbart@student.hu.nl",
-          "password":"1234",
-          "role":"student",
-          "university": "Hogeschool Utrecht"
-       },
-       {
-          "email":"milan.dol@student.hu.nl",
-          "password":"1234",
-          "role":"student",
-          "university": "Hogeschool Utrecht"
-       },
-       {
-          "email":"xander.vedder@student.hu.nl",
-          "password":"1234",
-          "role":"student",
-          "university": "Hogeschool Utrecht"
-       }
-    ]
- }
+  "accounts": [
+    {
+      "email": "ruben.vandenbrink@student.hu.nl",
+      "firstName": "Ruben",
+      "lastName": "van den Brink",
+      "password": "1234",
+      "role": "student",
+      "university": "Hogeschool-Utrecht"
+    },
+    {
+      "email": "jort.willemsen@student.hu.nl",
+      "firstName": "Jort",
+      "lastName": "Willemsen",
+      "password": "1234",
+      "role": "student",
+      "university": "Hogeschool-Utrecht"
+    },
+    {
+      "email": "arjen.norbart@student.hu.nl",
+      "firstName": "Arjen",
+      "lastName": "Norbart",
+      "password": "1234",
+      "role": "student",
+      "university": "Hogeschool-Utrecht"
+    },
+    {
+      "email": "milan.dol@student.hu.nl",
+      "firstName": "Milan",
+      "lastName": "Dol",
+      "password": "1234",
+      "role": "student",
+      "university": "Hogeschool-Utrecht"
+    },
+    {
+      "email": "xander.vedder@student.hu.nl",
+      "firstName": "Xander",
+      "lastName": "Vedder",
+      "password": "1234",
+      "role": "student",
+      "university": "Hogeschool-Utrecht"
+    }
+  ]
+}

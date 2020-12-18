@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
+import { store } from "../../js/store.js";
+
 class LoginButton extends LitElement {
   static get properties() {
     return {
@@ -41,7 +43,7 @@ class LoginButton extends LitElement {
         class="loginButton ${classMap({ "loginButton--large": this.large })}"
         @click="${this.login}"
       >
-        ${localStorage.getItem("email") || "inloggen"}
+        ${store.getState().login.user.firstName || "inloggen"}
       </button>
     `;
   }
