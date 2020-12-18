@@ -1,3 +1,5 @@
+import "../js/logged-in-checker.js";
+
 import "./app/app.js";
 import "./article/article.js";
 import "./aside/aside.js";
