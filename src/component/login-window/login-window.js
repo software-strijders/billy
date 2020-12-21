@@ -6,11 +6,11 @@ import { actions } from "../../js/login.js";
 // TODO: This is not really appropriate to be a component, it should be split into
 // smaller components
 class LoginWindow extends LitElement {
-  constructor(){
-    super()
+  constructor() {
+    super();
     store.subscribe(() => {
-      console.log(store.getState())
-    })
+      console.log(store.getState());
+    });
   }
   static getStyles() {
     return css`
@@ -93,41 +93,54 @@ class LoginWindow extends LitElement {
 
       <div class="wrapper">
         <div class="field">
-          <button class="field__button" @click="${this.login}">Inloggen</button> 
+          <button class="field__button" @click="${this.login}">Inloggen</button>
         </div>
-        <a class="redirect__link redirect__link--show" href="">Nog geen account? Registreer hier</a>
-        <a class="redirect__link redirect__link--show" href="./index.html">Terug naar homepagina</a>
+        <a class="redirect__link redirect__link--show" href=""
+          >Nog geen account? Registreer hier</a
+        >
+        <a class="redirect__link redirect__link--show" href="./index.html"
+          >Terug naar homepagina</a
+        >
       </div>
     `;
   }
 
-
   login() {
-    const emailInput = this.shadowRoot.querySelector("#email--input").value
-    const passwordInput = this.shadowRoot.querySelector("#password--input").value
+    const emailInput = this.shadowRoot.querySelector("#email--input").value;
+    const passwordInput = this.shadowRoot.querySelector("#password--input").value;
 
     fetch("/assets/json/accounts.json")
-      .then(response => response.json())
-      .then(data => data.accounts.forEach(account => {
-        if (account.email === emailInput && account.password === passwordInput) {
-          window.localStorage.setItem("email", account.email);
-          window.localStorage.setItem("firstName", account.firstName);
-          window.localStorage.setItem("lastName", account.lastName);
-          window.localStorage.setItem("role", account.role);
-          window.localStorage.setItem("university", account.university);
-          store.dispatch(actions.login({
-            loggedIn: true,
-            user: {
-                email: account.email,
-                firstName: account.firstName,
-                lastName: account.lastName,
-                role: account.role,
-                university: account.university,
-            }
-          }))
-          window.history.back();
-        }
-      }));
+      .then((response) => response.json())
+      .then((data) =>
+        data.accounts.forEach((account) => {
+          if (
+            account.email === emailInput &&
+            account.password === passwordInput
+          ) {
+            window.localStorage.setItem("data", JSON.stringify(
+              {
+                "email": account.email,
+                "firstName": account.firstName,
+                "lastName": account.lastName,
+                "role": account.role,
+                "university": account.university
+              }));
+            store.dispatch(
+              actions.login({
+                loggedIn: true,
+                user: {
+                  email: account.email,
+                  firstName: account.firstName,
+                  lastName: account.lastName,
+                  role: account.role,
+                  university: account.university,
+                },
+              }),
+            );
+            window.history.back();
+          }
+        }),
+      );
   }
 }
 
