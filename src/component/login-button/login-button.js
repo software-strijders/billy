@@ -34,6 +34,12 @@ class LoginButton extends LitElement {
       .loginButton--large {
         height: 50px;
       }
+
+      .loginButton--image {
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+      }
     `;
   }
 
@@ -43,9 +49,16 @@ class LoginButton extends LitElement {
         class="loginButton ${classMap({ "loginButton--large": this.large })}"
         @click="${this.login}"
       >
-        ${store.getState().login.user.firstName || "inloggen"}
+      <img class="loginButton--image" src="../../assets/image/${store.getState().login.user.university}.png">
+        ${this.getNameOfUser() || "inloggen"}
       </button>
     `;
+  }
+
+  getNameOfUser() {
+    if (store.getState().login.user.firstName !== "") {
+      return store.getState().login.user.firstName + " " + store.getState().login.user.lastName
+    }
   }
 
   login() {
