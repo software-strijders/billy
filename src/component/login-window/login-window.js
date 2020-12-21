@@ -70,6 +70,7 @@ class LoginWindow extends LitElement {
       <div class="wrapper">
         <div class="field">
           <input
+            @keyup="${this.handleKeyUp}"
             aria-label="e-mail"
             placeholder="E-mail"
             class="field__input"
@@ -82,6 +83,7 @@ class LoginWindow extends LitElement {
       <div class="wrapper">
         <div class="field">
           <input
+            @keyup="${this.handleKeyUp}"
             aria-label="wachtwoord"
             placeholder="Wachtwoord"
             class="field__input"
@@ -141,6 +143,12 @@ class LoginWindow extends LitElement {
           }
         }),
       );
+  }
+
+  handleKeyUp(e) {
+    if (e.key === 'Enter') {
+      this.login();
+    }
   }
 }
 
