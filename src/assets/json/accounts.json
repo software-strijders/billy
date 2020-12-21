@@ -14,7 +14,7 @@
       "lastName": "Willemsen",
       "password": "1234",
       "role": "student",
-      "university": "Hogeschool-Utrecht"
+      "university": "Universiteit-Utrecht"
     },
     {
       "email": "arjen.norbart@student.hu.nl",
@@ -38,7 +38,7 @@
       "lastName": "Vedder",
       "password": "1234",
       "role": "student",
-      "university": "Hogeschool-Utrecht"
+      "university": "Universiteit-Utrecht"
     }
   ]
 }
