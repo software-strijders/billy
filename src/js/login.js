@@ -7,7 +7,7 @@ const initialState = {
     firstName: "",
     lastName: "",
     role: "",
-    university: "",
+    link: "",
   },
 };
 

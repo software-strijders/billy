@@ -35,7 +35,7 @@ class LoginButton extends LitElement {
         height: 50px;
       }
 
-      .loginButton--image {
+      .loginButton__image {
         height: 20px;
         width: 20px;
         margin-right: 5px;
@@ -49,7 +49,7 @@ class LoginButton extends LitElement {
         class="loginButton ${classMap({ "loginButton--large": this.large })}"
         @click="${this.login}"
       >
-      <img class="loginButton--image" src="../../assets/image/${store.getState().login.user.university}.png">
+      <img class="loginButton__image" src="../../assets/image/${store.getState().login.user.link}.png" alt="">
         ${this.getNameOfUser() || "inloggen"}
       </button>
     `;

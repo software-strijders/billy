@@ -13,7 +13,7 @@ if (data.email) {
         firstName: data.firstName,
         lastName: data.lastName,
         role: data.role,
-        university: data.university,
+        link: data.link,
       },
     }),
   );

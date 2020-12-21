@@ -6,12 +6,6 @@ import { actions } from "../../js/login.js";
 // TODO: This is not really appropriate to be a component, it should be split into
 // smaller components
 class LoginWindow extends LitElement {
-  constructor() {
-    super();
-    store.subscribe(() => {
-      console.log(store.getState());
-    });
-  }
   static getStyles() {
     return css`
       .wrapper {
@@ -125,21 +119,9 @@ class LoginWindow extends LitElement {
                 "firstName": account.firstName,
                 "lastName": account.lastName,
                 "role": account.role,
-                "university": account.university
+                "link": account.link
               }));
-            store.dispatch(
-              actions.login({
-                loggedIn: true,
-                user: {
-                  email: account.email,
-                  firstName: account.firstName,
-                  lastName: account.lastName,
-                  role: account.role,
-                  university: account.university,
-                },
-              }),
-            );
-            window.history.back();
+            window.location.replace("../../index.html");
           }
         }),
       );

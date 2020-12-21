@@ -6,7 +6,7 @@
       "lastName": "van den Brink",
       "password": "1234",
       "role": "student",
-      "university": "Hogeschool-Utrecht"
+      "link": "hogeschool-utrecht"
     },
     {
       "email": "jort.willemsen@student.hu.nl",
@@ -14,7 +14,7 @@
       "lastName": "Willemsen",
       "password": "1234",
       "role": "student",
-      "university": "Universiteit-Utrecht"
+      "link": "universiteit-utrecht"
     },
     {
       "email": "arjen.norbart@student.hu.nl",
@@ -22,7 +22,7 @@
       "lastName": "Norbart",
       "password": "1234",
       "role": "student",
-      "university": "Hogeschool-Utrecht"
+      "link": "hogeschool-utrecht"
     },
     {
       "email": "milan.dol@student.hu.nl",
@@ -30,7 +30,7 @@
       "lastName": "Dol",
       "password": "1234",
       "role": "student",
-      "university": "Hogeschool-Utrecht"
+      "link": "hogeschool-utrecht"
     },
     {
       "email": "xander.vedder@student.hu.nl",
@@ -38,7 +38,7 @@
       "lastName": "Vedder",
       "password": "1234",
       "role": "student",
-      "university": "Universiteit-Utrecht"
+      "link": "universiteit-utrecht"
     }
   ]
 }
