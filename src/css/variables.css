@@ -1,5 +1,5 @@
 :root {
-  /* 
+  /*
     TODO: These names should be called different...
     It shouldn't describe the color, rather the component its coloring instead.
   */
@@ -36,10 +36,6 @@
   --billy-box-shadow-lighter: 0 5px 10px var(--billy-color-shadow-lighter);
   --billy-text-shadow: 0 5px 10px var(--billy-color-shadow);
 
-  --billy-border: none;
-  --billy-border-right: none;
-  --billy-border-left: none;
-
   --billy-font-family: "Aller";
 
   /* Dimens: */
@@ -55,6 +51,9 @@
   --billy-line-radius: 3px;
   --billy-line-margin: 15px 0 25px 0;
   --billy-title-size: 50px;
+  --billy-border: none;
+  --billy-border-right: none;
+  --billy-border-left: none;
   --billy-border-size: 2px;
 
   /* Edit page: */

@@ -4,7 +4,9 @@ import { classMap } from "lit-html/directives/class-map";
 class ContrastToggle extends LitElement {
   constructor() {
     super();
-    this.checkStorage();
+
+    this.on = localStorage.getItem("high-contrast") === "true";
+    this.updated();
   }
 
   static get properties() {
@@ -13,15 +15,7 @@ class ContrastToggle extends LitElement {
     };
   }
 
-  checkStorage() {
-    if (localStorage.getItem("high-contrast") === "true") {
-      this.on = true;
-      this.updated();
-    }
-  }
-
   updated(on) {
-    console.log(this.on)
     if (this.on) {
       document.documentElement.classList.add("contrast");
       localStorage.setItem("high-contrast", true);
