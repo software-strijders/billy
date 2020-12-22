@@ -22,12 +22,12 @@ class EditingPage extends LitElement {
     return css`
       :host {
         display: block;
-        width: 100%;
-        padding: 25px;
+        width: var(--billy-edit-page-width);
+        padding: var(--billy-edit-page-padding);
       }
 
       .form {
-        padding: 10px;
+        padding: var(--billy-edit-page-form-padding);
       }
 
       .form--disabled .form__input {
@@ -43,7 +43,7 @@ class EditingPage extends LitElement {
       }
 
       .form--disabled .form__select:hover {
-        background-position: 95%;
+        background-position: var(--billy-edit-page-form-select-background-position-hover);
       }
 
       .form__title {
@@ -61,15 +61,15 @@ class EditingPage extends LitElement {
 
       .form__wrapper {
         display: flex;
-        padding: 10px 0;
+        padding: var(--billy-edit-page-form-wrapper-padding);
       }
 
       .form__wrapper--first {
-        padding: 0 0 10px 0;
+        padding: var(--billy-edit-page-form-wrapper-padding-first);
       }
 
       .form__wrapper--select .form__wrapper {
-        padding: 0px;
+        padding: 0;
       }
 
       .form__wrapper--select .form__wrapper:last-child {
@@ -87,55 +87,55 @@ class EditingPage extends LitElement {
       }
 
       .form__labelTitle {
-        margin: 0 0 10px 0;
-        font-size: 22px;
+        margin: var(--billy-edit-page-form-label-title-margin);
+        font-size: var(--billy-edit-page-form-label-font-size);
       }
 
       .form__input {
         border: var(--billy-border-size) solid var(--billy-color-grey);
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 18px;
+        border-radius: var(--billy-edit-page-radius);
+        padding: var(--billy-edit-page-form-input-padding);
+        font-size: var(--billy-edit-page-form-input-font-size);
         transition: background 0.3s;
       }
 
       .form__select {
         position: relative;
-        height: 44px;
-        width: 200px;
+        height: var(--billy-edit-page-form-select-height);
+        width: var(--billy-edit-page-form-select-width);
         border: var(--billy-border-size) solid var(--billy-color-grey);
-        padding: 10px;
-        border-radius: 5px;
+        padding: var(--billy-edit-page-form-select-padding);
+        border-radius: var(--billy-edit-page-radius);
         overflow: hidden;
         appearance: none;
         background-color: var(--billy-color-white);
-        background-image: url("../../assets/select-dropdown.svg");
-        background-position: 95%;
+        background-image: var(--billy-edit-page-form-select-background-image-url);
+        background-position: var(--billy-edit-page-form-select-background-position);
         background-repeat: no-repeat;
         cursor: pointer;
         transition: background 0.3s;
       }
 
       .form__select:hover {
-        background-position: 95% 65%;
+        background-position: var(--billy-edit-page-form-select-background-position-hover);
       }
 
       .form__button {
-        padding: 12px 25px;
-        border-radius: 5px;
+        padding: var(--billy-edit-page-form-button-padding);
+        border-radius: var(--billy-edit-page-radius);
         background: none;
         background-image: var(--billy-gradient);
-        background-size: 100% 100%;
+        background-size: var(--billy-edit-page-form-button-background-size);
         border: none;
         color: var(--billy-color-white);
-        font-size: 16px;
+        font-size: var(--billy-edit-page-form-button-font-size);
         cursor: pointer;
         transition: background-size 0.3s, 0.3s;
         font-weight: bold;
       }
 
       .form__button:hover {
-        background-size: 200% 200%;
+        background-size: var(--billy-edit-page-form-button-background-size-hover);
       }
 
       .form__button--grey {
