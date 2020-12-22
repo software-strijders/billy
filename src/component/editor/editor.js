@@ -107,6 +107,7 @@ class Editor extends LitElement {
         position: relative;
         margin: 0 0 0 auto;
         font-size: 20px;
+        padding: 5px;
       }
 
       .pell__button:last-child:before {
