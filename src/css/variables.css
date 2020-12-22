@@ -4,6 +4,7 @@
   --billy-color-white: #fff;
   --billy-color-red: #ee4a4a;
   --billy-color-grey: #dddddd;
+  --billy-color-light-grey: #f0f0f0;
   --billy-color-lighter-grey: #f5f5f5;
   --billy-color-dark: #000;
   --billy-color-light-grey: #ebebeb;
@@ -47,6 +48,19 @@
   --billy-line-margin: 15px 0 25px 0;
   --billy-title-size: 50px;
   --billy-border-size: 2px;
+
+  /* Editor: */
+  --billy-editor-height: 500px;
+  --billy-editor-width: 100%;
+  --billy-editor-radius: 5px;
+  --billy-editor-button-height: 40px;
+  --billy-editor-button-width: 40px;
+  --billy-editor-button-padding-last-child: 5px;
+  --billy-editor-button-font-size-last-child: 20px;
+  --billy-editor-button-bg-color-hover: var(--billy-color-light-grey);
+  --billy-editor-content-padding: 10px;
+  --billy-editor-text-font-size: 15px;
+  --billy-editor-text-margin: auto 0 auto 15px;
 }
 
 .contrast {

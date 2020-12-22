@@ -49,10 +49,10 @@ class Editor extends LitElement {
         position: relative;
         display: flex;
         flex-direction: column;
-        height: 500px;
-        width: 100%;
+        height: var(--billy-editor-height);
+        width: var(--billy-editor-width);
         border: var(--billy-border-size) solid var(--billy-color-grey);
-        border-radius: 5px;
+        border-radius: var(--billy-editor-radius);
         overflow: hidden;
       }
 
@@ -78,8 +78,8 @@ class Editor extends LitElement {
 
       .pell__text {
         height: 100%;
-        margin: auto 0 auto 15px;
-        font-size: 15px;
+        margin: var(--billy-editor-text-margin);
+        font-size: var(--billy-editor-text-font-size);
         font-weight: bold;
       }
 
@@ -94,20 +94,20 @@ class Editor extends LitElement {
         background-color: var(--billy-color-transparent);
         border: none;
         cursor: pointer;
-        height: 40px;
-        width: 40px;
+        height: var(--billy-editor-button-height);
+        width: var(--billy-editor-button-width);
         transition: 0.3s;
       }
 
       .pell__button:hover {
-        background-color: #f0f0f0;
+        background-color: var(--billy-editor-button-bg-color-hover);
       }
 
       .pell__button:last-child {
         position: relative;
         margin: 0 0 0 auto;
-        font-size: 20px;
-        padding: 5px;
+        font-size: var(--billy-editor-button-font-size-last-child);
+        padding: var(--billy-editor-button-padding-last-child);
       }
 
       .pell__button:last-child:before {
@@ -120,19 +120,19 @@ class Editor extends LitElement {
       }
 
       .pell__button--selected {
-        background-color: #f0f0f0;
+        background-color: var(--billy-editor-button-bg-color-hover);
       }
 
       .pell__content {
         height: 100%;
         outline: 0;
         overflow-y: auto;
-        padding: 10px;
+        padding: var(--billy-editor-content-padding);
         scrollbar-width: thin;
       }
 
       .pell__content--preview {
-        height: calc(100% - 40px);
+        height: calc(100% - var(--billy-editor-button-height));
         padding: 0;
       }
 
