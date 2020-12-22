@@ -21,7 +21,6 @@ class Editor extends LitElement {
   constructor() {
     super();
 
-    // TODO: These don't show up in the preview:
     this.title = "";
     this.mainCategory = "";
     this.subCategory = "";
