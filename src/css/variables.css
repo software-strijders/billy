@@ -2,7 +2,9 @@
   --billy-color-turquoise: #4c74fc;
   --billy-color-blue: #801be5;
   --billy-color-white: #fff;
+  --billy-color-red: #ee4a4a;
   --billy-color-grey: #dddddd;
+  --billy-color-lighter-grey: #f5f5f5;
   --billy-color-dark: #000;
   --billy-color-light-grey: #ebebeb;
   --billy-color-result-item: var(--billy-color-blue);
@@ -44,6 +46,7 @@
   --billy-line-radius: 3px;
   --billy-line-margin: 15px 0 25px 0;
   --billy-title-size: 50px;
+  --billy-border-size: 2px;
 }
 
 .contrast {
