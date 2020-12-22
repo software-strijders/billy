@@ -1,0 +1,16 @@
+@startuml high_contrast_state
+
+state Article {
+  state "Normal" as A
+  state "High contrast" as B
+
+  [*] --> A
+  
+  A --> B
+  B --> A
+
+  A --> [*]  
+  B --> [*]
+}
+
+@enduml
