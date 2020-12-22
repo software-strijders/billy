@@ -4,8 +4,7 @@ import { classMap } from "lit-html/directives/class-map";
 class ContrastToggle extends LitElement {
   constructor() {
     super();
-
-    this.on = false;
+    this.checkStorage();
   }
 
   static get properties() {
@@ -14,36 +13,21 @@ class ContrastToggle extends LitElement {
     };
   }
 
-  firstUpdated(on) {
+  checkStorage() {
     if (localStorage.getItem("high-contrast") === "true") {
       this.on = true;
-      this.updated(this.on);
+      this.updated();
     }
   }
 
   updated(on) {
-    if (this.on === true || this.on === "true") {   
-      console.log("jup") 
-    document.documentElement.style
-    .setProperty('--billy-color-turquoise', '#000');
-    document.documentElement.style
-    .setProperty('--billy-color-blue', '#000');
-    document.documentElement.style
-    .setProperty('--billy-color-white', '#fff');
-    document.documentElement.style
-    .setProperty('--billy-color-gradient', '#000');
-    localStorage.setItem("high-contrast", true);
+    console.log(this.on)
+    if (this.on) {
+      document.documentElement.classList.add("contrast");
+      localStorage.setItem("high-contrast", true);
     } else {
-      console.log("nope")
-    document.documentElement.style
-    .setProperty('--billy-color-turquoise', '#4c74fc');
-    document.documentElement.style
-    .setProperty('--billy-color-blue', '#801be5');
-    document.documentElement.style
-    .setProperty('--billy-color-white', '#fff');
-    document.documentElement.style
-    .setProperty('--billy-color-gradient', '#dddddd');
-    localStorage.setItem("high-contrast", false);
+      document.documentElement.classList.remove("contrast");
+      localStorage.setItem("high-contrast", false);
     }
   }
 

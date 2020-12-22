@@ -18,6 +18,7 @@ class Aside extends LitElement {
         padding: 15px;
         margin: 0 0 25px 0;
         border-radius: 10px;
+        border: var(--billy-border);
       }
 
       .aside__card:first-child {

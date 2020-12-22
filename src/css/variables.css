@@ -36,6 +36,10 @@
   --billy-box-shadow-lighter: 0 5px 10px var(--billy-color-shadow-lighter);
   --billy-text-shadow: 0 5px 10px var(--billy-color-shadow);
 
+  --billy-border: none;
+  --billy-border-right: none;
+  --billy-border-left: none;
+
   --billy-font-family: "Aller";
 
   /* Dimens: */
@@ -94,6 +98,12 @@
   --billy-color-blue: #000;
   --billy-color-white: #fff;
   --billy-gradient: #000;
+  --billy-color-side-bar: #fff;
+  --billy-border: 3px solid #000;
+  --billy-border-right: 2px solid #000;
+  --billy-border-left: 2px solid #000;
+  --billy-box-shadow-lighter: none;
+  --billy-color-grey: #000;
 }
 
 @font-face {
