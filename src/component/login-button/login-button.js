@@ -49,15 +49,30 @@ class LoginButton extends LitElement {
         class="loginButton ${classMap({ "loginButton--large": this.large })}"
         @click="${this.login}"
       >
-      <img class="loginButton__image" src="../../assets/image/${store.getState().login.user.link}.png" alt="">
-        ${this.getNameOfUser() || "inloggen"}
+        ${store.getState().login.loggedIn
+          ? html`<img
+                class="loginButton__image"
+                src=${store.getState().login.user.link
+                  ? "../../assets/image/" +
+                    store.getState().login.user.link +
+                    ".png"
+                  : "../../assets/favicon.svg"}
+              />
+              ${this.getNameOfUser()} `
+          : html`inloggen`}
       </button>
     `;
   }
 
+  getLinkOfUser() {}
+
   getNameOfUser() {
     if (store.getState().login.user.firstName !== "") {
-      return store.getState().login.user.firstName + " " + store.getState().login.user.lastName
+      return (
+        store.getState().login.user.firstName +
+        " " +
+        store.getState().login.user.lastName
+      );
     }
   }
 
