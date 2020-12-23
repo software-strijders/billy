@@ -3,7 +3,7 @@ import { actions } from "../js/login.js";
 
 const data = JSON.parse(window.localStorage.getItem("data"));
 
-if (data.email) {
+if (data && data.email) {
   console.log(data)
   store.dispatch(
     actions.login({
