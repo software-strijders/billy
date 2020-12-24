@@ -24,6 +24,11 @@ h5 {
   margin: 10px 0 10px 0;
 }
 
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 main {
   height: 100%;
   width: 100%;

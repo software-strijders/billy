@@ -44,6 +44,8 @@ class SearchBar extends LitElement {
       }
 
       .searchBar__button {
+        display: flex;
+        justify-content: center;
         height: 100%;
         margin: 0;
         width: 60px;
@@ -65,8 +67,9 @@ class SearchBar extends LitElement {
       }
 
       .searchBar__arrow {
+        align-self: center;
+        height: 30px;
         background-color: var(--billy-color-transparent);
-        vertical-align: middle;
       }
     `;
   }
@@ -80,11 +83,11 @@ class SearchBar extends LitElement {
             id="searchInput"
             aria-label="Zoek"
             placeholder="Wat wil je weten?"
-            class="searchBar__input input--contrast"
+            class="searchBar__input"
             type="text"
           />
-          <button
-            @click="${this._search}"
+          <a
+            href="/search"
             name="zoek"
             aria-label="Zoek"
             class="searchBar__button"
@@ -95,7 +98,7 @@ class SearchBar extends LitElement {
               src="../assets/icon/arrow-right.svg"
               alt=""
             />
-          </button>
+          </a>
         </div>
         <a
           class="searchBar__link ${classMap({
