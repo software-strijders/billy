@@ -3,7 +3,13 @@ import { LitElement, html, css } from "lit-element";
 class ResultItem extends LitElement {
   static get properties() {
     return {
+      title: { type: String },
+      description: { type: String },
       href: { type: String },
+      readTime: { type: Number },
+      lastRevised: { type: String },
+      headCategory: { type: String },
+      subCategory: { type: String },
     };
   }
 
@@ -12,10 +18,9 @@ class ResultItem extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
-        margin: 20px 0;
+        margin: 25px 0;
         width: 100%;
         height: auto;
-        cursor: pointer;
       }
 
       .resultItem__link {
@@ -37,26 +42,40 @@ class ResultItem extends LitElement {
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
       }
+
+      .resultItem__categories {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        justify-content: flex-start;
+      }
+
+      .resultItem__category {
+        background-color: var(--billy-color-light-grey);
+        border-radius: 20px;
+        margin: 0 10px 0 0;
+        padding: 5px 10px;
+        cursor: select;
+        font-size: 15px;
+      }
     `;
   }
 
   render() {
     return html`
+      <div class="resultItem__categories">
+        <p class="resultItem__category">${this.headCategory}</p>
+        <p class="resultItem__category">${this.subCategory}</p>
+      </div>
       <a class="resultItem__link" href="${this.href}">
-        <h2 class="resultItem__title">Title</h2>
+        <h2 class="resultItem__title">${this.title}</h2>
         <p class="resultItem__description">
-          <small
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. , sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </small>
+          <small>${this.description} </small>
         </p>
-        <div class="resultItem__info">tijd: %.f min - laatst gewijzigd; %s</div>
+        <div class="resultItem__info">
+          tijd: ${this.readTime} min - laatst gewijzigd: ${this.lastRevised}
+        </div>
       </a>
     `;
   }

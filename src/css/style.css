@@ -29,23 +29,3 @@ main {
   height: 100%;
   width: 100%;
 }
-
-/* TODO: This should go into a component */
-.result {
-  width: 100%;
-  padding: 30px;
-  text-align: left;
-}
-
-.result__title {
-  font-size: var(--billy-title-size);
-  text-shadow: none;
-}
-
-.result__hr {
-  margin: var(--billy-line-margin);
-  height: var(--billy-line-height);
-  border: none;
-  border-radius: var(--billy-line-radius);
-  background-color: var(--billy-color-grey);
-}
