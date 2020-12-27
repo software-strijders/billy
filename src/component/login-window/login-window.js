@@ -105,7 +105,7 @@ class LoginWindow extends LitElement {
     const emailInput = this.shadowRoot.querySelector("#email--input").value;
     const passwordInput = this.shadowRoot.querySelector("#password--input").value;
 
-    fetch("/assets/json/accounts.json")
+    fetch("/assets/mock/accounts.json")
       .then((response) => response.json())
       .then((data) =>
         data.accounts.forEach((account) => {
@@ -121,7 +121,7 @@ class LoginWindow extends LitElement {
                 "role": account.role,
                 "link": account.link
               }));
-            window.location.replace("../../index.html");
+            window.location.replace("/");
           }
         }),
       );
