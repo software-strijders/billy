@@ -6,6 +6,8 @@ import "./aside/aside.js";
 import "./category-bar/category-bar.js";
 import "./category-option/category-option.js";
 import "./contrast-toggle/contrast-toggle.js";
+import "./editing-page/editing-page.js";
+import "./editor/editor.js";
 import "./hero/hero.js";
 import "./layout/full-page-layout/full-page-layout.js";
 import "./layout/side-bar-layout/side-bar-layout.js";

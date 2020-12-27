@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./assets/favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="icon" href="./assets/favicon.ico" sizes="any" type="image/ico">
+  <title>Billy - Artikel aanmaken</title>
+</head>
+<body>
+  <billy-app>
+    <billy-top-bar slot="header">
+      <billy-contrast-toggle slot="item"></billy-contrast-toggle>
+      <billy-search-bar hideLink="true" slot="item"></billy-search-bar>
+      <billy-login-button large="true" slot="item"></billy-login-button>
+    </billy-top-bar>
+    <billy-side-bar-layout slot="page-layout">
+      <billy-side-bar slot="side-bar"></billy-side-bar>
+      <billy-editing-page slot="content"></billy-editing-page>
+    </billy-side-bar-layout>
+  </billy-app>
+  <script type="module" src="./component/components.js"></script>
+</body>
+</html>
