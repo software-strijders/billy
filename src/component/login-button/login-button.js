@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
+import { store } from "../../js/store.js";
+
 class LoginButton extends LitElement {
   static get properties() {
     return {
@@ -32,6 +34,12 @@ class LoginButton extends LitElement {
       .loginButton--large {
         height: 50px;
       }
+
+      .loginButton__image {
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+      }
     `;
   }
 
@@ -41,9 +49,31 @@ class LoginButton extends LitElement {
         class="loginButton ${classMap({ "loginButton--large": this.large })}"
         @click="${this.login}"
       >
-        Inloggen
+        ${store.getState().login.loggedIn
+          ? html`<img
+                class="loginButton__image"
+                src=${store.getState().login.user.link
+                  ? "../../assets/image/" +
+                    store.getState().login.user.link +
+                    ".png"
+                  : "../../assets/favicon.svg"}
+              />
+              ${this.getNameOfUser()} `
+          : html`inloggen`}
       </button>
     `;
+  }
+
+  getLinkOfUser() {}
+
+  getNameOfUser() {
+    if (store.getState().login.user.firstName !== "") {
+      return (
+        store.getState().login.user.firstName +
+        " " +
+        store.getState().login.user.lastName
+      );
+    }
   }
 
   login() {

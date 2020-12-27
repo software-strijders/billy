@@ -1,0 +1,44 @@
+{
+  "accounts": [
+    {
+      "email": "ruben.vandenbrink@student.hu.nl",
+      "firstName": "Ruben",
+      "lastName": "van den Brink",
+      "password": "1234",
+      "role": "student",
+      "link": "hogeschool-utrecht"
+    },
+    {
+      "email": "jort.willemsen@student.hu.nl",
+      "firstName": "Jort",
+      "lastName": "Willemsen",
+      "password": "1234",
+      "role": "student",
+      "link": "universiteit-utrecht"
+    },
+    {
+      "email": "arjen.norbart@student.hu.nl",
+      "firstName": "Arjen",
+      "lastName": "Norbart",
+      "password": "1234",
+      "role": "student",
+      "link": "hogeschool-utrecht"
+    },
+    {
+      "email": "milan.dol@student.hu.nl",
+      "firstName": "Milan",
+      "lastName": "Dol",
+      "password": "1234",
+      "role": "student",
+      "link": "hogeschool-utrecht"
+    },
+    {
+      "email": "xander.vedder@student.hu.nl",
+      "firstName": "Xander",
+      "lastName": "Vedder",
+      "password": "1234",
+      "role": "student",
+      "link": "universiteit-utrecht"
+    }
+  ]
+}

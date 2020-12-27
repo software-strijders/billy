@@ -1,5 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 
+import { store } from "../../js/store.js";
+import { actions } from "../../js/login.js";
+
 // TODO: This is not really appropriate to be a component, it should be split into
 // smaller components
 class LoginWindow extends LitElement {
@@ -31,13 +34,13 @@ class LoginWindow extends LitElement {
         border-radius: 100px;
       }
 
-      .register__link {
+      .redirect__link {
         margin-top: 10px;
         color: white;
         font-size: 13px;
       }
 
-      .register__link--show {
+      .redirect__link--show {
         display: inline-block;
       }
 
@@ -61,9 +64,11 @@ class LoginWindow extends LitElement {
       <div class="wrapper">
         <div class="field">
           <input
+            @keyup="${this.handleKeyUp}"
             aria-label="e-mail"
             placeholder="E-mail"
             class="field__input"
+            id="email--input"
             type="text"
           />
         </div>
@@ -72,9 +77,11 @@ class LoginWindow extends LitElement {
       <div class="wrapper">
         <div class="field">
           <input
+            @keyup="${this.handleKeyUp}"
             aria-label="wachtwoord"
             placeholder="Wachtwoord"
             class="field__input"
+            id="password--input"
             type="password"
           />
         </div>
@@ -82,11 +89,48 @@ class LoginWindow extends LitElement {
 
       <div class="wrapper">
         <div class="field">
-          <button class="field__button" onclick="">Inloggen</button>
+          <button class="field__button" @click="${this.login}">Inloggen</button>
         </div>
-        <a class="register__link register__link--show" href="">Nog geen account? Registreer hier</a>
+        <a class="redirect__link redirect__link--show" href=""
+          >Nog geen account? Registreer hier</a
+        >
+        <a class="redirect__link redirect__link--show" href="./index.html"
+          >Terug naar homepagina</a
+        >
       </div>
     `;
+  }
+
+  login() {
+    const emailInput = this.shadowRoot.querySelector("#email--input").value;
+    const passwordInput = this.shadowRoot.querySelector("#password--input").value;
+
+    fetch("/assets/json/accounts.json")
+      .then((response) => response.json())
+      .then((data) =>
+        data.accounts.forEach((account) => {
+          if (
+            account.email === emailInput &&
+            account.password === passwordInput
+          ) {
+            window.localStorage.setItem("data", JSON.stringify(
+              {
+                "email": account.email,
+                "firstName": account.firstName,
+                "lastName": account.lastName,
+                "role": account.role,
+                "link": account.link
+              }));
+            window.location.replace("../../index.html");
+          }
+        }),
+      );
+  }
+
+  handleKeyUp(e) {
+    if (e.key === 'Enter') {
+      this.login();
+    }
   }
 }
 
