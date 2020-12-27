@@ -59,7 +59,7 @@ class Results extends LitElement {
             : this.articlePreviews.map((article) => {
                 return html`
                   <billy-result-item
-                    href="${article.href}"
+                    href="/article${article.link}"
                     title="${article.title}"
                     description="${article.description}"
                     readTime="${article.readTime}"
