@@ -26,35 +26,35 @@ class SideBar extends LitElement {
         <billy-category-option
           style="height: unset"
           text="Analyse"
-          icon="./assets/analyse-icon.svg"
+          icon="./assets/icon/analyse-icon.svg"
           href="./analyse.html"
           sidebar
         ></billy-category-option>
         <billy-category-option
           style="height: unset"
           text="Advies"
-          icon="./assets/advice-icon.svg"
+          icon="./assets/icon/advice-icon.svg"
           href="./advice.html"
           sidebar
         ></billy-category-option>
         <billy-category-option
           style="height: unset"
           text="Ontwerp"
-          icon="./assets/design-icon.svg"
+          icon="./assets/icon/design-icon.svg"
           href="./design.html"
           sidebar
         ></billy-category-option>
         <billy-category-option
           style="height: unset"
           text="Realisatie"
-          icon="./assets/realize-icon.svg"
+          icon="./assets/icon/realize-icon.svg"
           href="./realize.html"
           sidebar
         ></billy-category-option>
         <billy-category-option
           style="height: unset"
           text="Beheer"
-          icon="./assets/manage-icon.svg"
+          icon="./assets/icon/manage-icon.svg"
           href="./manage.html"
           sidebar
         ></billy-category-option>

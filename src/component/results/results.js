@@ -91,6 +91,7 @@ class Results extends LitElement {
           levenshtein.get(article.title, this.query) < 4
         );
       });
+
       this.requestUpdate();
     });
   }
