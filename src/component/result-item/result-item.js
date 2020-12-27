@@ -56,7 +56,7 @@ class ResultItem extends LitElement {
         border-radius: 20px;
         margin: 0 10px 0 0;
         padding: 5px 10px;
-        cursor: "select";
+        cursor: select;
         font-size: 15px;
       }
     `;

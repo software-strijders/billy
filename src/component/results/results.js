@@ -13,10 +13,6 @@ class Results extends LitElement {
     this._getResultItems();
   }
 
-  static get properties() {
-    return {};
-  }
-
   static getStyles() {
     return css`
       :host {
@@ -82,8 +78,6 @@ class Results extends LitElement {
     let urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has("q")) {
       return urlParams.get("q");
-    } else {
-      /* Display error message */
     }
   }
 
@@ -91,15 +85,12 @@ class Results extends LitElement {
     this.query = this._getQuery();
 
     parseJson(mockDataPath).then((json) => {
-      for (let num in json.articles) {
-        let item = json.articles[num];
-
-        if (item.title.search(new RegExp(this.query, "i")) >= 0) {
-          this.articlePreviews.push(item);
-        } else if (levenshtein.get(item.title, this.query) < 4) {
-          this.articlePreviews.push(item);
-        }
-      }
+      this.articlePreviews = json.articles.filter((article) => {
+        return (
+          article.title.search(new RegExp(this.query, "i")) >= 0 ||
+          levenshtein.get(article.title, this.query) < 4
+        );
+      });
       this.requestUpdate();
     });
   }

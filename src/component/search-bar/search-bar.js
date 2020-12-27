@@ -119,9 +119,9 @@ class SearchBar extends LitElement {
   }
 
   _search(event) {
-    let query = this._getSearchInput();
-    window.location.href =
-      "http://" + window.location.host + "/search?q=" + query;
+    window.location.href = `http://${
+      window.location.host
+    }/search?q=${this._getSearchInput()};`;
   }
 }
 
