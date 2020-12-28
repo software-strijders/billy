@@ -8,9 +8,11 @@ class Results extends LitElement {
   constructor() {
     super();
 
+    this.isFinished = false;
     this.query = "";
     this.articlePreviews = [];
     this._getResultItems();
+    this._getCategoryResultItems();
   }
 
   static getStyles() {
@@ -79,6 +81,41 @@ class Results extends LitElement {
     if (urlParams.has("q")) {
       return urlParams.get("q");
     }
+  }
+
+  _getSubCategory() {
+    let urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("sc")) {
+      return urlParams.get("sc");
+    }
+    return null;
+  }
+
+  _getHeadCategory() {
+    let urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("hc")) {
+      return urlParams.get("hc");
+    }
+    return null;
+  }
+
+  _getCategoryResultItems() {
+    let headCategory = this._getHeadCategory();
+    let subCategory = this._getSubCategory();
+
+    if (headCategory === null) {
+      return;
+    }
+
+    parseJson(mockDataPath).then((json) => {
+      this.articlePreviews = json.articles.filter((article) => {
+        return subCategory === null
+          ? article.headCategory === headCategory
+          : article.headCategory === headCategory &&
+              article.subCategory === subCategory;
+      });
+      this.requestUpdate();
+    });
   }
 
   _getResultItems() {

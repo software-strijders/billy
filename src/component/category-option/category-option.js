@@ -1,6 +1,14 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 
+const subCategoryOptions = {
+  interaction: "Gebruikersinteractie",
+  organizationProcess: "Organisatie processen",
+  infrastructure: "Infrastructuur",
+  software: "Software",
+  hardwareInterfacing: "Hardware interfacing",
+};
+
 class CategoryOption extends LitElement {
   static get properties() {
     return {
@@ -120,23 +128,23 @@ class CategoryOption extends LitElement {
     return html`
       <div class="popOut ${classMap({ "popOut--sideBar": this.sideBar })}">
         <div class="popOut__option">
-          <a href="#" class="popOut__link">Gebruikersinteractie</a>
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}" class="popOut__link">${subCategoryOptions.interaction}</a>
           <hr class="popOut__line">
         </div>
         <div class="popOut__option">
-          <a href="#" class="popOut__link">Organisatie processen</a>
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}" class="popOut__link">${subCategoryOptions.organizationProcess}</a>
           <hr class="popOut__line">
         </div>
         <div class="popOut__option">
-          <a href="#" class="popOut__link">Infrastructuur</a>
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}" class="popOut__link">${subCategoryOptions.infrastructure}</a>
           <hr class="popOut__line">
         </div>
         <div class="popOut__option">
-          <a href="#" class="popOut__link">Software</a>
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.software}" class="popOut__link">${subCategoryOptions.software}</a>
           <hr class="popOut__line">
         </div>
         <div class="popOut__option">
-          <a href="#" class="popOut__link">Hardware interfacing</a>
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}" class="popOut__link">${subCategoryOptions.hardwareInterfacing}</a>
           <hr class="popOut__line">
         </div>
         <div class="popOut__pointerContainer">
@@ -145,9 +153,9 @@ class CategoryOption extends LitElement {
       </div>
       <a class="category ${classMap({
         "category--sideBar": this.sideBar,
-      })}" ClassMap href="${this.href}">
+      })}" href="/search?hc=${this.text}">
         <div>
-          <img alt="" class="category__image" src="${this.icon}"></img>
+          <img alt="" class="category__image" src="${this.icon}">
           <p class="category__text">${this.text}</p>
         </div>
       </a>
