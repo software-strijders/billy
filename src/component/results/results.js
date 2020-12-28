@@ -10,9 +10,14 @@ class Results extends LitElement {
 
     this.isFinished = false;
     this.query = "";
-    this.articlePreviews = [];
+    this.previews = [];
     this._getResultItems();
-    this._getCategoryResultItems();
+  }
+
+  static get properties() {
+    return {
+      isFinished: { type: Boolean },
+    };
   }
 
   static getStyles() {
@@ -56,9 +61,9 @@ class Results extends LitElement {
         </h1>
         <hr class="results__hr" />
         <div id="resultItems" class="results__items">
-          ${this.articlePreviews.length === 0
+          ${this.previews.length === 0 && this.isFinished
             ? html`<billy-no-result></billy-no-result>`
-            : this.articlePreviews.map((article) => {
+            : this.previews.map((article) => {
                 return html`
                   <billy-result-item
                     href="/article${article.link}"
@@ -76,60 +81,44 @@ class Results extends LitElement {
     `;
   }
 
-  _getQuery() {
-    let urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("q")) {
-      return urlParams.get("q");
-    }
+  _filterByText(text) {
+    if (text === null) return;
+
+    this.query = text;
+    this.previews = this.previews.filter((article) => {
+      return (
+        // Check if the literal text is in the title.
+        article.title.search(new RegExp(text, "i")) >= 0 ||
+        // Check if there is text that looks like what was searched.
+        levenshtein.get(article.title, text) < 4
+      );
+    });
   }
 
-  _getSubCategory() {
-    let urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("sc")) {
-      return urlParams.get("sc");
-    }
-    return null;
-  }
+  _filterByCategories(headCategory, subCategory) {
+    if (headCategory === null) return;
 
-  _getHeadCategory() {
-    let urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("hc")) {
-      return urlParams.get("hc");
-    }
-    return null;
-  }
-
-  _getCategoryResultItems() {
-    let headCategory = this._getHeadCategory();
-    let subCategory = this._getSubCategory();
-
-    if (headCategory === null) {
-      return;
-    }
-
-    parseJson(mockDataPath).then((json) => {
-      this.articlePreviews = json.articles.filter((article) => {
-        return subCategory === null
-          ? article.headCategory === headCategory
-          : article.headCategory === headCategory &&
-              article.subCategory === subCategory;
-      });
-      this.requestUpdate();
+    this.previews = this.previews.filter((article) => {
+      return subCategory === null
+        ? article.headCategory === headCategory
+        : article.headCategory === headCategory &&
+            article.subCategory === subCategory;
     });
   }
 
   _getResultItems() {
-    this.query = this._getQuery();
-
     parseJson(mockDataPath).then((json) => {
-      this.articlePreviews = json.articles.filter((article) => {
-        return (
-          article.title.search(new RegExp(this.query, "i")) >= 0 ||
-          levenshtein.get(article.title, this.query) < 4
-        );
-      });
+      this.previews = json.articles;
 
-      this.requestUpdate();
+      // Filter based on the (optional) query parameters
+      let urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has("q"))
+        this._filterByText(urlParams.get("q"));
+      if (urlParams.has("hc"))
+        this._filterByCategories(urlParams.get("hc"), urlParams.get("sc"));
+
+      // Only render when filtering has finished.
+      this.isFinished = true;
     });
   }
 }
