@@ -1,31 +1,31 @@
 {
-    "articles": [
-        {
-            "title": "User Story",
-            "link": "/UserStory",
-            "headCategory": "Analyse",
-            "subCategory": "Gebruikers Interactie",
-            "description": "Fuga perspiciatis sint beatae deleniti enim et facere ad. Et id et voluptas consequuntur hic autem sunt natus. Dolor inventore vitae mollitia exercitationem et ex facilis. Nesciunt laborum similique ea suscipit voluptatibus. Et vel molestiae ea velit vitae voluptatum temporibus repudiandae. Eos nulla assumenda magni et quis eligendi.",
-            "readTime": 5,
-            "lastRevised": "2020-02-11"
-        },
-        {
-            "title": "Usability Testing",
-            "link": "/UsabilityTesting",
-            "headCategory": "Realisatie",
-            "subCategory": "Gebruikers Interactie",
-            "description": "Ad et qui reprehenderit voluptatem occaecati est. Accusamus debitis quo voluptas. Nemo modi id in eaque et sint odit. Ratione libero atque deleniti dolor consequatur fuga similique. Facere dolores tempora voluptate est ratione.",
-            "readTime": 1,
-            "lastRevised": "2018-03-06"
-        },
-        {
-            "title": "Infrastructuur Ontwerpen",
-            "link": "/InfrastructuurOntwerpen",
-            "headCategory": "Ontwerp",
-            "subCategory": "Infrastructuur",
-            "description": "Consequatur nihil incidunt eum ea. Ipsa iusto ut rem. Enim assumenda ea maxime enim eligendi quia accusantium. Totam eos labore rerum cupiditate ut suscipit et quia. Quo voluptates magnam quod sunt qui sequi ut. Tempora reprehenderit consectetur non incidunt qui.",
-            "readTime": 11,
-            "lastRevised": "2020-01-10"
-        }
-    ]
+  "articles": [
+    {
+      "title": "User Story",
+      "link": "/UserStory",
+      "headCategory": "Analyse",
+      "subCategory": "Gebruikers Interactie",
+      "description": "Fuga perspiciatis sint beatae deleniti enim et facere ad. Et id et voluptas consequuntur hic autem sunt natus. Dolor inventore vitae mollitia exercitationem et ex facilis. Nesciunt laborum similique ea suscipit voluptatibus. Et vel molestiae ea velit vitae voluptatum temporibus repudiandae. Eos nulla assumenda magni et quis eligendi.",
+      "readTime": 5,
+      "lastRevised": "2020-02-11"
+    },
+    {
+      "title": "Usability Testing",
+      "link": "/UsabilityTesting",
+      "headCategory": "Realisatie",
+      "subCategory": "Gebruikers Interactie",
+      "description": "Ad et qui reprehenderit voluptatem occaecati est. Accusamus debitis quo voluptas. Nemo modi id in eaque et sint odit. Ratione libero atque deleniti dolor consequatur fuga similique. Facere dolores tempora voluptate est ratione.",
+      "readTime": 1,
+      "lastRevised": "2018-03-06"
+    },
+    {
+      "title": "Infrastructuur Ontwerpen",
+      "link": "/InfrastructuurOntwerpen",
+      "headCategory": "Ontwerp",
+      "subCategory": "Infrastructuur",
+      "description": "Consequatur nihil incidunt eum ea. Ipsa iusto ut rem. Enim assumenda ea maxime enim eligendi quia accusantium. Totam eos labore rerum cupiditate ut suscipit et quia. Quo voluptates magnam quod sunt qui sequi ut. Tempora reprehenderit consectetur non incidunt qui.",
+      "readTime": 11,
+      "lastRevised": "2020-01-10"
+    }
+  ]
 }
