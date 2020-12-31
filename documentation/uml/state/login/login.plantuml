@@ -1,4 +1,4 @@
-@startuml
+@startuml login
 state Login {
     state "Anonymous" as A
     state "Logged in" as L
