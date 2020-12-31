@@ -4,7 +4,7 @@
       "title": "User Story",
       "link": "/UserStory",
       "headCategory": "Analyse",
-      "subCategory": "Gebruikers Interactie",
+      "subCategory": "Gebruikersinteractie",
       "description": "Fuga perspiciatis sint beatae deleniti enim et facere ad. Et id et voluptas consequuntur hic autem sunt natus. Dolor inventore vitae mollitia exercitationem et ex facilis. Nesciunt laborum similique ea suscipit voluptatibus. Et vel molestiae ea velit vitae voluptatum temporibus repudiandae. Eos nulla assumenda magni et quis eligendi.",
       "readTime": 5,
       "lastRevised": "2020-02-11"
@@ -13,7 +13,7 @@
       "title": "Usability Testing",
       "link": "/UsabilityTesting",
       "headCategory": "Realisatie",
-      "subCategory": "Gebruikers Interactie",
+      "subCategory": "Gebruikersinteractie",
       "description": "Ad et qui reprehenderit voluptatem occaecati est. Accusamus debitis quo voluptas. Nemo modi id in eaque et sint odit. Ratione libero atque deleniti dolor consequatur fuga similique. Facere dolores tempora voluptate est ratione.",
       "readTime": 1,
       "lastRevised": "2018-03-06"
@@ -26,6 +26,159 @@
       "description": "Consequatur nihil incidunt eum ea. Ipsa iusto ut rem. Enim assumenda ea maxime enim eligendi quia accusantium. Totam eos labore rerum cupiditate ut suscipit et quia. Quo voluptates magnam quod sunt qui sequi ut. Tempora reprehenderit consectetur non incidunt qui.",
       "readTime": 11,
       "lastRevised": "2020-01-10"
+    },
+    {
+      "title": "BPMN Diagram maken",
+      "link": "/BPMN",
+      "headCategory": "Analyse",
+      "subCategory": "Organisatie processen",
+      "description": "Non si conosce con esattezza il periodo della nascita di questo formaggio. Da alcune fonti viene datato all'anno 879, anche se sembra non contenesse venature colorate prima dell'XI secolo. Molte più tracce storiche se ne hanno a partire del XV secolo nella cittadina di Gorgonzola, nei pressi di Milano.",
+      "readTime": 8,
+      "lastRevised": "2020-12-30"
+    },
+    {
+      "title": "Hardware interfacing adviseren",
+      "link": "/Hardware-interfacing-adviseren",
+      "headCategory": "Advies",
+      "subCategory": "Hardware interfacing",
+      "description": "Narra infatti la leggenda che un mandriano, arrivato a Gorgonzola, lasciò in un recipiente del latte cagliato; in una sosta successiva, essendo sprovvisto degli utensili necessari per la lavorazione del latte, aggiunse alla prima cagliata un'altra cagliata.",
+      "readTime": 20,
+      "lastRevised": "2020-11-06"
+    },
+    {
+      "title": "Wireframes",
+      "link": "/Wireframes",
+      "headCategory": "Ontwerp",
+      "subCategory": "Software",
+      "description": " Dopo diversi giorni si accorse di aver ottenuto un formaggio con delle venature verdi molto appetitoso per la mescolanza della cagliata fredda della sera con la cagliata tiepida del mattino.",
+      "readTime": 2,
+      "lastRevised": "2020-01-22"
+    },
+    {
+      "title": "JAVA",
+      "link": "/JAVA",
+      "headCategory": "Realisatie",
+      "subCategory": "Software",
+      "description": " Oggi con le nuove tecniche di fabbricazione si ottiene un prodotto igienicamente molto più valido. Nell'Ottocento la produzione di questo formaggio crebbe sensibilmente ed esso venne esportato, oltre che in altri territori italiani, anche in Inghilterra.",
+      "readTime": 31,
+      "lastRevised": "2020-02-11"
+    },
+    {
+      "title": "C++",
+      "link": "/C++",
+      "headCategory": "Realisatie",
+      "subCategory": "Hardware interfacing",
+      "description": "Nel 1996, il formaggio gorgonzola è stato riconosciuto dalla Comunità Europea e registrato nella lista dei prodotti DOP con Reg. Cee n° 1107/96. La forma, del peso di 12 kg circa, riporta su entrambe le facce il marchio di origine e viene avvolta in fogli di alluminio riportanti il contrassegno caratteristico della denominazione protetta 'gorgonzola'.",
+      "readTime": 55,
+      "lastRevised": "2019-11-12"
+    },
+    {
+      "title": "C",
+      "link": "/C",
+      "headCategory": "Realisatie",
+      "subCategory": "Software",
+      "description": "Il gorgonzola è prodotto in Italia più precisamente Lombardia e Piemonte, precisamente nelle province di Bergamo, Brescia, Biella, Como, Cremona, Cuneo, Lecco, Lodi, Milano, Monza-Brianza, Novara, Pavia, Varese, Verbania-Cusio-Ossola, Vercelli ed alcuni comuni dell'Alessandrino.",
+      "readTime": 12,
+      "lastRevised": "2018-11-11"
+    },
+    {
+      "title": "C#",
+      "link": "/C#",
+      "headCategory": "Realisatie",
+      "subCategory": "Software",
+      "description": "Il formaggio gorgonzola DOP per essere definito come tale, deve rispettare il disciplinare di produzione; lo stesso prevede che per la sua produzione si utilizzi unicamente latte vaccino pastorizzato, quindi l'utilizzo di latte di pecora o capra o bufala non è consentito. Non può nemmeno fregiarsi del nome di gorgonzola un prodotto caseario composto da gorgonzola e altri ingredienti aggiuntivi non previsti dal disciplinare (ad esempio: mascarpone, peperoncino, zafferano, ecc.).",
+      "readTime": 33,
+      "lastRevised": "2016-12-22"
+    },
+    {
+      "title": "Raspberry Pi",
+      "link": "/Raspberry-pi",
+      "headCategory": "Beheer",
+      "subCategory": "Hardware interfacing",
+      "description": "Nel passato il comune di Gorgonzola ha perso una causa con il consorzio di tutela del Gorgonzola DOP[6]: il motivo era il tentativo di mettere in commercio (durante la fiera annuale) un 'gorgonzola' De.co e quindi prodotto nel territorio comunale, consistente in uno stracchino erborinato a latte crudo misto (vaccino-caprino). Pertanto, l'unico formaggio la cui denominazione può contenere il nome Gorgonzola è unicamente il gorgonzola DOP, etichettato e certificato come tale.",
+      "readTime": 11,
+      "lastRevised": "2020-01-10"
+    },
+    {
+      "title": "Arduino",
+      "link": "/Arduino",
+      "headCategory": "Beheer",
+      "subCategory": "Hardware interfacing",
+      "description": "Consequatur nihil incidunt eum ea. Ipsa iusto ut rem. Enim assumenda ea maxime enim eligendi quia accusantium. Totam eos labore rerum cupiditate ut suscipit et quia. Quo voluptates magnam quod sunt qui sequi ut. Tempora reprehenderit consectetur non incidunt qui.",
+      "readTime": 14,
+      "lastRevised": "2020-01-30"
+    },
+    {
+      "title": "State Diagram",
+      "link": "/State-diagram",
+      "headCategory": "Ontwerp",
+      "subCategory": "Software",
+      "description": "La differenza sostanziale tra la versione dolce e quella piccante, nel processo produttivo, sta nel fatto che il piccante ha stagionatura maggiore di 50 giorni (che è quella per il dolce) ovvero almeno 80 giorni, sebbene vi siano affinatori che producono gorgonzola piccante 'riserva' con stagionature di addirittura 10-12 mesi. Per il piccante si utilizzano combinazioni di penicillium specifici.",
+      "readTime": 20,
+      "lastRevised": "2020-01-15"
+    },
+    {
+      "title": "Sitemap",
+      "link": "/Sitemap",
+      "headCategory": "Ontwerp",
+      "subCategory": "Software",
+      "description": "Da notare che per il gorgonzola moderno i ceppi di penicillium sono di tipo selezionato e aggiunto (nel latte); nel secoli scorsi le muffe erano invece quelle derivate dall'ambiente di stagionatura (grotte in primis) che è la situazione attuale di altri formaggi ad erborinatura naturale ovvero con muffe non aggiunte (standard/industriali o locali che siano).",
+      "readTime": 1,
+      "lastRevised": "1988-01-12"
+    },
+    {
+      "title": "Infrastructuur Ontwerpen",
+      "link": "/InfrastructuurOntwerpen",
+      "headCategory": "Ontwerp",
+      "subCategory": "Infrastructuur",
+      "description": "Consequatur nihil incidunt eum ea. Ipsa iusto ut rem. Enim assumenda ea maxime enim eligendi quia accusantium. Totam eos labore rerum cupiditate ut suscipit et quia. Quo voluptates magnam quod sunt qui sequi ut. Tempora reprehenderit consectetur non incidunt qui.",
+      "readTime": 11,
+      "lastRevised": "2020-01-10"
+    },
+    {
+      "title": "Use Case",
+      "link": "/Use-case",
+      "headCategory": "Ontwerp",
+      "subCategory": "Software",
+      "description": "Oltre che essere consumato da solo o spalmato su una fetta di pane, il gorgonzola è ingrediente di molti piatti della cucina lombardo/piemontese, dal risotto alla pasta alle scaloppine, spesso abbinato con altri formaggi meno piccanti ma più consistenti. È ingrediente praticamente fondamentale della 'pasta ai quattro formaggi', sia nella versione 'alla bava' sia quella gratinata (compresa quella fatta con il riso). Gli altri tre formaggi (o più, in realtà) variano molto da ricetta a ricetta: uno di essi è necessariamente il parmigiano, grana o lodigiano grattugiati. Gli altri due sono generalmente formaggi dolci e fondenti, come la fontina o il valtellina, ma anche non italiani come l'emmentaler. Ancora, due classici abbinamenti del gorgonzola crudo, spesso combinati, sono con il mascarpone e le noci.",
+      "readTime": 45,
+      "lastRevised": "2017-05-10"
+    },
+    {
+      "title": "Hardware interface beheren",
+      "link": "/Hardware-interface-beheren",
+      "headCategory": "Beheer",
+      "subCategory": "Hardware interfacing",
+      "description": "Il gorgonzola richiede un vino rosso robusto e intenso (anche da uve appassite o da vendemmia tardiva, comunque secco o al più abboccato), ma è stato abbinato anche con morbidi vini bianchi o rosati e, per il tipo piccante, anche con vini da dessert o liquorosi tipo Marsala vergine o Porto (in questo caso meglio che il vino sia amabile/dolce).[senza fonte] Una classica associazione culinaria, soprattutto in uso nella provincia di Bergamo e nella Provincia di Brescia, è rappresentata da polenta e gorgonzola, da abbinarsi al Moscato di Scanzo (vino rosso moscato prodotto nell'omonimo comune di Scanzorosciate nella provincia di Bergamo).",
+      "readTime": 23,
+      "lastRevised": "2019-12-12"
+    },
+    {
+      "title": "Software beheren",
+      "link": "/Software-beheren",
+      "headCategory": "Beheer",
+      "subCategory": "Software",
+      "description": "Per l'ottimale conservazione del gorgonzola è sufficiente asportare la crosta ed avvolgere la fetta in foglio di alluminio, riponendola in una confezione salvafreschezza. Per grosse quantità invece, tagliato a fette sottili e avvolto sempre in fogli di alluminio, lo si ripone nel congelatore scongelando, volta per volta, la fetta da consumare entro breve tempo.",
+      "readTime": 56,
+      "lastRevised": "2020-09-14"
+    },
+    {
+      "title": "Versie beheer",
+      "link": "/Versie-beheer",
+      "headCategory": "Beheer",
+      "subCategory": "Gebruikersinteractie",
+      "description": "Giova sottolineare che 'gorgonzola' è una denominazione di origine protetta e non un tipo di formaggio. Anche se invalso nell'uso, è errato utilizzare il termine 'gorgonzola' per indicare un formaggio erborinato qualsiasi. Qualora questa confusione sia fatta nella vendita si tratta di frode in commercio. Questo utilizzo non rispettoso del termine gorgonzola è simile a quello che succede allo champagne per indicare un qualsiasi spumante.",
+      "readTime": 5,
+      "lastRevised": "2018-03-12"
+    },
+    {
+      "title": "Infrastructuur beheren",
+      "link": "/Infrastructuur-beheren",
+      "headCategory": "Beheer",
+      "subCategory": "Infrastructuur",
+      "description": "Un'indicazione sulla diffusione della tecnica di produzione viene data da un articolo del 1840 in cui si ricordava che finché i fabricatori di quel paese [Gorgonzola] conservarono il secreto delle principali circostanze, che intervengono a render ottimo questo latticinio, ne rimase loro un privilegio quasi esclusivo. Ma oramai si fabrica in varj altri luoghi di Lombardía col medesimo buon successo, benché quello che si fa nei contorni di Gorgonzóla conservi sempre in commercio un pregio maggiore",
+      "readTime": 24,
+      "lastRevised": "2017-12-22"
     }
   ]
 }
