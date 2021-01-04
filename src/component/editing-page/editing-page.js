@@ -102,6 +102,9 @@ class EditingPage extends LitElement {
       }
 
       .form__wrapper--links .form__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0;
       }
 
