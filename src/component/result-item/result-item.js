@@ -29,12 +29,12 @@ class ResultItem extends LitElement {
       }
 
       .resultItem__title {
-        color: var(--billy-color-result-item);
+        color: var(--billy-color-text-primary-dark);
         margin: 0 0 0 0;
       }
 
       .resultItem__description {
-        color: var(--billy-color-font-light);
+        color: var(--billy-color-text-secondary-dark);
         margin: 0;
         height: auto;
         overflow: hidden;
@@ -52,7 +52,7 @@ class ResultItem extends LitElement {
       }
 
       .resultItem__category {
-        background-color: var(--billy-color-light-grey);
+        background-color: var(--billy-color-background-light-grey);
         border-radius: 20px;
         margin: 0 10px 0 0;
         padding: 5px 10px;

@@ -41,13 +41,13 @@ class Results extends LitElement {
         height: var(--billy-line-height);
         border: none;
         border-radius: var(--billy-line-radius);
-        background-color: var(--billy-color-grey);
+        background-color: var(--billy-color-line-light);
       }
 
       .results__query {
-        background: var(--billy-gradient);
+        background: var(--billy-gradient-background-brand);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: var(--billy-color-transparent);
       }
     `;
   }
@@ -111,8 +111,7 @@ class Results extends LitElement {
 
       // Filter based on the (optional) query parameters
       let urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has("q"))
-        this._filterByText(urlParams.get("q"));
+      if (urlParams.has("q")) this._filterByText(urlParams.get("q"));
       if (urlParams.has("hc"))
         this._filterByCategories(urlParams.get("hc"), urlParams.get("sc"));
 

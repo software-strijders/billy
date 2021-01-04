@@ -26,13 +26,13 @@ class NoResultItem extends LitElement {
       }
 
       .noResultItem__title {
-        color: var(--billy-color-grey);
+        color: var(--billy-color-text-secondary-dark);
         font-size: 300px;
         margin: 10px 0;
       }
 
       .noResultItem__description {
-        color: var(--billy-color-grey);
+        color: var(--billy-color-text-secondary-dark);
         font-size: 50px;
         margin: 0;
         height: auto;

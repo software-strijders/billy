@@ -14,13 +14,16 @@
   --billy-color-background-light: #fff;
   --billy-color-background-light-grey: #ebebeb;
   --billy-color-background-dark: #000;
-  --billy-color-background-sidebar: #eaeef1;
+
+  --billy-color-line-light: #ebebeb;
 
   --billy-color-button-light: #fff;
   --billy-color-button-dark: #000;
 
   --billy-color-text-primary-light: #fff;
   --billy-color-text-primary-dark: #000;
+  --billy-color-text-secondary-light: #ebebeb;
+  --billy-color-text-secondary-dark: #a8a4a4;
   --billy-color-text-hint: #7e7e7e;
 
   --billy-gradient-background-brand: linear-gradient(

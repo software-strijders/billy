@@ -21,7 +21,7 @@ class TopBar extends LitElement {
       .topBar {
         width: 100%;
         height: var(--billy-top-bar-height);
-        background: var(--billy-gradient-bar);
+        background: var(--billy-gradient-background-brand);
         box-shadow: var(--billy-box-shadow-lighter);
       }
 
@@ -57,7 +57,7 @@ class TopBar extends LitElement {
       }
 
       .topBar__logo {
-        color: var(--billy-color-white);
+        color: var(--billy-color-text-primary-light);
         text-decoration: none;
         font-size: 45px;
         font-weight: bold;
