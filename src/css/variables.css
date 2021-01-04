@@ -3,6 +3,11 @@
     TODO: These names should be called different...
     It shouldn't describe the color, rather the component its coloring instead.
   */
+  --billy-remove-gradient: linear-gradient(
+    to bottom right,
+    #FC4C4C,
+    #E51B1B
+  );
   --billy-color-turquoise: #4c74fc;
   --billy-color-blue: #801be5;
   --billy-color-white: #fff;
@@ -15,10 +20,8 @@
   --billy-color-result-item: var(--billy-color-blue);
   --billy-color-side-bar: #eaeef1;
   --billy-color-transparent: transparent;
-
   --billy-color-font-light: #7e7e7e;
   --billy-color-font-dark: var(--billy-color-dark);
-
   --billy-gradient: linear-gradient(
     to bottom right,
     var(--billy-color-turquoise),
@@ -29,13 +32,11 @@
     var(--billy-color-turquoise),
     var(--billy-color-blue)
   );
-
   --billy-color-shadow: rgba(0, 0, 0, 0.25);
   --billy-color-shadow-lighter: rgba(0, 0, 0, 0.15);
   --billy-box-shadow: 0 5px 10px var(--billy-color-shadow);
   --billy-box-shadow-lighter: 0 5px 10px var(--billy-color-shadow-lighter);
   --billy-text-shadow: 0 5px 10px var(--billy-color-shadow);
-
   --billy-font-family: "Aller";
 
   /* Dimens: */
@@ -65,14 +66,15 @@
   --billy-edit-page-form-wrapper-padding-first: 0 0 10px 0;
   --billy-edit-page-form-label-title-margin: 0 0 10px 0;
   --billy-edit-page-form-label-font-size: 22px;
-  --billy-edit-page-form-input-padding: 10px;
-  --billy-edit-page-form-input-font-size: 18px;
+  --billy-edit-page-form-input-height: 45px;
+  --billy-edit-page-form-input-padding: 0 10px;
+  --billy-edit-page-form-input-font-size: 16px;
   --billy-edit-page-form-select-height: 44px;
   --billy-edit-page-form-select-width: 200px;
   --billy-edit-page-form-select-background-image-url: url("../../assets/icon/select-dropdown.svg");
   --billy-edit-page-form-select-background-position: 95%;
   --billy-edit-page-form-select-background-position-hover: 95% 65%;
-  --billy-edit-page-form-select-padding: 10px;
+  --billy-edit-page-form-select-padding: 0 10px;
   --billy-edit-page-form-button-padding: 12px 25px;
   --billy-edit-page-form-button-background-size: 100% 100%;
   --billy-edit-page-form-button-background-size-hover: 200% 200%;

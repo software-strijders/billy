@@ -1,6 +1,5 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
-import { unsafeHTML } from "lit-html/directives/unsafe-html";
 
 class EditingPage extends LitElement {
   constructor() {
@@ -10,10 +9,12 @@ class EditingPage extends LitElement {
     this._mainCategory = "Analyse";
     this._subCategory = "Gebruikersinteractie";
     this._htmlData = "";
+    this.links = [{ text: "", href: "", save: false, }];
   }
 
   static get properties() {
     return {
+      links:       { type: Array   },
       showPreview: { type: Boolean },
     };
   }
@@ -80,6 +81,28 @@ class EditingPage extends LitElement {
         justify-content: flex-end;
       }
 
+      .form__wrapper--links {
+        flex-direction: column;
+      }
+
+      .form__wrapper--links .form__label {
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .form__wrapper--links .form__input {
+        flex-grow: 1;
+        margin: 0 25px 0 0;
+      }
+
+      .form__wrapper--links .form__button {
+        padding: 0;
+      }
+
+      .form__wrapper--links .form__button:not(:last-child) {
+        margin: 0 25px 0 0;
+      }
+
       .form__label {
         display: flex;
         flex-direction: column;
@@ -92,6 +115,7 @@ class EditingPage extends LitElement {
       }
 
       .form__input {
+        height: calc(var(--billy-edit-page-form-input-height) - var(--billy-border-size));
         border: var(--billy-border-size) solid var(--billy-color-grey);
         border-radius: var(--billy-edit-page-radius);
         padding: var(--billy-edit-page-form-input-padding);
@@ -118,6 +142,22 @@ class EditingPage extends LitElement {
 
       .form__select:hover {
         background-position: var(--billy-edit-page-form-select-background-position-hover);
+      }
+
+      .form__link {
+        display: flex;
+        justify-content: center;
+        height: 45px;
+        margin: 0 0 20px 0;
+      }
+
+      .form__link:last-child {
+        margin: 0;
+      }
+
+      .form__link .form__labelTitle {
+        margin: 0 25px 0 0;
+        font-size: 18px;
       }
 
       .form__button {
@@ -148,6 +188,16 @@ class EditingPage extends LitElement {
       .form__button--grey:hover {
         background-color: var(--billy-color-grey);
       }
+
+      .form__button--remove {
+        background-image: var(--billy-remove-gradient);
+      }
+
+      .form__buttonImg {
+        height: 50%;
+        width: auto;
+        pointer-events: none;
+      }
     `;
   }
 
@@ -159,7 +209,7 @@ class EditingPage extends LitElement {
         <div class="form__wrapper form__wrapper--first">
           <label class="form__label" for="title">
             <h2 class="form__labelTitle">Titel</h1>
-            <input id="title" class="form__input" type="text"/>
+            <input id="title" class="form__input" type="text" />
           </label>
         </div>
         <div class="form__wrapper form__wrapper--select">
@@ -188,6 +238,36 @@ class EditingPage extends LitElement {
             </label>
           </div>
         </div>
+        <div class="form__wrapper form__wrapper--links">
+          <h2 class="form__labelTitle">Links</h2>
+          ${this.links.map((link, index) => {
+            return html`
+            <div class="form__link" data-index="${index}">
+              <label class="form__label" for="link-text-${index}">
+                <h3 class="form__labelTitle">Tekst</h2>
+                <input id="link-text-${index}" class="form__input" type="text" value="${link.text}">
+              </label>
+              <label class="form__label" for="link-href-${index}">
+                <h3 class="form__labelTitle">Link</h2>
+                <input id="link-href-${index}" class="form__input" type="url" value="${link.href}">
+              </label>
+              ${link.save 
+                ? html`
+                    <button class="form__button form__button--remove" type="button" @click="${this._removeLinkClick}">
+                      <img class="form__buttonImg" src="assets/icon/minus-icon.svg" alt="">
+                    </button>
+                  ` 
+                : html`
+                    <button class="form__button" type="button" @click="${this._addLinkClick}">
+                      <img class="form__buttonImg" src="assets/icon/plus-icon.svg" alt="">
+                    </button>
+                  ` 
+              }
+              </button>
+            </div>
+            `
+          })}
+        </div>
         <div class="form__wrapper">
           <billy-editor 
             @on-edit="${this._handleChange}"
@@ -204,6 +284,17 @@ class EditingPage extends LitElement {
     `;
   }
 
+  updated() {
+    const index = this.links.length - 1;
+    const links = this.shadowRoot.querySelectorAll(".form__link");
+
+    // Manually clear the values of the input fields.
+    // This is probably because LitElement caches elements inside of it, thus we have to resort to this:
+    const lastLink = [...links].pop();
+    lastLink.querySelector(`#link-text-${index}`).value = "";
+    lastLink.querySelector(`#link-href-${index}`).value = "";
+  }
+
   _handleChange(event) {
     this._htmlData = event.detail.html;
 
@@ -216,6 +307,23 @@ class EditingPage extends LitElement {
     this._title = this.shadowRoot.querySelector("#title").value
     this._mainCategory = this.shadowRoot.querySelector("#mainCategory option:checked").text;
     this._subCategory = this.shadowRoot.querySelector("#subCategory option:checked").text;
+  }
+
+  _addLinkClick(e) {
+    const parent = e.target.parentNode;
+    const index = this.links.length - 1;
+
+    const previousLink = this.links.pop();
+    previousLink.text = parent.querySelector(`#link-text-${index}`).value;
+    previousLink.href = parent.querySelector(`#link-href-${index}`).value;
+    previousLink.save = true;
+
+    this.links = [...this.links, previousLink, { text: "", href: "", save: false}];
+  }
+
+  _removeLinkClick(e) {
+    const index = parseInt(e.target.parentNode.dataset.index);
+    this.links = [...this.links.filter((item, _index) => _index !== index )];
   }
 
   _handleSaveClick() {
