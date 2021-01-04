@@ -1,6 +1,6 @@
 @startuml login
 state Login {
-    state "Anonymous" as A
+    state "Not logged in" as A
     state "Logged in" as L
 
     [*] --> A
