@@ -3,34 +3,36 @@
     TODO: These names should be called different...
     It shouldn't describe the color, rather the component its coloring instead.
   */
-  --billy-remove-gradient: linear-gradient(
-    to bottom right,
-    #FC4C4C,
-    #E51B1B
-  );
-  --billy-color-turquoise: #4c74fc;
-  --billy-color-blue: #801be5;
-  --billy-color-white: #fff;
-  --billy-color-red: #ee4a4a;
-  --billy-color-grey: #dddddd;
-  --billy-color-light-grey: #f0f0f0;
-  --billy-color-lighter-grey: #f5f5f5;
-  --billy-color-dark: #000;
-  --billy-color-light-grey: #ebebeb;
-  --billy-color-result-item: var(--billy-color-blue);
-  --billy-color-side-bar: #eaeef1;
+  --billy-color-brand-primary: #4c74fc;
+  --billy-color-brand-secondary: #801be5;
+
   --billy-color-transparent: transparent;
-  --billy-color-font-light: #7e7e7e;
-  --billy-color-font-dark: var(--billy-color-dark);
-  --billy-gradient: linear-gradient(
+
+  --billy-color-warning-primary: #fc4c4c;
+  --billy-color-waring-secondary: #e51b1b;
+
+  --billy-color-background-light: #fff;
+  --billy-color-background-light-grey: #ebebeb;
+  --billy-color-background-dark: #000;
+  --billy-color-background-sidebar: #eaeef1;
+
+  --billy-color-button-light: #fff;
+  --billy-color-button-dark: #000;
+
+  --billy-color-text-primary-light: #fff;
+  --billy-color-text-primary-dark: #000;
+  --billy-color-text-hint: #7e7e7e;
+
+  --billy-gradient-background-brand: linear-gradient(
     to bottom right,
-    var(--billy-color-turquoise),
-    var(--billy-color-blue)
+    var(--billy-color-brand-primary),
+    var(--billy-color-brand-secondary)
   );
-  --billy-gradient-bar: linear-gradient(
-    to right,
-    var(--billy-color-turquoise),
-    var(--billy-color-blue)
+
+  --billy-gradient-background-warning: linear-gradient(
+    to bottom right,
+    var(--billy-color-warning-primary),
+    var(--billy-color-waring-secondary)
   );
   --billy-color-shadow: rgba(0, 0, 0, 0.25);
   --billy-color-shadow-lighter: rgba(0, 0, 0, 0.15);
@@ -102,16 +104,17 @@
 }
 
 .contrast {
-  --billy-color-turquoise: #000;
-  --billy-color-blue: #000;
+  --billy-color-brand-primary: #000;
+  --billy-color-brand-secondary: #000;
   --billy-color-white: #fff;
-  --billy-gradient: #000;
+  --billy-gradient-background-brand: #000;
   --billy-color-side-bar: #fff;
   --billy-border: 3px solid #000;
   --billy-border-right: 2px solid #000;
   --billy-border-left: 2px solid #000;
   --billy-box-shadow-lighter: none;
   --billy-color-grey: #000;
+  --billy-color-button-dark: #fff;
   --billy-edit-page-form-button-background: linear-gradient(
     to right,
     var(--billy-color-dark),
