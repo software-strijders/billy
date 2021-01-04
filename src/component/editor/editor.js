@@ -50,7 +50,6 @@ class Editor extends LitElement {
         display: flex;
         flex-direction: column;
         height: var(--billy-editor-height);
-        width: var(--billy-editor-width);
         border: var(--billy-border-size) solid var(--billy-color-grey);
         border-radius: var(--billy-editor-radius);
         overflow: hidden;
