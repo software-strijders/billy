@@ -75,6 +75,7 @@ class TopBar extends LitElement {
         <ul class="topBar__list">
           <li class="topBar__item">
             <a class="topBar__logo" href="/">Billy</a>
+            <slot name="backItem">
           </li>
           <li class="topBar__item topBar__item--right">
             <slot name="item"></slot>

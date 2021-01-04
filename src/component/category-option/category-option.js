@@ -32,7 +32,7 @@ class CategoryOption extends LitElement {
 
       .category {
         text-decoration: none;
-        color: var(--billy-color-font-dark);
+        color: var(--billy-color-text-primary-dark);
       }
 
       .category--sideBar {
@@ -60,7 +60,7 @@ class CategoryOption extends LitElement {
         bottom: 240px;
         width: 200px;
         padding: 20px;
-        background-color: var(--billy-color-white);
+        background-color: var(--billy-color-background-light);
         border-radius: 10px;
         box-shadow: var(--billy-box-shadow);
         transition: 0.25s;
@@ -93,7 +93,7 @@ class CategoryOption extends LitElement {
 
       .popOut__link {
         text-decoration: none;
-        color: var(--billy-color-font-dark);
+        color: var(--billy-color-text-primary-dark);
         font-weight: bold;
       }
 
@@ -101,7 +101,7 @@ class CategoryOption extends LitElement {
         height: var(--billy-line-height);
         border: none;
         border-radius: var(--billy-line-radius);
-        background-color: var(--billy-color-light-grey);
+        background-color: var(--billy-color-background-light-grey);
       }
 
       .popOut__pointerContainer {
@@ -119,7 +119,7 @@ class CategoryOption extends LitElement {
         height: 0;
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
-        border-top: 20px solid var(--billy-color-light-grey);
+        border-top: 20px solid var(--billy-color-background-light-grey);
       }
     `;
   }
@@ -128,34 +128,60 @@ class CategoryOption extends LitElement {
     return html`
       <div class="popOut ${classMap({ "popOut--sideBar": this.sideBar })}">
         <div class="popOut__option">
-          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}" class="popOut__link">${subCategoryOptions.interaction}</a>
-          <hr class="popOut__line">
+          <a
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}"
+            class="popOut__link"
+            >${subCategoryOptions.interaction}</a
+          >
+          <hr class="popOut__line" />
         </div>
         <div class="popOut__option">
-          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}" class="popOut__link">${subCategoryOptions.organizationProcess}</a>
-          <hr class="popOut__line">
+          <a
+            href="/search?hc=${this
+              .text}&sc=${subCategoryOptions.organizationProcess}"
+            class="popOut__link"
+            >${subCategoryOptions.organizationProcess}</a
+          >
+          <hr class="popOut__line" />
         </div>
         <div class="popOut__option">
-          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}" class="popOut__link">${subCategoryOptions.infrastructure}</a>
-          <hr class="popOut__line">
+          <a
+            href="/search?hc=${this
+              .text}&sc=${subCategoryOptions.infrastructure}"
+            class="popOut__link"
+            >${subCategoryOptions.infrastructure}</a
+          >
+          <hr class="popOut__line" />
         </div>
         <div class="popOut__option">
-          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.software}" class="popOut__link">${subCategoryOptions.software}</a>
-          <hr class="popOut__line">
+          <a
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.software}"
+            class="popOut__link"
+            >${subCategoryOptions.software}</a
+          >
+          <hr class="popOut__line" />
         </div>
         <div class="popOut__option">
-          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}" class="popOut__link">${subCategoryOptions.hardwareInterfacing}</a>
-          <hr class="popOut__line">
+          <a
+            href="/search?hc=${this
+              .text}&sc=${subCategoryOptions.hardwareInterfacing}"
+            class="popOut__link"
+            >${subCategoryOptions.hardwareInterfacing}</a
+          >
+          <hr class="popOut__line" />
         </div>
         <div class="popOut__pointerContainer">
           <div class="popOut__pointer"></div>
         </div>
       </div>
-      <a class="category ${classMap({
-        "category--sideBar": this.sideBar,
-      })}" href="/search?hc=${this.text}">
+      <a
+        class="category ${classMap({
+          "category--sideBar": this.sideBar,
+        })}"
+        href="/search?hc=${this.text}"
+      >
         <div>
-          <img alt="" class="category__image" src="${this.icon}">
+          <img alt="" class="category__image" src="${this.icon}" />
           <p class="category__text">${this.text}</p>
         </div>
       </a>

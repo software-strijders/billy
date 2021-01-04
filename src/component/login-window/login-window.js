@@ -42,7 +42,7 @@ class LoginWindow extends LitElement {
       }
 
       .field__button {
-        background-color: var(--billy-color-dark);
+        background-color: var(--billy-color-button-dark);
         color: var(--billy-color-white);
         height: 100%;
         margin: 0;
@@ -91,16 +91,14 @@ class LoginWindow extends LitElement {
         <a class="redirect__link redirect__link--show" href=""
           >Nog geen account? Registreer hier</a
         >
-        <a class="redirect__link redirect__link--show" href="./index.html"
-          >Terug naar homepagina</a
-        >
       </div>
     `;
   }
 
   login() {
     const emailInput = this.shadowRoot.querySelector("#email--input").value;
-    const passwordInput = this.shadowRoot.querySelector("#password--input").value;
+    const passwordInput = this.shadowRoot.querySelector("#password--input")
+      .value;
 
     fetch("/assets/mock/accounts.json")
       .then((response) => response.json())
@@ -110,14 +108,16 @@ class LoginWindow extends LitElement {
             account.email === emailInput &&
             account.password === passwordInput
           ) {
-            window.localStorage.setItem("data", JSON.stringify(
-              {
-                "email": account.email,
-                "firstName": account.firstName,
-                "lastName": account.lastName,
-                "role": account.role,
-                "link": account.link
-              }));
+            window.localStorage.setItem(
+              "data",
+              JSON.stringify({
+                email: account.email,
+                firstName: account.firstName,
+                lastName: account.lastName,
+                role: account.role,
+                link: account.link,
+              }),
+            );
             window.location.replace("/");
           }
         }),
@@ -125,7 +125,7 @@ class LoginWindow extends LitElement {
   }
 
   handleKeyUp(e) {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       this.login();
     }
   }

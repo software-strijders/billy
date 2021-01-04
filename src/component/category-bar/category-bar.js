@@ -9,7 +9,7 @@ class CategoryBar extends LitElement {
         grid-gap: 10px;
         justify-items: center;
         align-items: center;
-        background-color: var(--billy-color-white);
+        background-color: var(--billy-color-background-light);
         width: 100%;
         height: 200px;
         margin-top: auto;
@@ -18,10 +18,11 @@ class CategoryBar extends LitElement {
   }
 
   render() {
-    return html` 
-    <div class="categoryBar">
-      <slot></slot>
-    </div> `;
+    return html`
+      <div class="categoryBar">
+        <slot></slot>
+      </div>
+    `;
   }
 }
 

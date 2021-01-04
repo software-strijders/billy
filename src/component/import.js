@@ -20,3 +20,4 @@ import "./result-item/no-result.js";
 import "./search-bar/search-bar.js";
 import "./side-bar/side-bar.js";
 import "./top-bar/top-bar.js";
+import "./back-arrow/back-arrow.js";

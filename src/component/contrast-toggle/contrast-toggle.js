@@ -34,7 +34,7 @@ class ContrastToggle extends LitElement {
         transition: 0.3s;
         display: flex;
         align-items: center;
-        background-color: var(--billy-color-dark);
+        background-color: var(--billy-color-background-dark);
         height: 30px;
         width: 60px;
         border-radius: 100px;
@@ -48,7 +48,7 @@ class ContrastToggle extends LitElement {
         transform: translateX(-5px);
         margin-right: auto;
         background-color: black;
-        border: 4px solid var(--billy-color-dark);
+        border: 4px solid var(--billy-color-background-dark);
         border-radius: 100px;
       }
 
@@ -59,7 +59,7 @@ class ContrastToggle extends LitElement {
         width: 20px;
         border-radius: 40px;
         height: 100%;
-        background-color: white;
+        background-color: var(--billy-color-background-light);
       }
 
       .contrastToggle--on .contrastToggle__fill {

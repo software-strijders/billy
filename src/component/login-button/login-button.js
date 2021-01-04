@@ -18,10 +18,11 @@ class LoginButton extends LitElement {
         box-shadow: 0px 5px 10px var(--billy-color-shadow);
         border: none;
         cursor: pointer;
-        background-color: white;
+        background-color: var(--billy-color-background-light);
         height: 30px;
         font-family: var(--billy-font-family);
         font-size: 20px;
+        font-weight: bold;
         padding: 0 20px 0 15px;
         border-radius: 40px 0 0 40px;
         transition: 0.2s;
