@@ -5,13 +5,24 @@ class ContrastToggle extends LitElement {
   constructor() {
     super();
 
-    this.on = false;
+    this.on = localStorage.getItem("high-contrast") === "true";
+    this.updated();
   }
 
   static get properties() {
     return {
       on: { type: Boolean },
     };
+  }
+
+  updated(on) {
+    if (this.on) {
+      document.documentElement.classList.add("contrast");
+      localStorage.setItem("high-contrast", true);
+    } else {
+      document.documentElement.classList.remove("contrast");
+      localStorage.setItem("high-contrast", false);
+    }
   }
 
   static getStyles() {
