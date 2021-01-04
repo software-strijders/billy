@@ -1,10 +1,23 @@
 @startuml "state"
 
 state SearchArticle {
-  [*] --> DoSearch
-  DoSearch --> ShowSearchResults
-  ShowSearchResults -left-> DoSearch : SearchAgain
-  ShowSearchResults --> [*]
+  [*] --> SearchByCategory
+  [*] --> SearchByUserInput
+  
+  SearchByUserInput --> ShowFoundResults
+  SearchByCategory --> ShowFoundResults
+  
+  ShowFoundResults -left-> SearchByCategory 
+  ShowFoundResults -left-> SearchByUserInput
+  
+  SearchByCategory --> ShowNoResultsFound
+  SearchByUserInput --> ShowNoResultsFound
+  
+  ShowNoResultsFound -left-> SearchByCategory
+  ShowNoResultsFound -left-> SearchByUserInput
+  
+  ShowFoundResults --> [*]
+  ShowNoResultsFound --> [*]
 }
   
 @enduml
