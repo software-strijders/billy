@@ -81,6 +81,12 @@ class EditingPage extends LitElement {
         justify-content: flex-end;
       }
 
+      .form__wrapper--button .form__button--remove {
+        margin: 0 20px 0 0;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
       .form__wrapper--links {
         flex-direction: column;
       }
@@ -280,7 +286,8 @@ class EditingPage extends LitElement {
           ></billy-editor>
         </div>
         <div class="form__wrapper form__wrapper--button">
-          <button @click="${this._handleSaveClick}" class="form__button" type="button">Opslaan</button>
+          <a href="/" class="form__button form__button--remove">Annuleren</a>
+          <button @click="${this._handleSaveClick}" class="form__button" type="button">Publiceer artikel</button>
         </div>
       </form>
     `;
