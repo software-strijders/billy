@@ -28,12 +28,12 @@ class LoginWindow extends LitElement {
         border: none;
         font-size: 20px;
         padding: 0 20px;
-        border-radius: 100px;
+        border-radius: 100px;a
       }
 
       .redirect__link {
         margin-top: 10px;
-        color: white;
+        color: var(--billy-color-text-primary-light);
         font-size: 13px;
       }
 
@@ -43,7 +43,7 @@ class LoginWindow extends LitElement {
 
       .field__button {
         background-color: var(--billy-color-button-dark);
-        color: var(--billy-color-white);
+        color: var(--billy-color-text-primary-light);
         height: 100%;
         margin: 0;
         width: 540px;
