@@ -209,14 +209,15 @@ class EditingPage extends LitElement {
         <div class="form__wrapper form__wrapper--first">
           <label class="form__label" for="title">
             <h2 class="form__labelTitle">Titel</h1>
-            <input id="title" class="form__input" type="text" />
+            <input id="title" class="form__input" type="text" required />
           </label>
         </div>
         <div class="form__wrapper form__wrapper--select">
           <div class="form__wrapper">
             <label class="form__label">
               <h2 class="form__labelTitle">Hoofdcategorie</h2>
-              <select id="mainCategory" class="form__select">
+              <select id="mainCategory" class="form__select" required>
+                <option disabled selected>Selecteer item</option>
                 <option>Analyse</option>
                 <option>Advies</option>
                 <option>Ontwerp</option>
@@ -228,7 +229,8 @@ class EditingPage extends LitElement {
           <div class="form__wrapper">
             <label class="form__label">
               <h2 class="form__labelTitle">Subcategorie</h2>
-              <select id="subCategory" class="form__select">
+              <select id="subCategory" class="form__select" required>
+                <option disabled selected>Selecteer item</option>
                 <option>Gebruikersinteractie</option>
                 <option>Organisatie Processen</option>
                 <option>Infrastructuur</option>
@@ -239,16 +241,16 @@ class EditingPage extends LitElement {
           </div>
         </div>
         <div class="form__wrapper form__wrapper--links">
-          <h2 class="form__labelTitle">Links</h2>
+          <h2 class="form__labelTitle">Links (optioneel)</h2>
           ${this.links.map((link, index) => {
             return html`
             <div class="form__link" data-index="${index}">
               <label class="form__label" for="link-text-${index}">
                 <h3 class="form__labelTitle">Tekst</h2>
-                <input id="link-text-${index}" class="form__input" type="text" value="${link.text}">
+                <input id="link-text-${index}" class="form__input" type="text" value="${link.text}" ?required="${link.save}">
               </label>
               <label class="form__label" for="link-href-${index}">
-                <h3 class="form__labelTitle">Link</h2>
+                <h3 class="form__labelTitle">Link </h2>
                 <input id="link-href-${index}" class="form__input" type="url" value="${link.href}">
               </label>
               ${link.save 
@@ -261,7 +263,7 @@ class EditingPage extends LitElement {
                     <button class="form__button" type="button" @click="${this._addLinkClick}">
                       <img class="form__buttonImg" src="assets/icon/plus-icon.svg" alt="">
                     </button>
-                  ` 
+                  `
               }
               </button>
             </div>
@@ -327,11 +329,12 @@ class EditingPage extends LitElement {
   }
 
   _handleSaveClick() {
-    // When saving, we should validate all fields here.
-    // Afterwards there should probably go a request to an api 
-    // OR we put it in localStorage and keep it in the state (redux).
-
-    // TODO: #10 (create article)
+    if (!this.shadowRoot.querySelector("form").reportValidity()) {
+      return;
+    } if (this._htmlData === "") {
+      alert("Voer de artikel tekst in.");
+      return;
+    }
   }
 }
 
