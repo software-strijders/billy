@@ -146,7 +146,7 @@ class EditingPage extends LitElement {
         background-position: var(--billy-edit-page-form-select-background-position);
         background-repeat: no-repeat;
         cursor: pointer;
-        transition: background 0.3s;
+        transition: background 0.05s;
       }
 
       .form__select:hover {
