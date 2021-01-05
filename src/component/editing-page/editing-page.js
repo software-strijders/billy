@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
 import { sendArticle } from "../../js/api";
+import { store } from "../../js/store.js";
 
 const MAX_DESCRIPTION_LENGTH = 300;
 const WORDS_PER_MINUTE = 250;
@@ -10,11 +11,20 @@ class EditingPage extends LitElement {
   constructor() {
     super();
 
+    this._checkAccess();
+
     this._title = "";
     this._mainCategory = "Analyse";
     this._subCategory = "Gebruikersinteractie";
     this._htmlData = "";
     this.links = [{ text: "", href: "", save: false, }];
+  }
+
+  _checkAccess() {
+    if (!store.getState().login.loggedIn) {
+      alert("Je hebt geen toegang tot deze pagina, u wordt omgeleid");
+      window.history.back();
+    }
   }
 
   static get properties() {
