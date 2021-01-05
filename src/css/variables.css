@@ -91,6 +91,13 @@
   --billy-editor-content-padding: 10px;
   --billy-editor-text-font-size: 15px;
   --billy-editor-text-margin: auto 0 auto 15px;
+
+  /* Contribute button: */
+  --billy-contribute-button-background-color: var(--billy-color-white);
+  --billy-contribute-button-border-radius: 75px;
+  --billy-contribute-button-color: var(--billy-color-lighter-dark);
+  --billy-contribute-button-font-size: 20px;
+  --billy-contribute-button-padding: 0 25px;
 }
 
 .contrast {
