@@ -61,6 +61,7 @@
   --billy-edit-page-width: 100%;
   --billy-edit-page-padding: 25px;
   --billy-edit-page-radius: 5px;
+  --billy-edit-page-form-button-background: var(--billy-gradient);
   --billy-edit-page-form-padding: 10px;
   --billy-edit-page-form-wrapper-padding: 10px 0;
   --billy-edit-page-form-wrapper-padding-first: 0 0 10px 0;
@@ -111,6 +112,11 @@
   --billy-border-left: 2px solid #000;
   --billy-box-shadow-lighter: none;
   --billy-color-grey: #000;
+  --billy-edit-page-form-button-background: linear-gradient(
+    to right,
+    var(--billy-color-dark),
+    var(--billy-color-dark)
+  );
 }
 
 @font-face {
