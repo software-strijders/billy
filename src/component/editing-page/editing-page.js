@@ -1,6 +1,11 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
+import { sendArticle } from "../../js/api";
+
+const MAX_DESCRIPTION_LENGTH = 300;
+const WORDS_PER_MINUTE = 250;
+
 class EditingPage extends LitElement {
   constructor() {
     super();
@@ -218,14 +223,14 @@ class EditingPage extends LitElement {
         <div class="form__wrapper form__wrapper--first">
           <label class="form__label" for="title">
             <h2 class="form__labelTitle">Titel</h1>
-            <input id="title" class="form__input" type="text" required />
+            <input id="title" name="title" class="form__input" type="text" required />
           </label>
         </div>
         <div class="form__wrapper form__wrapper--select">
           <div class="form__wrapper">
             <label class="form__label">
               <h2 class="form__labelTitle">Hoofdcategorie</h2>
-              <select id="mainCategory" class="form__select" required>
+              <select id="mainCategory" name="headCategory" class="form__select" required>
                 <option disabled selected>Selecteer item</option>
                 <option>Analyse</option>
                 <option>Advies</option>
@@ -238,7 +243,7 @@ class EditingPage extends LitElement {
           <div class="form__wrapper">
             <label class="form__label">
               <h2 class="form__labelTitle">Subcategorie</h2>
-              <select id="subCategory" class="form__select" required>
+              <select id="subCategory" name="subCategory" class="form__select" required>
                 <option disabled selected>Selecteer item</option>
                 <option>Gebruikersinteractie</option>
                 <option>Organisatie Processen</option>
@@ -339,12 +344,53 @@ class EditingPage extends LitElement {
   }
 
   _handleSaveClick() {
-    if (!this.shadowRoot.querySelector("form").reportValidity()) {
+    const form = this.shadowRoot.querySelector("form");
+    if (!form.reportValidity()) {
       return;
     } if (this._htmlData === "") {
       alert("Voer de artikel tekst in.");
       return;
     }
+
+    const formData = new FormData(form);
+    let article = {}
+    formData.forEach((value, key) => {
+      article[key] = value;
+    });
+
+    const strippedHtml = this._getStrippedHtml(this._htmlData);
+
+    article["text"] = this._htmlData;
+    article["description"] = this._getDescription(strippedHtml);
+    article["readTime"] = this._calculateReadTime(strippedHtml);
+    article["lastRevised"] = this._getDate();
+    article["links"] = this.links
+      .filter(link => link.save)
+      .map(link => ({ text: link.text, href: link.href }));
+
+    sendArticle(article).then(console.log);
+  }
+
+  _getStrippedHtml(html) {
+    return html
+      // Strip html tags
+      .replace(/<[^>]+>/g, '')
+      // Seperate titles sticking to paragraph text
+      .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
+  }
+
+  _getDescription(text) {
+    if (text.length < MAX_DESCRIPTION_LENGTH) return text;
+
+    return `${text.substring(0, MAX_DESCRIPTION_LENGTH)}...`;
+  }
+
+  _calculateReadTime(text) {
+    return Math.ceil(text.split(" ").length / WORDS_PER_MINUTE);
+  }
+
+  _getDate() {
+    return new Date().toISOString().split("T")[0];
   }
 }
 
