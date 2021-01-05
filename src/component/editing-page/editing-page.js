@@ -380,7 +380,10 @@ class EditingPage extends LitElement {
       .filter(link => link.save)
       .map(link => ({ text: link.text, href: link.href }));
 
-    sendArticle(article).then(console.log);
+    sendArticle(article).then(() => {
+      alert("Artikel succesvol aangemaakt");
+      window.location.href = `/article?a=${article.title}`;
+    });
   }
 
   _getStrippedHtml(html) {

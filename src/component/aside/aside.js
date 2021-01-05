@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 import { store } from "../../js/state/store";
 
 class Aside extends LitElement {
@@ -84,20 +85,25 @@ class Aside extends LitElement {
     return html`
       <div class="aside__content">
         <!-- TODO: This could be a component -->
-        <div class="aside__card">
-          <h2 class="aside__title">Gerelateerd</h1>
-          <hr class="aside__line" />
-          <div class="aside__links">
-            ${state.related.links.map(link => {
-              return html`
-                <div class="link">
-                  <span class="link__title">${link.text}</span>
-                  <a href="${link.href}" class="link__test">${link.href}</a>
-                </div>
-              `
-            })}
-          </div>
-        </div>
+        ${state.related.links.length === 0 
+          ? html``
+          : html`
+            <div class="aside__card">
+              <h2 class="aside__title">Gerelateerd</h1>
+              <hr class="aside__line" />
+              <div class="aside__links">
+                ${state.related.links.map(link => {
+                  return html`
+                    <div class="link">
+                      <span class="link__title">${link.text}</span>
+                      <a href="${link.href}" class="link__test">${link.href}</a>
+                    </div>
+                  `
+                })}
+              </div>
+            </div>
+          `
+        }
         <!-- TODO: This could be a component -->
         <div class="aside__card">
           <h2 class="aside__title">Auteur</h1>
