@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   loggedIn: false,
@@ -21,3 +21,8 @@ export const { actions, reducer } = createSlice({
     },
   },
 });
+
+export const fullName = createSelector(
+  (state) => `${state.login.user.firstName} ${state.login.user.lastName}`,
+  (name) => name,
+);
