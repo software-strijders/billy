@@ -7,7 +7,7 @@ export class ContributeButton extends LitElement {
 
     this._hidden = true;
 
-    store.subscribe(this._stateChangedEvent);
+    store.subscribe(() => this._stateChangedEvent);
   }
 
   static get properties() {

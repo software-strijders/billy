@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js"
 import { getArticleByTitle } from "../../js/api/api.js";
+import { actions } from "../../js/state/article-related.js";
+import { store } from "../../js/state/store.js";
 
 class Article extends LitElement {
   constructor() {
@@ -107,6 +109,14 @@ class Article extends LitElement {
         this.mainCategory = data.headCategory;
         this.subCategory = data.subCategory;
         this.html = data.text;
+
+        store.dispatch(actions.setLinks({
+          author: {
+            fullName: data.author,
+          },
+          lastRevised: data.lastRevised,
+          links: data.links,
+        }));
       })
     }
   }

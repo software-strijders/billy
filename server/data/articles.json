@@ -1,6 +1,7 @@
 {
   "articles": [
     {
+      "author": "Jort Willemsen",
       "title": "User Story",
       "link": "?a=User Story",
       "headCategory": "Analyse",
@@ -21,6 +22,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Usability Testing",
       "link": "?a=Usability Testing",
       "headCategory": "Realisatie",
@@ -41,6 +43,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Infrastructuur Ontwerpen",
       "link": "?a=Infrastructuur Ontwerpen",
       "headCategory": "Ontwerp",
@@ -61,6 +64,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "BPMN Diagram maken",
       "link": "?a=BPMN",
       "headCategory": "Analyse",
@@ -81,6 +85,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Hardware interfacing adviseren",
       "link": "?a=Hardware interfacing adviseren",
       "headCategory": "Advies",
@@ -101,6 +106,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Wireframes",
       "link": "?a=Wireframes",
       "headCategory": "Ontwerp",
@@ -121,6 +127,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "JAVA",
       "link": "?a=JAVA",
       "headCategory": "Realisatie",
@@ -141,6 +148,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "C++",
       "link": "?a=C++",
       "headCategory": "Realisatie",
@@ -161,6 +169,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "C",
       "link": "?a=C",
       "headCategory": "Realisatie",
@@ -181,6 +190,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "C#",
       "link": "?a=C#",
       "headCategory": "Realisatie",
@@ -201,6 +211,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Raspberry Pi",
       "link": "?a=Raspberry Pi",
       "headCategory": "Beheer",
@@ -221,6 +232,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Arduino",
       "link": "?a=Arduino",
       "headCategory": "Beheer",
@@ -241,6 +253,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "State Diagram",
       "link": "?a=State diagram",
       "headCategory": "Ontwerp",
@@ -261,6 +274,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Sitemap",
       "link": "?a=Sitemap",
       "headCategory": "Ontwerp",
@@ -281,6 +295,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Infrastructuur Ontwerpen",
       "link": "?a=Infrastructuur Ontwerpen",
       "headCategory": "Ontwerp",
@@ -301,6 +316,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Use Case",
       "link": "?a=Use case",
       "headCategory": "Ontwerp",
@@ -321,6 +337,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Hardware interface beheren",
       "link": "?a=Hardware interface-beheren",
       "headCategory": "Beheer",
@@ -341,6 +358,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Software beheren",
       "link": "?a=Software beheren",
       "headCategory": "Beheer",
@@ -361,6 +379,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Versie beheer",
       "link": "?a=Versie beheer",
       "headCategory": "Beheer",
@@ -381,6 +400,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Infrastructuur beheren",
       "link": "?a=Infrastructuur beheren",
       "headCategory": "Beheer",
@@ -401,6 +421,7 @@
       ]
     },
     {
+      "author": "Jort Willemsen",
       "title": "Test Article",
       "link": "?a=Test Article",
       "headCategory": "Analyse",
