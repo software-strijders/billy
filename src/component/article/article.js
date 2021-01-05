@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js"
-import { getArticleByTitle } from "../../js/api";
+import { getArticleByTitle } from "../../js/api/api.js";
 
 class Article extends LitElement {
   constructor() {

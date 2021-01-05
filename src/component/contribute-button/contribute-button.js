@@ -1,5 +1,5 @@
 import { html, LitElement, css } from "lit-element";
-import { store } from "../../js/store";
+import { store } from "../../js/state/store";
 
 export class ContributeButton extends LitElement {
   constructor() {

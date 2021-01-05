@@ -1,8 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
-import { sendArticle } from "../../js/api";
-import { store } from "../../js/store.js";
+import { sendArticle } from "../../js/api/api";
+import { store } from "../../js/state/store.js";
 
 const MAX_DESCRIPTION_LENGTH = 300;
 const WORDS_PER_MINUTE = 250;

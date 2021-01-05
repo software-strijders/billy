@@ -1,8 +1,5 @@
 import { LitElement, html, css } from "lit-element";
 
-import { store } from "../../js/store.js";
-import { actions } from "../../js/login.js";
-
 // TODO: This is not really appropriate to be a component, it should be split into
 // smaller components
 class LoginWindow extends LitElement {

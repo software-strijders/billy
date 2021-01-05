@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 import levenshtein from "fast-levenshtein";
 
-import { getArticles } from "../../js/api.js";
+import { getArticles } from "../../js/api/api.js";
 
 class Results extends LitElement {
   constructor() {
