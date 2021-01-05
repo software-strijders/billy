@@ -10,6 +10,14 @@ export function getArticles() {
     });
 }
 
+export function getArticleByTitle(title) {
+  return fetch(`${baseUrl}/article/${title}`)
+    .then(response => {
+      if (response.ok) return response.json();
+      else throw Error("Kon artikelen niet laden...");
+    });
+}
+
 export function sendArticle(article) {
   console.log(JSON.stringify(article));
   return fetch(`${baseUrl}/article`, { 

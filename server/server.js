@@ -14,8 +14,12 @@ app.get("/api/article", (req, res) => {
   res.sendFile(articlePath);
 });
 
+app.get("/api/article/:title", (req, res) => {
+  const file = JSON.parse(fs.readFileSync(articlePath));
+  res.send(file.articles.filter(article => article.title === req.params.title)[0]);
+});
+
 app.post("/api/article", (req, res) => {
-  console.log(req.body);
   const file = JSON.parse(fs.readFileSync(articlePath));
   file.articles.push(req.body);
   fs.writeFileSync(articlePath, JSON.stringify(file, null, 2));

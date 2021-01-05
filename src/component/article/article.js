@@ -1,13 +1,22 @@
 import { LitElement, html, css } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js"
+import { getArticleByTitle } from "../../js/api";
 
 class Article extends LitElement {
+  constructor() {
+    super();
+
+    this.isDone = false;
+    this._getArticle();
+  }
+
   static get properties() {
     return {
       html:         { type: String, reflect: true },
       title:        { type: String, reflect: true },
       mainCategory: { type: String, reflect: true },
       subCategory:  { type: String, reflect: true },
+      isDone:       { type: Boolean               },
     };
   }
 
@@ -67,21 +76,39 @@ class Article extends LitElement {
 
   render() {
     return html`
-      <article class="article__content">
-        <div class="article__categories">
-          <!-- TODO: Make into billy-article-tag component -->
-          <div class="category">
-            <p class="category__text">${this.mainCategory}</p>
-          </div>
-          <div class="category">
-            <p class="category__text">${this.subCategory}</p>
-          </div>
-        </div>
-        <h1 class="article__title">${this.title}</h1>
-        <hr class="article__line" />
-        ${unsafeHTML(this.html)}
-      </article>
+      ${ this.isDone 
+        ? html`
+          <article class="article__content">
+            <div class="article__categories">
+              <!-- TODO: Make into billy-article-tag component -->
+              <div class="category">
+                <p class="category__text">${this.mainCategory}</p>
+              </div>
+              <div class="category">
+                <p class="category__text">${this.subCategory}</p>
+              </div>
+            </div>
+            <h1 class="article__title">${this.title}</h1>
+            <hr class="article__line" />
+            ${unsafeHTML(this.html)}
+          </article>
+          `
+        : html``
+      }
     `;
+  }
+
+  _getArticle() {
+    let urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("a")) {
+      getArticleByTitle(urlParams.get("a")).then(data => {
+        this.isDone = true;
+        this.title = data.title;
+        this.mainCategory = data.headCategory;
+        this.subCategory = data.subCategory;
+        this.html = data.text;
+      })
+    }
   }
 }
 
