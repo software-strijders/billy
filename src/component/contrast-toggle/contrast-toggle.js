@@ -88,11 +88,13 @@ class ContrastToggle extends LitElement {
         class="contrastToggle ${classMap({
           "contrastToggle--on": this.on,
         })}"
+        name="Contrast toggle"
         @click="${this.toggleSwitch}"
       >
         <div class="contrastToggle__fill">
           <div class="contrastToggle__slider">
             <img
+              alt=""
               class="contrastToggle__sliderIcon"
               src="/assets/icon/contrast-icon.svg"
             />

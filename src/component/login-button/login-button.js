@@ -52,6 +52,7 @@ class LoginButton extends LitElement {
       >
         ${store.getState().login.loggedIn
           ? html`<img
+                alt="Organisatie logo"
                 class="loginButton__image"
                 src=${store.getState().login.user.link
                   ? "../../assets/image/" +

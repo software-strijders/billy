@@ -189,6 +189,8 @@ class EditingPage extends LitElement {
       }
 
       .form__link {
+        animation: "slideIn";
+        transition: 0.3s;
         display: flex;
         justify-content: center;
         height: 45px;
@@ -307,6 +309,7 @@ class EditingPage extends LitElement {
                       >
                         <img
                           class="form__buttonImg"
+                          aria-label="Verwijder link van artikel"
                           src="assets/icon/minus-icon.svg"
                           alt=""
                         />
@@ -320,6 +323,7 @@ class EditingPage extends LitElement {
                       >
                         <img
                           class="form__buttonImg"
+                          aria-label="Voeg link toe aan artikel"
                           src="assets/icon/plus-icon.svg"
                           alt=""
                         />

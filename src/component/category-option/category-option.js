@@ -67,6 +67,7 @@ class CategoryOption extends LitElement {
         opacity: 0;
         transform: scale(1.025);
         visibility: hidden;
+        z-index: 1;
       }
 
       :host(:hover) .popOut {

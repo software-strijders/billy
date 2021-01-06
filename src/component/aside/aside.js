@@ -40,7 +40,7 @@ class Aside extends LitElement {
         height: var(--billy-line-height);
         border: none;
         border-radius: var(--billy-line-radius);
-        background-color: var(--billy-color-grey);
+        background-color: var(--billy-color-line-light);
         margin: 5px 0 20px 0;
       }
 
@@ -85,20 +85,21 @@ class Aside extends LitElement {
     return html`
       <div class="aside__content">
         <!-- TODO: This could be a component -->
-        ${state.related.links.length === 0 
-          ? html``
-          : html`
+        ${
+          state.related.links.length === 0
+            ? html``
+            : html`
             <div class="aside__card">
               <h2 class="aside__title">Gerelateerd</h1>
               <hr class="aside__line" />
               <div class="aside__links">
-                ${state.related.links.map(link => {
+                ${state.related.links.map((link) => {
                   return html`
                     <div class="link">
                       <span class="link__title">${link.text}</span>
                       <a href="${link.href}" class="link__test">${link.href}</a>
                     </div>
-                  `
+                  `;
                 })}
               </div>
             </div>
@@ -109,7 +110,9 @@ class Aside extends LitElement {
           <h2 class="aside__title">Auteur</h1>
           <hr class="aside__line" />
           <div class="aside__textWrapper">
-            <p class="aside__text aside__text--bold">${state.related.author.fullName}</p>
+            <p class="aside__text aside__text--bold">${
+              state.related.author.fullName
+            }</p>
             <div class="aside__logoWrapper">
               <img src="/assets/image/hogeschool-utrecht.png" alt="" class="aside__logo">
               <p class="aside__text">Hogeschool Utrecht</p>

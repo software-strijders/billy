@@ -43,12 +43,13 @@ class LoginWindow extends LitElement {
 
       .field__button {
         background-color: var(--billy-color-button-dark);
-        color: var(--billy-color-text-primary-light);
+        color: var(--billy-color-button-text-light);
         height: 100%;
         margin: 0;
         width: 540px;
         border: none;
         font-size: 20px;
+        font-weight: bold;
         padding: 0 20px;
         border-radius: 100px;
         cursor: pointer;

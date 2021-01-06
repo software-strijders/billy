@@ -22,6 +22,7 @@
   --billy-color-button-light: #fff;
   --billy-color-button-dark: #000;
   --billy-color-button-gradient: var(--billy-gradient-background-brand);
+  --billy-color-button-text-light: #fff;
 
   --billy-color-text-primary-light: #fff;
   --billy-color-text-primary-dark: #000;
@@ -43,6 +44,7 @@
 
   --billy-color-shadow: rgba(0, 0, 0, 0.25);
   --billy-color-shadow-lighter: rgba(0, 0, 0, 0.15);
+
   --billy-box-shadow: 0 5px 10px var(--billy-color-shadow);
   --billy-box-shadow-lighter: 0 5px 10px var(--billy-color-shadow-lighter);
   --billy-text-shadow: 0 5px 10px var(--billy-color-shadow);
@@ -118,18 +120,16 @@
 .contrast {
   --billy-color-brand-primary: #000;
   --billy-color-brand-secondary: #000;
-  --billy-color-white: #fff;
   --billy-color-side-bar: #fff;
   --billy-border: 3px solid #000;
   --billy-border-right: 2px solid #000;
   --billy-border-left: 2px solid #000;
   --billy-box-shadow-lighter: none;
-  --billy-color-grey: #000;
   --billy-color-button-dark: #fff;
   --billy-color-line-light: #000;
   --billy-color-button-gradient: #000;
-
   --billy-color-background-light-grey: #fff;
+  --billy-color-button-text-light: #000;
 }
 
 @font-face {
