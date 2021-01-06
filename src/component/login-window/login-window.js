@@ -89,26 +89,20 @@ class LoginWindow extends LitElement {
         <div class="field">
           <button class="field__button" @click="${this.login}">Inloggen</button>
         </div>
-        <a class="redirect__link redirect__link--show" href=""
-          >Nog geen account? Registreer hier</a
-        >
+        <a class="redirect__link redirect__link--show" href="">Nog geen account? Registreer hier</a>
       </div>
     `;
   }
 
   login() {
     const emailInput = this.shadowRoot.querySelector("#email--input").value;
-    const passwordInput = this.shadowRoot.querySelector("#password--input")
-      .value;
+    const passwordInput = this.shadowRoot.querySelector("#password--input").value;
 
     fetch("/assets/mock/accounts.json")
       .then((response) => response.json())
       .then((data) =>
         data.accounts.forEach((account) => {
-          if (
-            account.email === emailInput &&
-            account.password === passwordInput
-          ) {
+          if (account.email === emailInput && account.password === passwordInput) {
             window.localStorage.setItem(
               "data",
               JSON.stringify({

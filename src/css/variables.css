@@ -1,8 +1,4 @@
 :root {
-  /*
-    TODO: These names should be called different...
-    It shouldn't describe the color, rather the component its coloring instead.
-  */
   --billy-color-brand-primary: #4c74fc;
   --billy-color-brand-secondary: #801be5;
 

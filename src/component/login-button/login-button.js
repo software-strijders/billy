@@ -55,9 +55,7 @@ class LoginButton extends LitElement {
                 alt="Organisatie logo"
                 class="loginButton__image"
                 src=${store.getState().login.user.link
-                  ? "../../assets/image/" +
-                    store.getState().login.user.link +
-                    ".png"
+                  ? "../../assets/image/" + store.getState().login.user.link + ".png"
                   : "../../assets/favicon.svg"}
               />
               ${this.getNameOfUser()} `
@@ -70,11 +68,7 @@ class LoginButton extends LitElement {
 
   getNameOfUser() {
     if (store.getState().login.user.firstName !== "") {
-      return (
-        store.getState().login.user.firstName +
-        " " +
-        store.getState().login.user.lastName
-      );
+      return store.getState().login.user.firstName + " " + store.getState().login.user.lastName;
     }
   }
 

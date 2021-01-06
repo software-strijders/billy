@@ -60,9 +60,7 @@ class EditingPage extends LitElement {
       }
 
       .form--disabled .form__select:hover {
-        background-position: var(
-          --billy-edit-page-form-select-background-position-hover
-        );
+        background-position: var(--billy-edit-page-form-select-background-position-hover);
       }
 
       .form__title {
@@ -151,9 +149,7 @@ class EditingPage extends LitElement {
       }
 
       .form__input {
-        height: calc(
-          var(--billy-edit-page-form-input-height) - var(--billy-border-size)
-        );
+        height: calc(var(--billy-edit-page-form-input-height) - var(--billy-border-size));
         border: var(--billy-border-size) solid var(--billy-color-line-light);
         border-radius: var(--billy-edit-page-radius);
         padding: var(--billy-edit-page-form-input-padding);
@@ -171,21 +167,15 @@ class EditingPage extends LitElement {
         overflow: hidden;
         appearance: none;
         background-color: var(--billy-color-background-light);
-        background-image: var(
-          --billy-edit-page-form-select-background-image-url
-        );
-        background-position: var(
-          --billy-edit-page-form-select-background-position
-        );
+        background-image: var(--billy-edit-page-form-select-background-image-url);
+        background-position: var(--billy-edit-page-form-select-background-position);
         background-repeat: no-repeat;
         cursor: pointer;
         transition: background 0.05s;
       }
 
       .form__select:hover {
-        background-position: var(
-          --billy-edit-page-form-select-background-position-hover
-        );
+        background-position: var(--billy-edit-page-form-select-background-position-hover);
       }
 
       .form__link {
@@ -220,9 +210,7 @@ class EditingPage extends LitElement {
       }
 
       .form__button:hover {
-        background-size: var(
-          --billy-edit-page-form-button-background-size-hover
-        );
+        background-size: var(--billy-edit-page-form-button-background-size-hover);
       }
 
       .form__button--remove {
@@ -244,23 +232,12 @@ class EditingPage extends LitElement {
         <hr class="form__line" />
         <div class="form__wrapper form__wrapper--first">
           <label class="form__label" for="title">Titel</label>
-          <input
-            id="title"
-            name="title"
-            class="form__input"
-            type="text"
-            required
-          />
+          <input id="title" name="title" class="form__input" type="text" required />
         </div>
         <div class="form__wrapper form__wrapper--select">
           <div class="form__wrapper">
             <label class="form__label" for="mainCategory">Hoofdcategorie</label>
-            <select
-              id="mainCategory"
-              name="headCategory"
-              class="form__select"
-              required
-            >
+            <select id="mainCategory" name="headCategory" class="form__select" required>
               <option disabled selected>Selecteer item</option>
               <option>Analyse</option>
               <option>Advies</option>
@@ -271,12 +248,7 @@ class EditingPage extends LitElement {
           </div>
           <div class="form__wrapper">
             <label class="form__label" for="subCategory">Subcategorie</label>
-            <select
-              id="subCategory"
-              name="subCategory"
-              class="form__select"
-              required
-            >
+            <select id="subCategory" name="subCategory" class="form__select" required>
               <option disabled selected>Selecteer item</option>
               <option>Gebruikersinteractie</option>
               <option>Organisatie Processen</option>
@@ -296,9 +268,7 @@ class EditingPage extends LitElement {
               link.text
             }" ?required="${link.save}">
               <label class="form__label" for="link-href-${index}">Link</label>
-              <input id="link-href-${index}" class="form__input" type="url" value="${
-              link.href
-            }">
+              <input id="link-href-${index}" class="form__input" type="url" value="${link.href}">
               ${
                 link.save
                   ? html`
@@ -316,11 +286,7 @@ class EditingPage extends LitElement {
                       </button>
                     `
                   : html`
-                      <button
-                        class="form__button"
-                        type="button"
-                        @click="${this._addLinkClick}"
-                      >
+                      <button class="form__button" type="button" @click="${this._addLinkClick}">
                         <img
                           class="form__buttonImg"
                           aria-label="Voeg link toe aan artikel"
@@ -346,11 +312,7 @@ class EditingPage extends LitElement {
         </div>
         <div class="form__wrapper form__wrapper--button">
           <a href="/" class="form__button form__button--remove">Annuleren</a>
-          <button
-            @click="${this._handleSaveClick}"
-            class="form__button"
-            type="button"
-          >
+          <button @click="${this._handleSaveClick}" class="form__button" type="button">
             Publiceer artikel
           </button>
         </div>
@@ -379,12 +341,8 @@ class EditingPage extends LitElement {
     this.showPreview = event.detail;
 
     this._title = this.shadowRoot.querySelector("#title").value;
-    this._mainCategory = this.shadowRoot.querySelector(
-      "#mainCategory option:checked",
-    ).text;
-    this._subCategory = this.shadowRoot.querySelector(
-      "#subCategory option:checked",
-    ).text;
+    this._mainCategory = this.shadowRoot.querySelector("#mainCategory option:checked").text;
+    this._subCategory = this.shadowRoot.querySelector("#subCategory option:checked").text;
   }
 
   _addLinkClick(e) {
@@ -396,11 +354,7 @@ class EditingPage extends LitElement {
     previousLink.href = parent.querySelector(`#link-href-${index}`).value;
     previousLink.save = true;
 
-    this.links = [
-      ...this.links,
-      previousLink,
-      { text: "", href: "", save: false },
-    ];
+    this.links = [...this.links, previousLink, { text: "", href: "", save: false }];
   }
 
   _removeLinkClick(e) {

@@ -17,7 +17,7 @@ class BackArrow extends LitElement {
 
   render() {
     return html`
-      <a class="backArrow" href="index.html">
+      <a class="backArrow" href="/">
         <img
           class="backArrow__image"
           src="../../assets/icon/backarrow-icon.svg"

@@ -16,12 +16,12 @@ class Article extends LitElement {
 
   static get properties() {
     return {
-      html: { type: String, reflect: true },
-      title: { type: String, reflect: true },
-      mainCategory: { type: String, reflect: true },
-      subCategory: { type: String, reflect: true },
-      isPreview: { type: Boolean, reflect: true },
-      isDone: { type: Boolean },
+      html:         { type: String,   reflect: true },
+      title:        { type: String,   reflect: true },
+      mainCategory: { type: String,   reflect: true },
+      subCategory:  { type: String,   reflect: true },
+      isPreview:    { type: Boolean,  reflect: true },
+      isDone:       { type: Boolean                 },
     };
   }
 
