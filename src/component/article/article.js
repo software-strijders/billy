@@ -9,16 +9,19 @@ class Article extends LitElement {
     super();
 
     this.isDone = false;
+    this.isPreview = false;
+
     this._getArticle();
   }
 
   static get properties() {
     return {
-      html:         { type: String, reflect: true },
-      title:        { type: String, reflect: true },
-      mainCategory: { type: String, reflect: true },
-      subCategory:  { type: String, reflect: true },
-      isDone:       { type: Boolean               },
+      html:         { type: String,  reflect: true   },
+      title:        { type: String,  reflect: true   },
+      mainCategory: { type: String,  reflect: true   },
+      subCategory:  { type: String,  reflect: true   },
+      isPreview:    { type: Boolean, reflect: true   },
+      isDone:       { type: Boolean,                 },
     };
   }
 
@@ -78,7 +81,7 @@ class Article extends LitElement {
 
   render() {
     return html`
-      ${ this.isDone 
+      ${ this.isDone || this.isPreview 
         ? html`
           <article class="article__content">
             <div class="article__categories">

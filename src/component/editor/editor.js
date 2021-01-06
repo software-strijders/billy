@@ -163,6 +163,7 @@ class Editor extends LitElement {
                     title="${this.title}"
                     mainCategory="${this.mainCategory}"
                     subCategory="${this.subCategory}"
+                    ?isPreview="${true}"
                   ></billy-article>
                 </div>
               </div>
