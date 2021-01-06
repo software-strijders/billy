@@ -1,8 +1,7 @@
 import { LitElement, html, css } from "lit-element";
-import parseJson from "../../js/utils.js";
 import levenshtein from "fast-levenshtein";
 
-const mockDataPath = "../../assets/mock/articles.json";
+import { getArticles } from "../../js/api/api.js";
 
 class Results extends LitElement {
   constructor() {
@@ -107,7 +106,7 @@ class Results extends LitElement {
   }
 
   _getResultItems() {
-    parseJson(mockDataPath).then((json) => {
+    getArticles().then((json) => {
       this.previews = json.articles;
 
       // Filter based on the (optional) query parameters

@@ -1,5 +1,5 @@
-import { store } from "../js/store.js";
-import { actions } from "../js/login.js";
+import { store } from "../js/state/store.js";
+import { actions } from "../js/state/login.js";
 
 const data = JSON.parse(window.localStorage.getItem("data"));
 

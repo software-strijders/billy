@@ -1,19 +1,36 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
-import { unsafeHTML } from "lit-html/directives/unsafe-html";
+
+import { sendArticle } from "../../js/api/api";
+import { fullName } from "../../js/state/login";
+import { store } from "../../js/state/store.js";
+
+const MAX_DESCRIPTION_LENGTH = 300;
+const WORDS_PER_MINUTE = 250;
 
 class EditingPage extends LitElement {
   constructor() {
     super();
 
+    this._checkAccess();
+
     this._title = "";
     this._mainCategory = "Analyse";
     this._subCategory = "Gebruikersinteractie";
     this._htmlData = "";
+    this.links = [{ text: "", href: "", save: false, }];
+  }
+
+  _checkAccess() {
+    if (!store.getState().login.loggedIn) {
+      alert("Je hebt geen toegang tot deze pagina, u wordt omgeleid");
+      window.location.href = "/";
+    }
   }
 
   static get properties() {
     return {
+      links:       { type: Array   },
       showPreview: { type: Boolean },
     };
   }
@@ -51,6 +68,11 @@ class EditingPage extends LitElement {
         font-size: var(--billy-title-size);
       }
 
+      .form__title--h2 {
+        margin: 0 0 10px 0;  
+        font-size: 22px;
+      }
+
       .form__line {
         height: var(--billy-line-height);
         border: none;
@@ -61,11 +83,16 @@ class EditingPage extends LitElement {
 
       .form__wrapper {
         display: flex;
+        flex-direction: column;
         padding: var(--billy-edit-page-form-wrapper-padding);
       }
 
       .form__wrapper--first {
         padding: var(--billy-edit-page-form-wrapper-padding-first);
+      }
+
+      .form__wrapper--select {
+        flex-direction: row;
       }
 
       .form__wrapper--select .form__wrapper {
@@ -78,20 +105,51 @@ class EditingPage extends LitElement {
 
       .form__wrapper--button {
         justify-content: flex-end;
+        flex-direction: row;
+      }
+
+      .form__wrapper--button .form__button--remove {
+        margin: 0 20px 0 0;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .form__wrapper--links {
+        flex-direction: column;
+      }
+
+      .form__wrapper--links .form__label {
+        align-items: center;
+        flex-direction: row;
+        font-size: 18px;
+        margin: 0 25px 0 0;
+      }
+
+      .form__wrapper--links .form__input {
+        flex-grow: 1;
+        margin: 0 25px 0 0;
+      }
+
+      .form__wrapper--links .form__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+
+      .form__wrapper--links .form__button:not(:last-child) {
+        margin: 0 25px 0 0;
       }
 
       .form__label {
         display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .form__labelTitle {
         margin: var(--billy-edit-page-form-label-title-margin);
         font-size: var(--billy-edit-page-form-label-font-size);
+        font-weight: bold;
       }
 
       .form__input {
+        height: calc(var(--billy-edit-page-form-input-height) - var(--billy-border-size));
         border: var(--billy-border-size) solid var(--billy-color-grey);
         border-radius: var(--billy-edit-page-radius);
         padding: var(--billy-edit-page-form-input-padding);
@@ -113,18 +171,34 @@ class EditingPage extends LitElement {
         background-position: var(--billy-edit-page-form-select-background-position);
         background-repeat: no-repeat;
         cursor: pointer;
-        transition: background 0.3s;
+        transition: background 0.05s;
       }
 
       .form__select:hover {
         background-position: var(--billy-edit-page-form-select-background-position-hover);
       }
 
+      .form__link {
+        display: flex;
+        justify-content: center;
+        height: 45px;
+        margin: 0 0 20px 0;
+      }
+
+      .form__link:last-child {
+        margin: 0;
+      }
+
+      .form__link .form__labelTitle {
+        margin: 0 25px 0 0;
+        font-size: 18px;
+      }
+
       .form__button {
         padding: var(--billy-edit-page-form-button-padding);
         border-radius: var(--billy-edit-page-radius);
         background: none;
-        background-image: var(--billy-gradient);
+        background-image: var(--billy-edit-page-form-button-background);
         background-size: var(--billy-edit-page-form-button-background-size);
         border: none;
         color: var(--billy-color-white);
@@ -148,6 +222,16 @@ class EditingPage extends LitElement {
       .form__button--grey:hover {
         background-color: var(--billy-color-grey);
       }
+
+      .form__button--remove {
+        background-image: var(--billy-remove-gradient);
+      }
+
+      .form__buttonImg {
+        height: 50%;
+        width: auto;
+        pointer-events: none;
+      }
     `;
   }
 
@@ -157,36 +241,58 @@ class EditingPage extends LitElement {
         <h1 class="form__title">Artikel aanmaken</h1>
         <hr class="form__line">
         <div class="form__wrapper form__wrapper--first">
-          <label class="form__label" for="title">
-            <h2 class="form__labelTitle">Titel</h1>
-            <input id="title" class="form__input" type="text"/>
-          </label>
+            <label class="form__label" for="title">Titel</label>
+            <input id="title" name="title" class="form__input" type="text" required />
         </div>
         <div class="form__wrapper form__wrapper--select">
           <div class="form__wrapper">
-            <label class="form__label">
-              <h2 class="form__labelTitle">Hoofdcategorie</h2>
-              <select id="mainCategory" class="form__select">
+              <label class="form__label" for="mainCategory">Hoofdcategorie</label>
+              <select id="mainCategory" name="headCategory" class="form__select" required>
+                <option disabled selected>Selecteer item</option>
                 <option>Analyse</option>
                 <option>Advies</option>
                 <option>Ontwerp</option>
                 <option>Realisatie</option>
                 <option>Beheer</option>
               </select>
-            </label>
           </div>
           <div class="form__wrapper">
-            <label class="form__label">
-              <h2 class="form__labelTitle">Subcategorie</h2>
-              <select id="subCategory" class="form__select">
+              <label class="form__label" for="subCategory">Subcategorie</label>
+              <select id="subCategory" name="subCategory" class="form__select" required>
+                <option disabled selected>Selecteer item</option>
                 <option>Gebruikersinteractie</option>
                 <option>Organisatie Processen</option>
                 <option>Infrastructuur</option>
                 <option>Software</option>
                 <option>Hardware Interfacing</option>
               </select>
-            </label>
           </div>
+        </div>
+        <div class="form__wrapper form__wrapper--links">
+          <h2 class="form__title form__title--h2">Links (optioneel)</h2>
+          ${this.links.map((link, index) => {
+            return html`
+            <div class="form__link" data-index="${index}">
+              <label class="form__label" for="link-text-${index}">Tekst</label>
+              <input id="link-text-${index}" class="form__input" type="text" value="${link.text}" ?required="${link.save}">
+              <label class="form__label" for="link-href-${index}">Link</label>
+              <input id="link-href-${index}" class="form__input" type="url" value="${link.href}">
+              ${link.save 
+                ? html`
+                    <button class="form__button form__button--remove" type="button" @click="${this._removeLinkClick}">
+                      <img class="form__buttonImg" src="assets/icon/minus-icon.svg" alt="">
+                    </button>
+                  ` 
+                : html`
+                    <button class="form__button" type="button" @click="${this._addLinkClick}">
+                      <img class="form__buttonImg" src="assets/icon/plus-icon.svg" alt="">
+                    </button>
+                  `
+              }
+              </button>
+            </div>
+            `
+          })}
         </div>
         <div class="form__wrapper">
           <billy-editor 
@@ -198,10 +304,22 @@ class EditingPage extends LitElement {
           ></billy-editor>
         </div>
         <div class="form__wrapper form__wrapper--button">
-          <button @click="${this._handleSaveClick}" class="form__button" type="button">Opslaan</button>
+          <a href="/" class="form__button form__button--remove">Annuleren</a>
+          <button @click="${this._handleSaveClick}" class="form__button" type="button">Publiceer artikel</button>
         </div>
       </form>
     `;
+  }
+
+  updated() {
+    const index = this.links.length - 1;
+    const links = this.shadowRoot.querySelectorAll(".form__link");
+
+    // Manually clear the values of the input fields.
+    // This is probably because LitElement caches elements inside of it, thus we have to resort to this:
+    const lastLink = [...links].pop();
+    lastLink.querySelector(`#link-text-${index}`).value = "";
+    lastLink.querySelector(`#link-href-${index}`).value = "";
   }
 
   _handleChange(event) {
@@ -218,12 +336,75 @@ class EditingPage extends LitElement {
     this._subCategory = this.shadowRoot.querySelector("#subCategory option:checked").text;
   }
 
-  _handleSaveClick() {
-    // When saving, we should validate all fields here.
-    // Afterwards there should probably go a request to an api 
-    // OR we put it in localStorage and keep it in the state (redux).
+  _addLinkClick(e) {
+    const parent = e.target.parentNode;
+    const index = this.links.length - 1;
 
-    // TODO: #10 (create article)
+    const previousLink = this.links.pop();
+    previousLink.text = parent.querySelector(`#link-text-${index}`).value;
+    previousLink.href = parent.querySelector(`#link-href-${index}`).value;
+    previousLink.save = true;
+
+    this.links = [...this.links, previousLink, { text: "", href: "", save: false}];
+  }
+
+  _removeLinkClick(e) {
+    const index = parseInt(e.target.parentNode.dataset.index);
+    this.links = [...this.links.filter((item, _index) => _index !== index )];
+  }
+
+  _handleSaveClick() {
+    const form = this.shadowRoot.querySelector("form");
+    if (!form.reportValidity()) {
+      return;
+    } if (this._htmlData === "") {
+      alert("Voer de artikel tekst in.");
+      return;
+    }
+
+    const formData = new FormData(form);
+    let article = {}
+    formData.forEach((value, key) => {
+      article[key] = value;
+    });
+
+    const strippedHtml = this._getStrippedHtml(this._htmlData);
+
+    article["author"] = fullName(store.getState());
+    article["text"] = this._htmlData;
+    article["description"] = this._getDescription(strippedHtml);
+    article["readTime"] = this._calculateReadTime(strippedHtml);
+    article["lastRevised"] = this._getDate();
+    article["links"] = this.links
+      .filter(link => link.save)
+      .map(link => ({ text: link.text, href: link.href }));
+
+    sendArticle(article).then(() => {
+      alert("Artikel succesvol aangemaakt");
+      window.location.href = `/article?a=${article.title}`;
+    });
+  }
+
+  _getStrippedHtml(html) {
+    return html
+      // Strip html tags
+      .replace(/<[^>]+>/g, '')
+      // Seperate titles sticking to paragraph text
+      .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
+  }
+
+  _getDescription(text) {
+    if (text.length < MAX_DESCRIPTION_LENGTH) return text;
+
+    return `${text.substring(0, MAX_DESCRIPTION_LENGTH)}...`;
+  }
+
+  _calculateReadTime(text) {
+    return Math.ceil(text.split(" ").length / WORDS_PER_MINUTE);
+  }
+
+  _getDate() {
+    return new Date().toISOString().split("T")[0];
   }
 }
 
