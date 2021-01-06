@@ -18,7 +18,7 @@ class EditingPage extends LitElement {
     this._mainCategory = "Analyse";
     this._subCategory = "Gebruikersinteractie";
     this._htmlData = "";
-    this.links = [{ text: "", href: "", save: false, }];
+    this.links = [{ text: "", href: "", save: false }];
   }
 
   _checkAccess() {
@@ -30,7 +30,7 @@ class EditingPage extends LitElement {
 
   static get properties() {
     return {
-      links:       { type: Array   },
+      links: { type: Array },
       showPreview: { type: Boolean },
     };
   }
@@ -49,18 +49,20 @@ class EditingPage extends LitElement {
 
       .form--disabled .form__input {
         pointer-events: none;
-        background-color: var(--billy-color-grey);
+        background-color: var(--billy-color-background-disabled);
         color: var(--billy-color-font-light);
       }
 
       .form--disabled .form__select {
         pointer-events: none;
-        background-color: var(--billy-color-grey);
-        color: var(--billy-color-font-light);
+        background-color: var(--billy-color-background-disabled);
+        color: var(--billy-color-text-hint);
       }
 
       .form--disabled .form__select:hover {
-        background-position: var(--billy-edit-page-form-select-background-position-hover);
+        background-position: var(
+          --billy-edit-page-form-select-background-position-hover
+        );
       }
 
       .form__title {
@@ -69,14 +71,14 @@ class EditingPage extends LitElement {
       }
 
       .form__title--h2 {
-        margin: 0 0 10px 0;  
+        margin: 0 0 10px 0;
         font-size: 22px;
       }
 
       .form__line {
         height: var(--billy-line-height);
         border: none;
-        background-color: var(--billy-color-grey);
+        background-color: var(--billy-color-line-light);
         border-radius: var(--billy-line-radius);
         margin: var(--billy-line-margin);
       }
@@ -149,8 +151,10 @@ class EditingPage extends LitElement {
       }
 
       .form__input {
-        height: calc(var(--billy-edit-page-form-input-height) - var(--billy-border-size));
-        border: var(--billy-border-size) solid var(--billy-color-grey);
+        height: calc(
+          var(--billy-edit-page-form-input-height) - var(--billy-border-size)
+        );
+        border: var(--billy-border-size) solid var(--billy-color-line-light);
         border-radius: var(--billy-edit-page-radius);
         padding: var(--billy-edit-page-form-input-padding);
         font-size: var(--billy-edit-page-form-input-font-size);
@@ -161,21 +165,27 @@ class EditingPage extends LitElement {
         position: relative;
         height: var(--billy-edit-page-form-select-height);
         width: var(--billy-edit-page-form-select-width);
-        border: var(--billy-border-size) solid var(--billy-color-grey);
+        border: var(--billy-border-size) solid var(--billy-color-line-light);
         padding: var(--billy-edit-page-form-select-padding);
         border-radius: var(--billy-edit-page-radius);
         overflow: hidden;
         appearance: none;
-        background-color: var(--billy-color-white);
-        background-image: var(--billy-edit-page-form-select-background-image-url);
-        background-position: var(--billy-edit-page-form-select-background-position);
+        background-color: var(--billy-color-background-light);
+        background-image: var(
+          --billy-edit-page-form-select-background-image-url
+        );
+        background-position: var(
+          --billy-edit-page-form-select-background-position
+        );
         background-repeat: no-repeat;
         cursor: pointer;
         transition: background 0.05s;
       }
 
       .form__select:hover {
-        background-position: var(--billy-edit-page-form-select-background-position-hover);
+        background-position: var(
+          --billy-edit-page-form-select-background-position-hover
+        );
       }
 
       .form__link {
@@ -197,11 +207,10 @@ class EditingPage extends LitElement {
       .form__button {
         padding: var(--billy-edit-page-form-button-padding);
         border-radius: var(--billy-edit-page-radius);
-        background: none;
-        background-image: var(--billy-edit-page-form-button-background);
-        background-size: var(--billy-edit-page-form-button-background-size);
+        background: var(--billy-color-button-gradient);
+
         border: none;
-        color: var(--billy-color-white);
+        color: var(--billy-color-text-primary-light);
         font-size: var(--billy-edit-page-form-button-font-size);
         cursor: pointer;
         transition: background-size 0.3s, 0.3s;
@@ -209,22 +218,13 @@ class EditingPage extends LitElement {
       }
 
       .form__button:hover {
-        background-size: var(--billy-edit-page-form-button-background-size-hover);
-      }
-
-      .form__button--grey {
-        background-image: none;
-        background-color: var(--billy-color-lighter-grey);
-        border: 2px solid var(--billy-color-grey);
-        color: var(--billy-color-font-dark);
-      }
-
-      .form__button--grey:hover {
-        background-color: var(--billy-color-grey);
+        background-size: var(
+          --billy-edit-page-form-button-background-size-hover
+        );
       }
 
       .form__button--remove {
-        background-image: var(--billy-remove-gradient);
+        background-image: var(--billy-gradient-background-warning);
       }
 
       .form__buttonImg {
@@ -239,33 +239,49 @@ class EditingPage extends LitElement {
     return html`
       <form class="form ${classMap({ "form--disabled": this.showPreview })}">
         <h1 class="form__title">Artikel aanmaken</h1>
-        <hr class="form__line">
+        <hr class="form__line" />
         <div class="form__wrapper form__wrapper--first">
-            <label class="form__label" for="title">Titel</label>
-            <input id="title" name="title" class="form__input" type="text" required />
+          <label class="form__label" for="title">Titel</label>
+          <input
+            id="title"
+            name="title"
+            class="form__input"
+            type="text"
+            required
+          />
         </div>
         <div class="form__wrapper form__wrapper--select">
           <div class="form__wrapper">
-              <label class="form__label" for="mainCategory">Hoofdcategorie</label>
-              <select id="mainCategory" name="headCategory" class="form__select" required>
-                <option disabled selected>Selecteer item</option>
-                <option>Analyse</option>
-                <option>Advies</option>
-                <option>Ontwerp</option>
-                <option>Realisatie</option>
-                <option>Beheer</option>
-              </select>
+            <label class="form__label" for="mainCategory">Hoofdcategorie</label>
+            <select
+              id="mainCategory"
+              name="headCategory"
+              class="form__select"
+              required
+            >
+              <option disabled selected>Selecteer item</option>
+              <option>Analyse</option>
+              <option>Advies</option>
+              <option>Ontwerp</option>
+              <option>Realisatie</option>
+              <option>Beheer</option>
+            </select>
           </div>
           <div class="form__wrapper">
-              <label class="form__label" for="subCategory">Subcategorie</label>
-              <select id="subCategory" name="subCategory" class="form__select" required>
-                <option disabled selected>Selecteer item</option>
-                <option>Gebruikersinteractie</option>
-                <option>Organisatie Processen</option>
-                <option>Infrastructuur</option>
-                <option>Software</option>
-                <option>Hardware Interfacing</option>
-              </select>
+            <label class="form__label" for="subCategory">Subcategorie</label>
+            <select
+              id="subCategory"
+              name="subCategory"
+              class="form__select"
+              required
+            >
+              <option disabled selected>Selecteer item</option>
+              <option>Gebruikersinteractie</option>
+              <option>Organisatie Processen</option>
+              <option>Infrastructuur</option>
+              <option>Software</option>
+              <option>Hardware Interfacing</option>
+            </select>
           </div>
         </div>
         <div class="form__wrapper form__wrapper--links">
@@ -274,28 +290,49 @@ class EditingPage extends LitElement {
             return html`
             <div class="form__link" data-index="${index}">
               <label class="form__label" for="link-text-${index}">Tekst</label>
-              <input id="link-text-${index}" class="form__input" type="text" value="${link.text}" ?required="${link.save}">
+              <input id="link-text-${index}" class="form__input" type="text" value="${
+              link.text
+            }" ?required="${link.save}">
               <label class="form__label" for="link-href-${index}">Link</label>
-              <input id="link-href-${index}" class="form__input" type="url" value="${link.href}">
-              ${link.save 
-                ? html`
-                    <button class="form__button form__button--remove" type="button" @click="${this._removeLinkClick}">
-                      <img class="form__buttonImg" src="assets/icon/minus-icon.svg" alt="">
-                    </button>
-                  ` 
-                : html`
-                    <button class="form__button" type="button" @click="${this._addLinkClick}">
-                      <img class="form__buttonImg" src="assets/icon/plus-icon.svg" alt="">
-                    </button>
-                  `
+              <input id="link-href-${index}" class="form__input" type="url" value="${
+              link.href
+            }">
+              ${
+                link.save
+                  ? html`
+                      <button
+                        class="form__button form__button--remove"
+                        type="button"
+                        @click="${this._removeLinkClick}"
+                      >
+                        <img
+                          class="form__buttonImg"
+                          src="assets/icon/minus-icon.svg"
+                          alt=""
+                        />
+                      </button>
+                    `
+                  : html`
+                      <button
+                        class="form__button"
+                        type="button"
+                        @click="${this._addLinkClick}"
+                      >
+                        <img
+                          class="form__buttonImg"
+                          src="assets/icon/plus-icon.svg"
+                          alt=""
+                        />
+                      </button>
+                    `
               }
               </button>
             </div>
-            `
+            `;
           })}
         </div>
         <div class="form__wrapper">
-          <billy-editor 
+          <billy-editor
             @on-edit="${this._handleChange}"
             @on-preview="${this._handlePreview}"
             title="${this._title}"
@@ -305,7 +342,13 @@ class EditingPage extends LitElement {
         </div>
         <div class="form__wrapper form__wrapper--button">
           <a href="/" class="form__button form__button--remove">Annuleren</a>
-          <button @click="${this._handleSaveClick}" class="form__button" type="button">Publiceer artikel</button>
+          <button
+            @click="${this._handleSaveClick}"
+            class="form__button"
+            type="button"
+          >
+            Publiceer artikel
+          </button>
         </div>
       </form>
     `;
@@ -331,9 +374,13 @@ class EditingPage extends LitElement {
   _handlePreview(event) {
     this.showPreview = event.detail;
 
-    this._title = this.shadowRoot.querySelector("#title").value
-    this._mainCategory = this.shadowRoot.querySelector("#mainCategory option:checked").text;
-    this._subCategory = this.shadowRoot.querySelector("#subCategory option:checked").text;
+    this._title = this.shadowRoot.querySelector("#title").value;
+    this._mainCategory = this.shadowRoot.querySelector(
+      "#mainCategory option:checked",
+    ).text;
+    this._subCategory = this.shadowRoot.querySelector(
+      "#subCategory option:checked",
+    ).text;
   }
 
   _addLinkClick(e) {
@@ -345,25 +392,30 @@ class EditingPage extends LitElement {
     previousLink.href = parent.querySelector(`#link-href-${index}`).value;
     previousLink.save = true;
 
-    this.links = [...this.links, previousLink, { text: "", href: "", save: false}];
+    this.links = [
+      ...this.links,
+      previousLink,
+      { text: "", href: "", save: false },
+    ];
   }
 
   _removeLinkClick(e) {
     const index = parseInt(e.target.parentNode.dataset.index);
-    this.links = [...this.links.filter((item, _index) => _index !== index )];
+    this.links = [...this.links.filter((item, _index) => _index !== index)];
   }
 
   _handleSaveClick() {
     const form = this.shadowRoot.querySelector("form");
     if (!form.reportValidity()) {
       return;
-    } if (this._htmlData === "") {
+    }
+    if (this._htmlData === "") {
       alert("Voer de artikel tekst in.");
       return;
     }
 
     const formData = new FormData(form);
-    let article = {}
+    let article = {};
     formData.forEach((value, key) => {
       article[key] = value;
     });
@@ -377,8 +429,8 @@ class EditingPage extends LitElement {
     article["lastRevised"] = this._getDate();
     article["link"] = `?a=${article.title}`;
     article["links"] = this.links
-      .filter(link => link.save)
-      .map(link => ({ text: link.text, href: link.href }));
+      .filter((link) => link.save)
+      .map((link) => ({ text: link.text, href: link.href }));
 
     sendArticle(article).then(() => {
       alert("Artikel succesvol aangemaakt");
@@ -387,11 +439,13 @@ class EditingPage extends LitElement {
   }
 
   _getStrippedHtml(html) {
-    return html
-      // Strip html tags
-      .replace(/<[^>]+>/g, '')
-      // Seperate titles sticking to paragraph text
-      .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
+    return (
+      html
+        // Strip html tags
+        .replace(/<[^>]+>/g, "")
+        // Seperate titles sticking to paragraph text
+        .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
+    );
   }
 
   _getDescription(text) {

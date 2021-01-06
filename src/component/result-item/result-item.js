@@ -52,7 +52,7 @@ class ResultItem extends LitElement {
       }
 
       .resultItem__category {
-        background-color: var(--billy-color-background-light-grey);
+        background-color: var(--billy-color-background-grey);
         border-radius: 20px;
         margin: 0 10px 0 0;
         padding: 5px 10px;

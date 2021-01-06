@@ -1,5 +1,5 @@
 import { LitElement, html, css } from "lit-element";
-import { unsafeHTML } from "lit-html/directives/unsafe-html.js"
+import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { getArticleByTitle } from "../../js/api/api.js";
 import { actions } from "../../js/state/article-related.js";
 import { store } from "../../js/state/store.js";
@@ -16,12 +16,12 @@ class Article extends LitElement {
 
   static get properties() {
     return {
-      html:         { type: String,  reflect: true   },
-      title:        { type: String,  reflect: true   },
-      mainCategory: { type: String,  reflect: true   },
-      subCategory:  { type: String,  reflect: true   },
-      isPreview:    { type: Boolean, reflect: true   },
-      isDone:       { type: Boolean,                 },
+      html: { type: String, reflect: true },
+      title: { type: String, reflect: true },
+      mainCategory: { type: String, reflect: true },
+      subCategory: { type: String, reflect: true },
+      isPreview: { type: Boolean, reflect: true },
+      isDone: { type: Boolean },
     };
   }
 
@@ -50,7 +50,7 @@ class Article extends LitElement {
         display: inline-block;
         padding: 5px 10px;
         margin: 0 10px 0 0;
-        background-color: var(--billy-color-light-grey);
+        background-color: var(--billy-color-background-grey);
         border-radius: 20px;
       }
 
@@ -63,7 +63,7 @@ class Article extends LitElement {
       .article__line {
         height: var(--billy-line-height);
         margin: 15px 0 25px 0;
-        background-color: var(--billy-color-grey);
+        background-color: var(--billy-color-line-light);
         border: none;
         border-radius: var(--billy-line-radius);
       }
@@ -81,46 +81,47 @@ class Article extends LitElement {
 
   render() {
     return html`
-      ${ this.isDone || this.isPreview 
+      ${this.isDone || this.isPreview
         ? html`
-          <article class="article__content">
-            <div class="article__categories">
-              <!-- TODO: Make into billy-article-tag component -->
-              <div class="category">
-                <p class="category__text">${this.mainCategory}</p>
+            <article class="article__content">
+              <div class="article__categories">
+                <!-- TODO: Make into billy-article-tag component -->
+                <div class="category">
+                  <p class="category__text">${this.mainCategory}</p>
+                </div>
+                <div class="category">
+                  <p class="category__text">${this.subCategory}</p>
+                </div>
               </div>
-              <div class="category">
-                <p class="category__text">${this.subCategory}</p>
-              </div>
-            </div>
-            <h1 class="article__title">${this.title}</h1>
-            <hr class="article__line" />
-            ${unsafeHTML(this.html)}
-          </article>
+              <h1 class="article__title">${this.title}</h1>
+              <hr class="article__line" />
+              ${unsafeHTML(this.html)}
+            </article>
           `
-        : html``
-      }
+        : html``}
     `;
   }
 
   _getArticle() {
     let urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has("a")) {
-      getArticleByTitle(urlParams.get("a")).then(data => {
+      getArticleByTitle(urlParams.get("a")).then((data) => {
         this.isDone = true;
         this.title = data.title;
         this.mainCategory = data.headCategory;
         this.subCategory = data.subCategory;
         this.html = data.text;
 
-        store.dispatch(actions.setLinks({
-          author: {
-            fullName: data.author,
-          },
-          lastRevised: data.lastRevised,
-          links: data.links,
-        }));
-      })
+        store.dispatch(
+          actions.setLinks({
+            author: {
+              fullName: data.author,
+            },
+            lastRevised: data.lastRevised,
+            links: data.links,
+          }),
+        );
+      });
     }
   }
 }

@@ -13,12 +13,15 @@
 
   --billy-color-background-light: #fff;
   --billy-color-background-light-grey: #ebebeb;
+  --billy-color-background-grey: #dddddd;
   --billy-color-background-dark: #000;
+  --billy-color-background-disabled: #dddddd;
 
-  --billy-color-line-light: #ebebeb;
+  --billy-color-line-light: #dddddd;
 
   --billy-color-button-light: #fff;
   --billy-color-button-dark: #000;
+  --billy-color-button-gradient: var(--billy-gradient-background-brand);
 
   --billy-color-text-primary-light: #fff;
   --billy-color-text-primary-dark: #000;
@@ -37,6 +40,7 @@
     var(--billy-color-warning-primary),
     var(--billy-color-waring-secondary)
   );
+
   --billy-color-shadow: rgba(0, 0, 0, 0.25);
   --billy-color-shadow-lighter: rgba(0, 0, 0, 0.15);
   --billy-box-shadow: 0 5px 10px var(--billy-color-shadow);
@@ -66,7 +70,9 @@
   --billy-edit-page-width: 100%;
   --billy-edit-page-padding: 25px;
   --billy-edit-page-radius: 5px;
-  --billy-edit-page-form-button-background: var(--billy-gradient);
+  --billy-edit-page-form-button-background: var(
+    --billy-gradient-background-brand
+  );
   --billy-edit-page-form-padding: 10px;
   --billy-edit-page-form-wrapper-padding: 10px 0;
   --billy-edit-page-form-wrapper-padding-first: 0 0 10px 0;
@@ -93,15 +99,18 @@
   --billy-editor-button-width: 40px;
   --billy-editor-button-padding-last-child: 5px;
   --billy-editor-button-font-size-last-child: 20px;
-  --billy-editor-button-bg-color-hover: var(--billy-color-light-grey);
+  --billy-editor-button-bg-color-hover: var(
+    --billy-color-background-light-grey
+  );
   --billy-editor-content-padding: 10px;
   --billy-editor-text-font-size: 15px;
   --billy-editor-text-margin: auto 0 auto 15px;
 
   /* Contribute button: */
-  --billy-contribute-button-background-color: var(--billy-color-white);
+  --billy-contribute-button-background-color: var(
+    --billy-color-background-light
+  );
   --billy-contribute-button-border-radius: 75px;
-  --billy-contribute-button-color: var(--billy-color-lighter-dark);
   --billy-contribute-button-font-size: 20px;
   --billy-contribute-button-padding: 0 25px;
 }
@@ -110,7 +119,6 @@
   --billy-color-brand-primary: #000;
   --billy-color-brand-secondary: #000;
   --billy-color-white: #fff;
-  --billy-gradient-background-brand: #000;
   --billy-color-side-bar: #fff;
   --billy-border: 3px solid #000;
   --billy-border-right: 2px solid #000;
@@ -118,11 +126,10 @@
   --billy-box-shadow-lighter: none;
   --billy-color-grey: #000;
   --billy-color-button-dark: #fff;
-  --billy-edit-page-form-button-background: linear-gradient(
-    to right,
-    var(--billy-color-dark),
-    var(--billy-color-dark)
-  );
+  --billy-color-line-light: #000;
+  --billy-color-button-gradient: #000;
+
+  --billy-color-background-light-grey: #fff;
 }
 
 @font-face {
