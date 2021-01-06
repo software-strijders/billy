@@ -1,3 +1,4 @@
+import { Router } from "@vaadin/router";
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
@@ -117,14 +118,15 @@ class SearchBar extends LitElement {
 
   _handleKeyDown(event) {
     if (event.keyCode === 13) {
-      this._search(event);
+      this._search();
     }
   }
 
-  _search(event) {
-    window.location.href = `http://${
-      window.location.host
-    }/search?q=${this._getSearchInput()}`;
+  _search() {
+    Router.go({
+      pathname: "/search",
+      search: `?q=${this._getSearchInput()}`
+    });
   }
 }
 

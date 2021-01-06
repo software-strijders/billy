@@ -11,6 +11,11 @@ class Results extends LitElement {
     this.query = "";
     this.previews = [];
     this._getResultItems();
+
+    window.addEventListener('locationchange', () => {
+      this.isFinished = false;
+      this._getResultItems();
+    });
   }
 
   static get properties() {

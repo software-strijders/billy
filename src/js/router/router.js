@@ -11,4 +11,5 @@ router.setRoutes([
   { path: "/login",   component: "billy-login-page"   },
   { path: "/search",  component: "billy-search-page"  },
   { path: "/article", component: "billy-article-page" },
+  { path: "/create",  component: "billy-create-page" },
 ]);
