@@ -24,7 +24,7 @@ class EditingPage extends LitElement {
   _checkAccess() {
     if (!store.getState().login.loggedIn) {
       alert("Je hebt geen toegang tot deze pagina, u wordt omgeleid");
-      window.history.back();
+      window.location.href = "/";
     }
   }
 
@@ -68,6 +68,11 @@ class EditingPage extends LitElement {
         font-size: var(--billy-title-size);
       }
 
+      .form__title--h2 {
+        margin: 0 0 10px 0;  
+        font-size: 22px;
+      }
+
       .form__line {
         height: var(--billy-line-height);
         border: none;
@@ -78,11 +83,16 @@ class EditingPage extends LitElement {
 
       .form__wrapper {
         display: flex;
+        flex-direction: column;
         padding: var(--billy-edit-page-form-wrapper-padding);
       }
 
       .form__wrapper--first {
         padding: var(--billy-edit-page-form-wrapper-padding-first);
+      }
+
+      .form__wrapper--select {
+        flex-direction: row;
       }
 
       .form__wrapper--select .form__wrapper {
@@ -95,6 +105,7 @@ class EditingPage extends LitElement {
 
       .form__wrapper--button {
         justify-content: flex-end;
+        flex-direction: row;
       }
 
       .form__wrapper--button .form__button--remove {
@@ -110,6 +121,8 @@ class EditingPage extends LitElement {
       .form__wrapper--links .form__label {
         align-items: center;
         flex-direction: row;
+        font-size: 18px;
+        margin: 0 25px 0 0;
       }
 
       .form__wrapper--links .form__input {
@@ -130,13 +143,9 @@ class EditingPage extends LitElement {
 
       .form__label {
         display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .form__labelTitle {
         margin: var(--billy-edit-page-form-label-title-margin);
         font-size: var(--billy-edit-page-form-label-font-size);
+        font-weight: bold;
       }
 
       .form__input {
@@ -232,15 +241,12 @@ class EditingPage extends LitElement {
         <h1 class="form__title">Artikel aanmaken</h1>
         <hr class="form__line">
         <div class="form__wrapper form__wrapper--first">
-          <label class="form__label" for="title">
-            <h2 class="form__labelTitle">Titel</h1>
+            <label class="form__label" for="title">Titel</label>
             <input id="title" name="title" class="form__input" type="text" required />
-          </label>
         </div>
         <div class="form__wrapper form__wrapper--select">
           <div class="form__wrapper">
-            <label class="form__label">
-              <h2 class="form__labelTitle">Hoofdcategorie</h2>
+              <label class="form__label" for="mainCategory">Hoofdcategorie</label>
               <select id="mainCategory" name="headCategory" class="form__select" required>
                 <option disabled selected>Selecteer item</option>
                 <option>Analyse</option>
@@ -249,11 +255,9 @@ class EditingPage extends LitElement {
                 <option>Realisatie</option>
                 <option>Beheer</option>
               </select>
-            </label>
           </div>
           <div class="form__wrapper">
-            <label class="form__label">
-              <h2 class="form__labelTitle">Subcategorie</h2>
+              <label class="form__label" for="subCategory">Subcategorie</label>
               <select id="subCategory" name="subCategory" class="form__select" required>
                 <option disabled selected>Selecteer item</option>
                 <option>Gebruikersinteractie</option>
@@ -262,22 +266,17 @@ class EditingPage extends LitElement {
                 <option>Software</option>
                 <option>Hardware Interfacing</option>
               </select>
-            </label>
           </div>
         </div>
         <div class="form__wrapper form__wrapper--links">
-          <h2 class="form__labelTitle">Links (optioneel)</h2>
+          <h2 class="form__title form__title--h2">Links (optioneel)</h2>
           ${this.links.map((link, index) => {
             return html`
             <div class="form__link" data-index="${index}">
-              <label class="form__label" for="link-text-${index}">
-                <h3 class="form__labelTitle">Tekst</h2>
-                <input id="link-text-${index}" class="form__input" type="text" value="${link.text}" ?required="${link.save}">
-              </label>
-              <label class="form__label" for="link-href-${index}">
-                <h3 class="form__labelTitle">Link </h2>
-                <input id="link-href-${index}" class="form__input" type="url" value="${link.href}">
-              </label>
+              <label class="form__label" for="link-text-${index}">Tekst</label>
+              <input id="link-text-${index}" class="form__input" type="text" value="${link.text}" ?required="${link.save}">
+              <label class="form__label" for="link-href-${index}">Link</label>
+              <input id="link-href-${index}" class="form__input" type="url" value="${link.href}">
               ${link.save 
                 ? html`
                     <button class="form__button form__button--remove" type="button" @click="${this._removeLinkClick}">
