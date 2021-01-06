@@ -375,6 +375,7 @@ class EditingPage extends LitElement {
     article["description"] = this._getDescription(strippedHtml);
     article["readTime"] = this._calculateReadTime(strippedHtml);
     article["lastRevised"] = this._getDate();
+    article["link"] = `?a=${article.title}`;
     article["links"] = this.links
       .filter(link => link.save)
       .map(link => ({ text: link.text, href: link.href }));
