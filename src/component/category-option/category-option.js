@@ -12,7 +12,6 @@ const subCategoryOptions = {
 class CategoryOption extends LitElement {
   static get properties() {
     return {
-      href: { type: String },
       icon: { type: String },
       text: { type: String },
       sideBar: { type: Boolean },

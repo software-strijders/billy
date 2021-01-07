@@ -213,21 +213,21 @@
 
 @font-face {
   font-family: Aller;
-  src: url(/assets/font/aller.woff2);
+  src: url(/dist/assets/font/aller.woff2);
   font-weight: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: Aller;
-  src: url(/assets/font/aller-bold.woff2);
+  src: url(/dist/assets/font/aller-bold.woff2);
   font-weight: bold;
   font-display: swap;
 }
 
 @font-face {
   font-family: Aller;
-  src: url(/assets/font/aller-bold-italic.woff2);
+  src: url(/dist/assets/font/aller-bold-italic.woff2);
   font-style: italic;
   font-weight: bold;
   font-display: swap;
@@ -235,7 +235,7 @@
 
 @font-face {
   font-family: Aller;
-  src: url(/assets/font/aller-italic.woff2);
+  src: url(/dist/assets/font/aller-italic.woff2);
   font-style: italic;
   font-weight: normal;
   font-display: swap;

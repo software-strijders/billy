@@ -292,7 +292,7 @@ class EditingPage extends LitElement {
                         <img
                           class="form__buttonImg"
                           aria-label="Verwijder link van artikel"
-                          src="assets/icon/minus-icon.svg"
+                          src="/distassets/icon/minus-icon.svg"
                           alt=""
                         />
                       </button>
@@ -302,7 +302,7 @@ class EditingPage extends LitElement {
                         <img
                           class="form__buttonImg"
                           aria-label="Voeg link toe aan artikel"
-                          src="assets/icon/plus-icon.svg"
+                          src="/distassets/icon/plus-icon.svg"
                           alt=""
                         />
                       </button>

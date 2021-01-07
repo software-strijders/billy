@@ -100,7 +100,7 @@ class SearchBar extends LitElement {
           >
             <img
               class="searchBar__arrow"
-              src="../assets/icon/arrow-right.svg"
+              src="/dist/assets/icon/arrow-right.svg"
               alt=""
             />
           </a>

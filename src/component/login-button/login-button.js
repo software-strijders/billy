@@ -63,8 +63,8 @@ class LoginButton extends LitElement {
                 alt="Organisatie logo"
                 class="loginButton__image"
                 src=${store.getState().login.user.link
-                  ? "../../assets/image/" + store.getState().login.user.link + ".png"
-                  : "../../assets/favicon.svg"}
+                  ? "/dist/assets/image/" + store.getState().login.user.link + ".png"
+                  : "/dist/assets/favicon.svg"}
               />
               ${this.getNameOfUser()} `
           : html`Inloggen`}

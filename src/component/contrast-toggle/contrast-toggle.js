@@ -93,7 +93,7 @@ class ContrastToggle extends LitElement {
       >
         <div class="contrastToggle__fill">
           <div class="contrastToggle__slider">
-            <img alt="" class="contrastToggle__sliderIcon" src="/assets/icon/contrast-icon.svg" />
+            <img alt="" class="contrastToggle__sliderIcon" src="/dist/assets/icon/contrast-icon.svg" />
           </div>
         </div>
       </div>
