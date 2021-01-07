@@ -100,7 +100,7 @@ class LoginWindow extends LitElement {
     const emailInput = this.shadowRoot.querySelector("#email--input").value;
     const passwordInput = this.shadowRoot.querySelector("#password--input").value;
 
-    fetch("/assets/mock/accounts.json")
+    fetch("/dist/assets/mock/accounts.json")
       .then((response) => response.json())
       .then((data) => {
         let succes = false;
