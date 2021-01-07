@@ -7,6 +7,12 @@ class BackArrow extends LitElement {
         display: inline-block;
         height: 50px;
         width: 70px;
+        transition: 0.1s;
+        margin-left: 10px;
+      }
+
+      .backArrow:hover {
+        transform: translateX(-10px);
       }
 
       .backArrow__image {

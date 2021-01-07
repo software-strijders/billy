@@ -43,6 +43,10 @@ class ResultItem extends LitElement {
         
       }
 
+      :host(:hover) .resultItem__description {
+        color: grey;
+      }
+
       .line {
         position: absolute;
         height: 100%;
