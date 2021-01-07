@@ -14,8 +14,6 @@ class HomePage extends LitElement {
   }
 
   render() {
-    console.log(this.getBoundingClientRect());
-
     return html`
       <billy-app>
         <billy-full-page-layout slot="page-layout">
