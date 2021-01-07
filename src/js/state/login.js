@@ -16,7 +16,6 @@ export const { actions, reducer } = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      console.log(action.payload); //should be removed but its temporarily here for demonstration purposes
       return action.payload;
     },
   },

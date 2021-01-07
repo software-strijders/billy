@@ -15,10 +15,12 @@ class TopBar extends LitElement {
       }
 
       .topBar {
+        position: relative;
         width: 100%;
         height: var(--billy-top-bar-height);
-        background: var(--billy-gradient-bar);
+        background: var(--billy-gradient-background-brand);
         box-shadow: var(--billy-box-shadow-lighter);
+        z-index: 1;
       }
 
       .topBar--hero {
@@ -53,7 +55,7 @@ class TopBar extends LitElement {
       }
 
       .topBar__logo {
-        color: var(--billy-color-white);
+        color: var(--billy-color-text-primary-light);
         text-decoration: none;
         font-size: 45px;
         font-weight: bold;
@@ -71,6 +73,7 @@ class TopBar extends LitElement {
         <ul class="topBar__list">
           <li class="topBar__item">
             <a class="topBar__logo" href="/">Billy</a>
+            <slot name="backItem">
           </li>
           <li class="topBar__item topBar__item--right">
             <slot name="item"></slot>

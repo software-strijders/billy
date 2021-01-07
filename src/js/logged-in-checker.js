@@ -4,7 +4,6 @@ import { actions } from "../js/state/login.js";
 const data = JSON.parse(window.localStorage.getItem("data"));
 
 if (data && data.email) {
-  console.log(data)
   store.dispatch(
     actions.login({
       loggedIn: true,
