@@ -111,8 +111,8 @@ class ResultItem extends LitElement {
       <div class="line"></div>
       <div class="resultItem">
         <div class="resultItem__categories">
-          <p class="resultItem__category">${this.headCategory}</p>
-          <p class="resultItem__category">${this.subCategory}</p>
+          <a class="resultItem__category" href="/search?hc=${this.headCategory}">${this.headCategory}</a>
+          <a class="resultItem__category" href="/search?sc=${this.subCategory}">${this.subCategory}</a>
         </div>
         <a class="resultItem__link" href="${this.href}">
           <h2 class="resultItem__title">${this.title}</h2>
