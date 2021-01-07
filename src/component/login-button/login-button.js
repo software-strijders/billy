@@ -15,17 +15,23 @@ class LoginButton extends LitElement {
       .loginButton {
         display: flex;
         align-items: center;
-        box-shadow: 0px 5px 10px var(--billy-color-shadow);
-        border: none;
-        cursor: pointer;
-        background-color: var(--billy-color-background-light);
         height: 30px;
-        font-family: var(--billy-font-family);
-        font-size: 20px;
-        font-weight: bold;
         padding: 0 20px 0 15px;
+        background-color: var(--billy-color-background-light);
+        border: none;
         border-radius: 40px 0 0 40px;
+        box-shadow: 0px 5px 10px var(--billy-color-shadow);
+        color: var(--billy-color-black);
+        font-family: var(--billy-font-family);
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+        cursor: pointer;
         transition: 0.2s;
+      }
+
+      .loginButton:visited {
+        color: var(--billy-color-black);
       }
 
       .loginButton:hover {
@@ -46,9 +52,10 @@ class LoginButton extends LitElement {
 
   render() {
     return html`
-      <button
+      <a
         class="loginButton ${classMap({ "loginButton--large": this.large })}"
         @click="${this.login}"
+        href="/login"
       >
         ${store.getState().login.loggedIn
           ? html`<img
@@ -59,21 +66,14 @@ class LoginButton extends LitElement {
                   : "../../assets/favicon.svg"}
               />
               ${this.getNameOfUser()} `
-          : html`inloggen`}
+          : html`Inloggen`}
       </button>
     `;
   }
-
-  getLinkOfUser() {}
-
   getNameOfUser() {
     if (store.getState().login.user.firstName !== "") {
       return store.getState().login.user.firstName + " " + store.getState().login.user.lastName;
     }
-  }
-
-  login() {
-    window.location.href = "./login.html";
   }
 }
 

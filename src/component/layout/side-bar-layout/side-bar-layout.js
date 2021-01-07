@@ -21,6 +21,7 @@ class SideBarLayout extends LitElement {
         height: 100%;
         width: 100%;
         overflow: auto;
+        background-color: var(--billy-color-background-light);
       }
 
       .sideBarLayout__filler {

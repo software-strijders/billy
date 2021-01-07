@@ -1,4 +1,5 @@
 import "../js/logged-in-checker.js";
+import "../js/location-change-event.js"
 
 import "./app/app.js";
 import "./article/article.js";
@@ -14,6 +15,11 @@ import "./layout/full-page-layout/full-page-layout.js";
 import "./layout/side-bar-layout/side-bar-layout.js";
 import "./login-button/login-button.js";
 import "./login-window/login-window.js";
+import "./page/article-page.js"
+import "./page/create-page.js"
+import "./page/home-page.js";
+import "./page/login-page.js"
+import "./page/search-page.js"
 import "./results/results.js";
 import "./result-item/result-item.js";
 import "./result-item/no-result.js";

@@ -9,7 +9,6 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  transition: 0.3s;
   overflow: hidden;
 }
 
@@ -24,7 +23,23 @@ h5 {
   margin: 10px 0 10px 0;
 }
 
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 main {
   height: 100%;
   width: 100%;
+}
+
+.leaving {
+  animation: 0.1s fadeOut ease-in-out;
+  overflow: hidden;
+  z-index: 2;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }

@@ -30,7 +30,7 @@ class EditingPage extends LitElement {
 
   static get properties() {
     return {
-      links: { type: Array },
+      links:       { type: Array   },
       showPreview: { type: Boolean },
     };
   }
@@ -386,24 +386,20 @@ class EditingPage extends LitElement {
     article["readTime"] = this._calculateReadTime(strippedHtml);
     article["lastRevised"] = this._getDate();
     article["link"] = `?a=${article.title}`;
-    article["links"] = this.links
-      .filter((link) => link.save)
-      .map((link) => ({ text: link.text, href: link.href }));
+    article["links"] = this._getLinks() || [];
 
     sendArticle(article).then(() => {
       alert("Artikel succesvol aangemaakt");
-      window.location.href = `/article?a=${article.title}`;
+      Router.go({ pathname: "/article", search: `?a=${article.title}`});
     });
   }
 
   _getStrippedHtml(html) {
-    return (
-      html
-        // Strip html tags
-        .replace(/<[^>]+>/g, "")
-        // Seperate titles sticking to paragraph text
-        .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
-    );
+    return html
+      // Strip html tags
+      .replace(/<[^>]+>/g, '')
+      // Seperate titles sticking to paragraph text
+      .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
   }
 
   _getDescription(text) {
@@ -418,6 +414,12 @@ class EditingPage extends LitElement {
 
   _getDate() {
     return new Date().toISOString().split("T")[0];
+  }
+
+  _getLinks() {
+    return this.links
+      .filter(link => link.save)
+      .map(link => ({ text: link.text, href: link.href }));
   }
 }
 

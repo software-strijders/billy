@@ -28,7 +28,7 @@ class LoginWindow extends LitElement {
         border: none;
         font-size: 20px;
         padding: 0 20px;
-        border-radius: 100px;a
+        border-radius: 100px;
       }
 
       .redirect__link {

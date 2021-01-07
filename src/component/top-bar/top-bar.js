@@ -19,10 +19,12 @@ class TopBar extends LitElement {
       }
 
       .topBar {
+        position: relative;
         width: 100%;
         height: var(--billy-top-bar-height);
         background: var(--billy-gradient-background-brand);
         box-shadow: var(--billy-box-shadow-lighter);
+        z-index: 1;
       }
 
       .topBar--hero {
