@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
+import { store } from "../../js/state/store.js";
+
 class ArticlePage extends LitElement {
   static getStyles() {
     return css`
@@ -16,7 +18,10 @@ class ArticlePage extends LitElement {
       <billy-app>
         <billy-top-bar slot="header">
           <billy-contrast-toggle slot="item"></billy-contrast-toggle>
-          <billy-contribute-button slot="item"></billy-contribute-button>
+          ${store.getState().login.loggedIn
+            ? html`<billy-contribute-button slot="item"></billy-contribute-button>`
+            : html``
+          }
           <billy-search-bar hideLink="true" slot="item"></billy-search-bar>
           <billy-login-button large="true" slot="item"></billy-login-button>
         </billy-top-bar>

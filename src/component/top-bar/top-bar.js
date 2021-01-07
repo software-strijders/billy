@@ -11,11 +11,7 @@ class TopBar extends LitElement {
   static getStyles() {
     return css`
       ::slotted(*) {
-        margin: 0 10px;
-      }
-
-      ::slotted(:last-child) {
-        margin: 0;
+        margin: 0 0 0 15px;
       }
 
       .topBar {
