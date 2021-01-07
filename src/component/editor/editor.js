@@ -31,10 +31,10 @@ class Editor extends LitElement {
 
   static get properties() {
     return {
-      showPreview:  { type: Boolean },
-      title:        { type: String, reflect: true },
+      showPreview: { type: Boolean },
+      title: { type: String, reflect: true },
       mainCategory: { type: String, reflect: true },
-      subCategory:  { type: String, reflect: true, },
+      subCategory: { type: String, reflect: true },
     };
   }
 
@@ -50,7 +50,7 @@ class Editor extends LitElement {
         display: flex;
         flex-direction: column;
         height: var(--billy-editor-height);
-        border: var(--billy-border-size) solid var(--billy-color-grey);
+        border: var(--billy-border-size) solid var(--billy-color-line-light);
         border-radius: var(--billy-editor-radius);
         overflow: hidden;
       }
@@ -71,8 +71,8 @@ class Editor extends LitElement {
       }
 
       .pell__preview .pell__button:last-child:hover {
-        background-color: var(--billy-color-red);
-        color: var(--billy-color-white);
+        background: var(--billy-gradient-background-warning);
+        color: var(--billy-color-text-primary-light);
       }
 
       .pell__text {
@@ -85,8 +85,9 @@ class Editor extends LitElement {
       .pell__actionBar {
         /* Fixes weird spacing issue: */
         display: flex;
-        background-color: var(--billy-color-white);
-        border-bottom: var(--billy-border-size) solid var(--billy-color-grey);
+        background-color: var(--billy-color-background-light);
+        border-bottom: var(--billy-border-size) solid
+          var(--billy-color-line-light);
       }
 
       .pell__button {
@@ -115,7 +116,8 @@ class Editor extends LitElement {
         left: 0;
         content: "";
         height: 40px;
-        border-left: var(--billy-border-size) solid var(--billy-color-grey);
+        border-left: var(--billy-border-size) solid
+          var(--billy-color-line-light);
       }
 
       .pell__button--selected {
@@ -154,7 +156,9 @@ class Editor extends LitElement {
                     title="Close"
                     type="button"
                     @click="${this._togglePreview}"
-                  >x</button>
+                  >
+                    x
+                  </button>
                 </div>
                 <div class="pell__content pell__content--preview">
                   <!-- TODO: This should eventually be passed in the state -->
@@ -215,7 +219,9 @@ class Editor extends LitElement {
   }
 
   _togglePreview() {
-    this.dispatchEvent(new CustomEvent("on-preview", { detail: !this.showPreview }));
+    this.dispatchEvent(
+      new CustomEvent("on-preview", { detail: !this.showPreview }),
+    );
     this.showPreview = !this.showPreview;
   }
 }

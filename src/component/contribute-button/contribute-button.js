@@ -24,9 +24,10 @@ export class ContributeButton extends LitElement {
         height: 50px;
         padding: var(--billy-contribute-button-padding);
         border-radius: var(--billy-contribute-button-border-radius);
-        background-color: var(--billy-contribute-button-background-color);
+        background-color: var(--billy-color-background-light);
         color: var(--billy-contribute-button-color);
         font-size: var(--billy-contribute-button-font-size);
+        font-weight: bold;
         text-align: middle;
         text-decoration: none;
       }
@@ -39,8 +40,7 @@ export class ContributeButton extends LitElement {
     return html`
       ${state.login.loggedIn
         ? html`<a class="link" href="/create">Bijdragen</a>`
-        : html``
-      }
+        : html``}
     `;
   }
 

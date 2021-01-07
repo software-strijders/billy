@@ -28,12 +28,12 @@ class LoginWindow extends LitElement {
         border: none;
         font-size: 20px;
         padding: 0 20px;
-        border-radius: 100px;
+        border-radius: 100px;a
       }
 
       .redirect__link {
         margin-top: 10px;
-        color: white;
+        color: var(--billy-color-text-primary-light);
         font-size: 13px;
       }
 
@@ -42,13 +42,14 @@ class LoginWindow extends LitElement {
       }
 
       .field__button {
-        background-color: var(--billy-color-dark);
-        color: var(--billy-color-white);
+        background-color: var(--billy-color-button-dark);
+        color: var(--billy-color-button-text-light);
         height: 100%;
         margin: 0;
         width: 540px;
         border: none;
         font-size: 20px;
+        font-weight: bold;
         padding: 0 20px;
         border-radius: 100px;
         cursor: pointer;
@@ -88,12 +89,7 @@ class LoginWindow extends LitElement {
         <div class="field">
           <button class="field__button" @click="${this.login}">Inloggen</button>
         </div>
-        <a class="redirect__link redirect__link--show" href=""
-          >Nog geen account? Registreer hier</a
-        >
-        <a class="redirect__link redirect__link--show" href="./index.html"
-          >Terug naar homepagina</a
-        >
+        <a class="redirect__link redirect__link--show" href="">Nog geen account? Registreer hier</a>
       </div>
     `;
   }
@@ -106,18 +102,17 @@ class LoginWindow extends LitElement {
       .then((response) => response.json())
       .then((data) =>
         data.accounts.forEach((account) => {
-          if (
-            account.email === emailInput &&
-            account.password === passwordInput
-          ) {
-            window.localStorage.setItem("data", JSON.stringify(
-              {
-                "email": account.email,
-                "firstName": account.firstName,
-                "lastName": account.lastName,
-                "role": account.role,
-                "link": account.link
-              }));
+          if (account.email === emailInput && account.password === passwordInput) {
+            window.localStorage.setItem(
+              "data",
+              JSON.stringify({
+                email: account.email,
+                firstName: account.firstName,
+                lastName: account.lastName,
+                role: account.role,
+                link: account.link,
+              }),
+            );
             window.location.replace("/");
           }
         }),
@@ -125,7 +120,7 @@ class LoginWindow extends LitElement {
   }
 
   handleKeyUp(e) {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       this.login();
     }
   }

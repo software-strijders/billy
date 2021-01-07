@@ -14,7 +14,7 @@ class SideBar extends LitElement {
         flex-direction: column;
         width: 100%;
         text-align: center;
-        background: var(--billy-color-side-bar);
+        background: var(--billy-color-background-light-grey);
         box-shadow: 0px 5px 10px var(--billy-color-shadow);
         border-right: var(--billy-border-right);
         border-left: var(--billy-border-left);

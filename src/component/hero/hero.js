@@ -23,7 +23,7 @@ class Hero extends LitElement {
         position: relative;
         width: 100%;
         height: 100%;
-        background: var(--billy-gradient);
+        background: var(--billy-gradient-background-brand);
         box-shadow: 0px 5px 10px var(--billy-color-shadow);
       }
 
@@ -48,7 +48,7 @@ class Hero extends LitElement {
       .hero__logo {
         margin: 0;
         font-size: 125px;
-        color: var(--billy-color-white);
+        color: var(--billy-color-text-primary-light);
         text-align: center;
         user-select: none;
         text-shadow: var(--billy-text-shadow);
@@ -58,7 +58,7 @@ class Hero extends LitElement {
         font-size: 25px;
         margin: 0 0 50px 0;
         user-select: none;
-        color: var(--billy-color-white);
+        color: var(--billy-color-text-primary-light);
         text-align: center;
         font-weight: normal;
       }
@@ -69,7 +69,7 @@ class Hero extends LitElement {
       }
 
       .hero__categoryTitle {
-        color: var(--billy-color-white);
+        color: var(--billy-color-text-primary-light);
         user-select: none;
       }
 
