@@ -17,6 +17,7 @@ class LoginPage extends LitElement {
         <billy-full-page-layout slot="page-layout">
           <billy-hero hideCategoryTitle="true" slot="content">
             <billy-top-bar hero="true" slot="header">
+              <billy-back-arrow slot="backItem"></billy-back-arrow>
               <billy-contrast-toggle slot="item" style="margin: 0 15px 0 0"></billy-contrast-toggle>
               <billy-contribute-button slot="item"></billy-contribute-button>
             </billy-top-bar>

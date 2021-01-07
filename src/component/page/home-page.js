@@ -21,7 +21,7 @@ class HomePage extends LitElement {
             <billy-top-bar hero="true" slot="header">
               <billy-contrast-toggle slot="item"></billy-contrast-toggle>
               <billy-contribute-button slot="item"></billy-contribute-button>
-              <billy-login-button slot="item"></billy-login-button>
+              <billy-login-button slot="item" large="true"></billy-login-button>
             </billy-top-bar>
             <billy-search-bar slot="content"></billy-search-bar>
           </billy-hero>
