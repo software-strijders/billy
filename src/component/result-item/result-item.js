@@ -44,7 +44,7 @@ class ResultItem extends LitElement {
       }
 
       :host(:hover) .resultItem__description {
-        color: grey;
+        color: var(--billy-color-text-secondary-dark);
       }
 
       .line {
@@ -102,6 +102,10 @@ class ResultItem extends LitElement {
         padding: 5px 10px;
         cursor: select;
         font-size: 15px;
+      }
+
+      .resultItem__info {
+        margin-top: 5px;
       }
     `;
   }
