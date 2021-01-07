@@ -1,7 +1,19 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html, css } from "lit-element";
 
 class HomePage extends LitElement {
+  static getStyles() {
+    return css`
+      :host {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    `;
+  }
+
   render() {
+    console.log(this.getBoundingClientRect());
+
     return html`
       <billy-app>
         <billy-full-page-layout slot="page-layout">

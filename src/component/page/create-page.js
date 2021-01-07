@@ -1,6 +1,16 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html, css } from "lit-element";
 
 class CreatePage extends LitElement {
+  static getStyles() {
+    return css`
+      :host {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    `;
+  }
+
   render() {
     return html`
       <billy-app>

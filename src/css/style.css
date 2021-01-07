@@ -33,3 +33,14 @@ main {
   height: 100%;
   width: 100%;
 }
+
+.leaving {
+  animation: 0.1s fadeOut ease-in-out;
+  overflow: hidden;
+  z-index: 2;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
