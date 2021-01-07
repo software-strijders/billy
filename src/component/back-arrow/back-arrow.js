@@ -23,11 +23,12 @@ class BackArrow extends LitElement {
 
   render() {
     return html`
-      <a class="backArrow" href="/">
+      <a class="backArrow" href="/" aria-label="Ga terug naar vorige pagina">
         <img
           class="backArrow__image"
           src="../../assets/icon/backarrow-icon.svg"
-        />
+          alt=""
+          />
       </a>
     `;
   }
