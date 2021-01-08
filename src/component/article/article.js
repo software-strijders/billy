@@ -76,6 +76,85 @@ class Article extends LitElement {
         font-size: 18px;
         margin: 0 0 25px 0;
       }
+      
+      blockquote {
+        background: #f9f9f9;
+        border-left: 5px solid #ccc;
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        border-radius: 5px; 
+      }
+
+      blockquote:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 2em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+      }
+
+      blockquote:after {
+        color: #ccc;
+        content: close-quote;
+        font-size: 2em;
+        line-height: 0.1em;
+        margin-left: 0.25em;
+        vertical-align: -0.4em;
+      }
+
+      ol {
+        list-style: none;
+        counter-reset: ol-counter;
+      }
+
+      ol li {
+        counter-increment: ol-counter;
+      }
+
+      ol li::before {
+        content: counter(ol-counter) ". ";
+        color: var(--billy-color-brand-secondary);
+        font-weight: bold;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      ul li::before {
+        content: "* ";
+        color: var(--billy-color-brand-secondary);
+        font-weight: bold;
+      }
+
+      pre {
+        background: #212121;
+        color: white;
+        padding: 6px;
+        border-radius: 4px;
+      }
+
+      hr {
+        height: 2px;
+        margin: 15px 0 25px 0;
+        background-color: var(--billy-color-line-light);
+        border: none;
+        border-radius: var(--billy-line-radius);
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      a {
+        color: var(--billy-color-brand-primary);
+      }
+
+      a:visited {
+        color: var(--billy-color-brand-secondary);
+      }
     `;
   }
 
