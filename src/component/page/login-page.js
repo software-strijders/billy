@@ -23,7 +23,7 @@ class LoginPage extends LitElement {
               ${store.getState().login.loggedIn
                 ? html`
                 <billy-contrast-toggle slot="item"></billy-contrast-toggle>
-                <billy-contribute-button slot="item"></billy-contribute-button>
+                <billy-contribute-button slot="item" style="margin: 0 15px 0 15px"></billy-contribute-button>
                 `
                 : html`
                 <billy-contrast-toggle slot="item" style="margin: 0 15px 0 0"></billy-contrast-toggle>
