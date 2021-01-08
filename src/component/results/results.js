@@ -61,7 +61,7 @@ class Results extends LitElement {
     return html`
       <div class="results">
         <h1 class="results__title">
-          Results for: <span class="results__query">${this.query} ${this.getHeadCategory()} ${this.getSubCategory()} </span>
+          Results for: <span class="results__query">${this.query} ${this.getCategories()} </span>
         </h1>
         <hr class="results__hr" />
         <div id="resultItems" class="results__items">
@@ -125,17 +125,10 @@ class Results extends LitElement {
     });
   }
 
-  getHeadCategory() {
+  getCategories() {
     let urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("hc")) {
-      return urlParams.get("hc");
-    }
-  }
-
-  getSubCategory() {
-    let urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("sc")) {
-      return urlParams.get("sc");
+    if (urlParams.has("sc") || urlParams.has("sc")) {
+      return urlParams.get("hc") + ", " + urlParams.get("sc");
     }
   }
 }
