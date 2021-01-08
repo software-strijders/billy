@@ -126,18 +126,21 @@
   --billy-color-button-gradient: #000;
   --billy-color-background-light-grey: #fff;
   --billy-color-button-text-light: #000;
+  --billy-color-text-secondary-dark: #000;
 }
 
 @font-face {
   font-family: Aller;
   src: url(/assets/font/aller.woff2);
   font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: Aller;
   src: url(/assets/font/aller-bold.woff2);
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
@@ -145,6 +148,7 @@
   src: url(/assets/font/aller-bold-italic.woff2);
   font-style: italic;
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
@@ -152,4 +156,5 @@
   src: url(/assets/font/aller-italic.woff2);
   font-style: italic;
   font-weight: normal;
+  font-display: swap;
 }
