@@ -1,0 +1,93 @@
+@startuml combined
+
+state Article {
+  state "Created" as C
+  state "Edited" as E 
+  state "Deleted" as D
+
+  [*] --> C
+
+  C --> E
+  C --> D
+  
+  E --> E
+  E --> D
+  
+  D --> [*]
+}
+
+state Contrast {
+  state "Normal" as N
+  state "High" as H
+
+  [*] --> N
+  
+  N --> H
+  H --> N
+
+  N --> [*]  
+  H --> [*]
+}
+
+state SearchArticle {
+  state "SearchByCategory" as SBC
+  state "SearchByUserInput" as SBUI
+  state "ShowFoundResults" as SFR
+  state "ShowNoResultsFound" as SNFR
+  
+  [*] --> SBC
+  [*] --> SBUI
+  
+  SBUI --> SFR
+  SBC --> SFR
+  
+  SFR -left-> SBC 
+  SFR -left-> SBUI
+  
+  SBC --> SNFR
+  SBUI --> SNFR
+  
+  SNFR -left-> SBC
+  SNFR -left-> SBUI
+  
+  SFR --> [*]
+  SNFR --> [*]
+}
+
+state Login {
+    state "Anonymous" as A
+    state "Logged in" as L
+
+    [*] --> A
+    A --> L
+    L --> A
+    L --> [*]
+    A --> [*]
+}
+
+[*] --> Article
+[*] --> Contrast
+[*] --> Login
+[*] --> SearchArticle
+
+Article --> SearchArticle
+Article --> Contrast
+Article --> Login
+Article --> [*]
+
+SearchArticle --> Article
+SearchArticle --> Contrast
+SearchArticle --> Login
+SearchArticle --> [*]
+
+Contrast --> Article
+Contrast --> SearchArticle
+Contrast --> Login
+Contrast --> [*]
+
+Login --> Article
+Login --> SearchArticle
+Login --> Contrast
+Login --> [*]
+
+@enduml
