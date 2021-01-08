@@ -100,7 +100,8 @@ class LoginWindow extends LitElement {
 
     fetch("/assets/mock/accounts.json")
       .then((response) => response.json())
-      .then((data) =>
+      .then((data) => {
+        let succes = false;
         data.accounts.forEach((account) => {
           if (account.email === emailInput && account.password === passwordInput) {
             window.localStorage.setItem(
@@ -114,9 +115,11 @@ class LoginWindow extends LitElement {
               }),
             );
             window.location.replace("/");
+            succes = true;
           }
-        }),
-      );
+        });
+        if (!succes) alert("Inloggegevens zijn incorrect!");
+    });
   }
 
   handleKeyUp(e) {
