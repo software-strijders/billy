@@ -86,8 +86,7 @@ class Editor extends LitElement {
         /* Fixes weird spacing issue: */
         display: flex;
         background-color: var(--billy-color-background-light);
-        border-bottom: var(--billy-border-size) solid
-          var(--billy-color-line-light);
+        border-bottom: var(--billy-border-size) solid var(--billy-color-line-light);
       }
 
       .pell__button {
@@ -116,8 +115,7 @@ class Editor extends LitElement {
         left: 0;
         content: "";
         height: 40px;
-        border-left: var(--billy-border-size) solid
-          var(--billy-color-line-light);
+        border-left: var(--billy-border-size) solid var(--billy-color-line-light);
       }
 
       .pell__button--selected {
@@ -174,6 +172,9 @@ class Editor extends LitElement {
             `
           : ""}
       </div>
+      <style>
+        @import "../css/article.css";
+      </style>
     `;
   }
 
@@ -182,9 +183,7 @@ class Editor extends LitElement {
       element: this.shadowRoot.querySelector(".pell"),
       onChange: (html) => {
         this.articleHtml = html;
-        this.dispatchEvent(
-          new CustomEvent("on-edit", { detail: { html: html } }),
-        );
+        this.dispatchEvent(new CustomEvent("on-edit", { detail: { html: html } }));
       },
       classes: {
         // We'd like to keep our BEM convention :)
@@ -219,9 +218,7 @@ class Editor extends LitElement {
   }
 
   _togglePreview() {
-    this.dispatchEvent(
-      new CustomEvent("on-preview", { detail: !this.showPreview }),
-    );
+    this.dispatchEvent(new CustomEvent("on-preview", { detail: !this.showPreview }));
     this.showPreview = !this.showPreview;
   }
 }

@@ -15,13 +15,13 @@ class Article extends LitElement {
   }
 
   static get properties() {
-    return {
-      html:         { type: String,   reflect: true },
-      title:        { type: String,   reflect: true },
-      mainCategory: { type: String,   reflect: true },
-      subCategory:  { type: String,   reflect: true },
-      isPreview:    { type: Boolean,  reflect: true },
-      isDone:       { type: Boolean                 },
+    return {        
+      html:         { type: String,  reflect: true },
+      title:        { type: String,  reflect: true },
+      mainCategory: { type: String,  reflect: true },
+      subCategory:  { type: String,  reflect: true },
+      isPreview:    { type: Boolean, reflect: true },
+      isDone:       { type: Boolean                },
     };
   }
 
@@ -97,6 +97,9 @@ class Article extends LitElement {
               <hr class="article__line" />
               ${unsafeHTML(this.html)}
             </article>
+            <style>
+              @import "../css/article.css";
+            </style>
           `
         : html``}
     `;
