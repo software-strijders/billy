@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../js/custom-element";
 import { store } from "../../js/state/store.js";
 
 class SearchPage extends LitElement {
@@ -34,4 +35,4 @@ class SearchPage extends LitElement {
   }
 }
 
-window.customElements.define("billy-search-page", SearchPage);
+defineElement("billy-search-page", SearchPage);

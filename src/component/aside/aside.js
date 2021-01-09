@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit-element";
-import { classMap } from "lit-html/directives/class-map";
+
+import { defineElement } from "../../js/custom-element";
 import { store } from "../../js/state/store";
 
 class Aside extends LitElement {
@@ -128,4 +129,4 @@ class Aside extends LitElement {
   }
 }
 
-window.customElements.define("billy-aside", Aside);
+defineElement("billy-aside", Aside)

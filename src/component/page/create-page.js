@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../js/custom-element";
+
 class CreatePage extends LitElement {
   static getStyles() {
     return css`
@@ -28,4 +30,4 @@ class CreatePage extends LitElement {
   }
 }
 
-window.customElements.define("billy-create-page", CreatePage);
+defineElement("billy-create-page", CreatePage);

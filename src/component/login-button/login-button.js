@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
+import { defineElement } from "../../js/custom-element.js";
+
 import { store } from "../../js/state/store.js";
 
 class LoginButton extends LitElement {
@@ -84,4 +86,4 @@ class LoginButton extends LitElement {
   }
 }
 
-customElements.define("billy-login-button", LoginButton);
+defineElement("billy-login-button", LoginButton);

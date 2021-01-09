@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../../js/custom-element";
+
 class SideBarLayout extends LitElement {
   static getStyles() {
     return css`
@@ -82,4 +84,4 @@ class SideBarLayout extends LitElement {
   }
 }
 
-window.customElements.define("billy-side-bar-layout", SideBarLayout);
+defineElement("billy-side-bar-layout", SideBarLayout);

@@ -2,6 +2,8 @@ import { Router } from "@vaadin/router";
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
+import { defineElement } from "../../js/custom-element";
+
 const link = "https://www.un.org/en/sections/issues-depth/climate-change/";
 
 class SearchBar extends LitElement {
@@ -134,4 +136,4 @@ class SearchBar extends LitElement {
   }
 }
 
-customElements.define("billy-search-bar", SearchBar);
+defineElement("billy-search-bar", SearchBar)

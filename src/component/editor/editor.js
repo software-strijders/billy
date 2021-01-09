@@ -2,6 +2,8 @@ import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import pell from "pell";
 
+import { defineElement } from "../../js/custom-element";
+
 const defaultOptions = [
   "bold",
   "italic",
@@ -272,4 +274,4 @@ class Editor extends LitElement {
   }
 }
 
-window.customElements.define("billy-editor", Editor);
+defineElement("billy-editor", Editor);

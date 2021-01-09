@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit-element";
 import levenshtein from "fast-levenshtein";
 
 import { getArticles } from "../../js/api/api.js";
+import { defineElement } from "../../js/custom-element.js";
 
 class Results extends LitElement {
   constructor() {
@@ -138,4 +139,4 @@ class Results extends LitElement {
   }
 }
 
-customElements.define("billy-results", Results);
+defineElement("billy-results", Results);

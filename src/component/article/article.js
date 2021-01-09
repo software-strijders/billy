@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { getArticleByTitle } from "../../js/api/api.js";
+
+import { defineElement } from "../../js/custom-element.js";
 import { actions } from "../../js/state/article-related.js";
 import { store } from "../../js/state/store.js";
 
@@ -131,4 +133,4 @@ class Article extends LitElement {
   }
 }
 
-window.customElements.define("billy-article", Article);
+defineElement("billy-article", Article);

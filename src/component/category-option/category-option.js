@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 
+import { defineElement } from "../../js/custom-element";
+
 const subCategoryOptions = {
   interaction: "Gebruikersinteractie",
   organizationProcess: "Organisatie processen",
@@ -192,4 +194,4 @@ class CategoryOption extends LitElement {
   }
 }
 
-customElements.define("billy-category-option", CategoryOption);
+defineElement("billy-category-option", CategoryOption);

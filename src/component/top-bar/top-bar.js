@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
+import { defineElement } from "../../js/custom-element";
 
 class TopBar extends LitElement {
   static get properties() {
@@ -85,4 +86,4 @@ class TopBar extends LitElement {
   }
 }
 
-window.customElements.define("billy-top-bar", TopBar);
+defineElement("billy-top-bar", TopBar);

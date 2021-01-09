@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 
+import { defineElement } from "../../js/custom-element";
+
 class Hero extends LitElement {
   constructor() {
     super();
@@ -105,4 +107,4 @@ class Hero extends LitElement {
   }
 }
 
-window.customElements.define("billy-hero", Hero);
+defineElement("billy-hero", Hero);

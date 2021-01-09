@@ -5,6 +5,7 @@ import { Router } from "@vaadin/router";
 import { sendArticle } from "../../js/api/api";
 import { author } from "../../js/state/login";
 import { store } from "../../js/state/store.js";
+import { defineElement } from "../../js/custom-element";
 
 const MAX_DESCRIPTION_LENGTH = 300;
 const WORDS_PER_MINUTE = 250;
@@ -436,4 +437,4 @@ class EditingPage extends LitElement {
   }
 }
 
-window.customElements.define("billy-editing-page", EditingPage);
+defineElement("billy-editing-page", EditingPage);

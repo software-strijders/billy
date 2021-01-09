@@ -1,4 +1,5 @@
 import { html, LitElement, css } from "lit-element";
+import { defineElement } from "../../js/custom-element";
 import { store } from "../../js/state/store";
 
 export class ContributeButton extends LitElement {
@@ -50,4 +51,4 @@ export class ContributeButton extends LitElement {
   }
 }
 
-window.customElements.define("billy-contribute-button", ContributeButton);
+defineElement("billy-contribute-button", ContributeButton);

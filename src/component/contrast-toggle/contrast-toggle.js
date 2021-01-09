@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
+import { defineElement } from "../../js/custom-element";
+
 class ContrastToggle extends LitElement {
   constructor() {
     super();
@@ -105,4 +107,4 @@ class ContrastToggle extends LitElement {
   }
 }
 
-customElements.define("billy-contrast-toggle", ContrastToggle);
+defineElement("billy-contrast-toggle", ContrastToggle)

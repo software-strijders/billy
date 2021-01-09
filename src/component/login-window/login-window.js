@@ -4,6 +4,7 @@ import { Router } from "@vaadin/router";
 import { logIn } from "../../js/api/api";
 import { store } from "../../js/state/store";
 import { actions } from "../../js/state/login";
+import { defineElement } from "../../js/custom-element";
 
 // TODO: This is not really appropriate to be a component, it should be split into
 // smaller components
@@ -119,4 +120,4 @@ class LoginWindow extends LitElement {
   }
 }
 
-customElements.define("billy-login-window", LoginWindow);
+defineElement("billy-login-window", LoginWindow);

@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../../js/custom-element";
+
 class FullPageLayout extends LitElement {
   static getStyles() {
     return css`
@@ -46,4 +48,4 @@ class FullPageLayout extends LitElement {
   }
 }
 
-window.customElements.define("billy-full-page-layout", FullPageLayout);
+defineElement("billy-full-page-layout", FullPageLayout)
