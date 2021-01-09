@@ -45,6 +45,14 @@ app.post("/api/login", (req, res) => {
 });
 
 if (app.settings.env === "production") {
+  app.enable('trust proxy');
+  app.use('*', (req, res, next) => {
+    if (req.secure) {
+      return next();
+    }
+    res.redirect(`https://${req.hostname}${req.url}`);
+  });
+  
   app.use(express.static(path.join(__dirname, "../build")));
   app.get(["/", "/*"], (req, res) => {
     res.sendFile(path.join(__dirname, "../build", "index.html"));
