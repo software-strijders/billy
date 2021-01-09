@@ -13,10 +13,10 @@ class Results extends LitElement {
     this.previews = [];
     this._getResultItems();
 
-    window.addEventListener('locationchange', () => {
+    window.locationchange = () => {
       this.isFinished = false;
       this._getResultItems();
-    });
+    };
   }
 
   static get properties() {
@@ -57,6 +57,12 @@ class Results extends LitElement {
         -webkit-text-fill-color: var(--billy-color-transparent);
       }
     `;
+  }
+
+  disconnectedCallback() {
+    // Removes the event listener.
+    // If we don't, we create our own personal DDoS machine...
+    window.locationchange = null;
   }
 
   render() {

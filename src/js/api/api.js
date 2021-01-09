@@ -35,7 +35,7 @@ export function sendArticle(article) {
     body: JSON.stringify(article), 
     headers: { "Content-type": "application/json; charset=UTF-8" },
   }).then(response => {
-      if (response.ok) return console.log("OK");
+      if (response.ok) return response;
       else throw Error("Kon artikel niet opslaan");
     })
 }
