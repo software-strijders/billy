@@ -1,4 +1,9 @@
 import { LitElement, html, css } from "lit-element";
+import { Router } from "@vaadin/router";
+
+import { logIn } from "../../js/api/api";
+import { store } from "../../js/state/store";
+import { actions } from "../../js/state/login";
 
 // TODO: This is not really appropriate to be a component, it should be split into
 // smaller components
@@ -73,7 +78,6 @@ class LoginWindow extends LitElement {
           />
         </div>
       </div>
-
       <div class="wrapper">
         <div class="field">
           <input
@@ -86,7 +90,6 @@ class LoginWindow extends LitElement {
           />
         </div>
       </div>
-
       <div class="wrapper">
         <div class="field">
           <button class="field__button" @click="${this.login}">Inloggen</button>
@@ -100,29 +103,13 @@ class LoginWindow extends LitElement {
     const emailInput = this.shadowRoot.querySelector("#email--input").value;
     const passwordInput = this.shadowRoot.querySelector("#password--input").value;
 
-    fetch("/dist/assets/mock/accounts.json")
-      .then((response) => response.json())
-      .then((data) => {
-        let succes = false;
-        data.accounts.forEach((account) => {
-          if (account.email === emailInput && account.password === passwordInput) {
-            window.localStorage.setItem(
-              "data",
-              JSON.stringify({
-                email: account.email,
-                firstName: account.firstName,
-                lastName: account.lastName,
-                role: account.role,
-                link: account.link,
-                organization: account.organization,
-              }),
-            );
-            window.location.replace("/");
-            succes = true;
-          }
-        });
-        if (!succes) alert("Inloggegevens zijn incorrect!");
-    });
+    logIn({ email: emailInput, password: passwordInput })
+      .then(data => {
+        window.localStorage.setItem("data", JSON.stringify(data));
+        store.dispatch(actions.login({ loggedIn: true, user: data }))
+        Router.go("/");
+      })
+      .catch(e => alert(e));
   }
 
   handleKeyUp(e) {

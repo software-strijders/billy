@@ -4,6 +4,12 @@ import { classMap } from "lit-html/directives/class-map";
 import { store } from "../../js/state/store.js";
 
 class LoginButton extends LitElement {
+  constructor() {
+    super();
+
+    store.subscribe(() => this.requestUpdate());
+  }
+
   static get properties() {
     return {
       large: { type: Boolean },

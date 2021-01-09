@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
+import { Router } from "@vaadin/router";
 
 import { sendArticle } from "../../js/api/api";
 import { author } from "../../js/state/login";

@@ -6,6 +6,7 @@ const cors = require("cors");
 const app = express();
 
 const articlePath = path.join(__dirname, "data", "articles.json");
+const accountPath = path.join(__dirname, "data", "accounts.json")
 
 app.use(express.json());
 app.use(cors());
@@ -25,6 +26,22 @@ app.post("/api/article", (req, res) => {
   fs.writeFileSync(articlePath, JSON.stringify(file, null, 2));
 
   res.sendStatus(200);
+});
+
+app.post("/api/login", (req, res) => {
+  const file = JSON.parse(fs.readFileSync(accountPath));
+  for (let account of file.accounts) {
+    if (account.email === req.body.email && account.password === req.body.password) {
+      return res.send({
+        email: account.email,
+        firstName: account.firstName,
+        lastName: account.lastName,
+        role: account.role,
+        link: account.link,
+      });
+    }
+  }
+  res.sendStatus(400);
 });
 
 if (app.settings.env === "production") {
