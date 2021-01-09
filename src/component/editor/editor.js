@@ -90,6 +90,9 @@ class Editor extends LitElement {
       }
 
       .pell__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: var(--billy-color-transparent);
         border: none;
         cursor: pointer;
@@ -103,6 +106,7 @@ class Editor extends LitElement {
       }
 
       .pell__button:last-child {
+        display: block;
         position: relative;
         margin: 0 0 0 auto;
         font-size: var(--billy-editor-button-font-size-last-child);
@@ -137,6 +141,11 @@ class Editor extends LitElement {
 
       .pell__content--hidden {
         display: none;
+      }
+
+      .pell__image {
+        height: 15px;
+        width: auto;
       }
     `;
   }
@@ -208,6 +217,12 @@ class Editor extends LitElement {
         },
         ...defaultOptions,
         {
+          name: "outdent",
+          icon: "<img class='pell__image' src='/assets/icon/outdent.svg' alt='outdent'>",
+          title: "Outdent",
+          result: () => pell.exec("outdent"),
+        },
+        {
           name: "preview",
           icon: "👁",
           title: "Preview",
@@ -215,6 +230,33 @@ class Editor extends LitElement {
         },
       ],
     });
+
+    // This fixes the caret dissapearing from the content-editable pell element in FireFox.
+    // Normally I don't really like to add browser-specific code, but we don't have a choice here.
+    // Looking on the internet I found the following related posts about this issue, though none of the
+    // solutions worked.
+    // ---
+    // https://stackoverflow.com/questions/27093136/firefox-contenteditable-cursor-issue
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=1146881
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=1175495
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=1417012
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=579760
+    if (navigator.userAgent.indexOf("Firefox") > 0) {
+      const pellRoot = this.shadowRoot.querySelector(".pell__content");
+      // The solution does the following:
+      // - Add listeners to all pell-generated buttons
+      // - When a button is clicked, remove the contenteditable attribute for 1ms
+      // - Then re-add it, this makes the cursor show on the right position again.
+      this.shadowRoot.querySelectorAll(".pell__button").forEach(button => {
+        button.addEventListener("click", () => {
+          pellRoot.setAttribute("contenteditable", false);
+          setTimeout(() => {
+            pellRoot.setAttribute("contenteditable", true);
+            pellRoot.focus();
+          }, 1);
+        });
+      });
+    }
   }
 
   _togglePreview() {
