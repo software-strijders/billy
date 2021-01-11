@@ -32,7 +32,6 @@ class Article extends LitElement {
         flex-direction: column;
         width: 100%;
         word-break: break-word;
-        
       }
 
       .article__content {
