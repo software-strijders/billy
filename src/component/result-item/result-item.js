@@ -79,6 +79,8 @@ class ResultItem extends LitElement {
         margin: 0;
         height: auto;
         width: 98%;
+        word-break: break-word;
+        text-overflow: ellipsis;
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 3;
