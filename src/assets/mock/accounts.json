@@ -6,7 +6,8 @@
       "lastName": "van den Brink",
       "password": "1234",
       "role": "student",
-      "link": "hogeschool-utrecht"
+      "link": "hogeschool-utrecht",
+      "organization": "Hogeschool Utrecht"
     },
     {
       "email": "jort.willemsen@student.hu.nl",
@@ -14,7 +15,8 @@
       "lastName": "Willemsen",
       "password": "1234",
       "role": "student",
-      "link": "universiteit-utrecht"
+      "link": "universiteit-utrecht",
+      "organization": "Universiteit Utrecht"
     },
     {
       "email": "arjen.norbart@student.hu.nl",
@@ -22,7 +24,8 @@
       "lastName": "Norbart",
       "password": "1234",
       "role": "student",
-      "link": "hogeschool-utrecht"
+      "link": "hogeschool-utrecht",
+      "organization": "Hogeschool Utrecht"
     },
     {
       "email": "milan.dol@student.hu.nl",
@@ -30,7 +33,8 @@
       "lastName": "Dol",
       "password": "1234",
       "role": "student",
-      "link": "hogeschool-utrecht"
+      "link": "hogeschool-utrecht",
+      "organization": "Hogeschool Utrecht"
     },
     {
       "email": "xander.vedder@student.hu.nl",
@@ -38,7 +42,8 @@
       "lastName": "Vedder",
       "password": "1234",
       "role": "student",
-      "link": "universiteit-utrecht"
+      "link": "universiteit-utrecht",
+      "organization": "Universiteit Utrecht"
     }
   ]
 }

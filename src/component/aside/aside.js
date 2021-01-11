@@ -112,8 +112,8 @@ class Aside extends LitElement {
           <div class="aside__textWrapper">
             <p class="aside__text aside__text--bold">${state.related.author.fullName}</p>
             <div class="aside__logoWrapper">
-              <img src="/assets/image/hogeschool-utrecht.png" alt="" class="aside__logo">
-              <p class="aside__text">Hogeschool Utrecht</p>
+              <img src="../../assets/image/${state.related.author.link}.png" alt="" class="aside__logo">
+              <p class="aside__text">${state.related.author.organization}</p>
             </div>
           </div>
           <div class="aside__textWrapper">

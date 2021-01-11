@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  author: {
-    fullName: "",
-  },
+  author: {},
   lastRevised: "",
   links: [],
 };

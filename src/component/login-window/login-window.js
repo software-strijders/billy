@@ -112,6 +112,7 @@ class LoginWindow extends LitElement {
                 lastName: account.lastName,
                 role: account.role,
                 link: account.link,
+                organization: account.organization,
               }),
             );
             window.location.replace("/");
