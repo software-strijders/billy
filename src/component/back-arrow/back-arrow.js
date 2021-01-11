@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../js/custom-element";
+
 class BackArrow extends LitElement {
   static getStyles() {
     return css`
@@ -26,7 +28,7 @@ class BackArrow extends LitElement {
       <a class="backArrow" href="/" aria-label="Ga terug naar vorige pagina">
         <img
           class="backArrow__image"
-          src="../../assets/icon/backarrow-icon.svg"
+          src="/dist/assets/icon/backarrow-icon.svg"
           alt=""
           />
       </a>
@@ -34,4 +36,4 @@ class BackArrow extends LitElement {
   }
 }
 
-window.customElements.define("billy-back-arrow", BackArrow);
+defineElement("billy-back-arrow", BackArrow);

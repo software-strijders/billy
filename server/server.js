@@ -3,11 +3,14 @@ const fs = require("fs");
 
 const express = require("express");
 const cors = require("cors");
+const compression = require("compression");
 const app = express();
 
 const articlePath = path.join(__dirname, "data", "articles.json");
+const accountPath = path.join(__dirname, "data", "accounts.json")
 
 app.use(express.json());
+app.use(compression());
 app.use(cors());
 
 app.get("/api/article", (req, res) => {
@@ -26,6 +29,38 @@ app.post("/api/article", (req, res) => {
 
   res.sendStatus(200);
 });
+
+app.post("/api/login", (req, res) => {
+  const file = JSON.parse(fs.readFileSync(accountPath));
+  for (let account of file.accounts) {
+    if (account.email === req.body.email && account.password === req.body.password) {
+      return res.send({
+        email: account.email,
+        firstName: account.firstName,
+        lastName: account.lastName,
+        role: account.role,
+        organization: account.organization,
+        link: account.link,
+      });
+    }
+  }
+  res.sendStatus(400);
+});
+
+if (app.settings.env === "production") {
+  app.enable("trust proxy");
+  app.use('*', (req, res, next) => {
+    if (req.secure) {
+      return next();
+    }
+    res.redirect(`https://${req.hostname}${req.url}`);
+  });
+  
+  app.use(express.static(path.join(__dirname, "../build")));
+  app.get(["/", "/*"], (req, res) => {
+    res.sendFile(path.join(__dirname, "../build", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

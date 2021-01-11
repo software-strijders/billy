@@ -1,9 +1,17 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
+import { defineElement } from "../../js/custom-element.js";
+
 import { store } from "../../js/state/store.js";
 
 class LoginButton extends LitElement {
+  constructor() {
+    super();
+
+    store.subscribe(() => this.requestUpdate());
+  }
+
   static get properties() {
     return {
       large: { type: Boolean },
@@ -63,8 +71,8 @@ class LoginButton extends LitElement {
                 alt="Organisatie logo"
                 class="loginButton__image"
                 src=${store.getState().login.user.link
-                  ? "../../assets/image/" + store.getState().login.user.link + ".png"
-                  : "../../assets/favicon.svg"}
+                  ? "/dist/assets/image/" + store.getState().login.user.link + ".png"
+                  : "/dist/assets/favicon.svg"}
               />
               ${this.getNameOfUser()} `
           : html`Inloggen`}
@@ -78,4 +86,4 @@ class LoginButton extends LitElement {
   }
 }
 
-customElements.define("billy-login-button", LoginButton);
+defineElement("billy-login-button", LoginButton);

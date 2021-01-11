@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../js/custom-element";
 import { store } from "../../js/state/store.js";
 
 class ArticlePage extends LitElement {
@@ -35,4 +36,4 @@ class ArticlePage extends LitElement {
   }
 }
 
-window.customElements.define("billy-article-page", ArticlePage);
+defineElement("billy-article-page", ArticlePage);

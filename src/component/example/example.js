@@ -72,4 +72,4 @@ class Example extends LitElement {
 }
 
 // Defining elements is still done in the same way.
-window.customElements.define("billy-example", Example);
+// window.customElements.define("billy-example", Example);

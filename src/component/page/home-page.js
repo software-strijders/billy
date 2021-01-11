@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../js/custom-element";
 import { store } from "../../js/state/store.js";
 
 class HomePage extends LitElement {
@@ -14,8 +15,6 @@ class HomePage extends LitElement {
   }
 
   render() {
-    console.log(this.getBoundingClientRect());
-
     return html`
       <billy-app>
         <billy-full-page-layout slot="page-layout">
@@ -31,11 +30,11 @@ class HomePage extends LitElement {
             <billy-search-bar slot="content"></billy-search-bar>
           </billy-hero>
           <billy-category-bar slot="category-bar">
-            <billy-category-option text="Analyse" icon="/assets/icon/analyse-icon.svg" href="./analyse.html"></billy-category-option>
-            <billy-category-option text="Advies" icon="/assets/icon/advice-icon.svg" href="./advice.html"></billy-category-option>
-            <billy-category-option text="Ontwerp" icon="/assets/icon/design-icon.svg" href="./design.html"></billy-category-option>
-            <billy-category-option text="Realisatie" icon="/assets/icon/realize-icon.svg" href="./realize.html"></billy-category-option>
-            <billy-category-option text="Beheer" icon="/assets/icon/manage-icon.svg" href="./manage.html"></billy-category-option>
+            <billy-category-option text="Analyse" icon="/dist/assets/icon/analyse-icon.svg"></billy-category-option>
+            <billy-category-option text="Advies" icon="/dist/assets/icon/advice-icon.svg"></billy-category-option>
+            <billy-category-option text="Ontwerp" icon="/dist/assets/icon/design-icon.svg"></billy-category-option>
+            <billy-category-option text="Realisatie" icon="/dist/assets/icon/realize-icon.svg"></billy-category-option>
+            <billy-category-option text="Beheer" icon="/dist/assets/icon/manage-icon.svg"></billy-category-option>
           </billy-category-bar>
         </billy-full-page-layout>
       </billy-app>
@@ -43,4 +42,4 @@ class HomePage extends LitElement {
   }
 }
 
-window.customElements.define("billy-home-page", HomePage);
+defineElement("billy-home-page", HomePage);

@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../js/custom-element";
+
 class SideBar extends LitElement {
   static getStyles() {
     return css`
@@ -29,36 +31,31 @@ class SideBar extends LitElement {
         <billy-category-option
           style="height: unset"
           text="Analyse"
-          icon="./assets/icon/analyse-icon.svg"
-          href="./analyse.html"
+          icon="/dist/assets/icon/analyse-icon.svg"
           sidebar
         ></billy-category-option>
         <billy-category-option
           style="height: unset"
           text="Advies"
-          icon="./assets/icon/advice-icon.svg"
-          href="./advice.html"
+          icon="/dist/assets/icon/advice-icon.svg"
           sidebar
         ></billy-category-option>
         <billy-category-option
           style="height: unset"
           text="Ontwerp"
-          icon="./assets/icon/design-icon.svg"
-          href="./design.html"
+          icon="/dist/assets/icon/design-icon.svg"
           sidebar
         ></billy-category-option>
         <billy-category-option
           style="height: unset"
           text="Realisatie"
-          icon="./assets/icon/realize-icon.svg"
-          href="./realize.html"
+          icon="/dist/assets/icon/realize-icon.svg"
           sidebar
         ></billy-category-option>
         <billy-category-option
           style="height: unset"
           text="Beheer"
-          icon="./assets/icon/manage-icon.svg"
-          href="./manage.html"
+          icon="/dist/assets/icon/manage-icon.svg"
           sidebar
         ></billy-category-option>
       </nav>
@@ -66,4 +63,4 @@ class SideBar extends LitElement {
   }
 }
 
-window.customElements.define("billy-side-bar", SideBar);
+defineElement("billy-side-bar", SideBar)

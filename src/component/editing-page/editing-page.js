@@ -1,9 +1,11 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
+import { Router } from "@vaadin/router";
 
 import { sendArticle } from "../../js/api/api";
 import { author } from "../../js/state/login";
 import { store } from "../../js/state/store.js";
+import { defineElement } from "../../js/custom-element";
 
 const MAX_DESCRIPTION_LENGTH = 300;
 const WORDS_PER_MINUTE = 250;
@@ -48,7 +50,7 @@ class EditingPage extends LitElement {
         max-width: 950px;
       }
 
-      .form--disabled .form__input {
+      .form--disabled .form__input, .form--disabled .form__link .form__input {
         pointer-events: none;
         background-color: var(--billy-color-background-disabled);
         color: var(--billy-color-text-primary-light);
@@ -292,7 +294,7 @@ class EditingPage extends LitElement {
                         <img
                           class="form__buttonImg"
                           aria-label="Verwijder link van artikel"
-                          src="assets/icon/minus-icon.svg"
+                          src="/distassets/icon/minus-icon.svg"
                           alt=""
                         />
                       </button>
@@ -302,7 +304,7 @@ class EditingPage extends LitElement {
                         <img
                           class="form__buttonImg"
                           aria-label="Voeg link toe aan artikel"
-                          src="assets/icon/plus-icon.svg"
+                          src="/dist/assets/icon/plus-icon.svg"
                           alt=""
                         />
                       </button>
@@ -435,4 +437,4 @@ class EditingPage extends LitElement {
   }
 }
 
-window.customElements.define("billy-editing-page", EditingPage);
+defineElement("billy-editing-page", EditingPage);

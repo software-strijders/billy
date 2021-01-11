@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../js/custom-element";
+
 class NoResultItem extends LitElement {
   static get properties() {
     return {
@@ -52,4 +54,4 @@ class NoResultItem extends LitElement {
   }
 }
 
-window.customElements.define("billy-no-result", NoResultItem);
+defineElement("billy-no-result", NoResultItem);

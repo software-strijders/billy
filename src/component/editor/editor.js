@@ -2,6 +2,8 @@ import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import pell from "pell";
 
+import { defineElement } from "../../js/custom-element";
+
 const defaultOptions = [
   "bold",
   "italic",
@@ -189,7 +191,7 @@ class Editor extends LitElement {
           : ""}
       </div>
       <style>
-        @import "../css/article.css";
+        @import "/dist/css/article.css";
       </style>
     `;
   }
@@ -225,7 +227,7 @@ class Editor extends LitElement {
         ...defaultOptions,
         {
           name: "outdent",
-          icon: "<img class='pell__image' src='/assets/icon/outdent.svg' alt='outdent'>",
+          icon: "<img class='pell__image' src='/dist/assets/icon/outdent.svg' alt='outdent'>",
           title: "Outdent",
           result: () => pell.exec("outdent"),
         },
@@ -272,4 +274,4 @@ class Editor extends LitElement {
   }
 }
 
-window.customElements.define("billy-editor", Editor);
+defineElement("billy-editor", Editor);

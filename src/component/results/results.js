@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit-element";
 import levenshtein from "fast-levenshtein";
 
 import { getArticles } from "../../js/api/api.js";
+import { defineElement } from "../../js/custom-element.js";
 
 class Results extends LitElement {
   constructor() {
@@ -12,10 +13,10 @@ class Results extends LitElement {
     this.previews = [];
     this._getResultItems();
 
-    window.addEventListener('locationchange', () => {
+    window.locationchange = () => {
       this.isFinished = false;
       this._getResultItems();
-    });
+    };
   }
 
   static get properties() {
@@ -56,6 +57,12 @@ class Results extends LitElement {
         -webkit-text-fill-color: var(--billy-color-transparent);
       }
     `;
+  }
+
+  disconnectedCallback() {
+    // Removes the event listener.
+    // If we don't, we create our own personal DDoS machine...
+    window.locationchange = null;
   }
 
   render() {
@@ -138,4 +145,4 @@ class Results extends LitElement {
   }
 }
 
-customElements.define("billy-results", Results);
+defineElement("billy-results", Results);

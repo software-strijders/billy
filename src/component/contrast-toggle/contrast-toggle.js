@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
+import { defineElement } from "../../js/custom-element";
+
 class ContrastToggle extends LitElement {
   constructor() {
     super();
@@ -93,7 +95,7 @@ class ContrastToggle extends LitElement {
       >
         <div class="contrastToggle__fill">
           <div class="contrastToggle__slider">
-            <img alt="" class="contrastToggle__sliderIcon" src="/assets/icon/contrast-icon.svg" />
+            <img alt="" class="contrastToggle__sliderIcon" src="/dist/assets/icon/contrast-icon.svg" />
           </div>
         </div>
       </div>
@@ -105,4 +107,4 @@ class ContrastToggle extends LitElement {
   }
 }
 
-customElements.define("billy-contrast-toggle", ContrastToggle);
+defineElement("billy-contrast-toggle", ContrastToggle)

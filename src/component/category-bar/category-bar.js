@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../js/custom-element";
+
 class CategoryBar extends LitElement {
   static get styles() {
     return css`
@@ -28,4 +30,4 @@ class CategoryBar extends LitElement {
   }
 }
 
-customElements.define("billy-category-bar", CategoryBar);
+defineElement("billy-category-bar", CategoryBar);

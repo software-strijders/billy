@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
+import { defineElement } from "../../js/custom-element";
+
 class App extends LitElement {
   static getStyles() {
     return css`
@@ -23,4 +25,4 @@ class App extends LitElement {
   }
 }
 
-window.customElements.define("billy-app", App);
+defineElement("billy-app", App);
