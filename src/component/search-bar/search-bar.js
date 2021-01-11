@@ -40,6 +40,7 @@ class SearchBar extends LitElement {
         margin: 0;
         width: 500px;
         border: none;
+        color: var(--billy-color-text-primary-dark);
         font-size: 20px;
         padding: 0 0 0 20px;
         border-radius: 100px 0 0 100px;

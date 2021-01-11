@@ -50,7 +50,7 @@ class EditingPage extends LitElement {
       .form--disabled .form__input {
         pointer-events: none;
         background-color: var(--billy-color-background-disabled);
-        color: var(--billy-color-font-light);
+        color: var(--billy-color-text-primary-light);
       }
 
       .form--disabled .form__select {
@@ -127,6 +127,8 @@ class EditingPage extends LitElement {
       }
 
       .form__wrapper--links .form__input {
+        background-color: var(--billy-color-background-light);
+        color: var(--billy-color-text-primary-dark);
         flex-grow: 1;
         margin: 0 25px 0 0;
       }
@@ -151,6 +153,8 @@ class EditingPage extends LitElement {
       }
 
       .form__input {
+        color: var(--billy-color-text-primary-dark);
+        background-color: var(--billy-color-background-light);
         height: calc(var(--billy-edit-page-form-input-height) - var(--billy-border-size));
         border: var(--billy-border-size) solid var(--billy-color-line-light);
         border-radius: var(--billy-edit-page-radius);

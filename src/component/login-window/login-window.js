@@ -25,7 +25,9 @@ class LoginWindow extends LitElement {
         height: 100%;
         margin: 0;
         width: 500px;
-        border: none;
+        background-color: var(--billy-color-background-light);
+        color: var(--billy-color-text-primary-dark);
+        border: 2px solid var(--billy-color-border-loginbutton);
         font-size: 20px;
         padding: 0 20px;
         border-radius: 100px;
@@ -42,12 +44,12 @@ class LoginWindow extends LitElement {
       }
 
       .field__button {
-        background-color: var(--billy-color-button-dark);
-        color: var(--billy-color-button-text-light);
+        background-color: var(--billy-color-background-dark);
+        border: 2px solid var(--billy-color-border-loginbutton);
+        color: var(--billy-color-text-primary-light);
         height: 100%;
         margin: 0;
         width: 540px;
-        border: none;
         font-size: 20px;
         font-weight: bold;
         padding: 0 20px;

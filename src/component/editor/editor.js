@@ -94,7 +94,8 @@ class Editor extends LitElement {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--billy-color-transparent);
+        background-color: var(--billy-color-background-light);
+        color: var(--billy-color-text-primary-dark);
         border: none;
         cursor: pointer;
         height: var(--billy-editor-button-height);
@@ -126,6 +127,7 @@ class Editor extends LitElement {
 
       .pell__button--selected {
         background-color: var(--billy-editor-button-bg-color-hover);
+        color: var(--billy-color-selected-contrast)
       }
 
       .pell__content {

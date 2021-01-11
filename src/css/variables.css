@@ -34,6 +34,8 @@
   --billy-color-warning-primary: #fc4c4c;
   --billy-color-waring-secondary: #e51b1b;
 
+  --billy-color-border-loginbutton: transparent;
+
   --billy-color-background-light: #fff;
   --billy-color-background-light-grey: #ebebeb;
   --billy-color-background-grey: #dddddd;
@@ -50,6 +52,8 @@
   --billy-color-button-dark: #000;
   --billy-color-button-gradient: var(--billy-gradient-background-brand);
   --billy-color-button-text-light: #fff;
+
+  --billy-color-selected-contrast: #000;
 
   --billy-color-text-primary-light: #fff;
   --billy-color-text-primary-dark: #000;
@@ -165,7 +169,10 @@
   --billy-color-background-popout: #000;
   --billy-color-text-popout-link: #fff;
   --billy-color-text-brand-secondary: #fff;
-
+  --billy-color-button-loginpage: #fff;
+  --billy-color-text-primary-light: #fff;
+  --billy-color-selected-contrast: #ebe720;
+  --billy-color-border-loginbutton: #fff;
   --billy-border-top-pop-out-pointer: 18px solid #fff;
   
   --billy-color-border-pop-out: #fff;
