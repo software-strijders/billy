@@ -1,5 +1,6 @@
 import "../js/logged-in-checker.js";
 import "../js/location-change-event.js"
+import "../js/router/router.js";
 
 import "./app/app.js";
 import "./article/article.js";
