@@ -12,6 +12,9 @@
   --billy-color-background-grey: #dddddd;
   --billy-color-background-dark: #000;
   --billy-color-background-disabled: #dddddd;
+  --billy-color-background-popout: var(--billy-color-background-light);
+  --billy-color-backgorund-popout-link: var(--billy-color-text-primary-dark);
+  --billy-color-background-popout-pointer: var(--billy-color-background-light-grey);
 
   --billy-color-line-light: #dddddd;
 
@@ -127,6 +130,9 @@
   --billy-color-background-light-grey: #fff;
   --billy-color-button-text-light: #000;
   --billy-color-text-secondary-dark: #000;
+  --billy-color-background-popout: var(--billy-color-background-dark);
+  --billy-color-text-popout-link: var(--billy-color-text-primary-light);
+  --billy-color-background-popout-pointer: var(--billy-color-background-popout);
 }
 
 @font-face {
