@@ -37,6 +37,7 @@ class Results extends LitElement {
 
       .results__title {
         font-size: var(--billy-title-size);
+        color: var(--billy-color-results-title);
         text-shadow: none;
         margin: 0;
       }

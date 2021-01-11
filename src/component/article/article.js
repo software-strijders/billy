@@ -36,6 +36,7 @@ class Article extends LitElement {
 
       .article__content {
         padding: 25px;
+        color: var(--billy-color-text-primary-dark);
       }
 
       .article__title {
@@ -53,6 +54,8 @@ class Article extends LitElement {
         margin: 0 10px 0 0;
         background-color: var(--billy-color-background-grey);
         border-radius: 20px;
+        color: var(--billy-color-text-primary-dark);
+        border: var(--billy-border-category-article-editor);
       }
 
       .category__text {

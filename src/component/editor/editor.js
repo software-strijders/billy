@@ -80,6 +80,7 @@ class Editor extends LitElement {
         margin: var(--billy-editor-text-margin);
         font-size: var(--billy-editor-text-font-size);
         font-weight: bold;
+        color: var(--billy-color-text-primary-dark);
       }
 
       .pell__actionBar {
@@ -93,7 +94,8 @@ class Editor extends LitElement {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--billy-color-transparent);
+        background-color: var(--billy-color-background-light);
+        color: var(--billy-color-text-primary-dark);
         border: none;
         cursor: pointer;
         height: var(--billy-editor-button-height);
@@ -119,11 +121,13 @@ class Editor extends LitElement {
         left: 0;
         content: "";
         height: 40px;
+        border: var(--billy-border-codeblock);
         border-left: var(--billy-border-size) solid var(--billy-color-line-light);
       }
 
       .pell__button--selected {
         background-color: var(--billy-editor-button-bg-color-hover);
+        color: var(--billy-color-selected-contrast)
       }
 
       .pell__content {
@@ -134,6 +138,7 @@ class Editor extends LitElement {
         text-overflow: ellipsis;
         padding: var(--billy-editor-content-padding);
         scrollbar-width: thin;
+        color: var(--billy-color-text-primary-dark);
       }
 
       .pell__content--preview {

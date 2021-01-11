@@ -59,7 +59,7 @@ class ContrastToggle extends LitElement {
         width: 20px;
         border-radius: 40px;
         height: 100%;
-        background-color: var(--billy-color-background-light);
+        background-color: var(--billy-color-background-contrast-button-light);
       }
 
       .contrastToggle--on .contrastToggle__fill {

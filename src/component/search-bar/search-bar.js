@@ -31,6 +31,7 @@ class SearchBar extends LitElement {
         margin: 0;
         box-shadow: 0px 5px 10px var(--billy-color-shadow);
         border-radius: 100px;
+        border: var(--billy-color-border-search-bar);
         padding: 0;
       }
 
@@ -39,9 +40,11 @@ class SearchBar extends LitElement {
         margin: 0;
         width: 500px;
         border: none;
+        color: var(--billy-color-text-primary-dark);
         font-size: 20px;
         padding: 0 0 0 20px;
         border-radius: 100px 0 0 100px;
+        background-color: var(--billy-color-background-light);
       }
 
       .searchBar__button {
@@ -71,6 +74,7 @@ class SearchBar extends LitElement {
         align-self: center;
         height: 30px;
         background-color: var(--billy-color-transparent);
+        filter: invert(var(--billy-filter-invert));
       }
     `;
   }

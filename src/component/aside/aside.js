@@ -34,6 +34,7 @@ class Aside extends LitElement {
 
       .aside__title {
         margin: 0;
+        color: var(--billy-color-text-primary-dark);
       }
 
       .aside__line {
@@ -50,6 +51,7 @@ class Aside extends LitElement {
 
       .aside__text {
         margin: 0 0 5px 0;
+        color: var(--billy-color-text-primary-dark);
       }
 
       .aside__text--bold {

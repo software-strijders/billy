@@ -23,6 +23,7 @@ export class ContributeButton extends LitElement {
         align-items: center;
         height: 50px;
         padding: var(--billy-contribute-button-padding);
+        border: var(--billy-contribute-button-border);
         border-radius: var(--billy-contribute-button-border-radius);
         background-color: var(--billy-color-background-light);
         color: var(--billy-contribute-button-color);

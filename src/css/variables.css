@@ -1,24 +1,59 @@
 :root {
+  --billy-filter-invert: 0;
+  --billy-color-border-search-bar: none;
+  --billy-contribute-button-border: none;
+  --billy-login-button-border: none;
+  --billy-outline-contrast-toggle: none;
+  --billy-login-button-border-width: none;
+  --billy-login-button-border-color: none;
+  --billy-login-button-border-style: none;
+  --billy-border-category-bar-border: none;
+  --billy-border-link-button: none;
+  --billy-border-category-bar-border-width: none;
+  --billy-border-top-pop-out-pointer: 20px solid var(--billy-color-background-light-grey);
+  --billy-color-pop-out-line: var(--billy-color-background-light-grey);
+  --billy-color-results-title: none;
+  --billy-edit-page-select-border: none;
+  --billy-border-category-article-editor: none;
+  --billy-color-text-blockquote: #000;
+  --billy-color-quotes: #ccc;
+  --billy-color-border-left-codeblock: #565656;
+  --billy-color-background-codeblock: #212121;
+  --billy-color-border-left-blockquote: var(--billy-color-quotes);
+  --billy-color-background-quoteblock: #f9f9f9;
+  --billy-color-border-quoteblock: none;
+  --billy-border-quoteblock: none;
+  
   --billy-color-brand-primary: #4c74fc;
   --billy-color-brand-secondary: #801be5;
+  --billy-color-text-brand-secondary: var(--billy-color-brand-secondary);
+  --billy-color-text-brand-primary: var(--billy-color-brand-primary);
 
   --billy-color-transparent: transparent;
 
   --billy-color-warning-primary: #fc4c4c;
   --billy-color-waring-secondary: #e51b1b;
 
+  --billy-color-border-loginbutton: transparent;
+
   --billy-color-background-light: #fff;
   --billy-color-background-light-grey: #ebebeb;
   --billy-color-background-grey: #dddddd;
   --billy-color-background-dark: #000;
   --billy-color-background-disabled: #dddddd;
+  --billy-color-background-popout: var(--billy-color-background-light);
+  --billy-color-backgorund-popout-link: var(--billy-color-text-primary-dark);
+  --billy-color-background-popout-pointer: var(--billy-color-background-light-grey);
 
   --billy-color-line-light: #dddddd;
+  --billy-color-border-pop-out: none;
 
   --billy-color-button-light: #fff;
   --billy-color-button-dark: #000;
   --billy-color-button-gradient: var(--billy-gradient-background-brand);
   --billy-color-button-text-light: #fff;
+
+  --billy-color-selected-contrast: #000;
 
   --billy-color-text-primary-light: #fff;
   --billy-color-text-primary-dark: #000;
@@ -114,19 +149,66 @@
 }
 
 .contrast {
+  --billy-color-background-light: #000;
+  --billy-color-text-primary-dark: #fff;
+  --billy-color-background-contrast-button-light: #fff;
+  --billy-color-pop-out-line: #fff;
+  --billy-edit-page-select-border: 2px solid #fff;
+  --billy-border-category-article-editor: 2px solid #fff;
   --billy-color-brand-primary: #000;
   --billy-color-brand-secondary: #000;
   --billy-color-side-bar: #fff;
   --billy-border: 3px solid #000;
-  --billy-border-right: 2px solid #000;
   --billy-border-left: 2px solid #000;
   --billy-box-shadow-lighter: none;
   --billy-color-button-dark: #fff;
   --billy-color-line-light: #000;
   --billy-color-button-gradient: #000;
-  --billy-color-background-light-grey: #fff;
   --billy-color-button-text-light: #000;
   --billy-color-text-secondary-dark: #000;
+  --billy-color-background-popout: #000;
+  --billy-color-text-popout-link: #fff;
+  --billy-color-text-brand-secondary: #fff;
+  --billy-color-button-loginpage: #fff;
+  --billy-color-text-primary-light: #fff;
+  --billy-color-selected-contrast: #ebe720;
+  --billy-color-border-loginbutton: #fff;
+  --billy-border-top-pop-out-pointer: 18px solid #fff;
+  
+  --billy-color-border-pop-out: #fff;
+  --billy-color-background-popout-pointer: #fff;
+  --billy-filter-invert: 1;
+  --billy-color-background-light-grey: #000;
+  --billy-color-text-white: #fff;
+  --billy-border-right:2px solid #fff;
+  --billy-border-bottom: 2px solid #fff;
+  --billy-color-border-search-bar: 2px solid #fff;
+  --billy-contribute-button-color: #fff;
+  --billy-contribute-button-border: 2px solid #fff;
+  --billy-outline-contrast-toggle: 1px solid #fff;
+  --billy-login-button-border-width: 2px 0px 2px 2px;
+  --billy-login-button-border:solid #fff;
+  --billy-border-category-bar-border-width: 2px 0px 0px 0px;
+  --billy-border-category-bar-border: solid #fff;
+  --billy-color-results-title: #fff;
+  --billy-color-transparent: #fff;
+  --billy-color-line-light: #fff;
+  --billy-color-text-secondary-dark: #fff;
+  --billy-color-background-grey: #000;
+  --billy-color-border-category: 2px solid #fff;
+  --billy-border-link-button: 2px solid #fff;
+  --billy-color-text-brand-primary: #fff;
+  --billy-color-text-blockquote: #fff;
+  --billy-color-border-left-codeblock: #fff;
+  --billy-border-codeblock: 1px 1px 1px 1px;
+  --billy-color-border-codeblock: solid #fff;
+  --billy-color-background-codeblock: #000;
+  --billy-color-border-left-blockquote: #fff;
+  --billy-color-background-quoteblock: #000;
+  --billy-color-border-quoteblock: #fff;
+  --billy-border-quoteblock: 1px;
+  --billy-color-quotes: #fff;
+  --billy-border: 2px solid #fff;
 }
 
 @font-face {
