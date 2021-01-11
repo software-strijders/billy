@@ -2,6 +2,6 @@ user-agent: *
 allow: /
 allow: /article/
 allow: /login/
-disallow: /search
+allow: /search
 
 disallow: /*.svg

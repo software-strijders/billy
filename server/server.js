@@ -39,6 +39,7 @@ app.post("/api/login", (req, res) => {
         firstName: account.firstName,
         lastName: account.lastName,
         role: account.role,
+        organization: account.organization,
         link: account.link,
       });
     }

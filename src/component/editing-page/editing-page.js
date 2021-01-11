@@ -50,7 +50,7 @@ class EditingPage extends LitElement {
         max-width: 950px;
       }
 
-      .form--disabled .form__input {
+      .form--disabled .form__input, .form--disabled .form__link .form__input {
         pointer-events: none;
         background-color: var(--billy-color-background-disabled);
         color: var(--billy-color-text-primary-light);
@@ -304,7 +304,7 @@ class EditingPage extends LitElement {
                         <img
                           class="form__buttonImg"
                           aria-label="Voeg link toe aan artikel"
-                          src="/distassets/icon/plus-icon.svg"
+                          src="/dist/assets/icon/plus-icon.svg"
                           alt=""
                         />
                       </button>

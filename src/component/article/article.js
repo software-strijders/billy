@@ -104,7 +104,7 @@ class Article extends LitElement {
               ${unsafeHTML(this.html)}
             </article>
             <style>
-              @import "../css/article.css";
+              @import "/dist/css/article.css";
             </style>
           `
         : html``}

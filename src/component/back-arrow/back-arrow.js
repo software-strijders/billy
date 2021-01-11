@@ -28,7 +28,7 @@ class BackArrow extends LitElement {
       <a class="backArrow" href="/" aria-label="Ga terug naar vorige pagina">
         <img
           class="backArrow__image"
-          src="../../assets/icon/backarrow-icon.svg"
+          src="/dist/assets/icon/backarrow-icon.svg"
           alt=""
           />
       </a>

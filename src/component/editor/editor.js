@@ -191,7 +191,7 @@ class Editor extends LitElement {
           : ""}
       </div>
       <style>
-        @import "../css/article.css";
+        @import "/dist/css/article.css";
       </style>
     `;
   }
@@ -227,7 +227,7 @@ class Editor extends LitElement {
         ...defaultOptions,
         {
           name: "outdent",
-          icon: "<img class='pell__image' src='/assets/icon/outdent.svg' alt='outdent'>",
+          icon: "<img class='pell__image' src='/dist/assets/icon/outdent.svg' alt='outdent'>",
           title: "Outdent",
           result: () => pell.exec("outdent"),
         },

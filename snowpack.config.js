@@ -4,5 +4,5 @@ module.exports = {
     "public": "/",
     "src": "/dist",
   },
-  plugins: [["@snowpack/plugin-webpack"]],
+  plugins: [["@snowpack/plugin-webpack"], ["@snowpack/plugin-optimize"]],
 };
