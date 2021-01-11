@@ -98,6 +98,7 @@ class ResultItem extends LitElement {
         color: var(--billy-color-text-primary-dark);
         text-decoration: none;
         border-radius: 20px;
+        border: var(--billy-color-border-category);
         margin: 0 10px 0 0;
         padding: 5px 10px;
         cursor: select;
@@ -106,6 +107,7 @@ class ResultItem extends LitElement {
 
       .resultItem__info {
         margin-top: 5px;
+        color: var(--billy-color-text-primary-dark);
       }
     `;
   }

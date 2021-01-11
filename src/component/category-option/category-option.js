@@ -48,11 +48,13 @@ class CategoryOption extends LitElement {
       .category__image {
         height: 80px;
         width: 80px;
+        filter: invert(var(--billy-filter-invert));
       }
 
       .category__text {
         text-align: center;
         font-weight: bold;
+        color: var(--billy-te);
       }
 
       .popOut {
@@ -74,6 +76,7 @@ class CategoryOption extends LitElement {
         visibility: visible;
         transform: translateY(30px) scale(1);
         opacity: 1;
+        border: var(--billy-color-border-pop-out) 2px solid;
       }
 
       .popOut--sideBar {
@@ -102,7 +105,7 @@ class CategoryOption extends LitElement {
         height: var(--billy-line-height);
         border: none;
         border-radius: var(--billy-line-radius);
-        background-color: var(--billy-color-background-light-grey);
+        background-color: var(--billy-color-pop-out-line);
       }
 
       .popOut__pointerContainer {
@@ -120,7 +123,7 @@ class CategoryOption extends LitElement {
         height: 0;
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
-        border-top: 20px solid var(--billy-color-background-popout-pointer);
+        border-top: var(--billy-border-top-pop-out-pointer);
       }
     `;
   }

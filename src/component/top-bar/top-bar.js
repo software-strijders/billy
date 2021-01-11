@@ -20,6 +20,7 @@ class TopBar extends LitElement {
         height: var(--billy-top-bar-height);
         background: var(--billy-gradient-background-brand);
         box-shadow: var(--billy-box-shadow-lighter);
+        border-bottom: var(--billy-border-bottom);
         z-index: 1;
       }
 

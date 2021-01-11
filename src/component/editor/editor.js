@@ -80,6 +80,7 @@ class Editor extends LitElement {
         margin: var(--billy-editor-text-margin);
         font-size: var(--billy-editor-text-font-size);
         font-weight: bold;
+        color: var(--billy-color-text-primary-dark);
       }
 
       .pell__actionBar {
@@ -119,6 +120,7 @@ class Editor extends LitElement {
         left: 0;
         content: "";
         height: 40px;
+        border: var(--billy-border-codeblock);
         border-left: var(--billy-border-size) solid var(--billy-color-line-light);
       }
 
@@ -132,6 +134,7 @@ class Editor extends LitElement {
         overflow-y: auto;
         padding: var(--billy-editor-content-padding);
         scrollbar-width: thin;
+        color: var(--billy-color-text-primary-dark);
       }
 
       .pell__content--preview {

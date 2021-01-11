@@ -66,6 +66,7 @@ class EditingPage extends LitElement {
       .form__title {
         margin: 0;
         font-size: var(--billy-title-size);
+        color: var(--billy-color-text-primary-dark);
       }
 
       .form__title--h2 {
@@ -143,6 +144,7 @@ class EditingPage extends LitElement {
 
       .form__label {
         display: flex;
+        color: var(--billy-color-text-primary-dark);
         margin: var(--billy-edit-page-form-label-title-margin);
         font-size: var(--billy-edit-page-form-label-font-size);
         font-weight: bold;
@@ -159,6 +161,7 @@ class EditingPage extends LitElement {
 
       .form__select {
         position: relative;
+        color: var(--billy-color-text-primary-dark);
         height: var(--billy-edit-page-form-select-height);
         width: var(--billy-edit-page-form-select-width);
         border: var(--billy-border-size) solid var(--billy-color-line-light);
@@ -176,6 +179,10 @@ class EditingPage extends LitElement {
 
       .form__select:hover {
         background-position: var(--billy-edit-page-form-select-background-position-hover);
+      }
+
+      .form__select--wrapper {
+        border: var(--billy-edit-page-select-border);
       }
 
       .form__link {
@@ -201,7 +208,7 @@ class EditingPage extends LitElement {
         border-radius: var(--billy-edit-page-radius);
         background: var(--billy-color-button-gradient);
 
-        border: none;
+        border: var(--billy-border-link-button);
         color: var(--billy-color-text-primary-light);
         font-size: var(--billy-edit-page-form-button-font-size);
         cursor: pointer;

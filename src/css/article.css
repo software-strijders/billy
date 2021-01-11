@@ -1,13 +1,15 @@
 .pell__content blockquote, blockquote {
-    background: #f9f9f9;
-    border-left: 5px solid #ccc;
-    margin: 1.5em 10px;
+    background: var(--billy-color-background-quoteblock);
+    border: var(--billy-border-quoteblock) solid var(--billy-color-border-quoteblock);
+    border-left: 5px solid var(--billy-color-border-left-blockquote);
+    margin: 1.5em 0;
     padding: 0.5em 10px;
-    border-radius: 5px; 
+    border-radius: 5px;
+    color: var(--billy-color-text-blockquote);
   }
 
   .pell__content blockquote:before, blockquote:before {
-    color: #ccc;
+    color: var(--billy-color-quotes);
     content: open-quote;
     font-size: 2em;
     line-height: 0.1em;
@@ -16,7 +18,7 @@
   }
 
   .pell__content blockquote:after, blockquote:after {
-    color: #ccc;
+    color: var(--billy-color-quotes);
     content: close-quote;
     font-size: 2em;
     line-height: 0.1em;
@@ -35,7 +37,7 @@
 
   .pell__content ol li::before, ol li::before {
     content: counter(ol-counter) ". ";
-    color: var(--billy-color-brand-secondary);
+    color: var(--billy-color-text-brand-secondary);
     font-weight: bold;
   }
 
@@ -45,16 +47,18 @@
 
   .pell__content ul li::before, ul li::before {
     content: "* ";
-    color: var(--billy-color-brand-secondary);
+    color: var(--billy-color-text-brand-secondary);
     font-weight: bold;
   }
 
   .pell__content pre, pre {
-    background: #212121;
+    background: var(--billy-color-background-codeblock);
     color: white;
     padding: 10px;
     border-radius: 4px;
-    border-left: 5px solid #565656;
+    border: var(--billy-color-border-codeblock);
+    border-width: var(--billy-border-codeblock);
+    border-left: 5px solid var(--billy-color-border-left-codeblock);
   }
 
   .pell__content hr, hr {
@@ -71,9 +75,9 @@
   }
 
   .pell__content a, a {
-    color: var(--billy-color-brand-primary);
+    color: var(--billy-color-text-brand-primary);
   }
 
   .pell__content a:visited, a:visited {
-    color: var(--billy-color-brand-secondary);
+    color: var(--billy-color-brand-secondary); /*TODO: groen of geel maken */
   }
