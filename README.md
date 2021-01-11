@@ -8,6 +8,7 @@
 
 ## Inhoudsopgave
 
+- [De applicatie](#de-applicatie)
 - [Het team](#het-team)
 - [Introductie](#introductie)
 - [Git strategie](#git-strategie)
@@ -19,6 +20,12 @@
 - [Codebase](#codebase)
 - [Installatie](#installatie)
 - [Gebruikersinstructies](#gebruikersinstructies)
+
+## De applicatie
+
+De applicatie is op de volgende plekken te vinden:
+- [billy.software-strijders.nl](billy.software-strijders.nl)
+- [wiki-billy.herokuapp.com](wiki-billy.herokuapp.com)
 
 ## Het team
 
@@ -81,13 +88,9 @@ In dit kopje worden alle zaken omtrent documentatie opgenoemd.
 
 ### Visie/Scope document
 
-<!-- TODO: Add proper link -->
-
 Het Visie/Scope document is [hier](/documentation/visie-scope-document.pdf) te vinden.
 
 ### Functioneel ontwerp
-
-<!-- TODO: Add proper link -->
 
 Het Functioneel ontwerp document is [hier](/documentation/functioneel-ontwerp.pdf) te vinden.
 
@@ -105,8 +108,20 @@ De root directory van de codebase is [hier](/src) te vinden.
 
 ## Installatie
 
-<!-- TODO: make this -->
+Om het project te installeren, moet het volgende gedaan worden:
+
+```
+$ git clone git@github.com:HU-SD-SV2PRFED-studenten-2021/prfed_2021-V2B-1.git
+$ cd prfed_2021-V2B-1/
+$ npm i
+```
 
 ## Gebruikersinstructies
 
-<!-- TODO: make this -->
+Om het project lokaal te draaien moet het volgende gedaan worden (er wordt hier van uitgegaan dat de vorige stappen zijn gedaan):
+
+```
+$ npm start
+```
+
+Nadat de command is uitgevoerd, wordt je browser geopend naar `localhost:8080`. Ook wordt er in de achtergrond een tweede server gestart die op `localhost:3000` draait. Dat is waar de API draait.
