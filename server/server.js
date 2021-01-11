@@ -3,12 +3,14 @@ const fs = require("fs");
 
 const express = require("express");
 const cors = require("cors");
+const compression = require("compression");
 const app = express();
 
 const articlePath = path.join(__dirname, "data", "articles.json");
 const accountPath = path.join(__dirname, "data", "accounts.json")
 
 app.use(express.json());
+app.use(compression());
 app.use(cors());
 
 app.get("/api/article", (req, res) => {
@@ -45,7 +47,7 @@ app.post("/api/login", (req, res) => {
 });
 
 if (app.settings.env === "production") {
-  app.enable('trust proxy');
+  app.enable("trust proxy");
   app.use('*', (req, res, next) => {
     if (req.secure) {
       return next();
