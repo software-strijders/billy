@@ -130,6 +130,8 @@ class Editor extends LitElement {
         height: 100%;
         outline: 0;
         overflow-y: auto;
+        word-break: break-word;
+        text-overflow: ellipsis;
         padding: var(--billy-editor-content-padding);
         scrollbar-width: thin;
       }

@@ -45,6 +45,7 @@ class EditingPage extends LitElement {
 
       .form {
         padding: var(--billy-edit-page-form-padding);
+        max-width: 950px;
       }
 
       .form--disabled .form__input {
