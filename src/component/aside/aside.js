@@ -81,7 +81,6 @@ class Aside extends LitElement {
 
   render() {
     const state = store.getState();
-    console.log(state);
 
     return html`
       <div class="aside__content">
