@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
 import { sendArticle } from "../../js/api/api";
-import { fullName } from "../../js/state/login";
+import { author } from "../../js/state/login";
 import { store } from "../../js/state/store.js";
 
 const MAX_DESCRIPTION_LENGTH = 300;
@@ -380,7 +380,7 @@ class EditingPage extends LitElement {
 
     const strippedHtml = this._getStrippedHtml(this._htmlData);
 
-    article["author"] = fullName(store.getState());
+    article["author"] = author(store.getState());
     article["text"] = this._htmlData;
     article["description"] = this._getDescription(strippedHtml);
     article["readTime"] = this._calculateReadTime(strippedHtml);

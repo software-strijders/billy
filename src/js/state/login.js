@@ -8,6 +8,7 @@ const initialState = {
     lastName: "",
     role: "",
     link: "",
+    organization: "",
   },
 };
 
@@ -21,7 +22,11 @@ export const { actions, reducer } = createSlice({
   },
 });
 
-export const fullName = createSelector(
-  (state) => `${state.login.user.firstName} ${state.login.user.lastName}`,
+export const author = createSelector(
+  (state) => ({
+    fullName: `${state.login.user.firstName} ${state.login.user.lastName}`,
+    organization: state.login.user.organization,
+    link: state.login.user.link,
+  }),
   (name) => name,
 );

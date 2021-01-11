@@ -117,9 +117,7 @@ class Article extends LitElement {
 
         store.dispatch(
           actions.setLinks({
-            author: {
-              fullName: data.author,
-            },
+            author: data.author,
             lastRevised: data.lastRevised,
             links: data.links,
           }),
