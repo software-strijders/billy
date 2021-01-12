@@ -6,7 +6,8 @@ class BackArrow extends LitElement {
   static getStyles() {
     return css`
       .backArrow {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         height: 50px;
         width: 70px;
         transition: 0.1s;
@@ -18,7 +19,14 @@ class BackArrow extends LitElement {
       }
 
       .backArrow__image {
-        height: 50px;
+        height: 100%;
+      }
+
+      @media(max-width: 850px) {
+        .backArrow__image {
+          width: 35px;
+          height: 35px;
+        }
       }
     `;
   }

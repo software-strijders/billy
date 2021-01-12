@@ -45,6 +45,7 @@ class TopBar extends LitElement {
       }
 
       .topBar__item {
+        display: flex;
         justify-content: center;
         align-items: flex-start;
         text-shadow: 0px 5px 10px var(--billy-color-shadow);
