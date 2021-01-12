@@ -126,6 +126,43 @@ class CategoryOption extends LitElement {
         border-right: 20px solid transparent;
         border-top: var(--billy-border-top-pop-out-pointer);
       }
+
+      @media (max-width: 850px) {
+        .category__container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+        }
+
+        .category {
+          width: 100%;
+        }
+
+        .category__text {
+          margin-left: 40px;
+          font-size: 20px;
+        }
+
+        .category__dropdownImage {
+            height: 20px;
+        }
+
+        .category__dropdown {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: none;
+          border: none;
+          margin: 0 50px 0 auto;
+        }
+
+        :host {
+          width: 100%;
+          justify-content: start;
+          padding-left: 50px;
+        }
+      }
     `;
   }
 
@@ -142,8 +179,7 @@ class CategoryOption extends LitElement {
         </div>
         <div class="popOut__option">
           <a
-            href="/search?hc=${this
-              .text}&sc=${subCategoryOptions.organizationProcess}"
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}"
             class="popOut__link"
             >${subCategoryOptions.organizationProcess}</a
           >
@@ -151,25 +187,21 @@ class CategoryOption extends LitElement {
         </div>
         <div class="popOut__option">
           <a
-            href="/search?hc=${this
-              .text}&sc=${subCategoryOptions.infrastructure}"
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}"
             class="popOut__link"
             >${subCategoryOptions.infrastructure}</a
           >
           <hr class="popOut__line" />
         </div>
         <div class="popOut__option">
-          <a
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.software}"
-            class="popOut__link"
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.software}" class="popOut__link"
             >${subCategoryOptions.software}</a
           >
           <hr class="popOut__line" />
         </div>
         <div class="popOut__option">
           <a
-            href="/search?hc=${this
-              .text}&sc=${subCategoryOptions.hardwareInterfacing}"
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}"
             class="popOut__link"
             >${subCategoryOptions.hardwareInterfacing}</a
           >
@@ -185,9 +217,10 @@ class CategoryOption extends LitElement {
         })}"
         href="/search?hc=${this.text}"
       >
-        <div>
+        <div class="category__container">
           <img alt="" class="category__image" src="${this.icon}" />
           <p class="category__text">${this.text}</p>
+          <button class="category__dropdown"><img src="/dist/assets/icon/select-dropdown.svg" class="category__dropdownImage" /></button>
         </div>
       </a>
     `;

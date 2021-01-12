@@ -79,6 +79,10 @@ class Hero extends LitElement {
         display: none;
       }
 
+      .hero__footerButton {
+        display: none;
+      }
+
       @media (max-width: 850px) {
         .hero__logo {
           font-size: 80px;
@@ -90,6 +94,21 @@ class Hero extends LitElement {
 
         :host {
           height: 100vh;
+        }
+
+        .hero__footerText {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+
+        .hero__footerButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
         }
       }
     `;
@@ -115,10 +134,17 @@ class Hero extends LitElement {
           >
             Of zie de categoriëen
           </h2>
-          <img src="/assets/icon/scroll-icon.svg"></img>
+          <button class="hero__footerButton" @click=${this._scrollToBottom}><img src="/dist/assets/icon/scroll-icon.svg"></img></button>
         </div>
       </div>
     `;
+  }
+
+  _scrollToBottom() {
+    window.scrollBy({
+      top: -100,
+      behavior: 'smooth'
+    });
   }
 }
 
