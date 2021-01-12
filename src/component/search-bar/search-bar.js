@@ -21,19 +21,6 @@ class SearchBar extends LitElement {
 
   static getStyles() {
     return css`
-
-      @media(max-width: 850px) {
-        .searchBar {
-          width: 350px;
-        }
-
-        .searchBar__arrow {
-          height: 20px !important;
-          padding-right: 20px;
-          padding-left: 5px;
-        }
-      }
-
       .wrapper {
         display: flex;
         flex-direction: column;
@@ -90,6 +77,18 @@ class SearchBar extends LitElement {
         height: 30px;
         background-color: var(--billy-color-transparent);
         filter: invert(var(--billy-filter-invert));
+      }
+
+      @media(max-width: 850px) {
+        .searchBar {
+          width: 350px;
+        }
+
+        .searchBar__arrow {
+          height: 20px !important;
+          padding-right: 20px;
+          padding-left: 5px;
+        }
       }
     `;
   }

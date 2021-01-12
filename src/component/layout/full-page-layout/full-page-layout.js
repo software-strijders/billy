@@ -29,6 +29,14 @@ class FullPageLayout extends LitElement {
         width: 100%;
         margin: auto 0 0 0;
       }
+
+      @media (max-width: 850px) {
+        :host {
+          overflow-x: hidden;
+          overflow-y: auto;
+          scrollbar-width: thin;
+        }
+      }
     `;
   }
 

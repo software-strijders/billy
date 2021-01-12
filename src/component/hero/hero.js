@@ -78,6 +78,20 @@ class Hero extends LitElement {
       .hero__categoryTitle--hide {
         display: none;
       }
+
+      @media (max-width: 850px) {
+        .hero__logo {
+          font-size: 80px;
+        }
+
+        .hero__underTitle {
+          font-size: 20px;
+        }
+
+        :host {
+          height: 100vh;
+        }
+      }
     `;
   }
 
@@ -101,6 +115,7 @@ class Hero extends LitElement {
           >
             Of zie de categoriëen
           </h2>
+          <img src="/assets/icon/scroll-icon.svg"></img>
         </div>
       </div>
     `;
