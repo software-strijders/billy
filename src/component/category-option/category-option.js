@@ -12,11 +12,16 @@ const subCategoryOptions = {
 };
 
 class CategoryOption extends LitElement {
+  constructor() {
+    super();
+  }
+
   static get properties() {
     return {
       icon: { type: String },
       text: { type: String },
       sideBar: { type: Boolean },
+      collapsed: { type: Boolean },
     };
   }
 
@@ -127,6 +132,21 @@ class CategoryOption extends LitElement {
         border-top: var(--billy-border-top-pop-out-pointer);
       }
 
+      .category__dropdown {
+        display: none;
+      }
+
+      .category__wrapper {
+        display: flex;
+        text-decoration: none;
+        flex-direction: column;
+        color: var(--billy-color-text-primary-dark);
+      }
+
+      .slideOut {
+        display: none;
+      }
+
       @media (max-width: 850px) {
         .category__container {
           display: flex;
@@ -135,32 +155,86 @@ class CategoryOption extends LitElement {
           width: 100%;
         }
 
+
         .category {
           width: 100%;
+          height: auto;
+          border-bottom: 5px solid var(--billy-color-line-light);
+          margin: 10% 10% 0;
+        }
+
+        .category--collapsed {
+          height: 100px;
+          border-bottom: none;
         }
 
         .category__text {
           margin-left: 40px;
           font-size: 20px;
         }
+        .category__option__wrapper {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
 
         .category__dropdownImage {
-            height: 20px;
+          height: 20px;
+          transition: 0.1s;
+          transform: rotate(180deg);
+          filter: invert(var(--billy-filter-invert));
         }
 
         .category__dropdown {
           display: flex;
+          width: 0;
+          height: 0;
           justify-content: center;
           align-items: center;
           background: none;
           border: none;
-          margin: 0 50px 0 auto;
+          margin: 0 15px 0 auto;
+          border-radius: 50px;
+          transition: 0.1s;
+        }
+
+        .category--collapsed .category__dropdownImage {
+          transform: rotate(0);
+        }
+
+        .category--collapsed .slideOut {
+          display: none;
+        }
+
+        .slideOut {
+          display: flex;
+          height: auto;
+        }
+
+        .slideOut__list {
+          list-style-type: none;
+        }
+
+        .slideOut__listOption {
+          margin: 30px 0;
+          font-weight: bold;
+          font-size: 20px;
+        }
+
+        .slideOut__link {
+          text-decoration: none;
+          color: var(--billy-color-text-primary-dark);
         }
 
         :host {
           width: 100%;
           justify-content: start;
-          padding-left: 50px;
+          height: auto;
+          align-items: start;
+        }
+
+        .popOut {
+          display: none;
         }
       }
     `;
@@ -211,19 +285,55 @@ class CategoryOption extends LitElement {
           <div class="popOut__pointer"></div>
         </div>
       </div>
-      <a
+
+      <div
         class="category ${classMap({
           "category--sideBar": this.sideBar,
+          "category--collapsed": this.collapsed,
         })}"
         href="/search?hc=${this.text}"
       >
         <div class="category__container">
           <img alt="" class="category__image" src="${this.icon}" />
           <p class="category__text">${this.text}</p>
-          <button class="category__dropdown"><img src="/dist/assets/icon/select-dropdown.svg" class="category__dropdownImage" /></button>
+          <button
+            @click=${this._changeCollapsed}
+            class="category__dropdown"
+          >
+            <img src="/dist/assets/icon/select-dropdown.svg" class="category__dropdownImage" />
+          </button>
         </div>
-      </a>
+
+        <div class="slideOut">
+          <ul class="slideOut__list">
+            <li class="slideOut__listOption"><a class="slideOut__link"
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}"
+            >${subCategoryOptions.interaction}</a
+          ></li>
+            <li class="slideOut__listOption"><a class="slideOut__link"
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}"
+            >${subCategoryOptions.organizationProcess}</a
+          ></li>
+            <li class="slideOut__listOption"><a class="slideOut__link"
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}"
+            >${subCategoryOptions.infrastructure}</a
+          ></li>
+            <li class="slideOut__listOption"><a class="slideOut__link"
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.software}"
+            >${subCategoryOptions.software}</a
+          ></li>
+            <li class="slideOut__listOption"><a class="slideOut__link"
+            href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}"
+            >${subCategoryOptions.hardwareInterfacing}</a
+          ></li>
+          </ul>
+        </div>
+      </div>
     `;
+  }
+
+  _changeCollapsed() {
+    this.collapsed = !this.collapsed;
   }
 }
 
