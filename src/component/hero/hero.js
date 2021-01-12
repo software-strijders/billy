@@ -43,7 +43,10 @@ class Hero extends LitElement {
       }
 
       .hero__content {
-        width: var(--billy-hero-content-width);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         margin: 0 0 var(--billy-hero-content-margin-offset) 0;
       }
 
