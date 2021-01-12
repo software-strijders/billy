@@ -62,6 +62,10 @@ class Results extends LitElement {
           padding: 0;
           margin: 0;
         }
+
+        .results__title {
+          font-size: 30px;
+        }
       }
     `;
   }
@@ -76,7 +80,7 @@ class Results extends LitElement {
     return html`
       <div class="results">
         <h1 class="results__title">
-          Resultaten voor: <span class="results__query">${this.query} ${this.getCategories()} </span>
+          <span class="results__query">${this.query} ${this.getCategories()} </span>
         </h1>
         <hr class="results__hr" />
         <div id="resultItems" class="results__items">

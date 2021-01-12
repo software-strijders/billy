@@ -86,7 +86,7 @@ class SearchBar extends LitElement {
 
       @media (max-width: 850px) {
         .searchBar {
-          width: 350px;
+          max-width: 90vw;
         }
 
         .wrapper {
