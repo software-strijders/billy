@@ -43,6 +43,13 @@ class CategoryOption extends LitElement {
         color: var(--billy-color-text-primary-dark);
       }
 
+      .category__link {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: var(--billy-color-text-primary-dark);
+      }
+
       .category--sideBar {
         font-size: 13px;
         margin: 20px;
@@ -157,12 +164,15 @@ class CategoryOption extends LitElement {
           width: 100%;
         }
 
-
         .category {
           width: 100%;
           height: auto;
           border-bottom: 5px solid var(--billy-color-line-light);
           margin: 10% 10% 0;
+        }
+
+        .category__link {
+          flex-direction: row;
         }
 
         .category--collapsed {
@@ -296,38 +306,52 @@ class CategoryOption extends LitElement {
         href="/search?hc=${this.text}"
       >
         <div class="category__container">
-          <img alt="" class="category__image" src="${this.icon}" />
-          <p class="category__text">${this.text}</p>
-          <button
-            @click=${this._changeCollapsed}
-            class="category__dropdown"
-          >
+          <a class="category__link" href="/search?hc=${this.text}">
+            <img alt="" class="category__image" src="${this.icon}" />
+            <p class="category__text">${this.text}</p>
+          </a>
+          <button @click=${this._changeCollapsed} class="category__dropdown">
             <img src="/dist/assets/icon/select-dropdown.svg" class="category__dropdownImage" />
           </button>
         </div>
 
         <div class="slideOut">
           <ul class="slideOut__list">
-            <li class="slideOut__listOption"><a class="slideOut__link"
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}"
-            >${subCategoryOptions.interaction}</a
-          ></li>
-            <li class="slideOut__listOption"><a class="slideOut__link"
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}"
-            >${subCategoryOptions.organizationProcess}</a
-          ></li>
-            <li class="slideOut__listOption"><a class="slideOut__link"
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}"
-            >${subCategoryOptions.infrastructure}</a
-          ></li>
-            <li class="slideOut__listOption"><a class="slideOut__link"
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.software}"
-            >${subCategoryOptions.software}</a
-          ></li>
-            <li class="slideOut__listOption"><a class="slideOut__link"
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}"
-            >${subCategoryOptions.hardwareInterfacing}</a
-          ></li>
+            <li class="slideOut__listOption">
+              <a
+                class="slideOut__link"
+                href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}"
+                >${subCategoryOptions.interaction}</a
+              >
+            </li>
+            <li class="slideOut__listOption">
+              <a
+                class="slideOut__link"
+                href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}"
+                >${subCategoryOptions.organizationProcess}</a
+              >
+            </li>
+            <li class="slideOut__listOption">
+              <a
+                class="slideOut__link"
+                href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}"
+                >${subCategoryOptions.infrastructure}</a
+              >
+            </li>
+            <li class="slideOut__listOption">
+              <a
+                class="slideOut__link"
+                href="/search?hc=${this.text}&sc=${subCategoryOptions.software}"
+                >${subCategoryOptions.software}</a
+              >
+            </li>
+            <li class="slideOut__listOption">
+              <a
+                class="slideOut__link"
+                href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}"
+                >${subCategoryOptions.hardwareInterfacing}</a
+              >
+            </li>
           </ul>
         </div>
       </div>

@@ -97,6 +97,7 @@ class SearchBar extends LitElement {
           height: 20px !important;
           padding-right: 20px;
           padding-left: 5px;
+          border-radius: 20px;
         }
 
         .wrapper--topBar .mobileButton {
