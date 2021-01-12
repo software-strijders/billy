@@ -12,12 +12,6 @@ class LoginButton extends LitElement {
     store.subscribe(() => this.requestUpdate());
   }
 
-  static get properties() {
-    return {
-      large: { type: Boolean },
-    };
-  }
-
   static getStyles() {
     return css`
       .loginButton {
@@ -37,6 +31,7 @@ class LoginButton extends LitElement {
         text-decoration: none;
         cursor: pointer;
         transition: 0.2s;
+        height: 50px;
       }
 
       .loginButton:visited {
@@ -47,10 +42,6 @@ class LoginButton extends LitElement {
         padding-right: 40px;
       }
 
-      .loginButton--large {
-        height: 50px;
-      }
-
       .loginButton__image {
         height: 20px;
         width: 20px;
@@ -59,12 +50,17 @@ class LoginButton extends LitElement {
 
       .loginButton__mobileIcon {
         display: none;
+        height: 40px;
+        width: 40px;
       }
 
       @media(max-width: 850px) {
         .loginButton {
-          background-color: var(--billy-color-transparent);
+          background-color: var(--billy-color-background-loginButton);
+          border: none;
           box-shadow: none;
+          margin-left: 0;
+          padding-left: 0;
         }
 
         .loginButton:hover {
@@ -90,7 +86,7 @@ class LoginButton extends LitElement {
   render() {
     return html`
       <a
-        class="loginButton ${classMap({ "loginButton--large": this.large })}"
+        class="loginButton"
         @click="${this.login}"
         href="/login"
       >

@@ -56,6 +56,13 @@ class Results extends LitElement {
         -webkit-background-clip: text;
         -webkit-text-fill-color: var(--billy-color-transparent);
       }
+
+      @media (max-width: 850px) {
+        .results {
+          padding: 0;
+          margin: 0;
+        }
+      }
     `;
   }
 

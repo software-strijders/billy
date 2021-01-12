@@ -21,10 +21,6 @@ class HomePage extends LitElement {
           <billy-hero slot="content">
             <billy-top-bar hero="true" slot="header">
               <billy-contrast-toggle slot="item"></billy-contrast-toggle>
-              ${store.getState().login.loggedIn
-                ? html`<billy-contribute-button slot="item"></billy-contribute-button>`
-                : html``
-              }
               <billy-login-button slot="item" large="true"></billy-login-button>
             </billy-top-bar>
             <billy-search-bar slot="content"></billy-search-bar>

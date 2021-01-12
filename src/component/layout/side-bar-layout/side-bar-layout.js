@@ -61,6 +61,14 @@ class SideBarLayout extends LitElement {
           padding: 25px;
         }
       }
+
+      @media(max-width: 850px) {
+        .sideBarLayout__sideBar {
+          display: none;
+        }
+
+        
+      }
     `;
   }
 

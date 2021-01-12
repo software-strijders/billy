@@ -16,6 +16,7 @@ class SearchBar extends LitElement {
   static get properties() {
     return {
       hideLink: { type: Boolean },
+      topBar: { type: Boolean },
     };
   }
 
@@ -79,9 +80,17 @@ class SearchBar extends LitElement {
         filter: invert(var(--billy-filter-invert));
       }
 
-      @media(max-width: 850px) {
+      .mobileButton {
+        display: none;
+      }
+
+      @media (max-width: 850px) {
         .searchBar {
           width: 350px;
+        }
+
+        .wrapper {
+          margin: 0;
         }
 
         .searchBar__arrow {
@@ -89,14 +98,44 @@ class SearchBar extends LitElement {
           padding-right: 20px;
           padding-left: 5px;
         }
+
+        .wrapper--topBar .mobileButton {
+          display: block;
+          background: none;
+          border: none;
+          padding: 0;
+          height: 50px;
+        }
+
+        .wrapper--topBar .mobileButton__image {
+          height: 40px;
+          width: 40px;
+        }
+
+        .wrapper--topBar .searchBar {
+          display: none;
+        }
+
+        .wrapper--topbar {
+          margin: 0;
+          
+        }
+
+        .wrapper--topBar .searchBar {
+          width: 40px;
+        }
+
+        :host {
+          margin-left: 15px;
+        }
       }
     `;
   }
 
   render() {
     return html`
-      <div class="wrapper">
-        <div class="searchBar">
+      <div class="wrapper ${classMap({ "wrapper--topBar": this.topBar })}">
+        <div class="searchBar ">
           <input
             @keydown="${this._handleKeyDown}"
             id="searchInput"
@@ -105,20 +144,14 @@ class SearchBar extends LitElement {
             class="searchBar__input"
             type="text"
           />
-          <a
-            href="/search"
-            name="zoek"
-            aria-label="Zoek"
-            class="searchBar__button"
-            type="submit"
-          >
-            <img
-              class="searchBar__arrow"
-              src="/dist/assets/icon/arrow-right.svg"
-              alt=""
-            />
+          <a href="/search" name="zoek" aria-label="Zoek" class="searchBar__button" type="submit">
+            <img class="searchBar__arrow" src="/dist/assets/icon/arrow-right.svg" alt="" />
           </a>
         </div>
+        <button class="mobileButton">
+          <img class="mobileButton__image" src="/dist/assets/icon/search-icon.svg" />
+        </button>
+
         <a
           class="searchBar__link ${classMap({
             "searchBar__link--hide": this.hideLink,
@@ -143,9 +176,9 @@ class SearchBar extends LitElement {
   _search() {
     Router.go({
       pathname: "/search",
-      search: `?q=${this._getSearchInput()}`
+      search: `?q=${this._getSearchInput()}`,
     });
   }
 }
 
-defineElement("billy-search-bar", SearchBar)
+defineElement("billy-search-bar", SearchBar);

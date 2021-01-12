@@ -63,6 +63,16 @@ class TopBar extends LitElement {
         font-weight: bold;
         margin: 0 0 0 10px;
       }
+
+      @media (max-width: 850px) {
+        .topBar__logo {
+          font-size: 30px;
+        }
+
+        .topBar {
+          height: 60px;
+        }
+      }
     `;
   }
 
