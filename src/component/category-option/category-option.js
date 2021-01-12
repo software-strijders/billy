@@ -14,6 +14,8 @@ const subCategoryOptions = {
 class CategoryOption extends LitElement {
   constructor() {
     super();
+
+    this.collapsed = true;
   }
 
   static get properties() {

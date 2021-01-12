@@ -56,6 +56,34 @@ class LoginButton extends LitElement {
         width: 20px;
         margin-right: 5px;
       }
+
+      .loginButton__mobileIcon {
+        display: none;
+      }
+
+      @media(max-width: 850px) {
+        .loginButton {
+          background-color: var(--billy-color-transparent);
+          box-shadow: none;
+        }
+
+        .loginButton:hover {
+          padding-right: 20px;
+        }
+
+        .loginButton__image {
+          display: none;
+        }
+
+        .loginButton__text {
+          display: none;
+        }
+
+        .loginButton__mobileIcon {
+          display: block;
+          height: 50px;
+        }
+      }
     `;
   }
 
@@ -74,8 +102,9 @@ class LoginButton extends LitElement {
                   ? "/dist/assets/image/" + store.getState().login.user.link + ".png"
                   : "/dist/assets/favicon.svg"}
               />
-              ${this.getNameOfUser()} `
-          : html`Inloggen`}
+              <p class="loginButton__text">${this.getNameOfUser()} </p>
+              <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
+          : html`Inloggen <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`}
       </button>
     `;
   }
