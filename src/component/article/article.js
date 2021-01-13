@@ -57,7 +57,7 @@ class Article extends LitElement {
         background-color: var(--billy-color-background-grey);
         border-radius: 20px;
         color: var(--billy-color-text-primary-dark);
-        border: var(--billy-border-category-article-editor);
+        border: var(--billy-border);
       }
 
       .category__text {

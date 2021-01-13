@@ -194,7 +194,7 @@ class EditingPage extends LitElement {
       }
 
       .form__select--wrapper {
-        border: var(--billy-edit-page-select-border);
+        border: var(--billy-border);
       }
 
       .form__link {
@@ -219,7 +219,7 @@ class EditingPage extends LitElement {
         padding: var(--billy-edit-page-form-button-padding);
         border-radius: var(--billy-edit-page-radius);
         background: var(--billy-color-button-gradient);
-        border: var(--billy-border-link-button);
+        border: var(--billy-border);
         color: var(--billy-color-text-primary-light);
         font-size: var(--billy-edit-page-form-button-font-size);
         cursor: pointer;

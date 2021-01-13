@@ -91,7 +91,7 @@ class CategoryOption extends LitElement {
         visibility: visible;
         transform: translateY(30px) scale(1);
         opacity: 1;
-        border: var(--billy-color-border-pop-out) 2px solid;
+        border: var(--billy-border);
       }
 
       .popOut--sideBar {
@@ -120,7 +120,7 @@ class CategoryOption extends LitElement {
         height: var(--billy-line-height);
         border: none;
         border-radius: var(--billy-line-radius);
-        background-color: var(--billy-color-pop-out-line);
+        background-color: var(--billy-color-line-popout);
       }
 
       .popOut__pointerContainer {
@@ -138,7 +138,7 @@ class CategoryOption extends LitElement {
         height: 0;
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
-        border-top: var(--billy-border-top-pop-out-pointer);
+        border-top: var(--billy-border-top-pointer-popout);
       }
 
       .category__dropdown {

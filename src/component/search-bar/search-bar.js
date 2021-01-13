@@ -38,7 +38,7 @@ class SearchBar extends LitElement {
         margin: 0;
         box-shadow: 0px 5px 10px var(--billy-color-shadow);
         border-radius: 100px;
-        border: var(--billy-color-border-search-bar);
+        border: var(--billy-border);
         padding: 0;
       }
 
