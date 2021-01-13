@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Billy is een wiki voor duurzame ontwikkel tools. Hier kun je alles vinden om jou applicatie duurzamer te maken.">
-  <link rel="stylesheet" href="/dist/css/style.css" />
-  <link rel="icon" href="/dist/assets/favicon.svg" sizes="any" type="image/svg+xml" />
-  <link rel="icon" href="/dist/assets/favicon.ico" sizes="any" type="image/ico" />
-  <title>Billy - Duurzame ontwikkeling</title>
-</head>
-<body>
-  <noscript>Om van deze website gebruik te maken, is JavaScript nodig...</noscript>
-  <div id="root"></div>
-  <script type="module" src="/dist/component/import.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Billy is een wiki voor duurzame ontwikkel tools. Hier kun je alles vinden om jou applicatie duurzamer te maken."
+    />
+    <meta name="theme-color" content="#801BE5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="/dist/css/style.css" />
+    <link rel="icon" href="/dist/assets/favicon.svg" sizes="any" type="image/svg+xml" />
+    <link rel="icon" href="/dist/assets/favicon.ico" sizes="any" type="image/ico" />
+    <link rel="apple-touch-icon" href="/dist/assets/icon/pwa/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Billy - Duurzame ontwikkeling</title>
+  </head>
+  <body>
+    <noscript>Om van deze website gebruik te maken, is JavaScript nodig...</noscript>
+    <div id="root"></div>
+    <script type="module" src="/dist/component/import.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+      }
+    </script>
+  </body>
 </html>
