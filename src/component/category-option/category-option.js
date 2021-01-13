@@ -168,7 +168,7 @@ class CategoryOption extends LitElement {
           width: 100%;
           height: auto;
           border-bottom: 5px solid var(--billy-color-line-light);
-          margin: 10% 10% 0;
+          margin: 25px 25px 10px;
         }
 
         .category__link {
@@ -191,7 +191,7 @@ class CategoryOption extends LitElement {
         }
 
         .category__dropdownImage {
-          height: 20px;
+          height: 35px;
           transition: 0.1s;
           transform: rotate(180deg);
           filter: invert(var(--billy-filter-invert));
@@ -199,14 +199,14 @@ class CategoryOption extends LitElement {
 
         .category__dropdown {
           display: flex;
-          width: 0;
-          height: 0;
+          width: 65px;
+          height: 65px;
+          background-color: var(--billy-color-background-light-grey);
           justify-content: center;
           align-items: center;
-          background: none;
-          border: none;
+          border: var(--billy-border);
           margin: 0 15px 0 auto;
-          border-radius: 50px;
+          border-radius: 5px;
           transition: 0.1s;
         }
 
@@ -234,7 +234,7 @@ class CategoryOption extends LitElement {
         }
 
         .slideOut__link {
-          text-decoration: none;
+
           color: var(--billy-color-text-primary-dark);
         }
 

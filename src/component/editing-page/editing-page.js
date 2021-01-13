@@ -219,7 +219,6 @@ class EditingPage extends LitElement {
         padding: var(--billy-edit-page-form-button-padding);
         border-radius: var(--billy-edit-page-radius);
         background: var(--billy-color-button-gradient);
-
         border: var(--billy-border-link-button);
         color: var(--billy-color-text-primary-light);
         font-size: var(--billy-edit-page-form-button-font-size);
