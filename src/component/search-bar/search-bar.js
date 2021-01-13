@@ -11,12 +11,14 @@ class SearchBar extends LitElement {
     super();
 
     this.hideLink = false;
+    this.topBar = false;
   }
 
   static get properties() {
     return {
       hideLink: { type: Boolean },
       topBar: { type: Boolean },
+      expandedSearchBar: { type: Boolean },
     };
   }
 
@@ -26,6 +28,8 @@ class SearchBar extends LitElement {
         display: flex;
         flex-direction: column;
         align-items: center;
+        transition: 0.3s;
+        background-image: transparent;
       }
 
       .searchBar {
@@ -82,30 +86,33 @@ class SearchBar extends LitElement {
 
       .mobileButton {
         display: none;
+        cursor: pointer;
+      }
+
+      .mobileButton--close {
+        display: none;
       }
 
       @media (max-width: 850px) {
-        .searchBar {
-          max-width: 90vw;
+        :host {
+          margin-left: 15px;
         }
 
         .wrapper {
           margin: 0;
         }
 
-        .searchBar__arrow {
-          height: 20px !important;
-          padding-right: 20px;
-          padding-left: 5px;
-          border-radius: 20px;
-        }
-
         .wrapper--topBar .mobileButton {
-          display: block;
+          display: flex;
+          align-items: center;
           background: none;
           border: none;
           padding: 0;
           height: 50px;
+        }
+
+        .wrapper--topBar .mobileButton--close {
+          display: none;
         }
 
         .wrapper--topBar .mobileButton__image {
@@ -117,17 +124,56 @@ class SearchBar extends LitElement {
           display: none;
         }
 
-        .wrapper--topbar {
-          margin: 0;
-          
-        }
-
         .wrapper--topBar .searchBar {
           width: 40px;
         }
 
-        :host {
-          margin-left: 15px;
+        .wrapper--expand {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          flex-direction: row;
+          background-image: var(--billy-gradient-background-brand);
+        }
+
+        .wrapper--expand .searchBar {
+          display: flex;
+          height: calc(var(--billy-top-bar-height) - 25px);
+          flex-grow: 1;
+          max-width: unset;
+          margin: 0 15px;
+        }
+
+        .wrapper--expand .searchBar__input {
+          width: 100%;
+          font-size: 16px;
+        }
+
+        .wrapper--expand .mobileButton {
+          display: none;
+        }
+
+        .wrapper--expand .mobileButton--close {
+          display: flex;
+          align-items: center;
+          margin: 0 10px;
+        }
+
+        .wrapper--expand .searchBar__arrow {
+          padding: 0;
+        }
+
+        .searchBar {
+          max-width: 90vw;
+        }
+
+        .searchBar__arrow {
+          height: 20px;
+          padding-right: 20px;
+          padding-left: 5px;
+          border-radius: 20px;
         }
       }
     `;
@@ -135,8 +181,13 @@ class SearchBar extends LitElement {
 
   render() {
     return html`
-      <div class="wrapper ${classMap({ "wrapper--topBar": this.topBar })}">
-        <div class="searchBar ">
+      <div
+        class="wrapper ${classMap({
+          "wrapper--topBar": this.topBar,
+          "wrapper--expand": this.expandedSearchBar,
+        })}"
+      >
+        <div class="searchBar">
           <input
             @keydown="${this._handleKeyDown}"
             id="searchInput"
@@ -149,10 +200,12 @@ class SearchBar extends LitElement {
             <img class="searchBar__arrow" src="/dist/assets/icon/arrow-right.svg" alt="" />
           </a>
         </div>
-        <button class="mobileButton">
+        <button class="mobileButton mobileButton--close" @click="${this._toggleSearchBar}">
+          <img class="mobileButton__image" src="/dist/assets/icon/cancel-icon.svg" />
+        </button>
+        <button class="mobileButton" @click="${this._toggleSearchBar}">
           <img class="mobileButton__image" src="/dist/assets/icon/search-icon.svg" />
         </button>
-
         <a
           class="searchBar__link ${classMap({
             "searchBar__link--hide": this.hideLink,
@@ -179,6 +232,10 @@ class SearchBar extends LitElement {
       pathname: "/search",
       search: `?q=${this._getSearchInput()}`,
     });
+  }
+
+  _toggleSearchBar() {
+    this.expandedSearchBar = !this.expandedSearchBar;
   }
 }
 

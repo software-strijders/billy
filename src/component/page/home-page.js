@@ -16,7 +16,7 @@ class HomePage extends LitElement {
         display: none;
       }
 
-      @media(max-width: 850px) {
+      @media (max-width: 850px) {
         .hero__footer {
           display: flex;
           align-items: center;
@@ -38,8 +38,9 @@ class HomePage extends LitElement {
               <billy-login-button slot="item" large="true"></billy-login-button>
             </billy-top-bar>
             <billy-search-bar slot="content"></billy-search-bar>
-            <button slot="footer"
-            class="hero__footer" @click=${this._scrollToCategories}><img src="/dist/assets/icon/scroll-icon.svg"></img></button>
+            <button slot="footer" class="hero__footer" @click=${this._scrollToCategories}>
+              <img src="/dist/assets/icon/scroll-icon.svg">
+            </button>
           </billy-hero>
           <billy-category-bar id="categoryBar" slot="category-bar">
             <billy-category-option text="Analyse" icon="/dist/assets/icon/analyse-icon.svg"></billy-category-option>
@@ -55,7 +56,7 @@ class HomePage extends LitElement {
 
   _scrollToCategories() {
     let bar = this.shadowRoot.querySelector("#categoryBar");
-    bar.scrollIntoView({ block: "start", inline: "center", behavior: "smooth" })
+    bar.scrollIntoView({ block: "start", inline: "center", behavior: "smooth" });
   }
 }
 
