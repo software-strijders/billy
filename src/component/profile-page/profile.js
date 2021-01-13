@@ -5,13 +5,22 @@ import { Router } from "@vaadin/router";
 import { sendArticle } from "../../js/api/api";
 import { author } from "../../js/state/login";
 import { store } from "../../js/state/store.js";
+import { getArticles } from "../../js/api/api.js";
 import { defineElement } from "../../js/custom-element";
 
 class Profile extends LitElement {
   constructor() {
     super();
 
+    this.isFinished = false;
+    this.previews = [];
     this._checkAccess();
+    this._getResultItems();
+
+    window.locationchange = () => {
+      this.isFinished = false;
+      this._getResultItems();
+    };
   }
 
   _checkAccess() {
@@ -19,6 +28,12 @@ class Profile extends LitElement {
       alert("Je hebt geen toegang tot deze pagina, u wordt omgeleid");
       window.location.href = "/";
     }
+  }
+
+  static get properties() {
+    return {
+      isFinished: { type: Boolean },
+    };
   }
 
   static getStyles() {
@@ -61,6 +76,28 @@ class Profile extends LitElement {
         text-shadow: none;
         margin: 0;
       }
+
+      .create__button {
+        padding: var(--billy-edit-page-form-button-padding);
+        border-radius: var(--billy-edit-page-radius);
+        background: var(--billy-color-button-gradient);
+        border: var(--billy-border-link-button);
+        color: var(--billy-color-text-primary-light);
+        font-size: var(--billy-edit-page-form-button-font-size);
+        cursor: pointer;
+        transition: background-size 0.3s ease 0s, all 0.3s ease 0s;
+        font-weight: bold;
+      }
+
+      .create__article-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        border-style: solid;
+        border-color: var(--billy-color-line-light);
+        border-radius: 6px;
+        padding: 6px;
+      }
       `;
   }
 
@@ -81,9 +118,59 @@ class Profile extends LitElement {
         <h2 class="profile__preferencesTitle">
             Voorkeuren
         </h2>
+        <hr class="profile__line"/>
+        <br>
+        <div class="create__article-wrapper">
+          <span class="profile__title"> Nieuw Artikel </span>
+          <button class="create__button" type="button" @click="${this._redirectToCreateArticlePage}">Maak aan</button>
+        </div>
+        <br>
+        <br>
+        <h3 class="profile__preferencesTitle">
+          Mijn artikelen
+        </h3>
+        <hr class="profile__line"/>
+        <div id="resultItems" class="results__items">
+          ${this.previews.map((article) => {
+                return html`
+                  <billy-result-item
+                    href="/article${article.link}"
+                    title="${article.title}"
+                    description="${article.description}"
+                    readTime="${article.readTime}"
+                    lastRevised="${article.lastRevised}"
+                    headCategory="${article.headCategory}"
+                    subCategory="${article.subCategory}"
+                  ></billy-result-item>
+                `;
+              })}
+        </div>
       </div>
       `;
   }
+
+  _redirectToCreateArticlePage() {
+    window.location.href="/create";
+  }
+
+  _getResultItems() {
+    getArticles().then((json) => {
+      this.previews = json.articles;
+      this._filterByUser();
+    
+      // Only render when filtering has finished.
+      this.isFinished = true;
+    });
+  }
+
+  _filterByUser() {
+    this.previews = this.previews.filter((article) => {
+      return (
+        article.author.fullName === this.getNameOfUser()
+        );
+    });
+  }
+  
 
   getNameOfUser() {
     if (store.getState().login.user.firstName !== "") {
