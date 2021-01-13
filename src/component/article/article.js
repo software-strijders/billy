@@ -82,6 +82,16 @@ class Article extends LitElement {
         font-size: 18px;
         margin: 0 0 25px 0;
       }
+
+      @media(max-width: 850px) {
+        .article__content {
+          padding: 0;
+        }
+
+        .article__title {
+          font-size: 30px;
+        }
+      }
     `;
   }
 
