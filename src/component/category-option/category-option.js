@@ -77,7 +77,7 @@ class CategoryOption extends LitElement {
         bottom: 240px;
         width: 200px;
         padding: 20px;
-        background-color: var(--billy-color-background-pop-out);
+        background-color: var(--billy-color-background-popout);
         border-radius: 10px;
         box-shadow: var(--billy-box-shadow);
         transition: 0.25s;
@@ -112,7 +112,7 @@ class CategoryOption extends LitElement {
 
       .popOut__link {
         text-decoration: none;
-        color: var(--billy-color-text-pop-out-link);
+        color: var(--billy-color-text-popout-link);
         font-weight: bold;
       }
 
@@ -120,7 +120,7 @@ class CategoryOption extends LitElement {
         height: var(--billy-line-height);
         border: none;
         border-radius: var(--billy-line-radius);
-        background-color: var(--billy-color-line-pop-out);
+        background-color: var(--billy-color-line-popout);
       }
 
       .popOut__pointerContainer {
@@ -138,7 +138,7 @@ class CategoryOption extends LitElement {
         height: 0;
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
-        border-top: var(--billy-border-top-pointer-pop-out);
+        border-top: var(--billy-border-top-pointer-popout);
       }
 
       .category__dropdown {

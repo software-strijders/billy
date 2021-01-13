@@ -56,7 +56,7 @@ class LoginButton extends LitElement {
 
       @media(max-width: 850px) {
         .loginButton {
-          background-color: var(--billy-color-background-loginButton);
+          background-color: var(--billy-color-background-loginbutton);
           border: none;
           box-shadow: none;
           margin-left: 0;
