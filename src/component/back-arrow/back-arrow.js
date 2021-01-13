@@ -8,7 +8,7 @@ class BackArrow extends LitElement {
       .backArrow {
         display: flex;
         align-items: center;
-        height: 50px;
+        height: 70px;
         width: 70px;
         transition: 0.1s;
         margin-left: 10px;
@@ -24,8 +24,8 @@ class BackArrow extends LitElement {
 
       @media(max-width: 850px) {
         .backArrow__image {
-          width: 35px;
-          height: 35px;
+          width: 50px;
+          height: 50px;
         }
       }
     `;
@@ -36,7 +36,7 @@ class BackArrow extends LitElement {
       <a class="backArrow" href="/" aria-label="Ga terug naar vorige pagina">
         <img
           class="backArrow__image"
-          src="/dist/assets/icon/backarrow-icon.svg"
+          src="/dist/assets/icon/back-arrow-icon.svg"
           alt=""
           />
       </a>

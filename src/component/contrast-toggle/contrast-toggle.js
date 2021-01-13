@@ -43,6 +43,9 @@ class ContrastToggle extends LitElement {
       }
 
       .contrastToggle__slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
         height: 30px;
         transition: 0.3s;
@@ -78,7 +81,7 @@ class ContrastToggle extends LitElement {
 
       .contrastToggle__sliderIcon {
         transition: 0.25s;
-        width: 30px;
+        width: 40px;
         user-select: none;
       }
 
@@ -99,13 +102,17 @@ class ContrastToggle extends LitElement {
 
         .contrastToggle__mobile {
           display: flex;
-          width: 28px;
-          height: 28px;
+          width: 40px;
+          height: 40px;
+          box-shadow: none;
           cursor: pointer;
           border-radius: 50px;
-          box-shadow: var(--billy-box-shadow);
           transition: 0.3s;
           margin-right: 20px;
+        }
+
+        .contrastToggle__mobileIcon {
+          box-shadow: none;
         }
 
         .contrastToggle--on .contrastToggle__mobile {
