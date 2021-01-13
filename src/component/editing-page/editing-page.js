@@ -28,6 +28,11 @@ class EditingPage extends LitElement {
       alert("Je hebt geen toegang tot deze pagina, u wordt omgeleid");
       window.location.href = "/";
     }
+
+    if (window.innerWidth < 850) {
+      alert("Gebruik alsjeblieft de desktop versie om artikelen te kunnen bewerken.")
+      window.location.href = "/";
+    }
   }
 
   static get properties() {
@@ -214,7 +219,6 @@ class EditingPage extends LitElement {
         padding: var(--billy-edit-page-form-button-padding);
         border-radius: var(--billy-edit-page-radius);
         background: var(--billy-color-button-gradient);
-
         border: var(--billy-border-link-button);
         color: var(--billy-color-text-primary-light);
         font-size: var(--billy-edit-page-form-button-font-size);

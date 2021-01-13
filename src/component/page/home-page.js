@@ -11,6 +11,20 @@ class HomePage extends LitElement {
         height: 100%;
         width: 100%;
       }
+
+      .hero__footer {
+        display: none;
+      }
+
+      @media (max-width: 850px) {
+        .hero__footer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: none;
+          border: none;
+        }
+      }
     `;
   }
 
@@ -21,15 +35,14 @@ class HomePage extends LitElement {
           <billy-hero slot="content">
             <billy-top-bar hero="true" slot="header">
               <billy-contrast-toggle slot="item"></billy-contrast-toggle>
-              ${store.getState().login.loggedIn
-                ? html`<billy-contribute-button slot="item"></billy-contribute-button>`
-                : html``
-              }
               <billy-login-button slot="item" large="true"></billy-login-button>
             </billy-top-bar>
             <billy-search-bar slot="content"></billy-search-bar>
+            <button slot="footer" class="hero__footer" @click=${this._scrollToCategories}>
+              <img src="/dist/assets/icon/scroll-icon.svg">
+            </button>
           </billy-hero>
-          <billy-category-bar slot="category-bar">
+          <billy-category-bar id="categoryBar" slot="category-bar">
             <billy-category-option text="Analyse" icon="/dist/assets/icon/analyse-icon.svg"></billy-category-option>
             <billy-category-option text="Advies" icon="/dist/assets/icon/advice-icon.svg"></billy-category-option>
             <billy-category-option text="Ontwerp" icon="/dist/assets/icon/design-icon.svg"></billy-category-option>
@@ -38,7 +51,22 @@ class HomePage extends LitElement {
           </billy-category-bar>
         </billy-full-page-layout>
       </billy-app>
-    `
+    `;
+  }
+
+  firstUpdated() {
+    let urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("jump")) {
+      // The method doesn't work without it being wrapped into a setTimeout
+      setTimeout(() => {
+        this._scrollToCategories();
+      }, 0);
+    }
+  }
+
+  _scrollToCategories() {
+    let bar = this.shadowRoot.querySelector("#categoryBar");
+    bar.scrollIntoView({ block: "start", inline: "center", behavior: "smooth" });
   }
 }
 

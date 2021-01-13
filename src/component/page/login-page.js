@@ -21,15 +21,7 @@ class LoginPage extends LitElement {
           <billy-hero hideCategoryTitle="true" slot="content">
             <billy-top-bar hero="true" slot="header">
               <billy-back-arrow slot="backItem"></billy-back-arrow>
-              ${store.getState().login.loggedIn
-                ? html`
-                <billy-contrast-toggle slot="item"></billy-contrast-toggle>
-                <billy-contribute-button slot="item" style="margin: 0 15px 0 15px"></billy-contribute-button>
-                `
-                : html`
-                <billy-contrast-toggle slot="item" style="margin: 0 15px 0 0"></billy-contrast-toggle>
-                `
-              }
+              <billy-contrast-toggle slot="item" style="margin: 0 15px 0 0"></billy-contrast-toggle>
             </billy-top-bar>
             <billy-login-window slot="content"></billy-login-window>
           </billy-hero>

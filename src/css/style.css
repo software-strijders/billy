@@ -23,6 +23,7 @@
   --billy-color-background-quoteblock: #f9f9f9;
   --billy-color-border-quoteblock: none;
   --billy-border-quoteblock: none;
+  --billy-color-background-loginButton: transparent;
   
   --billy-color-brand-primary: #4c74fc;
   --billy-color-brand-secondary: #801be5;
@@ -149,6 +150,7 @@
 }
 
 .contrast {
+  --billy-color-background-loginButton: transparent;
   --billy-color-background-light: #000;
   --billy-color-text-primary-dark: #fff;
   --billy-color-background-contrast-button-light: #fff;
@@ -284,4 +286,10 @@ main {
 @keyframes fadeOut {
   from { opacity: 1; }
   to   { opacity: 0; }
+}
+
+@media (max-width: 850px) {
+  :root {
+    --billy-top-bar-height: 60px;
+  }
 }

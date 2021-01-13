@@ -43,6 +43,16 @@ class NoResultItem extends LitElement {
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
       }
+
+      @media(max-width: 850px) {
+        .noResultItem__title {
+          font-size: 50px;
+        }
+
+        .noResultItem__description {
+          font-size: 25px;
+        }
+      }
     `;
   }
 

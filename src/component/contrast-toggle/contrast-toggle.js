@@ -43,6 +43,9 @@ class ContrastToggle extends LitElement {
       }
 
       .contrastToggle__slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
         height: 30px;
         transition: 0.3s;
@@ -78,8 +81,51 @@ class ContrastToggle extends LitElement {
 
       .contrastToggle__sliderIcon {
         transition: 0.25s;
-        width: 30px;
+        width: 40px;
         user-select: none;
+      }
+
+      .contrastToggle__mobile {
+        display: none;
+      }
+
+      @media(max-width: 850px) {
+        :host {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 50px;
+        }
+
+        .contrastToggle {
+          background-color: transparent;
+          box-shadow: none;
+          width: 40px;
+        }
+        
+        .contrastToggle__fill {
+          display: none;
+        }
+
+        .contrastToggle__mobile {
+          display: flex;
+          width: 40px;
+          height: 40px;
+          box-shadow: none;
+          cursor: pointer;
+          border-radius: 50px;
+          transition: 0.3s;
+          margin-right: 20px;
+        }
+
+        .contrastToggle__mobileIcon {
+          box-shadow: none;
+        }
+
+        .contrastToggle--on .contrastToggle__mobile {
+          transform: rotate(180deg);
+        }
       }
     `;
   }
@@ -97,6 +143,9 @@ class ContrastToggle extends LitElement {
           <div class="contrastToggle__slider">
             <img alt="" class="contrastToggle__sliderIcon" src="/dist/assets/icon/contrast-icon.svg" />
           </div>
+        </div>
+        <div class="contrastToggle__mobile">
+          <img class="contrastToggle__mobileIcon" src="/dist/assets/icon/contrast-icon.svg"/>
         </div>
       </div>
     `;

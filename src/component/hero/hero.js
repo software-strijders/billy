@@ -43,7 +43,10 @@ class Hero extends LitElement {
       }
 
       .hero__content {
-        width: var(--billy-hero-content-width);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         margin: 0 0 var(--billy-hero-content-margin-offset) 0;
       }
 
@@ -78,6 +81,31 @@ class Hero extends LitElement {
       .hero__categoryTitle--hide {
         display: none;
       }
+
+      .hero__footerButton {
+        display: none;
+      }
+
+      @media (max-width: 850px) {
+        :host {
+          height: 100vh;
+        }
+
+        .hero__logo {
+          font-size: 80px;
+        }
+
+        .hero__underTitle {
+          font-size: 20px;
+        }
+
+        .hero__footerText {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+      }
     `;
   }
 
@@ -101,9 +129,14 @@ class Hero extends LitElement {
           >
             Of zie de categoriëen
           </h2>
+          <slot name="footer"></slot>
         </div>
       </div>
     `;
+  }
+
+  _scrollToBottom() {
+    window.scrollTo(0 , document.body.scrollHeight);
   }
 }
 

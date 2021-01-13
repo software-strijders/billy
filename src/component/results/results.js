@@ -41,6 +41,9 @@ class Results extends LitElement {
         color: var(--billy-color-results-title);
         text-shadow: none;
         margin: 0;
+        background: var(--billy-gradient-background-brand);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: var(--billy-color-transparent);
       }
 
       .results__hr {
@@ -51,10 +54,42 @@ class Results extends LitElement {
         background-color: var(--billy-color-line-light);
       }
 
-      .results__query {
-        background: var(--billy-gradient-background-brand);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: var(--billy-color-transparent);
+      .result__filter {
+        display: none;
+      }
+
+      .result__image {
+        height: 75%;
+        width: auto;
+      }
+
+      @media (max-width: 850px) {
+        .results {
+          padding: 0;
+          margin: 0;
+        }
+
+        .results__title {
+          display: flex;
+          align-items: center;
+          font-size: 30px;
+        }
+
+        .result__filter {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 0 0 auto;
+          filter: invert(0);
+        }
+  
+        .result__image {
+          filter: invert(var(--billy-filter-invert));
+        }
+
+        .results__titleWrapper {
+          display: flex;
+        }
       }
     `;
   }
@@ -68,9 +103,12 @@ class Results extends LitElement {
   render() {
     return html`
       <div class="results">
-        <h1 class="results__title">
-          Resultaten voor: <span class="results__query">${this.query} ${this.getCategories()} </span>
-        </h1>
+        <div class="results__titleWrapper">
+          <h1 class="results__title">${this.query} ${this.getCategories()}</h1>
+          <a class="result__filter" href="/?jump">
+            <img class="result__image" src="/dist/assets/icon/filter-icon-dark.svg">
+          </a>
+        </div>
         <hr class="results__hr" />
         <div id="resultItems" class="results__items">
           ${this.previews.length === 0 && this.isFinished

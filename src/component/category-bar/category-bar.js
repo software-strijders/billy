@@ -18,6 +18,19 @@ class CategoryBar extends LitElement {
         border: var(--billy-border-category-bar-border);
         border-width: var(--billy-border-category-bar-border-width);
       }
+
+      @media(max-width: 850px) {
+        .categoryBar {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+        }
+
+        :host {
+          display: block;
+          width: 100%;
+        }
+      }
     `;
   }
 

@@ -1,10 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
   <defs>
-    <clipPath id="clip-contrast_icon">
-      <rect width="80" height="80"/>
+    <filter id="Icon_metro-contrast" x="-1.994" y="0.897" width="54.206" height="54.206" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-contrast-icon">
+      <rect width="50" height="50"/>
     </clipPath>
   </defs>
-  <g id="contrast_icon" data-name="contrast icon" clip-path="url(#clip-contrast_icon)">
-    <path id="Icon_metro-contrast" data-name="Icon metro-contrast" d="M42.461,1.928A39.891,39.891,0,1,0,82.352,41.819,39.891,39.891,0,0,0,42.461,1.928ZM12.543,41.819A29.918,29.918,0,0,1,42.461,11.9V71.737A29.918,29.918,0,0,1,12.543,41.819Z" transform="translate(-2.352 -1.819)" fill="#fff"/>
+  <g id="contrast-icon" clip-path="url(#clip-contrast-icon)">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_metro-contrast)">
+      <path id="Icon_metro-contrast-2" data-name="Icon metro-contrast" d="M20.674,1.928a18.1,18.1,0,1,0,18.1,18.1,18.1,18.1,0,0,0-18.1-18.1ZM7.1,20.031A13.577,13.577,0,0,1,20.674,6.454V33.608A13.577,13.577,0,0,1,7.1,20.031Z" transform="translate(4.44 4.97)" fill="#fff"/>
+    </g>
   </g>
 </svg>
