@@ -28,6 +28,11 @@ class EditingPage extends LitElement {
       alert("Je hebt geen toegang tot deze pagina, u wordt omgeleid");
       window.location.href = "/";
     }
+
+    if (window.innerWidth < 850) {
+      alert("Gebruik alsjeblieft de desktop versie om artikelen te kunnen bewerken.")
+      window.location.href = "/";
+    }
   }
 
   static get properties() {
