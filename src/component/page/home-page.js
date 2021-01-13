@@ -54,6 +54,16 @@ class HomePage extends LitElement {
     `;
   }
 
+  firstUpdated() {
+    let urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("jump")) {
+      // The method doesn't work without it being wrapped into a setTimeout
+      setTimeout(() => {
+        this._scrollToCategories();
+      }, 0);
+    }
+  }
+
   _scrollToCategories() {
     let bar = this.shadowRoot.querySelector("#categoryBar");
     bar.scrollIntoView({ block: "start", inline: "center", behavior: "smooth" });
