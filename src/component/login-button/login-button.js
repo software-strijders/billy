@@ -20,8 +20,8 @@ class LoginButton extends LitElement {
         height: 30px;
         padding: 0 20px 0 15px;
         background-color: var(--billy-color-background-light);
-        border: var(--billy-login-button-border);
-        border-width: var(--billy-login-button-border-width);
+        border: var(--billy-border);
+        border-width: var(--billy-border-button-width-login);
         border-radius: 40px 0 0 40px;
         box-shadow: 0px 5px 10px var(--billy-color-shadow);
         color: var(--billy-color-text-primary-dark);

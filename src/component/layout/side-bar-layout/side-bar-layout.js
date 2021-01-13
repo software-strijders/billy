@@ -7,13 +7,13 @@ class SideBarLayout extends LitElement {
     return css`
       :host {
         display: flex;
-        height: calc(100% - var(--billy-top-bar-height));
+        height: calc(100% - var(--billy-height-topbar));
         width: 100%;
         transition: 0.3s;
       }
 
       .sideBarLayout__sideBar {
-        width: var(--billy-side-bar-width);
+        width: var(--billy-width-sidebar);
       }
 
       .sideBarLayout__content {

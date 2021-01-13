@@ -18,8 +18,7 @@ class SideBar extends LitElement {
         text-align: center;
         background: var(--billy-color-background-light-grey);
         box-shadow: 0px 5px 10px var(--billy-color-shadow);
-        border-right: var(--billy-border-right);
-        border-left: var(--billy-border-left);
+        border-right: var(--billy-border);
         z-index: 1;
       }
     `;
