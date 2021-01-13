@@ -22,7 +22,7 @@ import "./page/home-page.js";
 import "./page/login-page.js";
 import "./page/search-page.js";
 import "./page/profile-page.js";
-import "./profile-page/profile.js";
+import "./profile/profile.js";
 import "./results/results.js";
 import "./result-item/result-item.js";
 import "./result-item/no-result.js";
