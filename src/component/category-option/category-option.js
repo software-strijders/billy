@@ -234,7 +234,6 @@ class CategoryOption extends LitElement {
         }
 
         .slideOut__link {
-
           color: var(--billy-color-text-primary-dark);
         }
 

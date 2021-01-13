@@ -90,6 +90,14 @@ class ContrastToggle extends LitElement {
       }
 
       @media(max-width: 850px) {
+        :host {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 50px;
+        }
+
         .contrastToggle {
           background-color: transparent;
           box-shadow: none;
@@ -117,14 +125,6 @@ class ContrastToggle extends LitElement {
 
         .contrastToggle--on .contrastToggle__mobile {
           transform: rotate(180deg);
-        }
-
-        :host {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 40px;
-          height: 50px;
         }
       }
     `;

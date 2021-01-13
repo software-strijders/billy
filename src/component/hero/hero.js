@@ -87,16 +87,16 @@ class Hero extends LitElement {
       }
 
       @media (max-width: 850px) {
+        :host {
+          height: 100vh;
+        }
+
         .hero__logo {
           font-size: 80px;
         }
 
         .hero__underTitle {
           font-size: 20px;
-        }
-
-        :host {
-          height: 100vh;
         }
 
         .hero__footerText {
@@ -137,7 +137,6 @@ class Hero extends LitElement {
 
   _scrollToBottom() {
     window.scrollTo(0 , document.body.scrollHeight);
-
   }
 }
 

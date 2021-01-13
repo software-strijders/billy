@@ -64,7 +64,6 @@ class LoginWindow extends LitElement {
       }
 
       @media(max-width: 850px) {
-        
         :host {
           display: block;
           max-width: 90vw;

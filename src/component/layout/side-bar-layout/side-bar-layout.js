@@ -66,8 +66,6 @@ class SideBarLayout extends LitElement {
         .sideBarLayout__sideBar {
           display: none;
         }
-
-        
       }
     `;
   }
