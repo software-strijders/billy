@@ -15,8 +15,8 @@ class CategoryBar extends LitElement {
         width: 100%;
         height: 200px;
         margin-top: auto;
-        border: var(--billy-border-categorybar);
-        border-width: var(--billy-border-width-categorybar);
+        border: var(--billy-border-category-bar);
+        border-width: var(--billy-border-width-category-bar);
       }
 
       @media(max-width: 850px) {

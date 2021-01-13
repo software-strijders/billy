@@ -13,7 +13,7 @@ class SideBarLayout extends LitElement {
       }
 
       .sideBarLayout__sideBar {
-        width: var(--billy-width-sidebar);
+        width: var(--billy-width-side-bar);
       }
 
       .sideBarLayout__content {
