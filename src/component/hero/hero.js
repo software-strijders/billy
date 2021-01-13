@@ -105,14 +105,6 @@ class Hero extends LitElement {
           align-items: center;
           margin-bottom: 20px;
         }
-
-        .hero__footerButton {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: none;
-            border: none;
-        }
       }
     `;
   }
@@ -137,17 +129,15 @@ class Hero extends LitElement {
           >
             Of zie de categoriëen
           </h2>
-          <button class="hero__footerButton" @click=${this._scrollToBottom}><img src="/dist/assets/icon/scroll-icon.svg"></img></button>
+          <slot name="footer"></slot>
         </div>
       </div>
     `;
   }
 
   _scrollToBottom() {
-    window.scrollBy({
-      top: -100,
-      behavior: 'smooth'
-    });
+    window.scrollTo(0 , document.body.scrollHeight);
+
   }
 }
 
