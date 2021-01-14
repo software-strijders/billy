@@ -140,7 +140,7 @@ class SearchBar extends LitElement {
 
         .wrapper--expand .searchBar {
           display: flex;
-          height: calc(var(--billy-top-bar-height) - 25px);
+          height: calc(var(--billy-height-topbar) - 25px);
           flex-grow: 1;
           max-width: unset;
           margin: 0 15px;
