@@ -87,8 +87,7 @@ class LoginButton extends LitElement {
     return html`
       <a
         class="loginButton"
-        @click="${this.login}"
-        href="/login"
+        href="${store.getState().login.loggedIn ? `/profile` : `/login`}"
       >
         ${store.getState().login.loggedIn
           ? html`<img

@@ -1,9 +1,5 @@
 import { LitElement, html, css } from "lit-element";
-import { classMap } from "lit-html/directives/class-map";
-import { Router } from "@vaadin/router";
 
-import { sendArticle } from "../../js/api/api";
-import { author } from "../../js/state/login";
 import { store } from "../../js/state/store.js";
 import { getArticles } from "../../js/api/api.js";
 import { defineElement } from "../../js/custom-element";
@@ -57,7 +53,9 @@ class Profile extends LitElement {
       }
 
       .profile__title--small {
-        font-size: 40px;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
       }
 
       .profile__name {
@@ -74,11 +72,9 @@ class Profile extends LitElement {
         background-color: var(--billy-color-line-light);
       }
 
-      .profile__preferencesTitle {
-        font-size: 40px;
-        color: var(--billy-color-results-title);
-        text-shadow: none;
-        margin: 30px 0 0 0;
+      .profile__userInfoWrapper {
+        display: flex;
+        justify-content: right;
       }
 
       .profile__userInfo {
@@ -87,20 +83,43 @@ class Profile extends LitElement {
         margin: 30px;
       }
 
-      .profile__userInfoWrapper {
-        display: flex;
-        justify-content: right;
-      }
-
       .profile__userInfoVariables {
         font-size: 30px;
       }
 
-      .profile__userInfo--details {
+      .profile__userInfoDetails {
         font-size: 30px;
         background: var(--billy-gradient-background-brand);
         -webkit-background-clip: text;
         -webkit-text-fill-color: var(--billy-color-transparent);
+      }
+
+      .profile__preferencesTitle {
+        font-size: 40px;
+        color: var(--billy-color-results-title);
+        text-shadow: none;
+        margin: 30px 0 0 0;
+      }
+
+      .profile__createArticleWrapper {
+        display: flex;
+        background: var(--billy-color-background-light-grey);
+        justify-content: space-between;
+        margin: 30px 0 0 0;
+        padding: 20px;
+        border-radius: 6px;
+      }
+
+      .preview__wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .button__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 50px 0 50px 50px;
       }
 
       .button {
@@ -117,27 +136,6 @@ class Profile extends LitElement {
 
       .button--delete {
         background: var(--billy-gradient-background-warning);
-      }
-
-      .profile__createArticleWrapper {
-        display: flex;
-        background: var(--billy-color-line-light);
-        justify-content: space-between;
-        margin: 30px 0 0 0;
-        padding: 6px;
-        border-radius: 6px;
-      }
-
-      .preview__wrapper {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .button__wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 50px 0 50px 50px;
       }
     `;
   }
@@ -161,19 +159,18 @@ class Profile extends LitElement {
             <span class="profile__userInfoVariables">Functie:</span>
           </div>
           <div class="profile__userInfo">
-            <span class="profile__userInfo--details">${state.login.user.firstName}</span>
-            <span class="profile__userInfo--details">${state.login.user.lastName}</span>
-            <span class="profile__userInfo--details">${state.login.user.email}</span>
-            <span class="profile__userInfo--details">${state.login.user.organization}</span>
-            <span class="profile__userInfo--details">${state.login.user.role}</span>
+            <span class="profile__userInfoDetails">${state.login.user.firstName}</span>
+            <span class="profile__userInfoDetails">${state.login.user.lastName}</span>
+            <span class="profile__userInfoDetails">${state.login.user.email}</span>
+            <span class="profile__userInfoDetails">${state.login.user.organization}</span>
+            <span class="profile__userInfoDetails">${state.login.user.role}</span>
           </div>
         </div>
 
-        <hr class="profile__line" />
         <h2 class="profile__preferencesTitle">Mijn Artikelen</h2>
         <hr class="profile__line" />
         <div class="profile__createArticleWrapper">
-          <h2 class="profile__title profile__title--small">Nieuw Artikel</h2>
+          <h3 class="profile__title profile__title--small">Nieuw Artikel</h3>
           <button class="button" type="button" @click="${this._redirectToCreateArticlePage}">
             Maak aan
           </button>
