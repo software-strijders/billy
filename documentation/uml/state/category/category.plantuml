@@ -1,0 +1,20 @@
+@startuml category
+
+state Category {
+  state "Created" as cr
+  state "Used" as us
+  state "Unused" as un
+  
+  [*] --> cr
+  
+  cr --> us
+  cr --> un
+  
+  us --> un
+  us --> [*] : Removed
+  
+  un --> us
+  un --> [*] : Removed
+}
+
+@enduml
