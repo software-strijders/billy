@@ -185,6 +185,7 @@ class EditingPage extends LitElement {
         background-image: var(--billy-edit-page-form-select-background-image-url);
         background-position: var(--billy-edit-page-form-select-background-position);
         background-repeat: no-repeat;
+        background-size: var(--billy-edit-page-form-select-background-size);
         cursor: pointer;
         transition: background 0.05s;
       }
