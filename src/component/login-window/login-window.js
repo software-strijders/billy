@@ -63,13 +63,14 @@ class LoginWindow extends LitElement {
         cursor: pointer;
       }
 
-      @media(max-width: 850px) {
+      @media (max-width: 850px) {
         :host {
           display: block;
           max-width: 90vw;
         }
 
-        .field, .field__input {
+        .field,
+        .field__input {
           max-width: 100%;
         }
       }
@@ -78,36 +79,39 @@ class LoginWindow extends LitElement {
 
   render() {
     return html`
-      <div class="wrapper">
-        <div class="field">
-          <input
-            @keyup="${this.handleKeyUp}"
-            aria-label="e-mail"
-            placeholder="E-mail"
-            class="field__input"
-            id="email--input"
-            type="text"
-          />
+      <form>
+        <div class="wrapper">
+          <div class="field">
+            <input
+              @keyup="${this.handleKeyUp}"
+              aria-label="e-mail"
+              placeholder="E-mail"
+              class="field__input"
+              id="email--input"
+              type="email"
+              required
+            />
+          </div>
         </div>
-      </div>
-      <div class="wrapper">
-        <div class="field">
-          <input
-            @keyup="${this.handleKeyUp}"
-            aria-label="wachtwoord"
-            placeholder="Wachtwoord"
-            class="field__input"
-            id="password--input"
-            type="password"
-          />
+        <div class="wrapper">
+          <div class="field">
+            <input
+              @keyup="${this.handleKeyUp}"
+              aria-label="wachtwoord"
+              placeholder="Wachtwoord"
+              class="field__input"
+              id="password--input"
+              type="password"
+              required
+            />
+          </div>
         </div>
-      </div>
-      <div class="wrapper">
-        <div class="field">
-          <button class="field__button" @click="${this.login}">Inloggen</button>
+        <div class="wrapper">
+          <div class="field">
+            <button class="field__button" @click="${this.login}" type="button">Inloggen</button>
+          </div>
         </div>
-        <a class="redirect__link redirect__link--show" href="">Nog geen account? Registreer hier</a>
-      </div>
+      </form>
     `;
   }
 
@@ -116,12 +120,12 @@ class LoginWindow extends LitElement {
     const passwordInput = this.shadowRoot.querySelector("#password--input").value;
 
     logIn({ email: emailInput, password: passwordInput })
-      .then(data => {
+      .then((data) => {
         window.localStorage.setItem("data", JSON.stringify(data));
-        store.dispatch(actions.login({ loggedIn: true, user: data }))
+        store.dispatch(actions.login({ loggedIn: true, user: data }));
         Router.go("/");
       })
-      .catch(e => alert(e));
+      .catch((e) => alert(e));
   }
 
   handleKeyUp(e) {

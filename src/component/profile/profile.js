@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit-element";
 import { Router } from "@vaadin/router";
 
 import { store } from "../../js/state/store.js";
+import { actions } from "../../js/state/login";
 import { getArticles } from "../../js/api/api.js";
 import { defineElement } from "../../js/custom-element";
 
@@ -122,6 +123,12 @@ class Profile extends LitElement {
         justify-content: space-between;
       }
 
+      .profile__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
       .button__wrapper {
         display: flex;
         flex-direction: column;
@@ -226,7 +233,10 @@ class Profile extends LitElement {
 
     return html`
       <div class="profile">
-        <h1 class="profile__title">Profiel</h1>
+        <div class="profile__top">
+          <h1 class="profile__title">Profiel</h1>
+          <button class="button button--delete" type="button" @click="${this._logOut}">Uitloggen</button>
+        </div>
         <hr class="profile__line" />
         <div class="userInfo">
           <div class="userInfo__row">
@@ -283,6 +293,12 @@ class Profile extends LitElement {
 
   _redirectToCreateArticlePage() {
     Router.go("/create");
+  }
+
+  _logOut() {
+    window.localStorage.removeItem("data");
+    store.dispatch(actions.login({ loggedIn: false, user: {} }));
+    Router.go("/");
   }
 
   _getResultItems() {
