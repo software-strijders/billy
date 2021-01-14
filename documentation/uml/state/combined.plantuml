@@ -4,11 +4,15 @@ state Article {
   state "Created" as C
   state "Edited" as E 
   state "Deleted" as D
+  state loggedIn <<choice>>
 
   [*] --> C
 
-  C --> E
-  C --> D
+  C --> loggedIn : Login check
+  loggedIn --> C : Not logged in
+  
+  loggedIn --> E
+  loggedIn --> D
   
   E --> E
   E --> D
@@ -16,78 +20,74 @@ state Article {
   D --> [*]
 }
 
-state Contrast {
-  state "Normal" as N
-  state "High" as H
+state Category {
+  state "Created" as cr
+  state "Used" as us
+  state "Unused" as un
+  
+  [*] --> cr
+  
+  cr --> us
+  cr --> un
+  
+  us --> un
+  us --> [*] : Removed
+  
+  un --> us
+  un --> [*] : Removed
+}
+
+state Contributor {
+  state "Not logged in" as N
+  state "Logged in" as L
 
   [*] --> N
   
-  N --> H
-  H --> N
-
-  N --> [*]  
-  H --> [*]
+  N --> L
+  
+  L --> N
+  L --> [*] : Inactive
 }
 
-state SearchArticle {
-  state "SearchByCategory" as SBC
-  state "SearchByUserInput" as SBUI
-  state "ShowFoundResults" as SFR
-  state "ShowNoResultsFound" as SNFR
+state Search {
+  state "Results" as R
+  state "NoResults" as NR
   
-  [*] --> SBC
-  [*] --> SBUI
+  [*] --> R : Search
+  [*] --> NR : Search
   
-  SBUI --> SFR
-  SBC --> SFR
+  R -left-> R : Search
+  R -left-> NR : Search
   
-  SFR -left-> SBC 
-  SFR -left-> SBUI
+  NR --> NR : Search
+  NR --> R : Search
   
-  SBC --> SNFR
-  SBUI --> SNFR
-  
-  SNFR -left-> SBC
-  SNFR -left-> SBUI
-  
-  SFR --> [*]
-  SNFR --> [*]
+  R --> [*]
+  NR --> [*]
 }
 
-state Login {
-    state "Anonymous" as A
-    state "Logged in" as L
+[*] -right-> Article
+[*] -right-> Category
+[*] -right-> Contributor
+[*] -right-> Search
 
-    [*] --> A
-    A --> L
-    L --> A
-    L --> [*]
-    A --> [*]
-}
+Article --> Category
+Article --> Contributor
+Article --> Search
+Article -right-> [*] : Leaves site
 
-[*] --> Article
-[*] --> Contrast
-[*] --> Login
-[*] --> SearchArticle
+Category --> Article
+Category --> Contributor
+Category --> Search
+Category -right-> [*] : Leaves site
 
-Article --> SearchArticle
-Article --> Contrast
-Article --> Login
-Article --> [*]
+Contributor --> Article
+Contributor --> Category
+Contributor --> Search
+Contributor -right-> [*] : Leaves site
 
-SearchArticle --> Article
-SearchArticle --> Contrast
-SearchArticle --> Login
-SearchArticle --> [*]
-
-Contrast --> Article
-Contrast --> SearchArticle
-Contrast --> Login
-Contrast --> [*]
-
-Login --> Article
-Login --> SearchArticle
-Login --> Contrast
-Login --> [*]
+Search --> Article
+Search --> Contributor
+Search -right-> [*] : Leaves site
 
 @enduml
