@@ -149,7 +149,6 @@ class Profile extends LitElement {
           Profiel - <span class="profile__name"> ${this.getNameOfUser()} </span>
         </h1>
         <hr class="profile__line" />
-
         <div class="profile__userInfoWrapper">
           <div class="profile__userInfo">
             <span class="profile__userInfoVariables">Voornaam:</span>
@@ -166,7 +165,6 @@ class Profile extends LitElement {
             <span class="profile__userInfoDetails">${state.login.user.role}</span>
           </div>
         </div>
-
         <h2 class="profile__preferencesTitle">Mijn Artikelen</h2>
         <hr class="profile__line" />
         <div class="profile__createArticleWrapper">
