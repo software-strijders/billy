@@ -3,6 +3,6 @@ allow: /
 allow: /article/
 allow: /login/
 allow: /search
-allow: /profile
 
 disallow: /*.svg
+disallow: /profile
