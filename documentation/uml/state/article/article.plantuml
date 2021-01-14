@@ -1,60 +1,21 @@
-@startuml article_state
+@startuml Article
 
 state Article {
-  state "Created" as A {
-    state "Normaal" as D
-    state "Hoog contrast" as E
-    state choice <<choice>>
-
-    [*] --> choice
-    choice --> D
-    choice --> E
-    D --> E
-    E --> D
-
-    E --> [*]
-    D --> [*]
-  }
+  state "Created" as C
+  state "Edited" as E 
+  state "Deleted" as D
+  state loggedIn <<choice>>
   
-  state "Edited" as B {
-    state "Normaal" as F
-    state "Hoog contrast" as G
-    state choice1 <<choice>>
-
-    [*] --> choice1
-    choice1 --> F
-    choice1 --> G
-    F --> G
-    G --> F
-
-    G --> [*]
-    F --> [*]
-  }
-
-  state "Deleted" as C {
-    state "Normaal" as H
-    state "Hoog contrast" as I
-    state choice2 <<choice>>
-
-    [*] --> choice2
-    choice2 --> H
-    choice2 --> I
-    H --> I
-    I --> H
-
-    I --> [*]
-    H --> [*]
-  }
-
-  [*] --> A
-
-  A --> B
-  B --> C
-
-  ' When the state is edited, we can edit as many times as we wan.
-  ' Thus the state won't change.
-
-  C --> [*]
+  [*] --> loggedIn
+  C --> loggedIn
+  E --> loggedIn
+  
+  loggedIn --> C
+  loggedIn --> D
+  loggedIn --> E
+  
+  D --> loggedIn
+  D --> [*]
 }
 
 @enduml

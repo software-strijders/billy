@@ -1,0 +1,15 @@
+@startuml contributor
+
+state Contributor {
+  state "Not logged in" as N
+  state "Logged in" as L
+
+  [*] --> N
+  
+  N --> L
+  
+  L --> N
+  L --> [*] : Inactive
+}
+
+@enduml
