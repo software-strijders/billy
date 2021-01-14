@@ -42,6 +42,13 @@ class LoginButton extends LitElement {
         padding-right: 40px;
       }
 
+      .loginButton__text {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        line-break: none;
+      }
+
       .loginButton__image {
         height: 20px;
         width: 20px;

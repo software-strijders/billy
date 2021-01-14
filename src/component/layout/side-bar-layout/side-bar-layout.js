@@ -33,6 +33,7 @@ class SideBarLayout extends LitElement {
       .sideBarLayout__main {
         display: flex;
         justify-content: center;
+        width: 100%;
       }
 
       .sideBarLayout__contentWrapper {

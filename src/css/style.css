@@ -69,7 +69,7 @@
   --billy-aside-card-margin-offset: 55px;
   --billy-color-border-quoteblock: none;
   --billy-color-results-title: none;
-  --billy-border-categorybar: none;
+  --billy-border-categorybar: 2px solid transparent;
   --billy-hero-content-width: 750px;
   --billy-color-line-popout: var(--billy-color-background-light-grey);
   --billy-max-content-width: 1000px;
@@ -82,7 +82,7 @@
   --billy-line-margin: 15px 0 25px 0;
   --billy-border-size: 2px;
   --billy-title-size: 50px;
-  --billy-border: none;
+  --billy-border: 2px solid transparent;
 
   /* Edit page: */
   --billy-edit-page-form-button-background: var(--billy-gradient-background-brand);
@@ -256,6 +256,6 @@ h5 {
 
 @media (max-width: 850px) {
   :root {
-    --billy-top-bar-height: 60px;
+    --billy-height-topbar: 60px;
   }
 }
