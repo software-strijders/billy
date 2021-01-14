@@ -9,6 +9,8 @@ rectangle Billy {
   usecase "Inloggen" as UC4
   usecase "Toggle hoog contrast" as UC5
   usecase "Artikel aanmaken" as UC6
+  usecase "Artikel aanpassen" as UC7
+  usecase "Artikel verwijderen" as UC8
 }
 
 actor Gast as g
@@ -26,8 +28,10 @@ g -- UC5
 
 s <|-right- d
 s -- UC6
+s -- UC7
 
 d <|-right- su
+d -- UC8
 
 su <|-right- a
 
