@@ -90,22 +90,23 @@ class LoginButton extends LitElement {
       <a
         class="loginButton"
         href="${store.getState().login.loggedIn ? `/profile` : `/login`}"
+        aria-label="Naar login pagina"
       >
         ${
           state.login.loggedIn
-            ? html`
-                <img
-                  alt="Organisatie logo"
-                  class="loginButton__image"
-                  src=${state.login.user.link
-                    ? "/dist/assets/image/" + state.login.user.link + ".png"
-                    : "/dist/assets/favicon.svg"}
-                />
-                <p class="loginButton__text">${this.getNameOfUser()} </p>
-                <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
-            : html`Inloggen <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
-        }
-      </button>
+          ? html`                
+              <img
+                alt="Organisatie logo"
+                class="loginButton__image"
+                src=${state.login.user.link
+                  ? "/dist/assets/image/" + state.login.user.link + ".png"
+                  : "/dist/assets/favicon.svg"}
+              />
+              <p class="loginButton__text">${this.getNameOfUser()} </p>
+              <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
+        : html`
+            <p class="loginButton__text">Inloggen</p>
+            <img alt="" class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`}
     `;
   }
 

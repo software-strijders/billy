@@ -145,7 +145,7 @@ class ContrastToggle extends LitElement {
           </div>
         </div>
         <div class="contrastToggle__mobile">
-          <img class="contrastToggle__mobileIcon" src="/dist/assets/icon/contrast-icon.svg"/>
+          <img alt="" class="contrastToggle__mobileIcon" src="/dist/assets/icon/contrast-icon.svg"/>
         </div>
       </div>
     `;

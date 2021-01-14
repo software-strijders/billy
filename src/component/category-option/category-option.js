@@ -309,8 +309,8 @@ class CategoryOption extends LitElement {
             <img alt="" class="category__image" src="${this.icon}" />
             <p class="category__text">${this.text}</p>
           </a>
-          <button @click=${this._changeCollapsed} class="category__dropdown">
-            <img src="/dist/assets/icon/select-dropdown.svg" class="category__dropdownImage" />
+          <button aria-label="Categorie uitklappen" @click=${this._changeCollapsed} class="category__dropdown">
+            <img alt="" src="/dist/assets/icon/select-dropdown.svg" class="category__dropdownImage" />
           </button>
         </div>
 
