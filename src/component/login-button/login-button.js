@@ -84,26 +84,31 @@ class LoginButton extends LitElement {
   }
 
   render() {
+    const state = store.getState();
+
     return html`
       <a
         class="loginButton"
-        @click="${this.login}"
-        href="/login"
+        href="${store.getState().login.loggedIn ? `/profile` : `/login`}"
       >
-        ${store.getState().login.loggedIn
-          ? html`<img
-                alt="Organisatie logo"
-                class="loginButton__image"
-                src=${store.getState().login.user.link
-                  ? "/dist/assets/image/" + store.getState().login.user.link + ".png"
-                  : "/dist/assets/favicon.svg"}
-              />
-              <p class="loginButton__text">${this.getNameOfUser()} </p>
-              <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
-          : html`Inloggen <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`}
+        ${
+          state.login.loggedIn
+            ? html`
+                <img
+                  alt="Organisatie logo"
+                  class="loginButton__image"
+                  src=${state.login.user.link
+                    ? "/dist/assets/image/" + state.login.user.link + ".png"
+                    : "/dist/assets/favicon.svg"}
+                />
+                <p class="loginButton__text">${this.getNameOfUser()} </p>
+                <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
+            : html`Inloggen <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
+        }
       </button>
     `;
   }
+
   getNameOfUser() {
     if (store.getState().login.user.firstName !== "") {
       return store.getState().login.user.firstName + " " + store.getState().login.user.lastName;

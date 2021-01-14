@@ -5,3 +5,4 @@ allow: /login/
 allow: /search
 
 disallow: /*.svg
+disallow: /profile
