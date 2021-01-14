@@ -256,6 +256,6 @@ h5 {
 
 @media (max-width: 850px) {
   :root {
-    --billy-top-bar-height: 60px;
+    --billy-height-topbar: 60px;
   }
 }

@@ -110,6 +110,8 @@ class ContrastToggle extends LitElement {
 
         .contrastToggle__mobile {
           display: flex;
+          align-items: center;
+          justify-content: center;
           width: 40px;
           height: 40px;
           box-shadow: none;
@@ -120,6 +122,8 @@ class ContrastToggle extends LitElement {
         }
 
         .contrastToggle__mobileIcon {
+          height: 40px;
+          width: 40px;
           box-shadow: none;
         }
 
