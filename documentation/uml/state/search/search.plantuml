@@ -1,23 +1,20 @@
-@startuml "state"
+@startuml search
 
-state SearchArticle {
-  [*] --> SearchByCategory
-  [*] --> SearchByUserInput
+state Search {
+  state "Results" as R
+  state "NoResults" as NR
   
-  SearchByUserInput --> ShowFoundResults
-  SearchByCategory --> ShowFoundResults
+  [*] --> R : Search
+  [*] --> NR : Search
   
-  ShowFoundResults -left-> SearchByCategory 
-  ShowFoundResults -left-> SearchByUserInput
+  R -left-> R : Search
+  R -left-> NR : Search
   
-  SearchByCategory --> ShowNoResultsFound
-  SearchByUserInput --> ShowNoResultsFound
+  NR --> NR : Search
+  NR --> R : Search
   
-  ShowNoResultsFound -left-> SearchByCategory
-  ShowNoResultsFound -left-> SearchByUserInput
-  
-  ShowFoundResults --> [*]
-  ShowNoResultsFound --> [*]
+  R --> [*]
+  NR --> [*]
 }
-  
+
 @enduml
