@@ -38,8 +38,8 @@ class HomePage extends LitElement {
               <billy-login-button slot="item" large="true"></billy-login-button>
             </billy-top-bar>
             <billy-search-bar slot="content"></billy-search-bar>
-            <button slot="footer" class="hero__footer" @click=${this._scrollToCategories}>
-              <img src="/dist/assets/icon/scroll-icon.svg">
+            <button aria-label="Naar categorieën" slot="footer" class="hero__footer" @click=${this._scrollToCategories}>
+              <img alt="" src="/dist/assets/icon/scroll-icon.svg">
             </button>
           </billy-hero>
           <billy-category-bar id="categoryBar" slot="category-bar">

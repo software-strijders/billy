@@ -54,7 +54,7 @@ class LoginButton extends LitElement {
         width: 40px;
       }
 
-      @media(max-width: 850px) {
+      @media (max-width: 850px) {
         .loginButton {
           background-color: var(--billy-color-background-loginbutton);
           border: none;
@@ -90,20 +90,29 @@ class LoginButton extends LitElement {
       <a
         class="loginButton"
         href="${store.getState().login.loggedIn ? `/profile` : `/login`}"
+        aria-label="Naar login pagina"
       >
         ${
           state.login.loggedIn
-            ? html`
-                <img
+            ? html`<img
                   alt="Organisatie logo"
                   class="loginButton__image"
                   src=${state.login.user.link
                     ? "/dist/assets/image/" + state.login.user.link + ".png"
                     : "/dist/assets/favicon.svg"}
                 />
-                <p class="loginButton__text">${this.getNameOfUser()} </p>
-                <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
-            : html`Inloggen <img class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
+                <p class="loginButton__text">${this.getNameOfUser()}</p>
+                <img
+                  alt=""
+                  class="loginButton__mobileIcon"
+                  src="/dist/assets/icon/profile-icon.svg"
+                />`
+            : html` <p class="loginButton__text">Inloggen</p>
+                <img
+                  alt=""
+                  class="loginButton__mobileIcon"
+                  src="/dist/assets/icon/profile-icon.svg"
+                />`
         }
       </button>
     `;
