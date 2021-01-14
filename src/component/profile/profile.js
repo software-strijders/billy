@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit-element";
+import { Router } from "@vaadin/router";
 
 import { store } from "../../js/state/store.js";
 import { getArticles } from "../../js/api/api.js";
@@ -281,7 +282,7 @@ class Profile extends LitElement {
   }
 
   _redirectToCreateArticlePage() {
-    window.location.href = "/create";
+    Router.go("/create");
   }
 
   _getResultItems() {
