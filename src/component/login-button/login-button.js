@@ -93,19 +93,27 @@ class LoginButton extends LitElement {
         aria-label="Naar login pagina"
       >
         ${
-            state.login.loggedIn
-          ? html`<img
-                alt="Organisatie logo"
-                class="loginButton__image"
-                src=${state.login.user.link
-                  ? "/dist/assets/image/" + state.login.user.link + ".png"
-                  : "/dist/assets/favicon.svg"}
-              />
-              <p class="loginButton__text">${this.getNameOfUser()} </p>
-              <img alt="" class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
-          : html` 
-          <p class="loginButton__text">Inloggen</p>
-          <img alt="" class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`}
+          state.login.loggedIn
+            ? html`<img
+                  alt="Organisatie logo"
+                  class="loginButton__image"
+                  src=${state.login.user.link
+                    ? "/dist/assets/image/" + state.login.user.link + ".png"
+                    : "/dist/assets/favicon.svg"}
+                />
+                <p class="loginButton__text">${this.getNameOfUser()}</p>
+                <img
+                  alt=""
+                  class="loginButton__mobileIcon"
+                  src="/dist/assets/icon/profile-icon.svg"
+                />`
+            : html` <p class="loginButton__text">Inloggen</p>
+                <img
+                  alt=""
+                  class="loginButton__mobileIcon"
+                  src="/dist/assets/icon/profile-icon.svg"
+                />`
+        }
       </button>
     `;
   }
