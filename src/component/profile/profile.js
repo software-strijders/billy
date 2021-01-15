@@ -281,7 +281,7 @@ class Profile extends LitElement {
                 subCategory="${article.subCategory}"
               ></billy-result-item>
               <div class="button__wrapper">
-                <button class="button" type="button">Pas aan</button>
+                <button class="button" type="button" @click="${() => this._redirectToEditArticlePage(article.link)}">Pas aan</button>
                 <button class="button button--delete" type="button">Verwijder</button>
               </div>
             </div>
@@ -293,6 +293,10 @@ class Profile extends LitElement {
 
   _redirectToCreateArticlePage() {
     Router.go("/create");
+  }
+
+  _redirectToEditArticlePage(link) {
+    Router.go({ pathname: "/create", search: link});
   }
 
   _logOut() {

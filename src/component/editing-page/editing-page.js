@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 import { Router } from "@vaadin/router";
 
+import { getArticleByTitle } from "../../js/api/api.js";
 import { sendArticle } from "../../js/api/api";
 import { author } from "../../js/state/login";
 import { store } from "../../js/state/store.js";
@@ -16,11 +17,13 @@ class EditingPage extends LitElement {
 
     this._checkAccess();
 
+    this._articleToEdit = null;
     this._title = "";
     this._mainCategory = "Analyse";
     this._subCategory = "Gebruikersinteractie";
     this._htmlData = "";
     this.links = [{ text: "", href: "", save: false }];
+    this._getArticleToEdit();
   }
 
   _checkAccess() {
@@ -30,15 +33,16 @@ class EditingPage extends LitElement {
     }
 
     if (window.innerWidth < 850) {
-      alert("Gebruik alsjeblieft de desktop versie om artikelen te kunnen bewerken.")
+      alert("Gebruik alsjeblieft de desktop versie om artikelen te kunnen bewerken.");
       window.location.href = "/";
     }
   }
 
   static get properties() {
     return {
-      links:       { type: Array   },
+      links: { type: Array },
       showPreview: { type: Boolean },
+      editMode: { type: Boolean },
     };
   }
 
@@ -55,7 +59,8 @@ class EditingPage extends LitElement {
         max-width: 950px;
       }
 
-      .form--disabled .form__input, .form--disabled .form__link .form__input {
+      .form--disabled .form__input,
+      .form--disabled .form__link .form__input {
         pointer-events: none;
         background-color: var(--billy-color-background-disabled);
         color: var(--billy-color-text-primary-light);
@@ -247,7 +252,7 @@ class EditingPage extends LitElement {
   render() {
     return html`
       <form class="form ${classMap({ "form--disabled": this.showPreview })}">
-        <h1 class="form__title">Artikel aanmaken</h1>
+        <h1 class="form__title">${this.editMode ? "Artikel aanpassen" : "Artikel aanmaken"}</h1>
         <hr class="form__line" />
         <div class="form__wrapper form__wrapper--first">
           <label class="form__label" for="title">Titel</label>
@@ -331,8 +336,12 @@ class EditingPage extends LitElement {
         </div>
         <div class="form__wrapper form__wrapper--button">
           <a href="/" class="form__button form__button--remove">Annuleren</a>
-          <button @click="${this._handleSaveClick}" class="form__button" type="button">
-            Publiceer artikel
+          <button
+            @click="${this.editMode ? this._handleEditClick : this._handleSaveClick}"
+            class="form__button"
+            type="button"
+          >
+            ${this.editMode ? "Pas aan" : "Publiceer artikel"}
           </button>
         </div>
       </form>
@@ -409,16 +418,23 @@ class EditingPage extends LitElement {
 
     sendArticle(article).then(() => {
       alert("Artikel succesvol aangemaakt");
-      Router.go({ pathname: "/article", search: `?a=${article.title}`});
+      Router.go({ pathname: "/article", search: `?a=${article.title}` });
     });
   }
 
+  _handleEditClick() {
+    //todo: need to implement edit article in stead of create a new article
+    console.log("test pas aan knop");
+  }
+
   _getStrippedHtml(html) {
-    return html
-      // Strip html tags
-      .replace(/<[^>]+>/g, '')
-      // Seperate titles sticking to paragraph text
-      .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
+    return (
+      html
+        // Strip html tags
+        .replace(/<[^>]+>/g, "")
+        // Seperate titles sticking to paragraph text
+        .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
+    );
   }
 
   _getDescription(text) {
@@ -437,8 +453,30 @@ class EditingPage extends LitElement {
 
   _getLinks() {
     return this.links
-      .filter(link => link.save)
-      .map(link => ({ text: link.text, href: link.href }));
+      .filter((link) => link.save)
+      .map((link) => ({ text: link.text, href: link.href }));
+  }
+
+  _getArticleToEdit() {
+    let urlParams = new URLSearchParams(window.location.search);
+    let articleTitle = "";
+
+    if (urlParams.has("a")) {
+      articleTitle = urlParams.get("a");
+      getArticleByTitle(articleTitle).then(article => {
+        // this.links = article.links.map(link => ({ text: link.text, href: link.href, save: true }));
+        this._articleToEdit = article;
+        console.log(this._articleToEdit);
+        this.shadowRoot.querySelector("#title").value = this._articleToEdit.title;
+        this.shadowRoot.querySelector("#mainCategory").value = this._articleToEdit.headCategory;
+        this.shadowRoot.querySelector("#subCategory").value = this._articleToEdit.subCategory;
+        // this.shadowRoot.querySelector("#") needs to put the text into the editor. Need to do this by state.
+        this.editMode = true;
+
+
+      });
+
+    }
   }
 }
 
