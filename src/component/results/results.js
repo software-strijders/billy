@@ -41,6 +41,9 @@ class Results extends LitElement {
         color: var(--billy-color-results-title);
         text-shadow: none;
         margin: 0;
+      }
+
+      .results__query {
         background: var(--billy-gradient-background-brand);
         -webkit-background-clip: text;
         -webkit-text-fill-color: var(--billy-color-transparent);
@@ -104,7 +107,7 @@ class Results extends LitElement {
     return html`
       <div class="results">
         <div class="results__titleWrapper">
-          <h1 class="results__title">${this.query} ${this.getCategories()}</h1>
+          <h1 class="results__title">Resultaten voor: <span class="results__query">${this.query} ${this.getCategories()}</span></h1>
           <a class="result__filter" href="/?jump">
             <img class="result__image" src="/dist/assets/icon/filter-icon-dark.svg">
           </a>
