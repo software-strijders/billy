@@ -4,7 +4,8 @@ import { Router } from "@vaadin/router";
 
 import { getArticleByTitle } from "../../js/api/api.js";
 import { sendArticle } from "../../js/api/api";
-import { author } from "../../js/state/login";
+import { actions, author } from "../../js/state/login";
+import { actions as editActions } from "../../js/state/edit-mode";
 import { store } from "../../js/state/store.js";
 import { defineElement } from "../../js/custom-element";
 
@@ -466,16 +467,12 @@ class EditingPage extends LitElement {
       getArticleByTitle(articleTitle).then(article => {
         // this.links = article.links.map(link => ({ text: link.text, href: link.href, save: true }));
         this._articleToEdit = article;
-        console.log(this._articleToEdit);
         this.shadowRoot.querySelector("#title").value = this._articleToEdit.title;
         this.shadowRoot.querySelector("#mainCategory").value = this._articleToEdit.headCategory;
         this.shadowRoot.querySelector("#subCategory").value = this._articleToEdit.subCategory;
-        // this.shadowRoot.querySelector("#") needs to put the text into the editor. Need to do this by state.
         this.editMode = true;
-
-
+        store.dispatch(editActions.articleToEdit({ inEditMode: true, articleTitle: articleTitle, articleContent: this._articleToEdit.text}));
       });
-
     }
   }
 }
