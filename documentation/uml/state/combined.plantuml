@@ -5,18 +5,16 @@ state Article {
   state "Edited" as E 
   state "Deleted" as D
   state loggedIn <<choice>>
-
-  [*] --> C
-
-  C --> loggedIn : Login check
-  loggedIn --> C : Not logged in
   
-  loggedIn --> E
+  [*] --> loggedIn
+  C --> loggedIn
+  E --> loggedIn
+  
+  loggedIn --> C
   loggedIn --> D
+  loggedIn --> E
   
-  E --> E
-  E --> D
-  
+  D --> loggedIn
   D --> [*]
 }
 
