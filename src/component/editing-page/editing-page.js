@@ -19,11 +19,14 @@ class EditingPage extends LitElement {
     this._checkAccess();
 
     this._articleToEdit = null;
-    this._title = "";
+    this._htmlData = "";
+    this._injectedLinks = false;
     this._mainCategory = "Analyse";
     this._subCategory = "Gebruikersinteractie";
-    this._htmlData = "";
+    this._title = "";
+
     this.links = [{ text: "", href: "", save: false }];
+
     this._getArticleToEdit();
   }
 
@@ -352,6 +355,15 @@ class EditingPage extends LitElement {
   updated() {
     const index = this.links.length - 1;
     const links = this.shadowRoot.querySelectorAll(".form__link");
+    
+    // If the links are injected (editing-mode) we need to take care of a few things
+    if (this._injectedLinks) {
+      this.links = this.links.length > 1 ? [...this.links, { href: "", text: "", save: false }] : [...this.links];
+      links[0].querySelector("#link-text-0").value = this.links[0].text;
+      links[0].querySelector("#link-href-0").value = this.links[0].href;
+      this._injectedLinks = false;
+      return;
+    }
 
     // Manually clear the values of the input fields.
     // This is probably because LitElement caches elements inside of it, thus we have to resort to this:
@@ -465,12 +477,18 @@ class EditingPage extends LitElement {
     if (urlParams.has("a")) {
       articleTitle = urlParams.get("a");
       getArticleByTitle(articleTitle).then(article => {
-        // this.links = article.links.map(link => ({ text: link.text, href: link.href, save: true }));
+        // TODO @arjen, do we really need this._articleToEdit..? It is not used anywhere
         this._articleToEdit = article;
         this.shadowRoot.querySelector("#title").value = this._articleToEdit.title;
         this.shadowRoot.querySelector("#mainCategory").value = this._articleToEdit.headCategory;
         this.shadowRoot.querySelector("#subCategory").value = this._articleToEdit.subCategory;
-        this.editMode = true;
+        this.links = article.links.length > 0
+          // Only map the links when there are actually links
+          ? article.links.map(link => ({ text: link.text, href: link.href, save: true }))
+          // Otherwise just use the default structure
+          : [...this.links];
+        this.editMode, this._injectedLinks = true;
+
         store.dispatch(editActions.articleToEdit({ inEditMode: true, articleTitle: articleTitle, articleContent: this._articleToEdit.text}));
       });
     }
