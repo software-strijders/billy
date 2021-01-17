@@ -2,9 +2,8 @@ import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 import { Router } from "@vaadin/router";
 
-import { getArticleByTitle } from "../../js/api/api.js";
-import { sendArticle } from "../../js/api/api";
-import { actions, author } from "../../js/state/login";
+import { getArticleByTitle, sendArticle, updateArticle } from "../../js/api/api";
+import { author } from "../../js/state/login";
 import { actions as editActions } from "../../js/state/edit-mode";
 import { store } from "../../js/state/store.js";
 import { defineElement } from "../../js/custom-element";
@@ -437,7 +436,35 @@ class EditingPage extends LitElement {
 
   _handleEditClick() {
     //todo: need to implement edit article in stead of create a new article
-    console.log("test pas aan knop");
+    const form = this.shadowRoot.querySelector("form");
+    if (!form.reportValidity()) {
+      return;
+    }
+    if (this._htmlData === "") {
+      alert("Voer de artikel tekst in.");
+      return;
+    }
+
+    const formData = new FormData(form);
+    let article = {};
+    formData.forEach((value, key) => {
+      article[key] = value;
+    });
+
+    const strippedHtml = this._getStrippedHtml(this._htmlData);
+
+    article["author"] = author(store.getState());
+    article["text"] = this._htmlData;
+    article["description"] = this._getDescription(strippedHtml);
+    article["readTime"] = this._calculateReadTime(strippedHtml);
+    article["lastRevised"] = this._getDate();
+    article["link"] = `?a=${article.title}`;
+    article["links"] = this._getLinks() || [];
+    
+    updateArticle(article).then(() => {
+      alert("Artikel succesvol aangepast");
+      Router.go({ pathname: "/article", search: `?a=${article.title}` });
+    });
   }
 
   _getStrippedHtml(html) {
