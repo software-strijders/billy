@@ -187,7 +187,7 @@ class SearchBar extends LitElement {
           "wrapper--expand": this.expandedSearchBar,
         })}"
       >
-        <div class="searchBar">
+        <div class="searchBar" role="search">
           <input
             @keydown="${this._handleKeyDown}"
             id="searchInput"
