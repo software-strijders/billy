@@ -191,7 +191,7 @@ class SearchBar extends LitElement {
           <input
             @keydown="${this._handleKeyDown}"
             id="searchInput"
-            aria-label="Zoek"
+            aria-label="Zoek invoerveld"
             placeholder="Wat wil je weten?"
             class="searchBar__input"
             type="text"
@@ -199,7 +199,7 @@ class SearchBar extends LitElement {
           <a
             href="/search"
             name="zoek"
-            aria-label="Zoek"
+            aria-label="Zoek knop"
             class="searchBar__button"
             type="submit"
             @click="${this._handleClick}"

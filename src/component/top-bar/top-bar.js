@@ -80,12 +80,11 @@ class TopBar extends LitElement {
   render() {
     return html`
       <nav
-        aria-label="Search menu"
         class="topBar ${classMap({ "topBar--hero": this.hero })}"
       >
         <ul class="topBar__list">
           <li class="topBar__item">
-            <a class="topBar__logo" href="/">Billy</a>
+            <a aria-label="Terug naar de hoofdpagina" class="topBar__logo" href="/">Billy</a>
             <slot name="backItem">
           </li>
           <li class="topBar__item topBar__item--right">

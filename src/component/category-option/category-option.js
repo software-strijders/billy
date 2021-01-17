@@ -305,7 +305,7 @@ class CategoryOption extends LitElement {
         href="/search?hc=${this.text}"
       >
         <div class="category__container">
-          <a class="category__link" href="/search?hc=${this.text}">
+          <a aria-label="Zoek naar artikelen met de categorie: ${this.text}" class="category__link" href="/search?hc=${this.text}">
             <img alt="" class="category__image" src="${this.icon}" />
             <p class="category__text">${this.text}</p>
           </a>

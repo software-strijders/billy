@@ -108,7 +108,7 @@ class Results extends LitElement {
       <div class="results">
         <div class="results__titleWrapper">
           <h1 class="results__title">Resultaten voor: <span class="results__query">${this.query} ${this.getCategories()}</span></h1>
-          <a class="result__filter" href="/?jump">
+          <a aria-label="Zoek via categorieën. Te vinden in het menu" class="result__filter" href="/?jump">
             <img class="result__image" src="/dist/assets/icon/filter-icon-dark.svg">
           </a>
         </div>
