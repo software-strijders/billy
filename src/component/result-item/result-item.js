@@ -29,7 +29,7 @@ class ResultItem extends LitElement {
       }
 
       :host(:hover) {
-        background-color: var(--billy-color-background-light-grey)
+        background-color: var(--billy-color-background-light-grey);
       }
 
       :host(:hover) .line {
@@ -41,7 +41,6 @@ class ResultItem extends LitElement {
 
       :host(:hover) .resultItem {
         transform: translateX(15px);
-        
       }
 
       :host(:hover) .resultItem__description {
@@ -120,17 +119,15 @@ class ResultItem extends LitElement {
       <div class="line"></div>
       <div class="resultItem">
         <div class="resultItem__categories">
-          <a class="resultItem__category" href="/search?hc=${this.headCategory}">${this.headCategory}</a>
-          <a class="resultItem__category" href="/search?sc=${this.subCategory}">${this.subCategory}</a>
+          <a aria-hidden="true" tabindex="-1" class="resultItem__category" href="/search?hc=${this.headCategory}">${this.headCategory}</a>
+          <a aria-hidden="true" tabindex="-1" class="resultItem__category" href="/search?sc=${this.subCategory}">${this.subCategory}</a>
         </div>
-        <a class="resultItem__link" href="${this.href}">
-          <h2 class="resultItem__title">${this.title}</h2>
-          <p class="resultItem__description">
-            <small>${this.description} </small>
+        <a aria-label="Artikel: ${this.title}" class="resultItem__link" href="${this.href}">
+          <h2 aria-hidden="true" class="resultItem__title">${this.title}</h2>
+          <p aria-hidden="true" class="resultItem__description">
+            <small aria-hidden="true">${this.description} </small>
           </p>
-          <div class="resultItem__info">
-            tijd: ${this.readTime} min - laatst gewijzigd: ${this.lastRevised}
-          </div>
+          <div aria-hidden="true" class="resultItem__info">tijd: ${this.readTime} min - laatst gewijzigd: ${this.lastRevised}</div>
         </a>
       </div>
     `;
