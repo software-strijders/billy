@@ -339,7 +339,7 @@ class EditingPage extends LitElement {
           ></billy-editor>
         </div>
         <div class="form__wrapper form__wrapper--button">
-          <a href="/" class="form__button form__button--remove">Annuleren</a>
+          <a href="/profile" class="form__button form__button--remove">Annuleren</a>
           <button
             @click="${this.editMode ? this._handleEditClick : this._handleSaveClick}"
             class="form__button"
@@ -487,7 +487,8 @@ class EditingPage extends LitElement {
           ? article.links.map(link => ({ text: link.text, href: link.href, save: true }))
           // Otherwise just use the default structure
           : [...this.links];
-        this.editMode, this._injectedLinks = true;
+        this.editMode= true; 
+        this._injectedLinks = true;
 
         store.dispatch(editActions.articleToEdit({ inEditMode: true, articleTitle: articleTitle, articleContent: this._articleToEdit.text}));
       });
