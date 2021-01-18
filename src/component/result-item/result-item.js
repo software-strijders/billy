@@ -9,7 +9,7 @@ class ResultItem extends LitElement {
       description: { type: String },
       href: { type: String },
       readTime: { type: Number },
-      lastRevised: { type: String },
+      date: { type: String },
       headCategory: { type: String },
       subCategory: { type: String },
     };
@@ -135,7 +135,7 @@ class ResultItem extends LitElement {
         </a>
         <footer>
           <div aria-hidden="true" class="resultItem__info">
-            tijd: ${this.readTime} min - laatst gewijzigd: ${this.lastRevised}
+            tijd: ${this.readTime} min - laatst gewijzigd: ${this.date}
           </div>
           <nav
             id="resultNavigation"
