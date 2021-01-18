@@ -17,7 +17,6 @@ class EditingPage extends LitElement {
 
     this._checkAccess();
 
-    this._articleToEdit = null;
     this._htmlData = "";
     this._injectedLinks = false;
     this._mainCategory = "Analyse";
@@ -403,31 +402,7 @@ class EditingPage extends LitElement {
   }
 
   _handleSaveClick() {
-    const form = this.shadowRoot.querySelector("form");
-    if (!form.reportValidity()) {
-      return;
-    }
-    if (this._htmlData === "") {
-      alert("Voer de artikel tekst in.");
-      return;
-    }
-
-    const formData = new FormData(form);
-    let article = {};
-    formData.forEach((value, key) => {
-      article[key] = value;
-    });
-
-    const strippedHtml = this._getStrippedHtml(this._htmlData);
-
-    article["author"] = author(store.getState());
-    article["text"] = this._htmlData;
-    article["description"] = this._getDescription(strippedHtml);
-    article["readTime"] = this._calculateReadTime(strippedHtml);
-    article["lastRevised"] = this._getDate();
-    article["link"] = `?a=${article.title}`;
-    article["links"] = this._getLinks() || [];
-
+    let article = this._formArticleData()
     sendArticle(article).then(() => {
       alert("Artikel succesvol aangemaakt");
       Router.go({ pathname: "/article", search: `?a=${article.title}` });
@@ -435,7 +410,14 @@ class EditingPage extends LitElement {
   }
 
   _handleEditClick() {
-    //todo: need to implement edit article in stead of create a new article
+    let article = this._formArticleData()
+    updateArticle(article).then(() => {
+      alert("Artikel succesvol aangepast");
+      Router.go({ pathname: "/article", search: `?a=${article.title}` });
+    });
+  }
+
+  _formArticleData() {
     const form = this.shadowRoot.querySelector("form");
     if (!form.reportValidity()) {
       return;
@@ -460,11 +442,8 @@ class EditingPage extends LitElement {
     article["lastRevised"] = this._getDate();
     article["link"] = `?a=${article.title}`;
     article["links"] = this._getLinks() || [];
-    
-    updateArticle(article).then(() => {
-      alert("Artikel succesvol aangepast");
-      Router.go({ pathname: "/article", search: `?a=${article.title}` });
-    });
+
+    return article;
   }
 
   _getStrippedHtml(html) {
@@ -504,11 +483,9 @@ class EditingPage extends LitElement {
     if (urlParams.has("a")) {
       articleTitle = urlParams.get("a");
       getArticleByTitle(articleTitle).then(article => {
-        // TODO @arjen, do we really need this._articleToEdit..? It is not used anywhere
-        this._articleToEdit = article;
-        this.shadowRoot.querySelector("#title").value = this._articleToEdit.title;
-        this.shadowRoot.querySelector("#mainCategory").value = this._articleToEdit.headCategory;
-        this.shadowRoot.querySelector("#subCategory").value = this._articleToEdit.subCategory;
+        this.shadowRoot.querySelector("#title").value = article.title;
+        this.shadowRoot.querySelector("#mainCategory").value = article.headCategory;
+        this.shadowRoot.querySelector("#subCategory").value = article.subCategory;
         this.links = article.links.length > 0
           // Only map the links when there are actually links
           ? article.links.map(link => ({ text: link.text, href: link.href, save: true }))
@@ -516,8 +493,9 @@ class EditingPage extends LitElement {
           : [...this.links];
         this.editMode= true; 
         this._injectedLinks = true;
+        this._htmlData = article.text;
 
-        store.dispatch(editActions.articleToEdit({ inEditMode: true, articleTitle: articleTitle, articleContent: this._articleToEdit.text}));
+        store.dispatch(editActions.articleToEdit({ inEditMode: true, articleTitle: articleTitle, articleContent: article.text}));
       });
     }
   }
