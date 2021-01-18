@@ -85,7 +85,7 @@ class Aside extends LitElement {
 
   render() {
     const state = store.getState();
-
+    console.log(state);
     return html`
       <div class="aside__content">
         <!-- TODO: This could be a component -->
@@ -116,12 +116,22 @@ class Aside extends LitElement {
           <div class="aside__textWrapper">
             <p class="aside__text aside__text--bold">${state.related.author.fullName}</p>
             <div class="aside__logoWrapper">
-              <img src="/dist/assets/image/${state.related.author.link || "hogeschool-utrecht"}.png" alt="" class="aside__logo">
+              <img src="/dist/assets/image/${
+                state.related.author.link || "hogeschool-utrecht"
+              }.png" alt="" class="aside__logo">
               <p class="aside__text">${state.related.author.organization || "Hogeschool Utrecht"}</p>
             </div>
           </div>
           <div class="aside__textWrapper">
-            <p class="aside__text aside__text--bold">Laatst bewerkt</p>
+            ${
+              state.related.edits.length > 0
+                ? html` <p class="aside__text aside__text--bold">Laatst bewerkt door</p>
+                    <p class="aside__text">
+                      ${state.related.edits[state.related.edits.length - 1].author.fullName}
+                    </p>`
+                : html``
+            }
+            <p class="aside__text aside__text--bold">Laatst bewerkt op</p>
             <p class="aside__text">${state.related.lastRevised}</p>
           </div>
         </div>
@@ -130,4 +140,4 @@ class Aside extends LitElement {
   }
 }
 
-defineElement("billy-aside", Aside)
+defineElement("billy-aside", Aside);

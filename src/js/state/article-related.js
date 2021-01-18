@@ -4,6 +4,7 @@ const initialState = {
   author: {},
   lastRevised: "",
   links: [],
+  edits: [],
 };
 
 export const { actions, reducer } = createSlice({

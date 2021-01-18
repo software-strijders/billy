@@ -18,13 +18,13 @@ class Article extends LitElement {
   }
 
   static get properties() {
-    return {        
-      html:         { type: String,  reflect: true },
-      title:        { type: String,  reflect: true },
-      mainCategory: { type: String,  reflect: true },
-      subCategory:  { type: String,  reflect: true },
-      isPreview:    { type: Boolean, reflect: true },
-      isDone:       { type: Boolean                },
+    return {
+      html: { type: String, reflect: true },
+      title: { type: String, reflect: true },
+      mainCategory: { type: String, reflect: true },
+      subCategory: { type: String, reflect: true },
+      isPreview: { type: Boolean, reflect: true },
+      isDone: { type: Boolean },
     };
   }
 
@@ -96,7 +96,7 @@ class Article extends LitElement {
         font-weight: bold;
       }
 
-      @media(max-width: 850px) {
+      @media (max-width: 850px) {
         .article__content {
           padding: 0;
         }
@@ -129,11 +129,12 @@ class Article extends LitElement {
                 </div>
               </div>
               <div class="title__bar">
-              <h1 class="article__title">${this.title}</h1>
-              ${store.getState().login.loggedIn
-               ? html`<button class="button" @click="${() => this._redirectToEditArticlePage("?a=" + this.title)}">Pas aan</button>`
-               : html``
-              }
+                <h1 class="article__title">${this.title}</h1>
+                ${store.getState().login.loggedIn
+                  ? html`<button class="button" @click="${() => this._redirectToEditArticlePage("?a=" + this.title)}">
+                      Pas aan
+                    </button>`
+                  : html``}
               </div>
               <hr class="article__line" />
               ${unsafeHTML(this.html)}
@@ -161,6 +162,7 @@ class Article extends LitElement {
             author: data.author,
             lastRevised: data.lastRevised,
             links: data.links,
+            edits: data.edits,
           }),
         );
       });
@@ -168,7 +170,7 @@ class Article extends LitElement {
   }
 
   _redirectToEditArticlePage(link) {
-    Router.go({ pathname: "/create", search: link});
+    Router.go({ pathname: "/create", search: link });
   }
 }
 

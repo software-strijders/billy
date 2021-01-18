@@ -25,6 +25,8 @@ class EditingPage extends LitElement {
 
     this.links = [{ text: "", href: "", save: false }];
 
+    this.edits = [];
+
     this._getArticleToEdit();
   }
 
@@ -290,19 +292,15 @@ class EditingPage extends LitElement {
             return html`
             <div class="form__link" data-index="${index}">
               <label class="form__label" for="link-text-${index}">Tekst</label>
-              <input id="link-text-${index}" class="form__input" type="text" value="${
-              link.text
-            }" ?required="${link.save}">
+              <input id="link-text-${index}" class="form__input" type="text" value="${link.text}" ?required="${
+              link.save
+            }">
               <label class="form__label" for="link-href-${index}">Link</label>
               <input id="link-href-${index}" class="form__input" type="url" value="${link.href}">
               ${
                 link.save
                   ? html`
-                      <button
-                        class="form__button form__button--remove"
-                        type="button"
-                        @click="${this._removeLinkClick}"
-                      >
+                      <button class="form__button form__button--remove" type="button" @click="${this._removeLinkClick}">
                         <img
                           class="form__buttonImg"
                           aria-label="Verwijder link van artikel"
@@ -457,6 +455,9 @@ class EditingPage extends LitElement {
     article["link"] = `?a=${article.title}`;
     article["links"] = this._getLinks() || [];
 
+    this.editMode ? this.edits.push({ date: this._getDate(), author: author(store.getState()) }) : ``;
+    article["edits"] = this.edits;
+
     return article;
   }
 
@@ -485,9 +486,7 @@ class EditingPage extends LitElement {
   }
 
   _getLinks() {
-    return this.links
-      .filter((link) => link.save)
-      .map((link) => ({ text: link.text, href: link.href }));
+    return this.links.filter((link) => link.save).map((link) => ({ text: link.text, href: link.href }));
   }
 
   _getArticleToEdit() {
@@ -509,6 +508,7 @@ class EditingPage extends LitElement {
         this.editMode = true;
         this._injectedLinks = true;
         this._htmlData = article.text;
+        this.edits = article.edits;
 
         store.dispatch(
           editActions.articleToEdit({
