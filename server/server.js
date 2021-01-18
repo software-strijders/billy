@@ -56,7 +56,6 @@ app.patch("/api/article/:oldTitle", (req, res) => {
       article.subCategory = req.body.subCategory;
       article.text = req.body.text;
       article.description = req.body.description;
-      article.lastRevised = req.body.lastRevised;
       article.readTime = req.body.readTime;
       article.link = req.body.link;
       article.links = req.body.links;

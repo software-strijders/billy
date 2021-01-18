@@ -451,7 +451,7 @@ class EditingPage extends LitElement {
     article["text"] = this._htmlData;
     article["description"] = this._getDescription(strippedHtml);
     article["readTime"] = this._calculateReadTime(strippedHtml);
-    article["lastRevised"] = this._getDate();
+    article["date"] = this._getDate();
     article["link"] = `?a=${article.title}`;
     article["links"] = this._getLinks() || [];
 
