@@ -44,7 +44,6 @@ class LoginButton extends LitElement {
 
       .loginButton__text {
         text-overflow: ellipsis;
-        overflow: hidden;
         white-space: nowrap;
         line-break: none;
       }

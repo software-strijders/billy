@@ -17,7 +17,7 @@ class NoResultItem extends LitElement {
 
   static getStyles() {
     return css`
-      :host {
+      .noResultItem {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -44,7 +44,7 @@ class NoResultItem extends LitElement {
         -webkit-box-orient: vertical;
       }
 
-      @media(max-width: 850px) {
+      @media (max-width: 850px) {
         .noResultItem__title {
           font-size: 50px;
         }
@@ -58,8 +58,12 @@ class NoResultItem extends LitElement {
 
   render() {
     return html`
-      <h2 class="noResultItem__title">404</h2>
-      <p class="noResultItem__description">No results found</p>
+      <article class="noResultItem">
+        <header>
+          <h2 class="noResultItem__title">404</h2>
+        </header>
+        <p class="noResultItem__description">No results found</p>
+      </article>
     `;
   }
 }

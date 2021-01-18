@@ -79,20 +79,19 @@ class TopBar extends LitElement {
 
   render() {
     return html`
-      <nav
-        aria-label="Search menu"
-        class="topBar ${classMap({ "topBar--hero": this.hero })}"
-      >
-        <ul class="topBar__list">
-          <li class="topBar__item">
-            <a class="topBar__logo" href="/">Billy</a>
-            <slot name="backItem">
-          </li>
-          <li class="topBar__item topBar__item--right">
-            <slot name="item"></slot>
-          </li>
-        </ul>
-      </nav>
+      <header>
+        <nav class="topBar ${classMap({ "topBar--hero": this.hero })}">
+          <ul class="topBar__list">
+            <li class="topBar__item">
+              <a aria-label="Terug naar de hoofdpagina" class="topBar__logo" href="/">Billy</a>
+              <slot name="backItem">
+            </li>
+            <li class="topBar__item topBar__item--right">
+              <slot name="item"></slot>
+            </li>
+          </ul>
+        </nav>
+      </header>
     `;
   }
 }

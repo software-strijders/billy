@@ -72,6 +72,14 @@ class CategoryOption extends LitElement {
         color: var(--billy-te);
       }
 
+      .accessability {
+        position: absolute;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+      }
+
       .popOut {
         position: absolute;
         bottom: 240px;
@@ -253,27 +261,21 @@ class CategoryOption extends LitElement {
 
   render() {
     return html`
-      <div class="popOut ${classMap({ "popOut--sideBar": this.sideBar })}">
+      <div class="popOut ${classMap({ "popOut--sideBar": this.sideBar })}" aria-hidden="true">
         <div class="popOut__option">
-          <a
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}"
-            class="popOut__link"
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}" class="popOut__link"
             >${subCategoryOptions.interaction}</a
           >
           <hr class="popOut__line" />
         </div>
         <div class="popOut__option">
-          <a
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}"
-            class="popOut__link"
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}" class="popOut__link"
             >${subCategoryOptions.organizationProcess}</a
           >
           <hr class="popOut__line" />
         </div>
         <div class="popOut__option">
-          <a
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}"
-            class="popOut__link"
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}" class="popOut__link"
             >${subCategoryOptions.infrastructure}</a
           >
           <hr class="popOut__line" />
@@ -285,9 +287,7 @@ class CategoryOption extends LitElement {
           <hr class="popOut__line" />
         </div>
         <div class="popOut__option">
-          <a
-            href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}"
-            class="popOut__link"
+          <a href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}" class="popOut__link"
             >${subCategoryOptions.hardwareInterfacing}</a
           >
           <hr class="popOut__line" />
@@ -296,16 +296,36 @@ class CategoryOption extends LitElement {
           <div class="popOut__pointer"></div>
         </div>
       </div>
-
+      <div class="accessability">
+        <a href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}" class="accessability__link">
+          Zoek naar artikelen met de hoofdcategorie ${this.text} en subcategorie ${subCategoryOptions.interaction}
+        </a>
+        <a href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}" class="accessability__link"
+          >Zoek naar artikelen met de hoofdcategorie ${this.text} en subcategorie
+          ${subCategoryOptions.organizationProcess}
+        </a>
+        <a href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}" class="accessability__link">
+          Zoek naar artikelen met de hoofdcategorie ${this.text} en subcategorie ${subCategoryOptions.infrastructure}
+        </a>
+        <a href="/search?hc=${this.text}&sc=${subCategoryOptions.software}" class="accessability__link">
+          Zoek naar artikelen met de hoofdcategorie ${this.text} en subcategorie ${subCategoryOptions.software}
+        </a>
+        <a href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}" class="accessability__link">
+          Zoek naar artikelen met de hoofdcategorie ${this.text} en subcategorie ${subCategoryOptions.hardwareInterfacing}
+        </a>
+      </div>
       <div
         class="category ${classMap({
           "category--sideBar": this.sideBar,
           "category--collapsed": this.collapsed,
         })}"
-        href="/search?hc=${this.text}"
       >
         <div class="category__container">
-          <a class="category__link" href="/search?hc=${this.text}">
+          <a
+            aria-label="Zoek naar artikelen met de categorie: ${this.text}"
+            class="category__link"
+            href="/search?hc=${this.text}"
+          >
             <img alt="" class="category__image" src="${this.icon}" />
             <p class="category__text">${this.text}</p>
           </a>
@@ -313,41 +333,30 @@ class CategoryOption extends LitElement {
             <img alt="" src="/dist/assets/icon/select-dropdown.svg" class="category__dropdownImage" />
           </button>
         </div>
-
         <div class="slideOut">
           <ul class="slideOut__list">
             <li class="slideOut__listOption">
-              <a
-                class="slideOut__link"
-                href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}"
+              <a class="slideOut__link" href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}"
                 >${subCategoryOptions.interaction}</a
               >
             </li>
             <li class="slideOut__listOption">
-              <a
-                class="slideOut__link"
-                href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}"
+              <a class="slideOut__link" href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}"
                 >${subCategoryOptions.organizationProcess}</a
               >
             </li>
             <li class="slideOut__listOption">
-              <a
-                class="slideOut__link"
-                href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}"
+              <a class="slideOut__link" href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}"
                 >${subCategoryOptions.infrastructure}</a
               >
             </li>
             <li class="slideOut__listOption">
-              <a
-                class="slideOut__link"
-                href="/search?hc=${this.text}&sc=${subCategoryOptions.software}"
+              <a class="slideOut__link" href="/search?hc=${this.text}&sc=${subCategoryOptions.software}"
                 >${subCategoryOptions.software}</a
               >
             </li>
             <li class="slideOut__listOption">
-              <a
-                class="slideOut__link"
-                href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}"
+              <a class="slideOut__link" href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}"
                 >${subCategoryOptions.hardwareInterfacing}</a
               >
             </li>

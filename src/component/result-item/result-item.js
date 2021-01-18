@@ -29,7 +29,7 @@ class ResultItem extends LitElement {
       }
 
       :host(:hover) {
-        background-color: var(--billy-color-background-light-grey)
+        background-color: var(--billy-color-background-light-grey);
       }
 
       :host(:hover) .line {
@@ -41,7 +41,6 @@ class ResultItem extends LitElement {
 
       :host(:hover) .resultItem {
         transform: translateX(15px);
-        
       }
 
       :host(:hover) .resultItem__description {
@@ -77,7 +76,8 @@ class ResultItem extends LitElement {
 
       .resultItem__description {
         color: var(--billy-color-text-secondary-dark);
-        margin: 0;
+        margin: 5px 0;
+        font-size: 15px;
         height: auto;
         width: 98%;
         word-break: break-word;
@@ -112,27 +112,51 @@ class ResultItem extends LitElement {
         margin-top: 5px;
         color: var(--billy-color-text-primary-dark);
       }
+
+      .navList {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
     `;
   }
 
   render() {
     return html`
       <div class="line"></div>
-      <div class="resultItem">
-        <div class="resultItem__categories">
-          <a class="resultItem__category" href="/search?hc=${this.headCategory}">${this.headCategory}</a>
-          <a class="resultItem__category" href="/search?sc=${this.subCategory}">${this.subCategory}</a>
-        </div>
-        <a class="resultItem__link" href="${this.href}">
-          <h2 class="resultItem__title">${this.title}</h2>
-          <p class="resultItem__description">
-            <small>${this.description} </small>
-          </p>
-          <div class="resultItem__info">
+      <article class="resultItem">
+        <a aria-label="Artikel: ${this.title}" class="resultItem__link" href="${this.href}">
+          <header>
+            <h2 aria-hidden="true" class="resultItem__title">${this.title}</h2>
+          </header>
+
+          <p aria-hidden="true" class="resultItem__description">${this.description}</p>
+        </a>
+        <footer>
+          <div aria-hidden="true" class="resultItem__info">
             tijd: ${this.readTime} min - laatst gewijzigd: ${this.lastRevised}
           </div>
-        </a>
-      </div>
+          <nav
+            id="resultNavigation"
+            aria-label="Categoriëen van het artikel: ${this.title}"
+            class="resultItem__categories"
+          >
+            <ul class="navList">
+              <li class="navList__item">
+                <a aria-hidden="true" tabindex="-1" class="resultItem__category" href="/search?hc=${this.headCategory}"
+                  >${this.headCategory}</a
+                >
+              </li>
+              <li class="navList__item">
+                <a aria-hidden="true" tabindex="-1" class="resultItem__category" href="/search?sc=${this.subCategory}"
+                  >${this.subCategory}</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </footer>
+      </article>
     `;
   }
 }
