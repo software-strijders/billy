@@ -180,9 +180,11 @@ class Results extends LitElement {
     
     if (urlParams.has("hc") && !urlParams.has("sc"))
       return urlParams.get("hc");
+    else if(urlParams.has("sc") && !urlParams.has("hc"))
+      return urlParams.get("sc");
     else if(urlParams.has("hc") && urlParams.has("sc"))
       return urlParams.get("hc") + ", " + urlParams.get("sc");
-    else if(!urlParams.has("hc") && !urlParams.has("q"))
+    else if(!urlParams.has("hc") && !urlParams.has("q") && !urlParams.get("sc"))
       return "Alles";
   }
 }
