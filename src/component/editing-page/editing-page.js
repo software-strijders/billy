@@ -354,7 +354,6 @@ class EditingPage extends LitElement {
 
     // If the links are injected (editing-mode) we need to take care of a few things
     if (this._injectedLinks) {
-      console.log(this.links);
       this.links =
         this.links[0].save && this.links.length > 0
           ? [...this.links, { href: "", text: "", save: false }]
