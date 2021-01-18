@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { getArticleByTitle } from "../../js/api/api.js";
+import { Router } from "@vaadin/router";
 
 import { defineElement } from "../../js/custom-element.js";
 import { actions } from "../../js/state/article-related.js";
@@ -108,6 +109,12 @@ class Article extends LitElement {
         .article__title {
           font-size: 30px;
         }
+      }
+      
+      .title__bar {	
+        display: flex;	
+        justify-content: space-between;	
+        align-items: center;	
       }
     `;
   }
