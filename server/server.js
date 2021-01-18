@@ -51,11 +51,13 @@ app.patch("/api/article/:oldTitle", (req, res) => {
   let file = JSON.parse(fs.readFileSync(articlePath));
   file = file.articles.map((article) => {
     if (article.title === req.params.oldTitle) {
+      article.author = req.body.author;
       article.title = req.body.title;
       article.headCategory = req.body.headCategory;
       article.subCategory = req.body.subCategory;
       article.text = req.body.text;
       article.description = req.body.description;
+      article.lastRevised = req.body.lastRevised;
       article.readTime = req.body.readTime;
       article.link = req.body.link;
       article.links = req.body.links;

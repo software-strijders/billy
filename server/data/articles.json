@@ -5,16 +5,17 @@
       "headCategory": "Analyse",
       "subCategory": "Gebruikersinteractie",
       "author": {
-        "fullName": "Ruben van den Brink",
-        "link": "hogeschool-utrecht",
-        "organization": "Hogeschool Utrecht"
+        "fullName": "Jort Willemsen",
+        "organization": "Universiteit Utrecht",
+        "link": "universiteit-utrecht"
       },
-      "text": "<h2>Onderwerp (What)</h2><div><table class=\"highlight tab-size js-file-line-container\" data-tab-size=\"8\" data-paste-markdown-skip=\"\"><tbody><tr><td id=\"LC74\" class=\"blob-code blob-code-inner js-file-line\"><p>Een user story is een korte beschrijving (story) van wat een gebruiker (user) wil. User stories worden gebruikt bij het ontwikkelen van software of producten. Een user story bestaat uit enkele zinnen gewone spreektaal van de (computer)gebruiker waarin staat wat de gebruiker doet of moet doen, als onderdeel van z'n werk. User stories worden gebruikt binnen agile software development als een manier om de requirements te beschrijven. Hierin zegt men 'wie', 'wat', 'waarom' wil. Het geheel is weinig gedetailleerd en moet passen op een post-it. Het is de belangrijkste manier waarop de gebruiker invloed heeft op de functionaliteit van het te ontwikkelen systeem of product. User stories kunnen ook door ontwikkelaars geschreven worden om niet-functionele eisen vast te leggen bijvoorbeeld op het gebied van beveiliging, kwaliteit en performance, maar de eerstverantwoordelijke voor de verzameling van de user stories is de producteigenaar.</p><h2>Voorbeelden</h2><div>Als een gebruiker wil ik mijn klanten kunnen zoeken zowel op voornaam als op achternaam.<br><br>Als een administrator wil ik accounts kunnen verwijderen.<br><br>Als een administrator wil ik nieuwe accounts kunnen aanmaken.<br></div><div><br></div><h2>Gebruik</h2><div>User stories worden gebruikt bij veel agile ontwikkelingsmethoden zoals XP (Extreme Programming) en Scrum. User stories bepalen wat er wordt gemaakt bij softwareprojecten. Door de gebruiker / productowner / klant worden de user stories op volgorde van belangrijkheid gesorteerd, vervolgens worden ze in taken uitgesplitst en van meer exacte tijdsschattingen voorzien door de ontwikkelaars.&nbsp;<br></div></td></tr></tbody></table></div>",
-      "description": "Onderwerp (What)Een user story is een korte beschrijving (story) van wat een gebruiker (user) wil. User stories worden gebruikt bij het ontwikkelen van software of producten. Een user story bestaat uit enkele zinnen gewone spreektaal van de (computer)gebruiker waarin staat wat de gebruiker doet of m...",
+      "text": "<h2>Onderwerp (What) 9</h2><div><table class=\"highlight tab-size js-file-line-container\" data-tab-size=\"8\" data-paste-markdown-skip=\"\"><tbody><tr><td id=\"LC74\" class=\"blob-code blob-code-inner js-file-line\"><p>Een user story is een korte beschrijving (story) van wat een gebruiker (user) wil. User stories worden gebruikt bij het ontwikkelen van software of producten. Een user story bestaat uit enkele zinnen gewone spreektaal van de (computer)gebruiker waarin staat wat de gebruiker doet of moet doen, als onderdeel van z'n werk. User stories worden gebruikt binnen agile software development als een manier om de requirements te beschrijven. Hierin zegt men 'wie', 'wat', 'waarom' wil. Het geheel is weinig gedetailleerd en moet passen op een post-it. Het is de belangrijkste manier waarop de gebruiker invloed heeft op de functionaliteit van het te ontwikkelen systeem of product. User stories kunnen ook door ontwikkelaars geschreven worden om niet-functionele eisen vast te leggen bijvoorbeeld op het gebied van beveiliging, kwaliteit en performance, maar de eerstverantwoordelijke voor de verzameling van de user stories is de producteigenaar.</p><h2>Voorbeelden</h2><div>Als een gebruiker wil ik mijn klanten kunnen zoeken zowel op voornaam als op achternaam.<br><br>Als een administrator wil ik accounts kunnen verwijderen.<br><br>Als een administrator wil ik nieuwe accounts kunnen aanmaken.<br></div><div><br></div><h2>Gebruik</h2><div>User stories worden gebruikt bij veel agile ontwikkelingsmethoden zoals XP (Extreme Programming) en Scrum. User stories bepalen wat er wordt gemaakt bij softwareprojecten. Door de gebruiker / productowner / klant worden de user stories op volgorde van belangrijkheid gesorteerd, vervolgens worden ze in taken uitgesplitst en van meer exacte tijdsschattingen voorzien door de ontwikkelaars.&nbsp;<br></div></td></tr></tbody></table></div>",
+      "description": "Onderwerp (What) 9. Een user story is een korte beschrijving (story) van wat een gebruiker (user) wil. User stories worden gebruikt bij het ontwikkelen van software of producten. Een user story bestaat uit enkele zinnen gewone spreektaal van de (computer)gebruiker waarin staat wat de gebruiker doet ...",
       "readTime": 1,
-      "lastRevised": "2021-01-08",
+      "lastRevised": "2021-01-18",
       "link": "?a=User story",
-      "links": []
+      "links": [],
+      "editors": []
     },
     {
       "title": "CMD Method Pack",
@@ -30,7 +31,8 @@
       "readTime": 1,
       "lastRevised": "2021-01-08",
       "link": "?a=CMD Method Pack",
-      "links": []
+      "links": [],
+      "editors": []
     },
     {
       "title": "Design Thinking Methode",
@@ -46,7 +48,8 @@
       "readTime": 1,
       "lastRevised": "2021-01-08",
       "link": "?a=Design Thinking Methode",
-      "links": []
+      "links": [],
+      "editors": []
     },
     {
       "title": "Design Sprint",
@@ -62,7 +65,8 @@
       "readTime": 1,
       "lastRevised": "2021-01-08",
       "link": "?a=Design Sprint",
-      "links": []
+      "links": [],
+      "editors": []
     },
     {
       "title": "Value Proposition Canvas (VPC)",
@@ -78,7 +82,8 @@
       "readTime": 1,
       "lastRevised": "2021-01-08",
       "link": "?a=Value Proposition Canvas (VPC)",
-      "links": []
+      "links": [],
+      "editors": []
     },
     {
       "title": "Persona's",
@@ -94,7 +99,8 @@
       "readTime": 3,
       "lastRevised": "2021-01-08",
       "link": "?a=Persona's",
-      "links": []
+      "links": [],
+      "editors": []
     },
     {
       "title": "Vaststellen van Business Modellen (SBMC)",
@@ -110,7 +116,8 @@
       "readTime": 5,
       "lastRevised": "2021-01-08",
       "link": "?a=Vaststellen van Business Modellen (SBMC)",
-      "links": []
+      "links": [],
+      "editors": []
     },
     {
       "title": "Prototype",
@@ -139,7 +146,8 @@
           "text": "Live prototyping",
           "href": "https://www.researchgate.net/publication/303901737_Live_Prototyping"
         }
-      ]
+      ],
+      "editors": []
     },
     {
       "title": "Wireframes",
@@ -160,7 +168,8 @@
           "text": "Persona's",
           "href": "https://wiki-billy.herokuapp.com/article?a=Persona%27s"
         }
-      ]
+      ],
+      "editors": []
     },
     {
       "title": "Usability testing",
@@ -181,7 +190,25 @@
           "text": "emence website",
           "href": "https://www.emerce.nl/best-practice/usabilitytesting-8-methoden-25-goedkope-online-tools"
         }
-      ]
+      ],
+      "editors": []
+    },
+    {
+      "title": "test",
+      "headCategory": "Analyse",
+      "subCategory": "Organisatie Processen",
+      "author": {
+        "fullName": "Jort Willemsen",
+        "organization": "Universiteit Utrecht",
+        "link": "universiteit-utrecht"
+      },
+      "text": "<div>test</div>",
+      "description": "test",
+      "readTime": 1,
+      "lastRevised": "2021-01-18",
+      "link": "?a=test",
+      "links": [],
+      "editors": []
     }
   ]
 }

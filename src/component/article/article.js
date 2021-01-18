@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { getArticleByTitle } from "../../js/api/api.js";
+import { Router } from "@vaadin/router";
 
 import { defineElement } from "../../js/custom-element.js";
 import { actions } from "../../js/state/article-related.js";
@@ -83,6 +84,18 @@ class Article extends LitElement {
         margin: 0 0 25px 0;
       }
 
+      .button {
+        padding: var(--billy-edit-page-form-button-padding);
+        border-radius: var(--billy-edit-page-radius);
+        background: var(--billy-color-button-gradient);
+        border: var(--billy-border);
+        color: var(--billy-color-text-primary-light);
+        font-size: var(--billy-edit-page-form-button-font-size);
+        cursor: pointer;
+        transition: background-size 0.3s ease 0s, all 0.3s ease 0s;
+        font-weight: bold;
+      }
+
       @media(max-width: 850px) {
         .article__content {
           padding: 0;
@@ -91,6 +104,12 @@ class Article extends LitElement {
         .article__title {
           font-size: 30px;
         }
+      }
+
+      .title__bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     `;
   }
@@ -109,7 +128,13 @@ class Article extends LitElement {
                   <p class="category__text">${this.subCategory}</p>
                 </div>
               </div>
+              <div class="title__bar">
               <h1 class="article__title">${this.title}</h1>
+              ${store.getState().login.loggedIn
+               ? html`<button class="button" @click="${() => this._redirectToEditArticlePage("?a=" + this.title)}">Pas aan</button>`
+               : html``
+              }
+              </div>
               <hr class="article__line" />
               ${unsafeHTML(this.html)}
             </article>
@@ -140,6 +165,10 @@ class Article extends LitElement {
         );
       });
     }
+  }
+
+  _redirectToEditArticlePage(link) {
+    Router.go({ pathname: "/create", search: link});
   }
 }
 
