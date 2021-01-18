@@ -196,8 +196,19 @@ class SearchBar extends LitElement {
             class="searchBar__input"
             type="text"
           />
-          <a href="/search" name="zoek" aria-label="Zoek" class="searchBar__button" type="submit">
-            <img class="searchBar__arrow" src="/dist/assets/icon/arrow-right.svg" alt="" />
+          <a
+            href="/search"
+            name="zoek"
+            aria-label="Zoek"
+            class="searchBar__button"
+            type="submit"
+            @click="${this._handleClick}"
+          >
+            <img
+              class="searchBar__arrow"
+              src="/dist/assets/icon/arrow-right.svg"
+              alt=""
+            />
           </a>
         </div>
         <button class="mobileButton mobileButton--close" @click="${this._toggleSearchBar}">
@@ -227,10 +238,17 @@ class SearchBar extends LitElement {
     }
   }
 
+  _handleClick(event) {
+    event.preventDefault();
+    this._search();
+  }
+
   _search() {
+    const searchInput = this._getSearchInput();
+
     Router.go({
       pathname: "/search",
-      search: `?q=${this._getSearchInput()}`,
+      search: searchInput === "" ? "" : `?q=${this._getSearchInput()}`,
     });
   }
 

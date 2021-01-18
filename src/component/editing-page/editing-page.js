@@ -306,7 +306,7 @@ class EditingPage extends LitElement {
                         <img
                           class="form__buttonImg"
                           aria-label="Verwijder link van artikel"
-                          src="/distassets/icon/minus-icon.svg"
+                          src="/dist/assets/icon/minus-icon.svg"
                           alt=""
                         />
                       </button>
