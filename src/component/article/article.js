@@ -1,7 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 import { getArticleByTitle } from "../../js/api/api.js";
-import { Router } from "@vaadin/router";
 
 import { defineElement } from "../../js/custom-element.js";
 import { actions } from "../../js/state/article-related.js";
@@ -67,6 +66,11 @@ class Article extends LitElement {
         font-size: 14px;
       }
 
+      .category__link {
+        text-decoration: none;
+        color: inherit;
+      }
+
       .article__line {
         height: var(--billy-line-height);
         margin: 15px 0 25px 0;
@@ -105,12 +109,6 @@ class Article extends LitElement {
           font-size: 30px;
         }
       }
-
-      .title__bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
     `;
   }
 
@@ -122,10 +120,14 @@ class Article extends LitElement {
               <div class="article__categories">
                 <!-- TODO: Make into billy-article-tag component -->
                 <div class="category">
-                  <p class="category__text">${this.mainCategory}</p>
+                  <a class="category__link" href="/search?hc=${this.mainCategory}">
+                    <p class="category__text">${this.mainCategory}</p>
+                  </a>
                 </div>
                 <div class="category">
-                  <p class="category__text">${this.subCategory}</p>
+                  <a class="category__link" href="/search?sc=${this.subCategory}">
+                    <p class="category__text">${this.subCategory}</p>
+                  </a>
                 </div>
               </div>
               <div class="title__bar">
