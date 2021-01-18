@@ -113,12 +113,13 @@ class Results extends LitElement {
           </a>
         </div>
         <hr class="results__hr" />
-        <div id="resultItems" class="results__items">
+        <div role="list" id="resultItems" class="results__items">
           ${this.previews.length === 0 && this.isFinished
             ? html`<billy-no-result></billy-no-result>`
             : this.previews.map((article) => {
                 return html`
                   <billy-result-item
+                    role="listitem"
                     href="/article${article.link}"
                     title="${article.title}"
                     description="${article.description}"
