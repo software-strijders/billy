@@ -121,6 +121,7 @@ class Profile extends LitElement {
       .preview__wrapper {
         display: flex;
         justify-content: space-between;
+        height: 210px;
       }
 
       .profile__top {
@@ -133,7 +134,7 @@ class Profile extends LitElement {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 50px 0 50px 50px;
+        padding: 45px 10px;
       }
 
       .button {
