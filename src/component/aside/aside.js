@@ -132,19 +132,24 @@ class Aside extends LitElement {
               <h2 class="aside__title">Laatste bewerking</h2>
               <hr class="aside__line" />
               <div class="aside__textWrapper">
-                <p class="aside__text aside__text--bold">${state.related.edits[state.related.edits.length -1].author.fullName}</p>
+                <p class="aside__text aside__text--bold">
+                  ${state.related.edits[state.related.edits.length - 1].author.fullName}
+                </p>
                 <div class="aside__logoWrapper">
                   <img
-                    src="/dist/assets/image/${state.related.edits[state.related.edits.length -1].author.link || "hogeschool-utrecht"}.png"
+                    src="/dist/assets/image/${state.related.edits[state.related.edits.length - 1].author.link ||
+                    "hogeschool-utrecht"}.png"
                     alt=""
                     class="aside__logo"
                   />
-                  <p class="aside__text">${state.related.edits[state.related.edits.length -1].author.organization || "Hogeschool Utrecht"}</p>
+                  <p class="aside__text">
+                    ${state.related.edits[state.related.edits.length - 1].author.organization || "Hogeschool Utrecht"}
+                  </p>
                 </div>
               </div>
               <div class="aside__textWrapper">
                 <p class="aside__text aside__text--bold">Datum</p>
-                <p class="aside__text">${state.related.edits[state.related.edits.length -1].date}</p>
+                <p class="aside__text">${state.related.edits[state.related.edits.length - 1].date}</p>
               </div>
             </div>`
           : html``}
