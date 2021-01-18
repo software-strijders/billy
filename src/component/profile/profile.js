@@ -215,6 +215,7 @@ class Profile extends LitElement {
 
         .preview__wrapper {
           flex-direction: column;
+          height: auto;
         }
 
         .button__wrapper {

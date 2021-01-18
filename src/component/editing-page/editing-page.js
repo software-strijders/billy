@@ -353,17 +353,18 @@ class EditingPage extends LitElement {
   updated() {
     const index = this.links.length - 1;
     const links = this.shadowRoot.querySelectorAll(".form__link");
-    
+
     // If the links are injected (editing-mode) we need to take care of a few things
     if (this._injectedLinks) {
       console.log(this.links);
-      this.links = (this.links[0].save && this.links.length > 0) 
-        ? [...this.links, { href: "", text: "", save: false }] 
-        : [...this.links];
+      this.links =
+        this.links[0].save && this.links.length > 0
+          ? [...this.links, { href: "", text: "", save: false }]
+          : [...this.links];
 
       links[0].querySelector("#link-text-0").value = this.links[0].text;
       links[0].querySelector("#link-href-0").value = this.links[0].href;
-      
+
       this._injectedLinks = false;
       return;
     }
@@ -407,29 +408,37 @@ class EditingPage extends LitElement {
   }
 
   _handleSaveClick() {
-    let article = this._formArticleData()
-    sendArticle(article).then(() => {
-      alert("Artikel succesvol aangemaakt");
-      Router.go({ pathname: "/article", search: `?a=${article.title}` });
-    });
+    try {
+      let article = this._formArticleData();
+      sendArticle(article).then(() => {
+        alert("Artikel succesvol aangemaakt");
+        Router.go({ pathname: "/article", search: `?a=${article.title}` });
+      });
+    } catch (e) {
+      alert(e.message);
+    }
   }
 
   _handleEditClick() {
-    let article = this._formArticleData()
-    updateArticle(article).then(() => {
-      alert("Artikel succesvol aangepast");
-      Router.go({ pathname: "/article", search: `?a=${article.title}` });
-    });
+    try {
+      let article = this._formArticleData();
+      updateArticle(article, store.getState().editMode.articleTitle).then(() => {
+        alert("Artikel succesvol aangepast");
+        Router.go({ pathname: "/article", search: `?a=${article.title}` });
+      });
+    } catch (e) {
+      alert(e.message);
+    }
   }
 
   _formArticleData() {
     const form = this.shadowRoot.querySelector("form");
     if (!form.reportValidity()) {
-      return;
+      throw Error("1 of meer velden niet ingevuld");
     }
+
     if (this._htmlData === "") {
-      alert("Voer de artikel tekst in.");
-      return;
+      throw Error("Voer de artikel tekst in.");
     }
 
     const formData = new FormData(form);
@@ -487,20 +496,27 @@ class EditingPage extends LitElement {
 
     if (urlParams.has("a")) {
       articleTitle = urlParams.get("a");
-      getArticleByTitle(articleTitle).then(article => {
+      getArticleByTitle(articleTitle).then((article) => {
         this.shadowRoot.querySelector("#title").value = article.title;
         this.shadowRoot.querySelector("#mainCategory").value = article.headCategory;
         this.shadowRoot.querySelector("#subCategory").value = article.subCategory;
-        this.links = article.links.length > 0
-          // Only map the links when there are actually links
-          ? article.links.map(link => ({ text: link.text, href: link.href, save: true }))
-          // Otherwise just use the default structure
-          : [...this.links];
-        this.editMode= true; 
+        this.links =
+          article.links.length > 0
+            ? // Only map the links when there are actually links
+              article.links.map((link) => ({ text: link.text, href: link.href, save: true }))
+            : // Otherwise just use the default structure
+              [...this.links];
+        this.editMode = true;
         this._injectedLinks = true;
         this._htmlData = article.text;
 
-        store.dispatch(editActions.articleToEdit({ inEditMode: true, articleTitle: articleTitle, articleContent: article.text}));
+        store.dispatch(
+          editActions.articleToEdit({
+            inEditMode: true,
+            articleTitle: articleTitle,
+            articleContent: article.text,
+          }),
+        );
       });
     }
   }

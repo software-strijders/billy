@@ -40,8 +40,8 @@ export function sendArticle(article) {
     })
 }
 
-export function updateArticle(article) {
-  return fetch(`${baseUrl}/article`, { 
+export function updateArticle(article, oldTitle) {
+  return fetch(`${baseUrl}/article/${oldTitle}`, { 
     method: "PATCH",
     body: JSON.stringify(article), 
     headers: { "Content-type": "application/json; charset=UTF-8" },

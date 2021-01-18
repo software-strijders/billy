@@ -47,11 +47,10 @@ app.post("/api/login", (req, res) => {
   res.sendStatus(400);
 });
 
-app.patch("/api/article", (req, res) => {
+app.patch("/api/article/:oldTitle", (req, res) => {
   let file = JSON.parse(fs.readFileSync(articlePath));
   file = file.articles.map((article) => {
-    if (article.title === req.body.title) {
-      console.log(req.body);
+    if (article.title === req.params.oldTitle) {
       article.title = req.body.title;
       article.headCategory = req.body.headCategory;
       article.subCategory = req.body.subCategory;
