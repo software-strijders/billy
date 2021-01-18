@@ -47,6 +47,26 @@ app.post("/api/login", (req, res) => {
   res.sendStatus(400);
 });
 
+app.patch("/api/article/:oldTitle", (req, res) => {
+  let file = JSON.parse(fs.readFileSync(articlePath));
+  file = file.articles.map((article) => {
+    if (article.title === req.params.oldTitle) {
+      article.title = req.body.title;
+      article.headCategory = req.body.headCategory;
+      article.subCategory = req.body.subCategory;
+      article.text = req.body.text;
+      article.description = req.body.description;
+      article.readTime = req.body.readTime;
+      article.link = req.body.link;
+      article.links = req.body.links;
+    }
+    return article;
+  });
+  fs.writeFileSync(articlePath, JSON.stringify({articles: file}, null, 2));
+  
+  res.sendStatus(200);
+});
+
 if (app.settings.env === "production") {
   app.enable("trust proxy");
   app.use('*', (req, res, next) => {

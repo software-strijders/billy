@@ -121,6 +121,7 @@ class Profile extends LitElement {
       .preview__wrapper {
         display: flex;
         justify-content: space-between;
+        height: 210px;
       }
 
       .profile__top {
@@ -133,7 +134,7 @@ class Profile extends LitElement {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 50px 0 50px 50px;
+        padding: 45px 10px;
       }
 
       .button {
@@ -214,6 +215,7 @@ class Profile extends LitElement {
 
         .preview__wrapper {
           flex-direction: column;
+          height: auto;
         }
 
         .button__wrapper {
@@ -281,7 +283,7 @@ class Profile extends LitElement {
                 subCategory="${article.subCategory}"
               ></billy-result-item>
               <div class="button__wrapper">
-                <button class="button" type="button">Pas aan</button>
+                <button class="button" type="button" @click="${() => this._redirectToEditArticlePage(article.link)}">Pas aan</button>
                 <button class="button button--delete" type="button">Verwijder</button>
               </div>
             </div>
@@ -293,6 +295,10 @@ class Profile extends LitElement {
 
   _redirectToCreateArticlePage() {
     Router.go("/create");
+  }
+
+  _redirectToEditArticlePage(link) {
+    Router.go({ pathname: "/create", search: link});
   }
 
   _logOut() {

@@ -2,8 +2,9 @@ import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 import { Router } from "@vaadin/router";
 
-import { sendArticle } from "../../js/api/api";
+import { getArticleByTitle, sendArticle, updateArticle } from "../../js/api/api";
 import { author } from "../../js/state/login";
+import { actions as editActions } from "../../js/state/edit-mode";
 import { store } from "../../js/state/store.js";
 import { defineElement } from "../../js/custom-element";
 
@@ -16,11 +17,15 @@ class EditingPage extends LitElement {
 
     this._checkAccess();
 
-    this._title = "";
+    this._htmlData = "";
+    this._injectedLinks = false;
     this._mainCategory = "Analyse";
     this._subCategory = "Gebruikersinteractie";
-    this._htmlData = "";
+    this._title = "";
+
     this.links = [{ text: "", href: "", save: false }];
+
+    this._getArticleToEdit();
   }
 
   _checkAccess() {
@@ -30,15 +35,16 @@ class EditingPage extends LitElement {
     }
 
     if (window.innerWidth < 850) {
-      alert("Gebruik alsjeblieft de desktop versie om artikelen te kunnen bewerken.")
+      alert("Gebruik alsjeblieft de desktop versie om artikelen te kunnen bewerken.");
       window.location.href = "/";
     }
   }
 
   static get properties() {
     return {
-      links:       { type: Array   },
+      links: { type: Array },
       showPreview: { type: Boolean },
+      editMode: { type: Boolean },
     };
   }
 
@@ -55,7 +61,8 @@ class EditingPage extends LitElement {
         max-width: 950px;
       }
 
-      .form--disabled .form__input, .form--disabled .form__link .form__input {
+      .form--disabled .form__input,
+      .form--disabled .form__link .form__input {
         pointer-events: none;
         background-color: var(--billy-color-background-disabled);
         color: var(--billy-color-text-primary-light);
@@ -247,7 +254,7 @@ class EditingPage extends LitElement {
   render() {
     return html`
       <form class="form ${classMap({ "form--disabled": this.showPreview })}">
-        <h1 class="form__title">Artikel aanmaken</h1>
+        <h1 class="form__title">${this.editMode ? "Artikel aanpassen" : "Artikel aanmaken"}</h1>
         <hr class="form__line" />
         <div class="form__wrapper form__wrapper--first">
           <label class="form__label" for="title">Titel</label>
@@ -330,9 +337,13 @@ class EditingPage extends LitElement {
           ></billy-editor>
         </div>
         <div class="form__wrapper form__wrapper--button">
-          <a href="/" class="form__button form__button--remove">Annuleren</a>
-          <button @click="${this._handleSaveClick}" class="form__button" type="button">
-            Publiceer artikel
+          <a href="/profile" class="form__button form__button--remove">Annuleren</a>
+          <button
+            @click="${this.editMode ? this._handleEditClick : this._handleSaveClick}"
+            class="form__button"
+            type="button"
+          >
+            ${this.editMode ? "Pas aan" : "Publiceer artikel"}
           </button>
         </div>
       </form>
@@ -342,6 +353,21 @@ class EditingPage extends LitElement {
   updated() {
     const index = this.links.length - 1;
     const links = this.shadowRoot.querySelectorAll(".form__link");
+
+    // If the links are injected (editing-mode) we need to take care of a few things
+    if (this._injectedLinks) {
+      console.log(this.links);
+      this.links =
+        this.links[0].save && this.links.length > 0
+          ? [...this.links, { href: "", text: "", save: false }]
+          : [...this.links];
+
+      links[0].querySelector("#link-text-0").value = this.links[0].text;
+      links[0].querySelector("#link-href-0").value = this.links[0].href;
+
+      this._injectedLinks = false;
+      return;
+    }
 
     // Manually clear the values of the input fields.
     // This is probably because LitElement caches elements inside of it, thus we have to resort to this:
@@ -382,13 +408,37 @@ class EditingPage extends LitElement {
   }
 
   _handleSaveClick() {
+    try {
+      let article = this._formArticleData();
+      sendArticle(article).then(() => {
+        alert("Artikel succesvol aangemaakt");
+        Router.go({ pathname: "/article", search: `?a=${article.title}` });
+      });
+    } catch (e) {
+      alert(e.message);
+    }
+  }
+
+  _handleEditClick() {
+    try {
+      let article = this._formArticleData();
+      updateArticle(article, store.getState().editMode.articleTitle).then(() => {
+        alert("Artikel succesvol aangepast");
+        Router.go({ pathname: "/article", search: `?a=${article.title}` });
+      });
+    } catch (e) {
+      alert(e.message);
+    }
+  }
+
+  _formArticleData() {
     const form = this.shadowRoot.querySelector("form");
     if (!form.reportValidity()) {
-      return;
+      throw Error("1 of meer velden niet ingevuld");
     }
+
     if (this._htmlData === "") {
-      alert("Voer de artikel tekst in.");
-      return;
+      throw Error("Voer de artikel tekst in.");
     }
 
     const formData = new FormData(form);
@@ -407,18 +457,17 @@ class EditingPage extends LitElement {
     article["link"] = `?a=${article.title}`;
     article["links"] = this._getLinks() || [];
 
-    sendArticle(article).then(() => {
-      alert("Artikel succesvol aangemaakt");
-      Router.go({ pathname: "/article", search: `?a=${article.title}`});
-    });
+    return article;
   }
 
   _getStrippedHtml(html) {
-    return html
-      // Strip html tags
-      .replace(/<[^>]+>/g, '')
-      // Seperate titles sticking to paragraph text
-      .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
+    return (
+      html
+        // Strip html tags
+        .replace(/<[^>]+>/g, "")
+        // Seperate titles sticking to paragraph text
+        .replace(/([a-z0-9])([A-Z])/g, "$1. $2")
+    );
   }
 
   _getDescription(text) {
@@ -437,8 +486,39 @@ class EditingPage extends LitElement {
 
   _getLinks() {
     return this.links
-      .filter(link => link.save)
-      .map(link => ({ text: link.text, href: link.href }));
+      .filter((link) => link.save)
+      .map((link) => ({ text: link.text, href: link.href }));
+  }
+
+  _getArticleToEdit() {
+    let urlParams = new URLSearchParams(window.location.search);
+    let articleTitle = "";
+
+    if (urlParams.has("a")) {
+      articleTitle = urlParams.get("a");
+      getArticleByTitle(articleTitle).then((article) => {
+        this.shadowRoot.querySelector("#title").value = article.title;
+        this.shadowRoot.querySelector("#mainCategory").value = article.headCategory;
+        this.shadowRoot.querySelector("#subCategory").value = article.subCategory;
+        this.links =
+          article.links.length > 0
+            ? // Only map the links when there are actually links
+              article.links.map((link) => ({ text: link.text, href: link.href, save: true }))
+            : // Otherwise just use the default structure
+              [...this.links];
+        this.editMode = true;
+        this._injectedLinks = true;
+        this._htmlData = article.text;
+
+        store.dispatch(
+          editActions.articleToEdit({
+            inEditMode: true,
+            articleTitle: articleTitle,
+            articleContent: article.text,
+          }),
+        );
+      });
+    }
   }
 }
 

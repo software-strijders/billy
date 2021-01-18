@@ -2,6 +2,7 @@ import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import pell from "pell";
 
+import { store } from "../../js/state/store.js";
 import { defineElement } from "../../js/custom-element";
 
 const defaultOptions = [
@@ -29,6 +30,7 @@ class Editor extends LitElement {
 
     this.articleHtml = "";
     this.showPreview = false;
+    this._checkIfInEditingMode();
   }
 
   static get properties() {
@@ -271,6 +273,16 @@ class Editor extends LitElement {
   _togglePreview() {
     this.dispatchEvent(new CustomEvent("on-preview", { detail: !this.showPreview }));
     this.showPreview = !this.showPreview;
+  }
+
+  _checkIfInEditingMode() {
+    store.subscribe(() => {
+      if (store.getState().editMode.inEditMode) {
+        this.articleHtml = store.getState().editMode.articleContent;
+        this.title = store.getState().editMode.articleTitle;
+        this.shadowRoot.querySelector(".pell__content[contenteditable='true']").innerHTML = this.articleHtml;
+      }
+    });
   }
 }
 
