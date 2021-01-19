@@ -114,11 +114,11 @@ class Aside extends LitElement {
             <p class="aside__text aside__text--bold">${state.related.author.fullName}</p>
             <div class="aside__logoWrapper">
               <img
-                src="/dist/assets/image/${state.related.author.link || "hogeschool-utrecht"}.png"
+                src="/dist/assets/image/${state.related.author.link}.png"
                 alt=""
                 class="aside__logo"
               />
-              <p class="aside__text">${state.related.author.organization || "Hogeschool Utrecht"}</p>
+              <p class="aside__text">${state.related.author.organization}</p>
             </div>
           </div>
           <div class="aside__textWrapper">
@@ -137,13 +137,12 @@ class Aside extends LitElement {
                 </p>
                 <div class="aside__logoWrapper">
                   <img
-                    src="/dist/assets/image/${state.related.edits[state.related.edits.length - 1].author.link ||
-                    "hogeschool-utrecht"}.png"
+                    src="/dist/assets/image/${state.related.edits[state.related.edits.length - 1].author.link}.png"
                     alt=""
                     class="aside__logo"
                   />
                   <p class="aside__text">
-                    ${state.related.edits[state.related.edits.length - 1].author.organization || "Hogeschool Utrecht"}
+                    ${state.related.edits[state.related.edits.length - 1].author.organization}
                   </p>
                 </div>
               </div>

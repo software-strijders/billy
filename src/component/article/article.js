@@ -111,7 +111,7 @@ class Article extends LitElement {
         }
       }
       
-      .title__bar {	
+      .category__titleWrapper {	
         display: flex;	
         justify-content: space-between;	
         align-items: center;	
@@ -137,10 +137,10 @@ class Article extends LitElement {
                   </a>
                 </div>
               </div>
-              <div class="title__bar">
+              <div class="category__titleWrapper">
                 <h1 class="article__title">${this.title}</h1>
                 ${store.getState().login.loggedIn
-                  ? html`<button class="button" @click="${() => this._redirectToEditArticlePage("?a=" + this.title)}">
+                  ? html`<button class="button" @click="${() => this._redirectToEditArticlePage(`?a=${this.title}`)}">
                       Pas aan
                     </button>`
                   : html``}

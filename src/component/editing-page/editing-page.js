@@ -24,7 +24,6 @@ class EditingPage extends LitElement {
     this._title = "";
 
     this.links = [{ text: "", href: "", save: false }];
-
     this.edits = [];
 
     this._getArticleToEdit();
@@ -454,7 +453,9 @@ class EditingPage extends LitElement {
     article["link"] = `?a=${article.title}`;
     article["links"] = this._getLinks() || [];
 
-    this.editMode ? this.edits.push({ date: this._getDate(), author: author(store.getState()) }) : ``;
+    if (this.editMode) {
+      this.edits.push({ date: this._getDate(), author: author(store.getState()) });
+    }
     article["edits"] = this.edits;
 
     return article;
