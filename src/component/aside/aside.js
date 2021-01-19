@@ -78,6 +78,7 @@ class Aside extends LitElement {
 
       .link__href {
         word-break: break-all;
+        color: var(--billy-color-text-link)
       }
 
       .link__title {

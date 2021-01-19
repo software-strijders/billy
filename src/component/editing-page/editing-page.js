@@ -66,7 +66,7 @@ class EditingPage extends LitElement {
       .form--disabled .form__link .form__input {
         pointer-events: none;
         background-color: var(--billy-color-background-disabled);
-        color: var(--billy-color-text-primary-light);
+        color: var(--billy-color-text-hint);
       }
 
       .form--disabled .form__select {
@@ -229,7 +229,7 @@ class EditingPage extends LitElement {
         border-radius: var(--billy-edit-page-radius);
         background: var(--billy-color-button-gradient);
         border: var(--billy-border);
-        color: var(--billy-color-text-primary-light);
+        color: var(--billy-color-text-primary-dark);
         font-size: var(--billy-edit-page-form-button-font-size);
         cursor: pointer;
         transition: background-size 0.3s, 0.3s;

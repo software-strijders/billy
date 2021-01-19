@@ -2,7 +2,6 @@
   --billy-font-family: "Aller";
 
   /* Color: */
-  --billy-color-selected-contrast: #000;
   --billy-color-warning-secondary: #e51b1b;
   --billy-color-warning-primary: #fc4c4c;
   --billy-color-brand-secondary: #801be5;
@@ -39,6 +38,8 @@
   --billy-color-text-primary-dark: #000;
   --billy-color-text-blockquote: #000;
   --billy-color-text-hint: #7e7e7e;
+  --billy-color-text-link: var(--billy-color-brand-primary);
+
 
   /* Button: */
   --billy-color-button-gradient: var(--billy-gradient-background-brand);
@@ -130,7 +131,7 @@
 
 .contrast {
   /* Color: */
-  --billy-color-selected-contrast: #ebe720;
+  --billy-color-text-link: #ebe720;
   --billy-color-brand-secondary: #000;
   --billy-color-brand-primary: #000;
   --billy-box-shadow-lighter: none;

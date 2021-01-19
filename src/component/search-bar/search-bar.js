@@ -69,7 +69,7 @@ class SearchBar extends LitElement {
 
       .searchBar__link {
         margin-top: 10px;
-        color: var(--billy-color-text-primary-light);
+        color: var(--billy-color-text-link);
         font-size: 13px;
       }
 
