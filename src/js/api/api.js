@@ -53,8 +53,8 @@ export function updateArticle(article, oldTitle) {
     method: "PATCH",
     body: JSON.stringify(article),
     headers: { "Content-type": "application/json; charset=UTF-8" },
-  }).then(response => {
+  }).then((response) => {
     if (response.ok) return response;
     else throw Error("Kon artikel niet opslaan");
-  })
+  });
 }
