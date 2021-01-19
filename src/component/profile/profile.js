@@ -5,6 +5,7 @@ import { store } from "../../js/state/store.js";
 import { actions } from "../../js/state/login";
 import { getArticles } from "../../js/api/api.js";
 import { defineElement } from "../../js/custom-element";
+import { deleteArticle } from "../../js/api/api.js";
 
 class Profile extends LitElement {
   constructor() {
@@ -76,8 +77,8 @@ class Profile extends LitElement {
 
       .userInfo {
         display: flex;
-          flex-direction: column;
-          justify-content: start;
+        flex-direction: column;
+        justify-content: start;
       }
 
       .userInfo__row {
@@ -85,7 +86,7 @@ class Profile extends LitElement {
       }
 
       .userInfo__details {
-       flex-grow: 1;
+        flex-grow: 1;
         text-align: left;
       }
 
@@ -266,9 +267,7 @@ class Profile extends LitElement {
         <hr class="profile__line" />
         <div class="profile__createArticleWrapper">
           <h3 class="profile__title profile__title--small">Nieuw Artikel</h3>
-          <button class="button" type="button" @click="${this._redirectToCreateArticlePage}">
-            Maak aan
-          </button>
+          <button class="button" type="button" @click="${this._redirectToCreateArticlePage}">Maak aan</button>
         </div>
         ${this.previews.map((article) => {
           return html`
@@ -283,8 +282,10 @@ class Profile extends LitElement {
                 subCategory="${article.subCategory}"
               ></billy-result-item>
               <div class="button__wrapper">
-                <button class="button" type="button" @click="${() => this._redirectToEditArticlePage(article.link)}">Pas aan</button>
-                <button class="button button--delete" type="button">Verwijder</button>
+                <button class="button" type="button" @click="${() => this._redirectToEditArticlePage(article.link)}">
+                  Pas aan
+                </button>
+                <button class="button button--delete" type="button" @click="${() => this._deleteArticle(article.title)}">Verwijder</button>
               </div>
             </div>
           `;
@@ -298,7 +299,7 @@ class Profile extends LitElement {
   }
 
   _redirectToEditArticlePage(link) {
-    Router.go({ pathname: "/create", search: link});
+    Router.go({ pathname: "/create", search: link });
   }
 
   _logOut() {
@@ -327,6 +328,13 @@ class Profile extends LitElement {
     if (store.getState().login.user.firstName !== "") {
       return store.getState().login.user.firstName + " " + store.getState().login.user.lastName;
     }
+  }
+
+  _deleteArticle(title) {
+    deleteArticle(title).then(() => {
+      alert("Artikel succesvol verwijderd");
+      Router.go("/profile");
+    });
   }
 }
 
