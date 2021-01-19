@@ -69,9 +69,12 @@ class LoginWindow extends LitElement {
           max-width: 90vw;
         }
 
-        .field,
+        .field {
+          width: 100%;
+        }
+
         .field__input {
-          max-width: 100%;
+          width: calc(100% - 40px);
         }
       }
     `;
