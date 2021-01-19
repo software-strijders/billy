@@ -70,15 +70,10 @@ app.patch("/api/article/:oldTitle", (req, res) => {
 
 app.delete("/api/article/:title", (req, res) => {
   const file = JSON.parse(fs.readFileSync(articlePath));
-  for (let article of file.articles) {
-    if (article.title === req.params.title) {
-      // TODO: delete article
+  const filteredArticles = file.articles.filter((article) => article.title !== req.params.title);
+  fs.writeFileSync(articlePath, JSON.stringify({ articles: filteredArticles }, null, 2));
 
-      fs.writeFileSync(articlePath, JSON.stringify(file, null, 2));
-      res.sendStatus(200);
-    }
-  }
-  res.sendStatus(418);
+  res.sendStatus(200);
 });
 
 if (app.settings.env === "production") {
