@@ -77,8 +77,8 @@ class Profile extends LitElement {
 
       .userInfo {
         display: flex;
-          flex-direction: column;
-          justify-content: start;
+        flex-direction: column;
+        justify-content: start;
       }
 
       .userInfo__row {
@@ -86,7 +86,7 @@ class Profile extends LitElement {
       }
 
       .userInfo__details {
-       flex-grow: 1;
+        flex-grow: 1;
         text-align: left;
       }
 
@@ -238,7 +238,9 @@ class Profile extends LitElement {
       <div class="profile">
         <div class="profile__top">
           <h1 class="profile__title">Profiel</h1>
-          <button class="button button--delete" type="button" @click="${this._logOut}">Uitloggen</button>
+          <button class="button button--delete" type="button" @click="${this._logOut}">
+            Uitloggen
+          </button>
         </div>
         <hr class="profile__line" />
         <div class="userInfo">
@@ -331,9 +333,10 @@ class Profile extends LitElement {
   }
 
   _deleteArticle(title) {
-    deleteArticle(title).
-    then(() => {alert("Artikel succesvol verwijderd")});
-    Router.go("/profile");
+    deleteArticle(title).then(() => {
+      alert("Artikel succesvol verwijderd");
+      Router.go("/profile");
+    });
   }
 }
 
