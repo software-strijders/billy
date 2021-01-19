@@ -76,7 +76,12 @@ class Aside extends LitElement {
         margin: 0 0 15px 0;
       }
 
+      .link__href {
+        word-break: break-all;
+      }
+
       .link__title {
+        word-break: break-word;
         font-size: 19px;
         color: var(--billy-color-text-primary-dark);
       }
@@ -99,7 +104,7 @@ class Aside extends LitElement {
                   return html`
                     <div class="link">
                       <span class="link__title">${link.text}</span>
-                      <a href="${link.href}" class="link__test">${link.href}</a>
+                      <a href="${link.href}" class="link__href">${link.href}</a>
                     </div>
                   `;
                 })}
@@ -113,11 +118,7 @@ class Aside extends LitElement {
           <div class="aside__textWrapper">
             <p class="aside__text aside__text--bold">${state.related.author.fullName}</p>
             <div class="aside__logoWrapper">
-              <img
-                src="/dist/assets/image/${state.related.author.link}.png"
-                alt=""
-                class="aside__logo"
-              />
+              <img src="/dist/assets/image/${state.related.author.link}.png" alt="" class="aside__logo" />
               <p class="aside__text">${state.related.author.organization}</p>
             </div>
           </div>
@@ -141,9 +142,7 @@ class Aside extends LitElement {
                     alt=""
                     class="aside__logo"
                   />
-                  <p class="aside__text">
-                    ${state.related.edits[state.related.edits.length - 1].author.organization}
-                  </p>
+                  <p class="aside__text">${state.related.edits[state.related.edits.length - 1].author.organization}</p>
                 </div>
               </div>
               <div class="aside__textWrapper">
