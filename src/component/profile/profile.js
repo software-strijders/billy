@@ -5,6 +5,7 @@ import { store } from "../../js/state/store.js";
 import { actions } from "../../js/state/login";
 import { getArticles } from "../../js/api/api.js";
 import { defineElement } from "../../js/custom-element";
+import { deleteArticle } from "../../js/api/api.js";
 
 class Profile extends LitElement {
   constructor() {
@@ -327,6 +328,12 @@ class Profile extends LitElement {
     if (store.getState().login.user.firstName !== "") {
       return store.getState().login.user.firstName + " " + store.getState().login.user.lastName;
     }
+  }
+
+  _deleteArticle(title) {
+    deleteArticle(title).
+    then(() => {alert("Artikel succesvol verwijderd")});
+    Router.go("/profile");
   }
 }
 

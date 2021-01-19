@@ -68,6 +68,19 @@ app.patch("/api/article/:oldTitle", (req, res) => {
   res.sendStatus(200);
 });
 
+app.delete("/api/article/:title", (req, res) => {
+  const file = JSON.parse(fs.readFileSync(articlePath));
+  for (let article of file.articles) {
+    if (article.title === req.params.title) {
+      // TODO: delete article
+
+      fs.writeFileSync(articlePath, JSON.stringify(file, null, 2));
+      res.sendStatus(200);
+    }
+  }
+  res.sendStatus(418);
+});
+
 if (app.settings.env === "production") {
   app.enable("trust proxy");
   app.use("*", (req, res, next) => {
