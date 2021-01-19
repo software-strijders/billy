@@ -16,7 +16,6 @@ class FullPageLayout extends LitElement {
       main {
         display: flex;
         flex-direction: column;
-        height: 100%;
         width: 100%;
         background-image: var(--billy-gradient);
       }
