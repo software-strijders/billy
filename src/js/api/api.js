@@ -41,7 +41,7 @@ export function sendArticle(article) {
 
 export function deleteArticle(title) {
   return fetch(`${baseUrl}/article/${title}`, {
-    method: "DELETE"
+    method: "DELETE",
   }).then((response) => {
     if (response.ok) return response;
     else console.log(response);
