@@ -63,13 +63,12 @@ class Article extends LitElement {
 
       .category__text {
         margin: 0;
-        color: var(--billy-color-font-dark);
+        color: var(--billy-color-text-primary-dark);
         font-size: 14px;
       }
 
       .category__link {
         text-decoration: none;
-        color: inherit;
       }
 
       .article__line {
