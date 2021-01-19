@@ -85,14 +85,12 @@ class Aside extends LitElement {
 
   render() {
     const state = store.getState();
-
     return html`
       <div class="aside__content">
         <!-- TODO: This could be a component -->
-        ${
-          state.related.links.length === 0
-            ? html``
-            : html`
+        ${state.related.links.length === 0
+          ? html``
+          : html`
             <div class="aside__card">
               <h2 class="aside__title">Gerelateerd</h1>
               <hr class="aside__line" />
@@ -107,27 +105,56 @@ class Aside extends LitElement {
                 })}
               </div>
             </div>
-          `
-        }
+          `}
         <!-- TODO: This could be a component -->
         <div class="aside__card">
-          <h2 class="aside__title">Auteur</h1>
+          <h2 class="aside__title">Auteur</h2>
           <hr class="aside__line" />
           <div class="aside__textWrapper">
             <p class="aside__text aside__text--bold">${state.related.author.fullName}</p>
             <div class="aside__logoWrapper">
-              <img src="/dist/assets/image/${state.related.author.link || "hogeschool-utrecht"}.png" alt="" class="aside__logo">
-              <p class="aside__text">${state.related.author.organization || "Hogeschool Utrecht"}</p>
+              <img
+                src="/dist/assets/image/${state.related.author.link}.png"
+                alt=""
+                class="aside__logo"
+              />
+              <p class="aside__text">${state.related.author.organization}</p>
             </div>
           </div>
           <div class="aside__textWrapper">
-            <p class="aside__text aside__text--bold">Laatst bewerkt</p>
-            <p class="aside__text">${state.related.lastRevised}</p>
+            <p class="aside__text aside__text--bold">Datum</p>
+            <p class="aside__text">${state.related.date}</p>
           </div>
         </div>
+
+        ${state.related.edits.length > 0
+          ? html` <div class="aside__card">
+              <h2 class="aside__title">Laatste bewerking</h2>
+              <hr class="aside__line" />
+              <div class="aside__textWrapper">
+                <p class="aside__text aside__text--bold">
+                  ${state.related.edits[state.related.edits.length - 1].author.fullName}
+                </p>
+                <div class="aside__logoWrapper">
+                  <img
+                    src="/dist/assets/image/${state.related.edits[state.related.edits.length - 1].author.link}.png"
+                    alt=""
+                    class="aside__logo"
+                  />
+                  <p class="aside__text">
+                    ${state.related.edits[state.related.edits.length - 1].author.organization}
+                  </p>
+                </div>
+              </div>
+              <div class="aside__textWrapper">
+                <p class="aside__text aside__text--bold">Datum</p>
+                <p class="aside__text">${state.related.edits[state.related.edits.length - 1].date}</p>
+              </div>
+            </div>`
+          : html``}
       </div>
     `;
   }
 }
 
-defineElement("billy-aside", Aside)
+defineElement("billy-aside", Aside);

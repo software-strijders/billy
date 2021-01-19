@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   author: {},
-  lastRevised: "",
+  date: "",
   links: [],
+  edits: [],
 };
 
 export const { actions, reducer } = createSlice({

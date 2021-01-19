@@ -278,7 +278,7 @@ class Profile extends LitElement {
                 title="${article.title}"
                 description="${article.description}"
                 readTime="${article.readTime}"
-                lastRevised="${article.lastRevised}"
+                date="${article.edits.length > 0 ? article.edits[article.edits.length - 1].date : article.date}"
                 headCategory="${article.headCategory}"
                 subCategory="${article.subCategory}"
               ></billy-result-item>

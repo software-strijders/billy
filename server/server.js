@@ -7,7 +7,7 @@ const compression = require("compression");
 const app = express();
 
 const articlePath = path.join(__dirname, "data", "articles.json");
-const accountPath = path.join(__dirname, "data", "accounts.json")
+const accountPath = path.join(__dirname, "data", "accounts.json");
 
 app.use(express.json());
 app.use(compression());
@@ -19,7 +19,7 @@ app.get("/api/article", (req, res) => {
 
 app.get("/api/article/:title", (req, res) => {
   const file = JSON.parse(fs.readFileSync(articlePath));
-  res.send(file.articles.filter(article => article.title === req.params.title)[0]);
+  res.send(file.articles.filter((article) => article.title === req.params.title)[0]);
 });
 
 app.post("/api/article", (req, res) => {
@@ -59,23 +59,24 @@ app.patch("/api/article/:oldTitle", (req, res) => {
       article.readTime = req.body.readTime;
       article.link = req.body.link;
       article.links = req.body.links;
+      article.edits = req.body.edits;
     }
     return article;
   });
-  fs.writeFileSync(articlePath, JSON.stringify({articles: file}, null, 2));
-  
+  fs.writeFileSync(articlePath, JSON.stringify({ articles: file }, null, 2));
+
   res.sendStatus(200);
 });
 
 if (app.settings.env === "production") {
   app.enable("trust proxy");
-  app.use('*', (req, res, next) => {
+  app.use("*", (req, res, next) => {
     if (req.secure) {
       return next();
     }
     res.redirect(`https://${req.hostname}${req.url}`);
   });
-  
+
   app.use(express.static(path.join(__dirname, "../build")));
   app.get(["/", "/*"], (req, res) => {
     res.sendFile(path.join(__dirname, "../build", "index.html"));

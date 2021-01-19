@@ -124,7 +124,7 @@ class Results extends LitElement {
                     title="${article.title}"
                     description="${article.description}"
                     readTime="${article.readTime}"
-                    lastRevised="${article.lastRevised}"
+                    date="${article.edits.length > 0 ? article.edits[article.edits.length - 1].date : article.date}"
                     headCategory="${article.headCategory}"
                     subCategory="${article.subCategory}"
                   ></billy-result-item>
@@ -180,9 +180,11 @@ class Results extends LitElement {
     
     if (urlParams.has("hc") && !urlParams.has("sc"))
       return urlParams.get("hc");
+    else if(urlParams.has("sc") && !urlParams.has("hc"))
+      return urlParams.get("sc");
     else if(urlParams.has("hc") && urlParams.has("sc"))
       return urlParams.get("hc") + ", " + urlParams.get("sc");
-    else if(!urlParams.has("hc") && !urlParams.has("q"))
+    else if(!urlParams.has("hc") && !urlParams.has("q") && !urlParams.get("sc"))
       return "Alles";
   }
 }
