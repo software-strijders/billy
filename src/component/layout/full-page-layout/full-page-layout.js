@@ -36,6 +36,10 @@ class FullPageLayout extends LitElement {
           overflow-y: auto;
           scrollbar-width: thin;
         }
+
+        main {
+          display: block;
+        }
       }
     `;
   }
