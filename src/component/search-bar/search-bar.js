@@ -94,10 +94,6 @@ class SearchBar extends LitElement {
       }
 
       @media (max-width: 850px) {
-        :host {
-          margin-left: 15px;
-        }
-
         .wrapper {
           margin: 0;
         }
