@@ -334,7 +334,7 @@ class EditingPage extends LitElement {
           ></billy-editor>
         </div>
         <div class="form__wrapper form__wrapper--button">
-          <a href="/profile" class="form__button form__button--remove">Annuleren</a>
+          <a href="${this._getCancelButtonHref()}" class="form__button form__button--remove">Annuleren</a>
           <button
             @click="${this.editMode ? this._handleEditClick : this._handleSaveClick}"
             class="form__button"
@@ -459,6 +459,14 @@ class EditingPage extends LitElement {
     article["edits"] = this.edits;
 
     return article;
+  }
+
+  _getCancelButtonHref() {
+    let urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("a")) {
+      return `/article?a=${urlParams.get("a")}`;
+    }
+    return `/profile`;
   }
 
   _getStrippedHtml(html) {
