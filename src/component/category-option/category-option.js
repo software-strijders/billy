@@ -103,14 +103,16 @@ class CategoryOption extends LitElement {
       }
 
       .popOut--sideBar {
-        bottom: 280px;
-        margin: 0 0 -385px 385px;
+        bottom: -100px;
+        left: 120px;
+        top: -20px;
+        margin: 0;
       }
 
       .popOut--sideBar .popOut__pointerContainer {
         transform: rotate(90deg);
         top: 30px;
-        left: -130px;
+        left: -132px;
         height: 20px;
       }
 
