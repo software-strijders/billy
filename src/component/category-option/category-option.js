@@ -86,6 +86,7 @@ class CategoryOption extends LitElement {
         width: 200px;
         padding: 20px;
         background-color: var(--billy-color-background-popout);
+        border: var(--billy-border);
         border-radius: 10px;
         box-shadow: var(--billy-box-shadow);
         transition: 0.25s;
@@ -99,7 +100,6 @@ class CategoryOption extends LitElement {
         visibility: visible;
         transform: translateY(30px) scale(1);
         opacity: 1;
-        border: var(--billy-border);
       }
 
       .popOut--sideBar {
