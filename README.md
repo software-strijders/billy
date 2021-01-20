@@ -153,6 +153,12 @@ $ npm start
 
 Nadat de command is uitgevoerd, wordt jouw voorkeurs browser geopend naar `localhost:8080`. Ook wordt er in de achtergrond een tweede server gestart die op `localhost:3000` draait. Dat is waar de API draait.
 
+## Deploy
+
+Er wordt automatisch gedeployed vanaf de `main` branch. Echter is het volgende belangrijk:
+- De cacheVersion in `service-worker.js` **moet** veranderd worden.
+- Wordt dit niet gedaan, dan kan het voorkomen dat er een witte pagina verschijnt. Dit kan dan worden opgelost met een hard-refresh (in de browser zelf).
+
 # Features
 
 <p>
