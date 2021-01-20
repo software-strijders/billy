@@ -32,6 +32,6 @@ import "./search-bar/search-bar.js";
 import "./side-bar/side-bar.js";
 import "./top-bar/top-bar.js";
 
-if ("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator && import.meta.env.MODE === "production") {
   navigator.serviceWorker.register("service-worker.js");
 }
