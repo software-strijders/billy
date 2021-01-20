@@ -26,7 +26,7 @@ class CategoryBar extends LitElement {
         }
       }
 
-      @media(max-width: 850px) {
+      @media(max-width: 850px), (pointer: coarse) {
         .categoryBar {
           display: flex;
           flex-direction: column;

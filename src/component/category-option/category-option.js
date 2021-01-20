@@ -176,7 +176,7 @@ class CategoryOption extends LitElement {
         }
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         .category__container {
           display: flex;
           flex-direction: row;

@@ -100,7 +100,7 @@ class Article extends LitElement {
         font-weight: bold;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         .article__content {
           padding: 0;
         }

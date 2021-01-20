@@ -16,7 +16,7 @@ class HomePage extends LitElement {
         display: none;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         .hero__footer {
           display: flex;
           align-items: center;

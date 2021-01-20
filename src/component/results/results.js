@@ -68,7 +68,7 @@ class Results extends LitElement {
         margin: 0 0 auto 0;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         .results {
           padding: 0;
           margin: 0;

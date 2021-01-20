@@ -154,7 +154,7 @@ class Profile extends LitElement {
         background: var(--billy-gradient-background-warning);
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         :host {
           padding: 0;
           width: 100%;

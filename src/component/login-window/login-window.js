@@ -63,7 +63,7 @@ class LoginWindow extends LitElement {
         cursor: pointer;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         :host {
           display: block;
           max-width: 90vw;
