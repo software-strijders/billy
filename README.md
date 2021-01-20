@@ -155,9 +155,11 @@ Nadat de command is uitgevoerd, wordt jouw voorkeurs browser geopend naar `local
 
 # Features
 
-![](/images/billy-frontpage-screenshot.png)
-![](/images/billy-frontpage-mobile-screenshot.png)
-
+<p>
+  <img src="/images/billy-frontpage-screenshot.png" alt="" width=76.6% height=76.6% style="margin-right: 1px;"/>
+  <img src="/images/billy-frontpage-mobile-screenshot.png" alt="" width=18% height=18%/>
+</p>
+  
 ## Mobiel
 De website is zowel beschikbaar voor mobiele apparaten als voor desktops. 
 In tegenstelling tot veel websites is onze website ook volledig geoptimaliseerd voor Apple devices.
@@ -171,7 +173,7 @@ Onze webapplicatie maakt gebruik van een geavanceerd, maar licht zoek algoritme.
 ## Hoog contrast mode
 Ook heeft onze webapplicatie een hoog contrast mode. Hierin wordt alles wit op zwart. Zwart kijkt voor de meeste mensen prettiger. Ook zijn uit gesprekken met mensen die ervaring hebben met het toegankelijk maken van een website gebleken dat er mensen zijn die het wit op een scherm erg slecht kunnen verdragen. Door de contrast mode zo te maken dat het niet veel licht projecteert vangen we twee vliegen in één klap. 
 
-![](/images/billy-articlepage-high-contrast.png)
+<img src="/images/billy-articlepage-high-contrast.png" width=50% height=50%/>
 
 ## Preview
 Als er door middel van de zoekbalk of het klikken op een (sub)catagorie gezocht is, wordt er een kleine preview onder het kopje getoond van het artikel.
@@ -185,7 +187,10 @@ Billy komt onder iedere preview met een verwachte leestijd. Deze leestijd wordt 
 ## Laatst gewijzigd
 Naast de leestijd indicator wordt getoond wanneer het artikel voor het laatst gewijzigd is. Dit kan helpen met het inschatten hoe actueel een artikel is. 
 
- ![](/images/billy-aside.png) ![](/images/billy-aside-high-contrast.png)
+<p align="center">
+  <img src="/images/billy-aside.png" alt="" height=30% width=30%/>
+  <img src="/images/billy-aside-high-contrast.png" alt="" height=30% width=30%/>
+</p>
 
 ## Aanpassen
 Artikelen kunnen worden aangepast. Om open te blijven en tevens misbruik tegen te gaan wordt er naast ieder artikel getoond wie het artikel voor het laatst heeft aangepast. 
