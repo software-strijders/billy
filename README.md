@@ -8,9 +8,9 @@
 
 ## Inhoudsopgave
 
+- [Introductie](#introductie)
 - [De applicatie](#de-applicatie)
 - [Het team](#het-team)
-- [Introductie](#introductie)
 - [Git strategie](#git-strategie)
 - [Scrum](#scrum)
 - [Documentatie](#documentatie)
@@ -27,18 +27,6 @@ De applicatie is op de volgende plekken te vinden:
 - [billy.software-strijders.nl](billy.software-strijders.nl)
 - [wiki-billy.herokuapp.com](wiki-billy.herokuapp.com)
 
-## Het team
-
-Dit project wordt gemaakt door een groep van vijf, elke met zijn eigen sterktes en zwaktes die elkaar complementeren.
-
-Het groepje bestaat uit de volgende mensen:
-
-- Xander Vedder ([@xandervedder](https://github.com/xandervedder))
-- Jort Willemsen ([@JortWillemsen](https://github.com/JortWillemsen))
-- Milan Dol ([@JustMilan](https://github.com/JustMilan))
-- Ruben van den Brink ([@Rubenvdbrink](https://github.com/Rubenvdbrink))
-- Arjen Norbart ([@arjennorbart](https://github.com/arjennorbart))
-
 ## Introductie
 
 Dit project zal worden gebruikt als een wiki voor alle HBO-i aangesloten hogescholen in Nederland.
@@ -52,6 +40,18 @@ Het heeft de volgende eisen:
 - De wiki moet open-source zijn.
 - De wiki moet voldoen aan de toegangelijksheid-eisen.
 - De wiki moet demonstreerbaar snel zijn waardoor er zo min mogelijk energie wordt gebruikt.
+
+## Het team
+
+Dit project wordt gemaakt door een groep van vijf, elke met zijn eigen sterktes en zwaktes die elkaar complementeren.
+
+Het groepje bestaat uit de volgende mensen:
+
+- Xander Vedder ([@xandervedder](https://github.com/xandervedder))
+- Jort Willemsen ([@JortWillemsen](https://github.com/JortWillemsen))
+- Milan Dol ([@JustMilan](https://github.com/JustMilan))
+- Ruben van den Brink ([@Rubenvdbrink](https://github.com/Rubenvdbrink))
+- Arjen Norbart ([@arjennorbart](https://github.com/arjennorbart))
 
 ## Git strategie
 
