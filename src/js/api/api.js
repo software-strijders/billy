@@ -24,7 +24,7 @@ export function logIn(user) {
     headers: { "Content-type": "application/json; charset=UTF-8" },
   }).then((response) => {
     if (response.ok) return response.json();
-    else throw Error("Inloggen mislukt");
+    else throw Error("U heeft geen geldige inloggegevens ingevuld.");
   });
 }
 
