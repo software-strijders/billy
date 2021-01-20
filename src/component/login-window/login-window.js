@@ -128,7 +128,7 @@ class LoginWindow extends LitElement {
         store.dispatch(actions.login({ loggedIn: true, user: data }));
         Router.go("/");
       })
-      .catch((e) => alert(e));
+      .catch((e) => alert(e.message));
   }
 
   handleKeyUp(e) {
