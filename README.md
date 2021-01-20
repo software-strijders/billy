@@ -1,6 +1,6 @@
 # Project Frontend development
 
-![Banner](logo/billy-banner.png)
+![Banner](/images/logo/billy-banner.png)
 ![Node version](https://img.shields.io/npm/v/npm)
 ![Snowpack version](https://img.shields.io/npm/v/snowpack?label=Snowpack)
 ![Lit element version](https://img.shields.io/npm/v/lit-element?label=Lit%20element)
@@ -155,8 +155,8 @@ Nadat de command is uitgevoerd, wordt jouw voorkeurs browser geopend naar `local
 
 # Features
 
-<!-- ![](link naar foto van de billy front page) -->
-<!-- ![](link naar foto van de billy front page mobile version) -->
+![](/images/billy-frontpage-screenshot.png)
+![](/images/billy-frontpage-mobile-screenshot.png)
 
 ## Mobiel
 De website is zowel beschikbaar voor mobiele apparaten als voor desktops. 
@@ -171,12 +171,13 @@ Onze webapplicatie maakt gebruik van een geavanceerd, maar licht zoek algoritme.
 ## Hoog contrast mode
 Ook heeft onze webapplicatie een hoog contrast mode. Hierin wordt alles wit op zwart. Zwart kijkt voor de meeste mensen prettiger. Ook zijn uit gesprekken met mensen die ervaring hebben met het toegankelijk maken van een website gebleken dat er mensen zijn die het wit op een scherm erg slecht kunnen verdragen. Door de contrast mode zo te maken dat het niet veel licht projecteert vangen we twee vliegen in één klap. 
 
-<!-- ![](Hoog contrast foto's?) -->
+![](/images/billy-articlepage-high-contrast.png)
 
 ## Preview
 Als er door middel van de zoekbalk of het klikken op een (sub)catagorie gezocht is, wordt er een kleine preview onder het kopje getoond van het artikel.
 
-<!-- ![](foto van een result-item?) -->
+![](/images/billy-resultitem.png)
+![](/images/billy-resultitem-high-contrast.png)
 
 ## Leestijd indicator
 Billy komt onder iedere preview met een verwachte leestijd. Deze leestijd wordt door een algoritme berekend en hiervoor wordt de gemiddelde leessnelheid onder alle Nederlanders genomen.
@@ -184,7 +185,7 @@ Billy komt onder iedere preview met een verwachte leestijd. Deze leestijd wordt 
 ## Laatst gewijzigd
 Naast de leestijd indicator wordt getoond wanneer het artikel voor het laatst gewijzigd is. Dit kan helpen met het inschatten hoe actueel een artikel is. 
 
-<!--  ![](link naar foto van een artikel?) -->
+ ![](/images/billy-aside.png) ![](/images/billy-aside-high-contrast.png)
 
 ## Aanpassen
 Artikelen kunnen worden aangepast. Om open te blijven en tevens misbruik tegen te gaan wordt er naast ieder artikel getoond wie het artikel voor het laatst heeft aangepast. 
@@ -204,6 +205,6 @@ Overgangen van webpagina naar webpagina kunnen vaak wat "hard" aanvoelen. Om onz
 ## Test scores
 Met een lach op ons gezicht kunnen we u vertellen dat alle scores 100/100 zijn. In de Lighthouse audit van Google hebben performance, toegankelijkheid, best practises en SEO (zoekmachine optimalisatie) allemaal perfect gescoord. De website is dus enorm snel en erg toegankelijk voor iedereen. Mensen die een beperking op enige manier hebben zullen dus geen mindere gebruikers ervaring hebben. 
 
-<!-- ![](link foto van alle scores 100) -->
+![](/images/billy-scores.png)
 
-Stichting accessibility heeft onze website ook gereviewd. Alle feedback is opgenomen en verwerkt.
+*Stichting accessibility heeft onze website ook gereviewd. Alle feedback is opgenomen en verwerkt.*
