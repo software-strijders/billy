@@ -154,6 +154,7 @@ class Results extends LitElement {
       if (headCategory === null) {
         return article.subCategory === subCategory;
       }
+      
       return subCategory === null
         ? article.headCategory === headCategory
         : article.headCategory === headCategory &&
