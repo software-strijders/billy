@@ -34,11 +34,6 @@ class EditingPage extends LitElement {
       alert("U heeft geen toegang tot deze pagina, u wordt omgeleid");
       window.location.href = "/";
     }
-
-    if (window.innerWidth < 850) {
-      alert("Gebruik alsjeblieft de desktop versie om artikelen te kunnen bewerken.");
-      window.location.href = "/";
-    }
   }
 
   static get properties() {
@@ -221,7 +216,7 @@ class EditingPage extends LitElement {
         border-radius: var(--billy-edit-page-radius);
         background: var(--billy-color-button-gradient);
         border: var(--billy-border);
-        color: var(--billy-color-text-primary-dark);
+        color: var(--billy-color-text-primary-light);
         font-size: var(--billy-edit-page-form-button-font-size);
         cursor: pointer;
         transition: background-size 0.3s, 0.3s;
@@ -240,6 +235,45 @@ class EditingPage extends LitElement {
         height: 50%;
         width: auto;
         pointer-events: none;
+      }
+
+      @media(max-width: 850px), (pointer: coarse) {
+        :host {
+          padding: 0;
+        }
+
+        .form__title {
+          font-size: 32px;
+        }
+
+        .form__wrapper--select {
+          flex-direction: column;
+        }
+
+        .form__wrapper--select .form__wrapper:last-child {
+          margin: 10px 0 0 0;
+        }
+
+        .form__link {
+          flex-direction: column;
+          height: auto;
+        }
+
+        .form__title--h2 {
+          font-size: var(--billy-edit-page-form-label-font-size)
+        }
+        
+        .form__link .form__label {
+          margin: 0;
+        }
+        
+        .form__link .form__input {
+          margin: 0 0 15px 0;
+        }
+
+        .form__link .form__button {
+
+        }
       }
     `;
   }

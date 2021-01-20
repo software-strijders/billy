@@ -261,5 +261,6 @@ h5 {
 @media (max-width: 850px) {
   :root {
     --billy-height-topbar: 60px;
+    --billy-edit-page-form-select-width: 100%;
   }
 }

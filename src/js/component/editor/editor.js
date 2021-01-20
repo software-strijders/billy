@@ -158,6 +158,18 @@ class Editor extends LitElement {
         height: 15px;
         width: auto;
       }
+
+      @media(max-width: 850px), (pointer: coarse) {
+        .pell__actionBar {
+          flex-direction: row;
+          overflow-x: auto;
+          overflow-y: hidden;
+        }
+
+        .pell__content--preview {
+          padding: var(--billy-editor-content-padding);
+        }
+      }
     `;
   }
 

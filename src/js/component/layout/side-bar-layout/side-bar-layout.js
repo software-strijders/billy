@@ -1,8 +1,15 @@
 import { LitElement, html, css } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 
 import { defineElement } from "../../../custom-element";
 
 class SideBarLayout extends LitElement {
+  static get properties() {
+    return {
+      editingPage: { type: Boolean },
+    };
+  }
+
   static getStyles() {
     return css`
       :host {
@@ -63,6 +70,15 @@ class SideBarLayout extends LitElement {
         .sideBarLayout__sideBar {
           display: none;
         }
+
+        .sideBarLayout__content--editPage .sideBarLayout__main {
+          width: 100vw;
+        }
+
+        .sideBarLayout__content--editPage .sideBarLayout__contentWrapper {
+          width: calc(100vw - 50px);
+          padding: 25px;
+        }
       }
     `;
   }
@@ -72,7 +88,7 @@ class SideBarLayout extends LitElement {
       <div class="sideBarLayout__sideBar">
         <slot name="side-bar"></slot>
       </div>
-      <div class="sideBarLayout__content">
+      <div class="sideBarLayout__content ${classMap({ "sideBarLayout__content--editPage": this.editingPage })}">
         <div class="sideBarLayout__filler"></div>
         <main class="sideBarLayout__main">
           <div class="sideBarLayout__contentWrapper">

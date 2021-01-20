@@ -21,7 +21,7 @@ class CreatePage extends LitElement {
           <billy-search-bar topBar="true" hideLink="true" slot="item"></billy-search-bar>
           <billy-login-button large="true" slot="item"></billy-login-button>
         </billy-top-bar>
-        <billy-side-bar-layout slot="page-layout">
+        <billy-side-bar-layout slot="page-layout" editingPage>
           <billy-side-bar slot="side-bar"></billy-side-bar>
           <billy-editing-page slot="content"></billy-editing-page>
         </billy-side-bar-layout>
