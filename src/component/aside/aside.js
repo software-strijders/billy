@@ -38,14 +38,6 @@ class Aside extends LitElement {
         color: var(--billy-color-text-primary-dark);
       }
 
-      .aside__line {
-        height: var(--billy-line-height);
-        border: none;
-        border-radius: var(--billy-line-radius);
-        background-color: var(--billy-color-line-light);
-        margin: 5px 0 20px 0;
-      }
-
       .aside__textWrapper {
         margin: 0 0 10px 0;
       }
@@ -98,7 +90,7 @@ class Aside extends LitElement {
           : html`
             <div class="aside__card">
               <h2 class="aside__title">Gerelateerd</h1>
-              <hr class="aside__line" />
+              <billy-hr></billy-hr>
               <div class="aside__links">
                 ${state.related.links.map((link) => {
                   return html`
@@ -114,7 +106,7 @@ class Aside extends LitElement {
         <!-- TODO: This could be a component -->
         <div class="aside__card">
           <h2 class="aside__title">Auteur</h2>
-          <hr class="aside__line" />
+          <billy-hr></billy-hr>
           <div class="aside__textWrapper">
             <p class="aside__text aside__text--bold">${state.related.author.fullName}</p>
             <div class="aside__logoWrapper">
@@ -131,7 +123,7 @@ class Aside extends LitElement {
         ${state.related.edits.length > 0
           ? html` <div class="aside__card">
               <h2 class="aside__title">Laatste bewerking</h2>
-              <hr class="aside__line" />
+              <billy-hr></billy-hr>
               <div class="aside__textWrapper">
                 <p class="aside__text aside__text--bold">
                   ${state.related.edits[state.related.edits.length - 1].author.fullName}
