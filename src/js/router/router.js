@@ -7,16 +7,16 @@ router.setRoutes([
   // This is where you can define routes
   // For more information, visit:
   // https://vaadin.github.io/vaadin-router/vaadin-router/#/classes/Router/demos/demo/index.html
-  { 
+  {
     path: "/",
     animate: true,
     children: [
-      { path: "",         component: "billy-home-page"    },
-      { path: "/login",   component: "billy-login-page"   },
-      { path: "/search",  component: "billy-search-page"  },
+      { path: "", component: "billy-home-page" },
+      { path: "/login", component: "billy-login-page" },
+      { path: "/search", component: "billy-search-page" },
       { path: "/article", component: "billy-article-page" },
-      { path: "/create",  component: "billy-create-page"  },
+      { path: "/create", component: "billy-create-page" },
       { path: "/profile", component: "billy-profile-page" },
-    ]
+    ],
   },
 ]);

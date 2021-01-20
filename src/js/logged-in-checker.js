@@ -3,6 +3,8 @@ import { actions } from "../js/state/login.js";
 
 const data = JSON.parse(window.localStorage.getItem("data"));
 
+// NOTE: This is for demonstration purposes only!
+// This can very easily be circumvented
 if (data && data.email) {
   store.dispatch(
     actions.login({
