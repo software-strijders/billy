@@ -90,14 +90,6 @@ class EditingPage extends LitElement {
         font-size: 22px;
       }
 
-      .form__line {
-        height: var(--billy-line-height);
-        border: none;
-        background-color: var(--billy-color-line-light);
-        border-radius: var(--billy-line-radius);
-        margin: var(--billy-line-margin);
-      }
-
       .form__wrapper {
         display: flex;
         flex-direction: column;
@@ -256,7 +248,7 @@ class EditingPage extends LitElement {
     return html`
       <form class="form ${classMap({ "form--disabled": this.showPreview })}">
         <h1 class="form__title">${this.editMode ? "Artikel aanpassen" : "Artikel aanmaken"}</h1>
-        <hr class="form__line" />
+        <billy-hr></billy-hr>
         <div class="form__wrapper form__wrapper--first">
           <label class="form__label" for="title">Titel</label>
           <input id="title" name="title" class="form__input" type="text" required />
