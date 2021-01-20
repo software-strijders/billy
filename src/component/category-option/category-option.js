@@ -124,13 +124,6 @@ class CategoryOption extends LitElement {
         font-weight: bold;
       }
 
-      .popOut__line {
-        height: var(--billy-line-height);
-        border: none;
-        border-radius: var(--billy-line-radius);
-        background-color: var(--billy-color-line-popout);
-      }
-
       .popOut__pointerContainer {
         position: absolute;
         bottom: 0;
@@ -266,31 +259,31 @@ class CategoryOption extends LitElement {
           <a href="/search?hc=${this.text}&sc=${subCategoryOptions.interaction}" class="popOut__link"
             >${subCategoryOptions.interaction}</a
           >
-          <hr class="popOut__line" />
+          <billy-hr popout></billy-hr>
         </div>
         <div class="popOut__option">
           <a href="/search?hc=${this.text}&sc=${subCategoryOptions.organizationProcess}" class="popOut__link"
             >${subCategoryOptions.organizationProcess}</a
           >
-          <hr class="popOut__line" />
+          <billy-hr popout></billy-hr>
         </div>
         <div class="popOut__option">
           <a href="/search?hc=${this.text}&sc=${subCategoryOptions.infrastructure}" class="popOut__link"
             >${subCategoryOptions.infrastructure}</a
           >
-          <hr class="popOut__line" />
+          <billy-hr popout></billy-hr>
         </div>
         <div class="popOut__option">
           <a href="/search?hc=${this.text}&sc=${subCategoryOptions.software}" class="popOut__link"
             >${subCategoryOptions.software}</a
           >
-          <hr class="popOut__line" />
+          <billy-hr popout></billy-hr>
         </div>
         <div class="popOut__option">
           <a href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}" class="popOut__link"
             >${subCategoryOptions.hardwareInterfacing}</a
           >
-          <hr class="popOut__line" />
+          <billy-hr popout></billy-hr>
         </div>
         <div class="popOut__pointerContainer">
           <div class="popOut__pointer"></div>
