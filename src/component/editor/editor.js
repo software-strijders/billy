@@ -179,7 +179,6 @@ class Editor extends LitElement {
                   </button>
                 </div>
                 <div class="pell__content pell__content--preview">
-                  <!-- TODO: This should eventually be passed in the state -->
                   <billy-article
                     html="${this.articleHtml}"
                     title="${this.title}"
@@ -245,7 +244,7 @@ class Editor extends LitElement {
     // This fixes the caret dissapearing from the content-editable pell element in FireFox.
     // Normally I don't really like to add browser-specific code, but we don't have a choice here.
     // Looking on the internet I found the following related posts about this issue, though none of the
-    // solutions worked.
+    // solutions worked (except this one...).
     // ---
     // https://stackoverflow.com/questions/27093136/firefox-contenteditable-cursor-issue
     // https://bugzilla.mozilla.org/show_bug.cgi?id=1146881

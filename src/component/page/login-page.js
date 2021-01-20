@@ -1,7 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 
 import { defineElement } from "../../js/custom-element";
-import { store } from "../../js/state/store.js";
 
 class LoginPage extends LitElement {
   static getStyles() {

@@ -12,7 +12,7 @@ class HorizontalLine extends LitElement {
 
   static getStyles() {
     return css`
-      hr {
+      .hr {
         height: var(--billy-line-height);
         margin: 15px 0 25px 0;
         background-color: var(--billy-color-line-light);
@@ -28,7 +28,7 @@ class HorizontalLine extends LitElement {
 
   render() {
     return html` 
-      <hr class="${classMap({ "hr--popout": this.popout })}"/>
+      <hr class="hr ${classMap({ "hr--popout": this.popout })}"/>
     `;
   }
 }

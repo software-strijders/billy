@@ -86,7 +86,7 @@ class LoginWindow extends LitElement {
         <div class="wrapper">
           <div class="field">
             <input
-              @keyup="${this.handleKeyUp}"
+              @keyup="${this._handleKeyUp}"
               aria-label="e-mail"
               placeholder="E-mail"
               class="field__input"
@@ -99,7 +99,7 @@ class LoginWindow extends LitElement {
         <div class="wrapper">
           <div class="field">
             <input
-              @keyup="${this.handleKeyUp}"
+              @keyup="${this._handleKeyUp}"
               aria-label="wachtwoord"
               placeholder="Wachtwoord"
               class="field__input"
@@ -111,14 +111,14 @@ class LoginWindow extends LitElement {
         </div>
         <div class="wrapper">
           <div class="field">
-            <button class="field__button" @click="${this.login}" type="button">Inloggen</button>
+            <button class="field__button" @click="${this._logIn}" type="button">Inloggen</button>
           </div>
         </div>
       </form>
     `;
   }
 
-  login() {
+  _logIn() {
     const emailInput = this.shadowRoot.querySelector("#email--input").value;
     const passwordInput = this.shadowRoot.querySelector("#password--input").value;
 
@@ -131,9 +131,9 @@ class LoginWindow extends LitElement {
       .catch((e) => alert(e.message));
   }
 
-  handleKeyUp(e) {
+  _handleKeyUp(e) {
     if (e.key === "Enter") {
-      this.login();
+      this._logIn();
     }
   }
 }

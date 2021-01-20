@@ -27,15 +27,15 @@ class CategoryBar extends LitElement {
       }
 
       @media(max-width: 850px), (pointer: coarse) {
+        :host {
+          display: block;
+          width: 100%;
+        }
+
         .categoryBar {
           display: flex;
           flex-direction: column;
           height: auto;
-        }
-
-        :host {
-          display: block;
-          width: 100%;
         }
       }
     `;

@@ -41,7 +41,7 @@ export class ContributeButton extends LitElement {
 
     return html`
       ${state.login.loggedIn
-        ? html`<a class="link" href="/create">Bijdragen</a>`
+        ? html`<a class="link" href="/create" aria-label="Artikel aanmaken">Bijdragen</a>`
         : html``}
     `;
   }

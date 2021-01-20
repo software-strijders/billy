@@ -9,6 +9,7 @@ class Aside extends LitElement {
 
     store.subscribe(() => this.requestUpdate());
   }
+
   static getStyles() {
     return css`
       :host {
@@ -83,9 +84,9 @@ class Aside extends LitElement {
 
   render() {
     const state = store.getState();
+    
     return html`
       <div class="aside__content">
-        <!-- TODO: This could be a component -->
         ${state.related.links.length === 0
           ? html``
           : html`
@@ -104,7 +105,6 @@ class Aside extends LitElement {
               </div>
             </div>
           `}
-        <!-- TODO: This could be a component -->
         <div class="aside__card">
           <h2 class="aside__title">Auteur</h2>
           <billy-hr></billy-hr>
@@ -120,7 +120,6 @@ class Aside extends LitElement {
             <p class="aside__text">${state.related.date}</p>
           </div>
         </div>
-
         ${state.related.edits.length > 0
           ? html` <div class="aside__card">
               <h2 class="aside__title">Laatste bewerking</h2>

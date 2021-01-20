@@ -1,4 +1,7 @@
-// Fires an event when the location (URL) changes
+// Fires an event when the location (URL) changes.
+// This is used in the results page, since the router
+// wasn't showing the new component when the URL changed.
+// This event *does* make it show the component.
 // ---
 // https://stackoverflow.com/a/52809105
 history.pushState = (f => function pushState(){

@@ -170,11 +170,15 @@ class CategoryOption extends LitElement {
       }
 
       @media (max-width: 850px), (pointer: coarse) {
-        .category__container {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
+        :host {
           width: 100%;
+          justify-content: start;
+          height: auto;
+          align-items: start;
+        }
+
+        .popOut {
+          display: none;
         }
 
         .category {
@@ -183,15 +187,31 @@ class CategoryOption extends LitElement {
           border-bottom: 5px solid var(--billy-color-line-light);
           margin: 25px 25px 10px;
         }
+        
+        .category--collapsed {
+          height: 100px;
+          border-bottom: none;
+        }
+
+        .category--collapsed .category__dropdownImage {
+          transform: rotate(0);
+        }
+
+        .category--collapsed .slideOut {
+          display: none;
+        }
+
+        .category__container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+        }
 
         .category__link {
           flex-direction: row;
         }
 
-        .category--collapsed {
-          height: 100px;
-          border-bottom: none;
-        }
 
         .category__text {
           margin-left: 40px;
@@ -218,14 +238,6 @@ class CategoryOption extends LitElement {
           transition: 0.1s;
         }
 
-        .category--collapsed .category__dropdownImage {
-          transform: rotate(0);
-        }
-
-        .category--collapsed .slideOut {
-          display: none;
-        }
-
         .slideOut {
           display: flex;
           height: auto;
@@ -243,17 +255,6 @@ class CategoryOption extends LitElement {
 
         .slideOut__link {
           color: var(--billy-color-text-primary-dark);
-        }
-
-        :host {
-          width: 100%;
-          justify-content: start;
-          height: auto;
-          align-items: start;
-        }
-
-        .popOut {
-          display: none;
         }
       }
     `;

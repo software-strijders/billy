@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit-element";
 
 import { defineElement } from "../../js/custom-element.js";
+import { author } from "../../js/state/login.js";
 
 import { store } from "../../js/state/store.js";
 
@@ -94,7 +95,7 @@ class LoginButton extends LitElement {
     return html`
       <a
         class="loginButton"
-        href="${store.getState().login.loggedIn ? `/profile` : `/login`}"
+        href="${state.login.loggedIn ? `/profile` : `/login`}"
         aria-label="Naar login pagina"
       >
         ${
@@ -106,7 +107,7 @@ class LoginButton extends LitElement {
                     ? "/dist/assets/image/" + state.login.user.link + ".png"
                     : "/dist/assets/favicon.svg"}
                 />
-                <p class="loginButton__text">${this.getNameOfUser()}</p>
+                <p class="loginButton__text">${this._getNameOfUser()}</p>
                 <img
                   alt=""
                   class="loginButton__mobileIcon"
@@ -123,10 +124,8 @@ class LoginButton extends LitElement {
     `;
   }
 
-  getNameOfUser() {
-    if (store.getState().login.user.firstName !== "") {
-      return store.getState().login.user.firstName + " " + store.getState().login.user.lastName;
-    }
+  _getNameOfUser() {
+    return author(store.getState()).fullName;
   }
 }
 

@@ -171,9 +171,12 @@ class Results extends LitElement {
 
       // Filter based on the (optional) query parameters
       let urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has("q")) this._filterByText(urlParams.get("q"));
-      if (urlParams.has("hc") || urlParams.has("sc"))
+      if (urlParams.has("q")) {
+        this._filterByText(urlParams.get("q"));
+      }
+      if (urlParams.has("hc") || urlParams.has("sc")) {
         this._filterByCategories(urlParams.get("hc"), urlParams.get("sc"));
+      }
 
       // Only render when filtering has finished.
       this.isFinished = true;
@@ -188,7 +191,7 @@ class Results extends LitElement {
     else if(urlParams.has("sc") && !urlParams.has("hc"))
       return urlParams.get("sc");
     else if(urlParams.has("hc") && urlParams.has("sc"))
-      return urlParams.get("hc") + ", " + urlParams.get("sc");
+      return `${urlParams.get("hc")}, ${urlParams.get("sc")}`;
     else if(!urlParams.has("hc") && !urlParams.has("q") && !urlParams.get("sc"))
       return "Alles";
   }

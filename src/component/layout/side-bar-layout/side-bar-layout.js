@@ -44,10 +44,6 @@ class SideBarLayout extends LitElement {
         max-width: var(--billy-max-content-width);
       }
 
-      /* 
-        TODO: We should define a few of these pixel widths.
-        Not sure what would be the best, though. 
-      */
       @media screen and (max-width: 1250px) {
         .sideBarLayout__content {
           grid-template-columns: 1fr;

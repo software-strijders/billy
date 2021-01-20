@@ -2,7 +2,7 @@ import { LitElement, html, css } from "lit-element";
 import { Router } from "@vaadin/router";
 
 import { store } from "../../js/state/store.js";
-import { actions } from "../../js/state/login";
+import { actions, author } from "../../js/state/login";
 import { getArticles } from "../../js/api/api.js";
 import { defineElement } from "../../js/custom-element";
 import { deleteArticle } from "../../js/api/api.js";
@@ -319,14 +319,8 @@ class Profile extends LitElement {
 
   _filterByUser() {
     this.previews = this.previews.filter((article) => {
-      return article.author.fullName === this.getNameOfUser();
+      return article.author.fullName === author(store.getState()).fullName;
     });
-  }
-
-  getNameOfUser() {
-    if (store.getState().login.user.firstName !== "") {
-      return store.getState().login.user.firstName + " " + store.getState().login.user.lastName;
-    }
   }
 
   _deleteArticle(title) {

@@ -80,6 +80,12 @@ class Article extends LitElement {
         margin: 0 0 25px 0;
       }
 
+      .category__titleWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
       .button {
         padding: var(--billy-edit-page-form-button-padding);
         border-radius: var(--billy-edit-page-radius);
@@ -100,12 +106,6 @@ class Article extends LitElement {
         .article__title {
           font-size: 30px;
         }
-      }
-
-      .category__titleWrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
       }
     `;
   }

@@ -42,6 +42,18 @@ class ContrastToggle extends LitElement {
         border-radius: 100px;
       }
 
+      .contrastToggle--on .contrastToggle__fill {
+        width: 100%;
+      }
+
+      .contrastToggle--on .contrastToggle__slider {
+        transform: translateX(25px);
+      }
+
+      .contrastToggle--on .contrastToggle__sliderIcon {
+        transform: rotate(180deg);
+      }
+
       .contrastToggle__slider {
         display: flex;
         justify-content: center;
@@ -65,18 +77,6 @@ class ContrastToggle extends LitElement {
         border-radius: 40px;
         height: 100%;
         background-color: var(--billy-color-background-contrast-button-light);
-      }
-
-      .contrastToggle--on .contrastToggle__fill {
-        width: 100%;
-      }
-
-      .contrastToggle--on .contrastToggle__slider {
-        transform: translateX(25px);
-      }
-
-      .contrastToggle--on .contrastToggle__sliderIcon {
-        transform: rotate(180deg);
       }
 
       .contrastToggle__sliderIcon {
@@ -103,6 +103,10 @@ class ContrastToggle extends LitElement {
           box-shadow: none;
           width: 40px;
         }
+
+        .contrastToggle--on .contrastToggle__mobile {
+          transform: rotate(180deg);
+        }
         
         .contrastToggle__fill {
           display: none;
@@ -125,10 +129,6 @@ class ContrastToggle extends LitElement {
           height: 40px;
           width: 40px;
           box-shadow: none;
-        }
-
-        .contrastToggle--on .contrastToggle__mobile {
-          transform: rotate(180deg);
         }
       }
     `;

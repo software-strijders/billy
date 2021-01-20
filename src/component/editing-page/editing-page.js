@@ -31,7 +31,7 @@ class EditingPage extends LitElement {
 
   _checkAccess() {
     if (!store.getState().login.loggedIn) {
-      alert("Je hebt geen toegang tot deze pagina, u wordt omgeleid");
+      alert("U heeft geen toegang tot deze pagina, u wordt omgeleid");
       window.location.href = "/";
     }
 

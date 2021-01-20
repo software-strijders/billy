@@ -9,6 +9,8 @@ const app = express();
 const articlePath = path.join(__dirname, "data", "articles.json");
 const accountPath = path.join(__dirname, "data", "accounts.json");
 
+// NOTE: This is a very minimal API that probably shouldn't be used in the *actual* Billy
+
 app.use(express.json());
 app.use(compression());
 app.use(cors());
@@ -78,6 +80,7 @@ app.delete("/api/article/:title", (req, res) => {
 
 if (app.settings.env === "production") {
   app.enable("trust proxy");
+  // HTTPS redirect
   app.use("*", (req, res, next) => {
     if (req.secure) {
       return next();
