@@ -150,9 +150,11 @@ class Results extends LitElement {
   }
 
   _filterByCategories(headCategory, subCategory) {
-    if (headCategory === null) return;
-
     this.previews = this.previews.filter((article) => {
+      if (headCategory === null) {
+        return article.subCategory === subCategory;
+      }
+      
       return subCategory === null
         ? article.headCategory === headCategory
         : article.headCategory === headCategory &&
@@ -167,7 +169,7 @@ class Results extends LitElement {
       // Filter based on the (optional) query parameters
       let urlParams = new URLSearchParams(window.location.search);
       if (urlParams.has("q")) this._filterByText(urlParams.get("q"));
-      if (urlParams.has("hc"))
+      if (urlParams.has("hc") || urlParams.has("sc"))
         this._filterByCategories(urlParams.get("hc"), urlParams.get("sc"));
 
       // Only render when filtering has finished.
