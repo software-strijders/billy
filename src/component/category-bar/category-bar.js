@@ -6,6 +6,7 @@ class CategoryBar extends LitElement {
   static get styles() {
     return css`
       .categoryBar {
+        position: relative;
         display: inline-grid;
         grid-template-columns: auto auto auto auto auto;
         grid-gap: 10px;
@@ -17,6 +18,12 @@ class CategoryBar extends LitElement {
         margin-top: auto;
         border: var(--billy-border-categorybar);
         border-width: var(--billy-border-width-categorybar);
+      }
+
+      @media(max-width: 1280px) {
+        .categoryBar {
+          height: 150px;
+        }
       }
 
       @media(max-width: 850px) {

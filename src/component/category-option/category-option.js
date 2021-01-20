@@ -166,6 +166,16 @@ class CategoryOption extends LitElement {
         display: none;
       }
 
+      @media(max-width: 1280px) {
+        .popOut {
+          bottom: 190px;
+        }
+
+        .category__image {
+          height: 60px;
+        }
+      }
+
       @media (max-width: 850px) {
         .category__container {
           display: flex;
@@ -193,11 +203,6 @@ class CategoryOption extends LitElement {
         .category__text {
           margin-left: 40px;
           font-size: 20px;
-        }
-        .category__option__wrapper {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
         }
 
         .category__dropdownImage {
