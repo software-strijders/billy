@@ -203,11 +203,11 @@ class SearchBar extends LitElement {
             <img class="searchBar__arrow" src="/dist/assets/icon/arrow-right.svg" alt="" />
           </a>
         </div>
-        <button class="mobileButton mobileButton--close" @click="${this._toggleSearchBar}">
-          <img class="mobileButton__image" src="/dist/assets/icon/cancel-icon.svg" />
+        <button class="mobileButton mobileButton--close" @click="${this._toggleSearchBar}" aria-label="Sluit zoekbalk">
+          <img class="mobileButton__image" src="/dist/assets/icon/cancel-icon.svg" alt="" />
         </button>
-        <button class="mobileButton" @click="${this._toggleSearchBar}">
-          <img class="mobileButton__image" src="/dist/assets/icon/search-icon.svg" />
+        <button class="mobileButton" @click="${this._toggleSearchBar}" aria-label="Zoek naar een artikel">
+          <img class="mobileButton__image" src="/dist/assets/icon/search-icon.svg" alt="" />
         </button>
         <a
           class="searchBar__link ${classMap({

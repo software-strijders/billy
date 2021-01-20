@@ -1,5 +1,5 @@
 // Update this variable manually to a new version when deploying!
-const cacheVersion = "3.0";
+const cacheVersion = "3.1.0";
 const cacheName = `BillyCache_v${cacheVersion}`;
 
 self.addEventListener("install", (event) => {

@@ -112,7 +112,7 @@ class Results extends LitElement {
             <span class="results__query">${this.query} ${this.getCategories()}</span>
           </h1>
           <a aria-label="Zoek via categorieën. Te vinden in het menu" class="result__filter" href="/?jump">
-            <img class="result__image" src="/dist/assets/icon/filter-icon-dark.svg" />
+            <img class="result__image" src="/dist/assets/icon/filter-icon-dark.svg" alt="" />
           </a>
         </div>
         <billy-hr></billy-hr>
