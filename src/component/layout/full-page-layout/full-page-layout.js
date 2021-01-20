@@ -30,11 +30,16 @@ class FullPageLayout extends LitElement {
         margin: auto 0 0 0;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         :host {
           overflow-x: hidden;
           overflow-y: auto;
           scrollbar-width: thin;
+        }
+
+        main {
+          height: initial;
+          display: block;
         }
       }
     `;

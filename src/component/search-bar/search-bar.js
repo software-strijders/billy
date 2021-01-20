@@ -69,7 +69,7 @@ class SearchBar extends LitElement {
 
       .searchBar__link {
         margin-top: 10px;
-        color: var(--billy-color-text-primary-light);
+        color: var(--billy-color-text-link-light);
         font-size: 13px;
       }
 
@@ -93,11 +93,7 @@ class SearchBar extends LitElement {
         display: none;
       }
 
-      @media (max-width: 850px) {
-        :host {
-          margin-left: 15px;
-        }
-
+      @media (max-width: 850px), (pointer: coarse) {
         .wrapper {
           margin: 0;
         }

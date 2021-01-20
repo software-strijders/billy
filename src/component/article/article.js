@@ -63,13 +63,12 @@ class Article extends LitElement {
 
       .category__text {
         margin: 0;
-        color: var(--billy-color-font-dark);
+        color: var(--billy-color-text-primary-dark);
         font-size: 14px;
       }
 
       .category__link {
         text-decoration: none;
-        color: inherit;
       }
 
       .article__line {
@@ -101,7 +100,7 @@ class Article extends LitElement {
         font-weight: bold;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         .article__content {
           padding: 0;
         }

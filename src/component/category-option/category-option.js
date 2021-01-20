@@ -86,6 +86,7 @@ class CategoryOption extends LitElement {
         width: 200px;
         padding: 20px;
         background-color: var(--billy-color-background-popout);
+        border: var(--billy-border);
         border-radius: 10px;
         box-shadow: var(--billy-box-shadow);
         transition: 0.25s;
@@ -99,18 +100,19 @@ class CategoryOption extends LitElement {
         visibility: visible;
         transform: translateY(30px) scale(1);
         opacity: 1;
-        border: var(--billy-border);
       }
 
       .popOut--sideBar {
-        bottom: 280px;
-        margin: 0 0 -385px 385px;
+        bottom: -100px;
+        left: 120px;
+        top: -20px;
+        margin: 0;
       }
 
       .popOut--sideBar .popOut__pointerContainer {
         transform: rotate(90deg);
         top: 30px;
-        left: -130px;
+        left: -132px;
         height: 20px;
       }
 
@@ -164,7 +166,17 @@ class CategoryOption extends LitElement {
         display: none;
       }
 
-      @media (max-width: 850px) {
+      @media(max-width: 1280px) {
+        .popOut {
+          bottom: 190px;
+        }
+
+        .category__image {
+          height: 60px;
+        }
+      }
+
+      @media (max-width: 850px), (pointer: coarse) {
         .category__container {
           display: flex;
           flex-direction: row;
@@ -191,11 +203,6 @@ class CategoryOption extends LitElement {
         .category__text {
           margin-left: 40px;
           font-size: 20px;
-        }
-        .category__option__wrapper {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
         }
 
         .category__dropdownImage {

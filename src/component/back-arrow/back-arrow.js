@@ -22,7 +22,7 @@ class BackArrow extends LitElement {
         height: 100%;
       }
 
-      @media(max-width: 850px) {
+      @media(max-width: 850px), (pointer: coarse) {
         .backArrow__image {
           width: 50px;
           height: 50px;

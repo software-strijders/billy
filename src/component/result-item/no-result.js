@@ -44,7 +44,7 @@ class NoResultItem extends LitElement {
         -webkit-box-orient: vertical;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         .noResultItem__title {
           font-size: 50px;
         }

@@ -65,7 +65,7 @@ class TopBar extends LitElement {
         margin: 0 0 0 10px;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         .topBar__logo {
           font-size: 30px;
         }

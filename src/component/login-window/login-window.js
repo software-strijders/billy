@@ -63,15 +63,18 @@ class LoginWindow extends LitElement {
         cursor: pointer;
       }
 
-      @media (max-width: 850px) {
+      @media (max-width: 850px), (pointer: coarse) {
         :host {
           display: block;
           max-width: 90vw;
         }
 
-        .field,
+        .field {
+          width: 100%;
+        }
+
         .field__input {
-          max-width: 100%;
+          width: calc(100% - 40px);
         }
       }
     `;

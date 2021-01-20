@@ -78,6 +78,7 @@ class Aside extends LitElement {
 
       .link__href {
         word-break: break-all;
+        color: var(--billy-color-text-link)
       }
 
       .link__title {
@@ -123,7 +124,7 @@ class Aside extends LitElement {
             </div>
           </div>
           <div class="aside__textWrapper">
-            <p class="aside__text aside__text--bold">Datum</p>
+            <p class="aside__text aside__text--bold">Aangemaakt op</p>
             <p class="aside__text">${state.related.date}</p>
           </div>
         </div>

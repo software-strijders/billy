@@ -86,7 +86,8 @@ class Hero extends LitElement {
         display: none;
       }
 
-      @media (max-width: 850px) {
+
+      @media (max-width: 850px), (pointer: coarse) {
         :host {
           height: 100vh;
         }

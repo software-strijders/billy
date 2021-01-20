@@ -1,83 +1,96 @@
-.pell__content blockquote, blockquote {
-    background: var(--billy-color-background-quoteblock);
-    border: var(--billy-border-quoteblock) solid var(--billy-color-border-quoteblock);
-    border-left: 5px solid var(--billy-color-border-left-blockquote);
-    margin: 1.5em 0;
-    padding: 0.5em 10px;
-    border-radius: 5px;
-    color: var(--billy-color-text-blockquote);
-  }
+.pell__content blockquote,
+blockquote {
+  background: var(--billy-color-background-quoteblock);
+  border: var(--billy-border-quoteblock) solid var(--billy-color-border-quoteblock);
+  border-left: 5px solid var(--billy-color-border-left-blockquote);
+  margin: 1.5em 0;
+  padding: 0.5em 10px;
+  border-radius: 5px;
+  color: var(--billy-color-text-blockquote);
+}
 
-  .pell__content blockquote:before, blockquote:before {
-    color: var(--billy-color-quotes);
-    content: open-quote;
-    font-size: 2em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-  }
+.pell__content blockquote:before,
+blockquote:before {
+  color: var(--billy-color-quotes);
+  content: open-quote;
+  font-size: 2em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
 
-  .pell__content blockquote:after, blockquote:after {
-    color: var(--billy-color-quotes);
-    content: close-quote;
-    font-size: 2em;
-    line-height: 0.1em;
-    margin-left: 0.25em;
-    vertical-align: -0.4em;
-  }
+.pell__content blockquote:after,
+blockquote:after {
+  color: var(--billy-color-quotes);
+  content: close-quote;
+  font-size: 2em;
+  line-height: 0.1em;
+  margin-left: 0.25em;
+  vertical-align: -0.4em;
+}
 
-  .pell__content ol, ol {
-    list-style: none;
-    counter-reset: ol-counter;
-  }
+.pell__content ol,
+ol {
+  list-style: none;
+  counter-reset: ol-counter;
+}
 
-  .pell__content ol li, ol li {
-    counter-increment: ol-counter;
-  }
+.pell__content ol li,
+ol li {
+  counter-increment: ol-counter;
+}
 
-  .pell__content ol li::before, ol li::before {
-    content: counter(ol-counter) ". ";
-    color: var(--billy-color-text-brand-secondary);
-    font-weight: bold;
-  }
+.pell__content ol li::before,
+ol li::before {
+  content: counter(ol-counter) ". ";
+  color: var(--billy-color-text-brand-secondary);
+  font-weight: bold;
+}
 
-  .pell__content ul, ul {
-    list-style: none;
-  }
+.pell__content ul,
+ul {
+  list-style: none;
+}
 
-  .pell__content ul li::before, ul li::before {
-    content: "* ";
-    color: var(--billy-color-text-brand-secondary);
-    font-weight: bold;
-  }
+.pell__content ul li::before,
+ul li::before {
+  content: "* ";
+  color: var(--billy-color-text-brand-secondary);
+  font-weight: bold;
+}
 
-  .pell__content pre, pre {
-    background: var(--billy-color-background-codeblock);
-    color: white;
-    padding: 10px;
-    border-radius: 4px;
-    border: var(--billy-color-border-codeblock);
-    border-width: var(--billy-border-codeblock);
-    border-left: 5px solid var(--billy-color-border-left-codeblock);
-  }
+.pell__content pre,
+pre {
+  background: var(--billy-color-background-codeblock);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  border: var(--billy-color-border-codeblock);
+  border-width: var(--billy-border-codeblock);
+  border-left: 5px solid var(--billy-color-border-left-codeblock);
+}
 
-  .pell__content hr, hr {
-    height: 2px;
-    margin: 15px 0 25px 0;
-    background-color: var(--billy-color-line-light);
-    border: none;
-    border-radius: var(--billy-line-radius);
-  }
+.pell__content hr,
+hr {
+  height: 2px;
+  margin: 15px 0 25px 0;
+  background-color: var(--billy-color-line-light);
+  border: none;
+  border-radius: var(--billy-line-radius);
+}
 
-  .pell__content img, img {
-    width: 100%;
-    height: auto;
-  }
+.pell__content img,
+img {
+  width: 100%;
+  height: auto;
+}
 
-  .pell__content a, a {
-    color: var(--billy-color-text-brand-primary);
-  }
+.pell__content a,
+a {
+  color: var(--billy-color-text-link);
+}
 
-  .pell__content a:visited, a:visited {
-    color: var(--billy-color-brand-secondary); /*TODO: groen of geel maken */
-  }
+.pell__content a:visited,
+a:visited {
+  color: var(--billy-color-text-link);
+}
