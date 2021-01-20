@@ -18,9 +18,23 @@
   - [Functioneel ontwerp](#functioneel-ontwerp)
 - [Git](#git)
 - [Codebase](#codebase)
+  - [Formatting](##formatting)
+  - [Code conventies](##code-conventies)
 - [Installatie](#installatie)
 - [Gebruikersinstructies](#gebruikersinstructies)
-
+- [Features](#features)
+  - [Mobiel](#mobiel)
+  - [Progressieve Web App](#progressieve-web-app)
+  - [Zoeken](#zoeken)
+  - [Hoog contrast mode](#hoog-contrast-mode)
+  - [Preview](#preview)
+  - [Leestijd indicator](#leestijd-indicator)
+  - [Laatst gewijzigd](#laatst-gewijzigd)
+  - [Aanpassen](#aanpassen)
+  - [Verwijderen](#verwijderen)
+  - [Balans en Design](#balans-en-design)
+  - [Transitie](#transitie)
+  - [Test scores](#test-scores)
 ## De applicatie
 
 De applicatie is op de volgende plekken te vinden:
@@ -29,9 +43,15 @@ De applicatie is op de volgende plekken te vinden:
 
 ## Introductie
 
+HBO-I heeft een wiki die hoognodig toe is aan vervanging. Met dit project zullen wij een goede vervanging hiervoor aanbieden. Het doel is om een wiki te ontwerpen en ontwikkelen die de huidige wiki van HBO-I kan vervangen. Tevens zal een nieuw design en een nieuwe applicatie voor meer verkeer zorgen zodat de goede bedoelingen van HBO-I beter tot uiting komen. 
+
+De focus van dit project ligt zwaar op toegankelijkheid. De webapplicatie zal dan ook volledig navigeer- en bruikbaar zijn voor mensen die bijvoorbeeld gebruik maken van een screenreader. Er zijn ook extra features toegevoegd zoals een hoog contrast mode waardoor mensen die geen screenreader nodig hebben, maar wel lastig kleuren kunnen onderscheiden ook probleemloos de webapplicatie kunnen gebruiken.
+
+De opdrachtgever heeft aangegeven dat de website snel en niet zwaar moet zijn. Hiermee voldoen we aan een andere manier dan de traditionele vorm van toegankelijkheid. Wij gebruiken Axe en Lighthouse om onze webapplicatie te controleren op performance, toegankelijkheid, zoekmachine optimalisatie en best practises volgens Google. 
+
 Dit project zal worden gebruikt als een wiki voor alle HBO-i aangesloten hogescholen in Nederland.
 
-Het heeft de volgende eisen:
+Met de hierbovenstaande uitleg komen ook de volgende harde eisen kijken:
 
 - Het moet een wiki worden waar de pagina's bewerkt kunnen worden.
 - Pagina's moeten alleen door ingelogde gebruikers bewerkt kunnen worden.
@@ -102,9 +122,16 @@ Om onze Git history zo schoon mogelijk te houden, gebruiken we in de feature bra
 
 ## Codebase
 
+De root directory van de codebase is [hier](/src) te vinden.
+
+### Formatting
+
 Om de kwaliteit van de code base zo hoog mogelijk te houden, maken we als team gebruik van [prettier](https://prettier.io/). Dit zorgt ervoor dat al onze code op dezelfde lijn gehouden wordt, waardoor verschillen in formatting niet aanwezig zijn.
 
-De root directory van de codebase is [hier](/src) te vinden.
+### Code conventies
+Naast de hierboven genoemde manier om code te formatten, gebruiken wij de "BEM" (Blok Element Modifier) methodologie zodat code deelbaar, leesbaar en herbruikbaar blijft.
+
+Ook maken wij gebruik van style variabelen in plaats van alles overal opnieuw te tikken. Dit verbeterd verder de drie hierboven genoemde punten. _Klik [hier](http://getbem.com/) om meer over BEM te leren_
 
 ## Installatie
 
@@ -118,10 +145,65 @@ $ npm i
 
 ## Gebruikersinstructies
 
-Om het project lokaal te draaien moet het volgende gedaan worden (er wordt hier van uitgegaan dat de vorige stappen zijn gedaan):
+Om het project lokaal te draaien moet het volgende gedaan worden (er wordt hier van uitgegaan dat de vorige stappen zijn uitgevoerd):
 
 ```
 $ npm start
 ```
 
-Nadat de command is uitgevoerd, wordt je browser geopend naar `localhost:8080`. Ook wordt er in de achtergrond een tweede server gestart die op `localhost:3000` draait. Dat is waar de API draait.
+Nadat de command is uitgevoerd, wordt jouw voorkeurs browser geopend naar `localhost:8080`. Ook wordt er in de achtergrond een tweede server gestart die op `localhost:3000` draait. Dat is waar de API draait.
+
+# Features
+
+<!-- ![](link naar foto van de billy front page) -->
+<!-- ![](link naar foto van de billy front page mobile version) -->
+
+## Mobiel
+De website is zowel beschikbaar voor mobiele apparaten als voor desktops. 
+In tegenstelling tot veel websites is onze website ook volledig geoptimaliseerd voor Apple devices.
+
+### Progressive Web App
+Onze webapp is tevens beschikbaar om te downloaden als progressieve web applicatie. Dit houdt in dat de website te downloaden is als het ware. De website is dus ook tot op bepaalde hoogte bruikbaar als er tijdelijk geen internetverbinding is.
+
+## Zoeken
+Onze webapplicatie maakt gebruik van een geavanceerd, maar licht zoek algoritme. Dit algoritme zal de juiste artikelen vinden zelfs als er spelfouten gemaakt zijn. Wij hebben het zo ingesteld dat er tot vier karakters anders mogen zijn om toch tot een juist resultaat te komen. Zo zal de zoekterm `story` nogsteeds tot de zoekresultaten voor `User story` leiden. Ook zal `erna's` toch tot het artikel `persona's` leiden.
+
+## Hoog contrast mode
+Ook heeft onze webapplicatie een hoog contrast mode. Hierin wordt alles wit op zwart. Zwart kijkt voor de meeste mensen prettiger. Ook zijn uit gesprekken met mensen die ervaring hebben met het toegankelijk maken van een website gebleken dat er mensen zijn die het wit op een scherm erg slecht kunnen verdragen. Door de contrast mode zo te maken dat het niet veel licht projecteert vangen we twee vliegen in één klap. 
+
+<!-- ![](Hoog contrast foto's?) -->
+
+## Preview
+Als er door middel van de zoekbalk of het klikken op een (sub)catagorie gezocht is, wordt er een kleine preview onder het kopje getoond van het artikel.
+
+<!-- ![](foto van een result-item?) -->
+
+## Leestijd indicator
+Billy komt onder iedere preview met een verwachte leestijd. Deze leestijd wordt door een algoritme berekend en hiervoor wordt de gemiddelde leessnelheid onder alle Nederlanders genomen.
+
+## Laatst gewijzigd
+Naast de leestijd indicator wordt getoond wanneer het artikel voor het laatst gewijzigd is. Dit kan helpen met het inschatten hoe actueel een artikel is. 
+
+<!--  ![](link naar foto van een artikel?) -->
+
+## Aanpassen
+Artikelen kunnen worden aangepast. Om open te blijven en tevens misbruik tegen te gaan wordt er naast ieder artikel getoond wie het artikel voor het laatst heeft aangepast. 
+
+## Verwijderen
+Artikelen kunnen net zoals dat ze aangemaakt en aangepast worden ook worden verwijderd. Enkel de maker van een artikel kan artikelen verwijderen.
+
+## Balans en Design
+Over design valt te twisten. 
+
+Wij hebben gekozen voor een groot en duidelijk design. Dit ziet er gelikt uit en zorgt voor leesbaarheid. 
+Wij hebben ons laten reviewen en informeren door een front-end expert. Als feedback op het originele design kregen we dat de grootte van een component moest coresponderen met de belangrijkheid ervan. Het zoeken van artikelen is het belangrijkst op billy. Dit is de reden dat de "home page" in het midden een zoekbalk heeft en onderaan categorieën. Het doel is direct duidelijk en mensen die moeite hebben met lezen worden geholpen door de grootte van alle componenten.
+
+# Transitie
+Overgangen van webpagina naar webpagina kunnen vaak wat "hard" aanvoelen. Om onze website prettiger voor het oog te maken hebben wij een heel korte, niet merkbare transitie toegevoegd. Deze transitie is vrijwel onmerkbaar, maar blijkt onbewust veel prettiger en rustiger voor het oog te zijn.
+
+## Test scores
+Met een lach op ons gezicht kunnen we u vertellen dat alle scores 100/100 zijn. In de Lighthouse audit van Google hebben performance, toegankelijkheid, best practises en SEO (zoekmachine optimalisatie) allemaal perfect gescoord. De website is dus enorm snel en erg toegankelijk voor iedereen. Mensen die een beperking op enige manier hebben zullen dus geen mindere gebruikers ervaring hebben. 
+
+<!-- ![](link foto van alle scores 100) -->
+
+Stichting accessibility heeft onze website ook gereviewd. Alle feedback is opgenomen en verwerkt.
