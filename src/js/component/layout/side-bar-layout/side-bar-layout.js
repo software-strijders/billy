@@ -66,7 +66,7 @@ class SideBarLayout extends LitElement {
         }
       }
 
-      @media(max-width: 850px), (pointer: coarse) {
+      @media (max-width: 850px), (pointer: coarse) {
         .sideBarLayout__sideBar {
           display: none;
         }

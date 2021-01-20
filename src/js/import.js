@@ -1,5 +1,5 @@
-import "./logged-in-checker";
 import "./location-change-event";
+import "./logged-in-checker";
 import "./router/router";
 
 import "./component/app/app";

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   author: {
-    link: "hogeschool-utrecht"
+    link: "hogeschool-utrecht",
   },
   date: "",
   links: [],

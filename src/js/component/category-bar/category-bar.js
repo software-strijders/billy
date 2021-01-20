@@ -20,13 +20,13 @@ class CategoryBar extends LitElement {
         border-width: var(--billy-border-width-categorybar);
       }
 
-      @media(max-width: 1280px) {
+      @media (max-width: 1280px) {
         .categoryBar {
           height: 150px;
         }
       }
 
-      @media(max-width: 850px), (pointer: coarse) {
+      @media (max-width: 850px), (pointer: coarse) {
         :host {
           display: block;
           width: 100%;

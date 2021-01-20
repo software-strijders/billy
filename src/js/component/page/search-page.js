@@ -26,7 +26,7 @@ class SearchPage extends LitElement {
           <billy-results slot="content"></billy-results>
         </billy-side-bar-layout>
       </billy-app>
-    `
+    `;
   }
 }
 

@@ -284,7 +284,13 @@ class Profile extends LitElement {
                 <button class="button" type="button" @click="${() => this._redirectToEditArticlePage(article.link)}">
                   Pas aan
                 </button>
-                <button class="button button--delete" type="button" @click="${() => this._deleteArticle(article.title)}">Verwijder</button>
+                <button
+                  class="button button--delete"
+                  type="button"
+                  @click="${() => this._deleteArticle(article.title)}"
+                >
+                  Verwijder
+                </button>
               </div>
             </div>
           `;

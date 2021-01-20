@@ -71,7 +71,7 @@ class Aside extends LitElement {
 
       .link__href {
         word-break: break-all;
-        color: var(--billy-color-text-link)
+        color: var(--billy-color-text-link);
       }
 
       .link__title {
@@ -84,7 +84,7 @@ class Aside extends LitElement {
 
   render() {
     const state = store.getState();
-    
+
     return html`
       <div class="aside__content">
         ${state.related.links.length === 0

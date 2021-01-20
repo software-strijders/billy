@@ -61,4 +61,4 @@ class FullPageLayout extends LitElement {
   }
 }
 
-defineElement("billy-full-page-layout", FullPageLayout)
+defineElement("billy-full-page-layout", FullPageLayout);

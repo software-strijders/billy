@@ -131,7 +131,7 @@ class Editor extends LitElement {
 
       .pell__button--selected {
         background-color: var(--billy-editor-button-bg-color-hover);
-        color: var(--billy-color-selected-contrast)
+        color: var(--billy-color-selected-contrast);
       }
 
       .pell__content {
@@ -159,7 +159,7 @@ class Editor extends LitElement {
         width: auto;
       }
 
-      @media(max-width: 850px), (pointer: coarse) {
+      @media (max-width: 850px), (pointer: coarse) {
         .pell__actionBar {
           flex-direction: row;
           overflow-x: auto;
@@ -181,14 +181,7 @@ class Editor extends LitElement {
               <div class="pell__preview">
                 <div class="pell__actionBar">
                   <p class="pell__text">Voorbeeld</p>
-                  <button
-                    class="pell__button"
-                    title="Close"
-                    type="button"
-                    @click="${this._togglePreview}"
-                  >
-                    x
-                  </button>
+                  <button class="pell__button" title="Close" type="button" @click="${this._togglePreview}">x</button>
                 </div>
                 <div class="pell__content pell__content--preview">
                   <billy-article
@@ -269,7 +262,7 @@ class Editor extends LitElement {
       // - Add listeners to all pell-generated buttons
       // - When a button is clicked, remove the contenteditable attribute for 1ms
       // - Then re-add it, this makes the cursor show on the right position again.
-      this.shadowRoot.querySelectorAll(".pell__button").forEach(button => {
+      this.shadowRoot.querySelectorAll(".pell__button").forEach((button) => {
         button.addEventListener("click", () => {
           pellRoot.setAttribute("contenteditable", false);
           setTimeout(() => {

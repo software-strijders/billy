@@ -22,7 +22,7 @@ class BackArrow extends LitElement {
         height: 100%;
       }
 
-      @media(max-width: 850px), (pointer: coarse) {
+      @media (max-width: 850px), (pointer: coarse) {
         .backArrow__image {
           width: 50px;
           height: 50px;
@@ -34,12 +34,7 @@ class BackArrow extends LitElement {
   render() {
     return html`
       <a class="backArrow" href="/" aria-label="Ga terug naar vorige pagina">
-        <img
-          aria-hidden="true"
-          class="backArrow__image"
-          src="/dist/assets/icon/back-arrow-icon.svg"
-          alt=""
-          />
+        <img aria-hidden="true" class="backArrow__image" src="/dist/assets/icon/back-arrow-icon.svg" alt="" />
       </a>
     `;
   }

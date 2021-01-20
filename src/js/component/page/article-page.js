@@ -18,7 +18,7 @@ class ArticlePage extends LitElement {
       <billy-app>
         <billy-top-bar slot="header">
           <billy-contrast-toggle slot="item"></billy-contrast-toggle>
-          <billy-search-bar topBar="true"  hideLink="true" slot="item"></billy-search-bar>
+          <billy-search-bar topBar="true" hideLink="true" slot="item"></billy-search-bar>
           <billy-login-button large="true" slot="item"></billy-login-button>
         </billy-top-bar>
         <billy-side-bar-layout slot="page-layout">
@@ -27,7 +27,7 @@ class ArticlePage extends LitElement {
           <billy-aside slot="aside"></billy-aside>
         </billy-side-bar-layout>
       </billy-app>
-    `
+    `;
   }
 }
 

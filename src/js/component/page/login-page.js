@@ -26,7 +26,7 @@ class LoginPage extends LitElement {
           </billy-hero>
         </billy-full-page-layout>
       </billy-app>
-    `
+    `;
   }
 }
 

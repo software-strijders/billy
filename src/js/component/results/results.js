@@ -85,7 +85,7 @@ class Results extends LitElement {
           margin: 0 0 0 auto;
           filter: invert(0);
         }
-  
+
         .result__image {
           filter: invert(var(--billy-filter-invert));
         }
@@ -112,7 +112,7 @@ class Results extends LitElement {
             <span class="results__query">${this.query} ${this.getCategories()}</span>
           </h1>
           <a aria-label="Zoek via categorieën. Te vinden in het menu" class="result__filter" href="/?jump">
-            <img class="result__image" src="/dist/assets/icon/filter-icon-dark.svg">
+            <img class="result__image" src="/dist/assets/icon/filter-icon-dark.svg" />
           </a>
         </div>
         <billy-hr></billy-hr>
@@ -157,11 +157,10 @@ class Results extends LitElement {
       if (headCategory === null) {
         return article.subCategory === subCategory;
       }
-      
+
       return subCategory === null
         ? article.headCategory === headCategory
-        : article.headCategory === headCategory &&
-            article.subCategory === subCategory;
+        : article.headCategory === headCategory && article.subCategory === subCategory;
     });
   }
 
@@ -185,15 +184,11 @@ class Results extends LitElement {
 
   getCategories() {
     let urlParams = new URLSearchParams(window.location.search);
-    
-    if (urlParams.has("hc") && !urlParams.has("sc"))
-      return urlParams.get("hc");
-    else if(urlParams.has("sc") && !urlParams.has("hc"))
-      return urlParams.get("sc");
-    else if(urlParams.has("hc") && urlParams.has("sc"))
-      return `${urlParams.get("hc")}, ${urlParams.get("sc")}`;
-    else if(!urlParams.has("hc") && !urlParams.has("q") && !urlParams.get("sc"))
-      return "Alles";
+
+    if (urlParams.has("hc") && !urlParams.has("sc")) return urlParams.get("hc");
+    else if (urlParams.has("sc") && !urlParams.has("hc")) return urlParams.get("sc");
+    else if (urlParams.has("hc") && urlParams.has("sc")) return `${urlParams.get("hc")}, ${urlParams.get("sc")}`;
+    else if (!urlParams.has("hc") && !urlParams.has("q") && !urlParams.get("sc")) return "Alles";
   }
 }
 

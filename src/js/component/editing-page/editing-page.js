@@ -237,7 +237,7 @@ class EditingPage extends LitElement {
         pointer-events: none;
       }
 
-      @media(max-width: 850px), (pointer: coarse) {
+      @media (max-width: 850px), (pointer: coarse) {
         :host {
           padding: 0;
         }
@@ -260,19 +260,15 @@ class EditingPage extends LitElement {
         }
 
         .form__title--h2 {
-          font-size: var(--billy-edit-page-form-label-font-size)
+          font-size: var(--billy-edit-page-form-label-font-size);
         }
-        
+
         .form__link .form__label {
           margin: 0;
         }
-        
+
         .form__link .form__input {
           margin: 0 0 15px 0;
-        }
-
-        .form__link .form__button {
-
         }
       }
     `;

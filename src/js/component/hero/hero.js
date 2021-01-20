@@ -86,7 +86,6 @@ class Hero extends LitElement {
         display: none;
       }
 
-
       @media (max-width: 850px), (pointer: coarse) {
         :host {
           height: 100vh;
@@ -137,7 +136,7 @@ class Hero extends LitElement {
   }
 
   _scrollToBottom() {
-    window.scrollTo(0 , document.body.scrollHeight);
+    window.scrollTo(0, document.body.scrollHeight);
   }
 }
 

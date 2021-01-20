@@ -6,7 +6,7 @@ import { defineElement } from "../../custom-element";
 class HorizontalLine extends LitElement {
   static get properties() {
     return {
-      popout: {type: Boolean},
+      popout: { type: Boolean },
     };
   }
 
@@ -27,9 +27,7 @@ class HorizontalLine extends LitElement {
   }
 
   render() {
-    return html` 
-      <hr class="hr ${classMap({ "hr--popout": this.popout })}"/>
-    `;
+    return html` <hr class="hr ${classMap({ "hr--popout": this.popout })}" /> `;
   }
 }
 

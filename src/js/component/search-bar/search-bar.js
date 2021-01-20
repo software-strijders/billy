@@ -200,11 +200,7 @@ class SearchBar extends LitElement {
             type="submit"
             @click="${this._handleClick}"
           >
-            <img
-              class="searchBar__arrow"
-              src="/dist/assets/icon/arrow-right.svg"
-              alt=""
-            />
+            <img class="searchBar__arrow" src="/dist/assets/icon/arrow-right.svg" alt="" />
           </a>
         </div>
         <button class="mobileButton mobileButton--close" @click="${this._toggleSearchBar}">

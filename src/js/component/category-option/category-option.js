@@ -159,7 +159,7 @@ class CategoryOption extends LitElement {
         display: none;
       }
 
-      @media(max-width: 1280px) {
+      @media (max-width: 1280px) {
         .popOut {
           bottom: 190px;
         }
@@ -187,7 +187,7 @@ class CategoryOption extends LitElement {
           border-bottom: 5px solid var(--billy-color-line-light);
           margin: 25px 25px 10px;
         }
-        
+
         .category--collapsed {
           height: 100px;
           border-bottom: none;
@@ -211,7 +211,6 @@ class CategoryOption extends LitElement {
         .category__link {
           flex-direction: row;
         }
-
 
         .category__text {
           margin-left: 40px;
@@ -312,7 +311,8 @@ class CategoryOption extends LitElement {
           Zoek naar artikelen met de hoofdcategorie ${this.text} en subcategorie ${subCategoryOptions.software}
         </a>
         <a href="/search?hc=${this.text}&sc=${subCategoryOptions.hardwareInterfacing}" class="accessability__link">
-          Zoek naar artikelen met de hoofdcategorie ${this.text} en subcategorie ${subCategoryOptions.hardwareInterfacing}
+          Zoek naar artikelen met de hoofdcategorie ${this.text} en subcategorie
+          ${subCategoryOptions.hardwareInterfacing}
         </a>
       </div>
       <div

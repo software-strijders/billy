@@ -107,17 +107,9 @@ class LoginButton extends LitElement {
                     : "/dist/assets/favicon.svg"}
                 />
                 <p class="loginButton__text">${this._getNameOfUser()}</p>
-                <img
-                  alt=""
-                  class="loginButton__mobileIcon"
-                  src="/dist/assets/icon/profile-icon.svg"
-                />`
+                <img alt="" class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
             : html` <p class="loginButton__text">Inloggen</p>
-                <img
-                  alt=""
-                  class="loginButton__mobileIcon"
-                  src="/dist/assets/icon/profile-icon.svg"
-                />`
+                <img alt="" class="loginButton__mobileIcon" src="/dist/assets/icon/profile-icon.svg" />`
         }
       </button>
     `;

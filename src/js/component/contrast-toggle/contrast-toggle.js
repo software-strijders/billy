@@ -89,7 +89,7 @@ class ContrastToggle extends LitElement {
         display: none;
       }
 
-      @media(max-width: 850px), (pointer: coarse) {
+      @media (max-width: 850px), (pointer: coarse) {
         :host {
           display: flex;
           justify-content: center;
@@ -107,7 +107,7 @@ class ContrastToggle extends LitElement {
         .contrastToggle--on .contrastToggle__mobile {
           transform: rotate(180deg);
         }
-        
+
         .contrastToggle__fill {
           display: none;
         }
@@ -149,7 +149,7 @@ class ContrastToggle extends LitElement {
           </div>
         </div>
         <div class="contrastToggle__mobile">
-          <img alt="" class="contrastToggle__mobileIcon" src="/dist/assets/icon/contrast-icon.svg"/>
+          <img alt="" class="contrastToggle__mobileIcon" src="/dist/assets/icon/contrast-icon.svg" />
         </div>
       </div>
     `;
@@ -160,4 +160,4 @@ class ContrastToggle extends LitElement {
   }
 }
 
-defineElement("billy-contrast-toggle", ContrastToggle)
+defineElement("billy-contrast-toggle", ContrastToggle);
