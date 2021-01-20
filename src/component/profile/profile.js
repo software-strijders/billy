@@ -188,7 +188,6 @@ class Profile extends LitElement {
           font-size: 15px;
         }
 
-        .profile__line,
         .userInfo,
         .profile__preferencesTitle,
         .profile__createArticleWrapper {
@@ -240,7 +239,7 @@ class Profile extends LitElement {
           <h1 class="profile__title">Profiel</h1>
           <button class="button button--delete" type="button" @click="${this._logOut}">Uitloggen</button>
         </div>
-        <hr class="profile__line" />
+        <billy-hr></billy-hr>
         <div class="userInfo">
           <div class="userInfo__row">
             <span class="userInfo__variables">Voornaam:</span>
@@ -264,7 +263,7 @@ class Profile extends LitElement {
           </div>
         </div>
         <h2 class="profile__preferencesTitle">Mijn Artikelen</h2>
-        <hr class="profile__line" />
+        <billy-hr></billy-hr>
         <div class="profile__createArticleWrapper">
           <h3 class="profile__title profile__title--small">Nieuw Artikel</h3>
           <button class="button" type="button" @click="${this._redirectToCreateArticlePage}">Maak aan</button>

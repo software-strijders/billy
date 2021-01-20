@@ -71,14 +71,6 @@ class Article extends LitElement {
         text-decoration: none;
       }
 
-      .article__line {
-        height: var(--billy-line-height);
-        margin: 15px 0 25px 0;
-        background-color: var(--billy-color-line-light);
-        border: none;
-        border-radius: var(--billy-line-radius);
-      }
-
       .article__heading {
         font-size: 22px;
       }
@@ -109,11 +101,11 @@ class Article extends LitElement {
           font-size: 30px;
         }
       }
-      
-      .category__titleWrapper {	
-        display: flex;	
-        justify-content: space-between;	
-        align-items: center;	
+
+      .category__titleWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     `;
   }
@@ -144,7 +136,7 @@ class Article extends LitElement {
                     </button>`
                   : html``}
               </div>
-              <hr class="article__line" />
+              <billy-hr></billy-hr>
               ${unsafeHTML(this.html)}
             </article>
             <style>

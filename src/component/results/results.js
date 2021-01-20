@@ -50,14 +50,6 @@ class Results extends LitElement {
         -webkit-text-fill-color: var(--billy-color-transparent);
       }
 
-      .results__hr {
-        margin: var(--billy-line-margin);
-        height: var(--billy-line-height);
-        border: none;
-        border-radius: var(--billy-line-radius);
-        background-color: var(--billy-color-line-light);
-      }
-
       .result__filter {
         display: none;
       }
@@ -123,7 +115,7 @@ class Results extends LitElement {
             <img class="result__image" src="/dist/assets/icon/filter-icon-dark.svg">
           </a>
         </div>
-        <hr class="results__hr" />
+        <billy-hr></billy-hr>
         <div role="list" id="resultItems" class="results__items">
           ${this.previews.length === 0 && this.isFinished
             ? html`<billy-no-result></billy-no-result>`
