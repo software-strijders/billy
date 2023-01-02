@@ -10,7 +10,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "@snowpack/plugin-optimize": "^0.2.10",
-    "@snowpack/plugin-webpack": "^2.2.0",
+    "@snowpack/plugin-webpack": "^3.0.0",
     "@vaadin/router": "^1.7.2",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
